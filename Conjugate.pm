@@ -20,7 +20,7 @@
 #          - Verb database as a string, is at the end of this file. 
 #          - put use //o  whenever possible, as suggested by Eryq
 #            <eryq@zeegee.com> 
-$VERSION=0.01;
+$VERSION=0.02;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -35,8 +35,61 @@ use Exporter ;
 @EXPORT_OK = qw(a2h cedilla codify diffstr end_gu end_oiar end_uir
                 end_zer hard_c hard_g list_verbs locate same_model
                 soft_c soft_g tabcol tabrow verbify verify @tense
-                %tense %endg %reg %verb @regverb $vpat $cpat $wpat $vlist
-                $letter );
+                %tense %alt_tense %long_tense %endg %reg %verb
+                @regverb $vpat $cpat $wpat $vlist $letter );
+
+# Various alternative ways of specifying tenses
+# No accentuated characters
+%alt_tense= ("presente" =>"pres",
+							"perfeito" =>"perf", 
+							"imperfeito"  =>"imp",
+							"futuro"  =>"fut",  
+							"mais-que-perfeito"=>"mdp",
+							"mais que perfeito"=>"mdp",
+							"mais"  =>{"que"=>{"perfeito"=>"mdp"}},  
+							"conjuntivo"=>{"presente"=>"cpres",
+														 "imperfeito"=>"cimp",
+														 "futuro"=>"cfut",
+														 "pres"=>"cpres",
+														 "imp"=>"cimp",
+														 "fut"=>"cfut"},
+							"conjuntivo presente"=>"cpres",
+							"conjuntivo imperfeito"=>"cimp",
+							"conjuntivo futuro"=>"cfut",
+							"condicional" =>"cond",
+							"imperativo"  =>"ivo",
+							"participio"=>{"passado"=>"pp"}, #'
+							"participio passado"=>"pp", #'
+							"gerundivo"  =>"grd" ,
+							"pres"=>"pres",
+							"perf"=> "perf",
+							"imp"=>"imp", 
+							"fut"=>"fut", 
+							"mdp"=>"mdp",  
+							"cpres"=>"cpres", 
+							"cimp"=>"cimp", 
+							"cfut"=>"cfut", 
+							"cond"=>"cond", 
+							"ivo"=>"ivo", 
+							"pp"=>"pp", 
+		          "grd"=>"grd",
+		);
+
+# Full tense names
+%long_tense= ("pres" =>"presente",
+							"perf" =>"perfeito", 
+							"imp"  =>"imperfeito",
+							"fut"  =>"futuro",  
+							"mdp"=>"mais-que-perfeito",
+							"cpres"=>"conjuntivo presente",
+							"cimp"=>"conjuntivo imperfeito",
+							"cfut"=>"conjuntivo futuro",
+							"cond" =>"condicional",
+							"ivo"  =>"imperativo",
+							"pp"=>"particípio passado", #'
+							"grd"  =>"gerundivo" ,
+		);
+
 
 # WARNING : $tense[9,] eq "ivo" is assumed in verbify() below.
 # WARNING : $tense[10,11] assumed to be partic'ipiopassado and
@@ -747,15 +800,16 @@ sub end_uir {
 #  
 
 %tg = ("cfp"=>"","cpres"=>"","mod"=>"","pres","","ivo","","reg","","pref"=>"");
-
 # %tg = ("cfp"=>"D ","cpres"=>" C","mod"=>"M ","pres","P ","ivo","I
 # ","reg","R ","pref"=>"X ");
+
 sub conjug {
 
-  my($v,@v,@t,@p);
+  my($v,$w,@v,@t,@p);
       
   my ($verbose,$rc,$regexp,$isoacc) = (1,"c",0,1);
 
+#	print "Received : >",join("<   >",@_),"<\n";
 #  print "HASH FOUND \n" if ( ref($_[0]) eq "HASH");
   my $verb = ( ref($_[0]) eq "HASH") ? shift  : \%verb ;
  
@@ -777,19 +831,37 @@ sub conjug {
       if   ( $v =~ /i/ ) { $isoacc = 0; }
   }
 
-  while( $v && !defined($tense{$v}) && ($v!~/[\d]/)){ 
+  while( $v && !defined($alt_tense{$w = lc(Lingua::PT::Accent_iso_8859_1::un_accent($v)) }) && ($v!~/[\d]/)){ 
 #     print "found verb $v\n";
       push @v,$v;
       $v=shift;
   }
-  
-  if($v && defined($tense{$v})){
-    @t = ($v);
-    while(($v=shift) && defined($tense{$v})){ push @t,$v};
+	my $cur_verb = \%alt_tense;
+	@t = ();
+	
+	$w = lc(Lingua::PT::Accent_iso_8859_1::un_accent($v)) if $v;
+#	print "$w\n";
+	while( $w && defined($cur_verb->{$w}) ){
+			if(ref($cur_verb->{$w}) eq "HASH" ){
+					$cur_verb = $cur_verb->{$w};
+			} else {
+					push @t, $cur_verb->{$w};
+					$cur_verb = \%alt_tense;
+			}
+			$w = ($v = shift) ? 
+				lc(Lingua::PT::Accent_iso_8859_1::un_accent($v)) :
+				""	;
+#			print "$w\n";
+	}
+	@t = @tense unless @t ;
 
-  } else {
-    @t = @tense;
-  }
+#  if($v && defined($tense{$v})){
+#    @t = ($v);
+#    while(($v=shift) && defined($tense{$v})){ push @t,$v};
+#
+#  } else {
+#    @t = @tense;
+#  }
   
   if( defined($v) && $v=~/^ [1-4,6] $/x ){
     @p = ($v);
@@ -803,7 +875,7 @@ sub conjug {
 # print "\nPERS  ",join(",",@p),"\n";
                                 # CONJUGATION
 
-  my  (@res,%res,$w);           # Result (as array and hash),tmp.
+  my  (@res,%res);              # Result (as array and hash),tmp.
   my ($root,$rr,$vr,$cr,$edg);  # Root, $root = "$rr$vr$cr$edg"; 
   my ($m,   $rm,$vm,$cm);       # Model $m  = "$rm$vm$cm$edg"; 
   my ($prefix, $missing);

@@ -8,17 +8,18 @@
    conjug [qvrcsx] verb+, [tense]*, [1-6]*
 
  - tense is one of 
-      pres    Presente, 
-      perf    Perfeito, 
-      imp     Imperfeito, 
-      fut     Futuro,
-      mdp     Mais-que-Perfeito,
-      cpres   Conjuntivo Presente,
-      cimp    Conjuntivo Imperfeito,
-      cfut    Conjuntivo Futuro,
-      ivo     Imperativo
-      pp      Partic'ipio Passado
-      grd     Gerundivo 
+      pres    or      Presente, 
+      perf    or      Perfeito, 
+      imp     or      Imperfeito, 
+      fut     or      Futuro,
+      mdp     or      Mais Que Perfeito      or Mais-que-Perfeito,
+      cpres   or      Conjuntivo Presente,
+      cimp    or      Conjuntivo Imperfeito,
+      cfut    or      Conjuntivo Futuro,
+      ivo     or      Imperativo
+      pp      or      Partic'ipio Passado
+      grd     or      Gerundivo 
+
       default is all.  
  
  - the numbers 1-4,6 correspond to
@@ -31,13 +32,12 @@
   per row, one person per column, writing out, and a little more
   information : Typical output is :
 
-      > conjug ouvir i pres cpres ivo pp grd
-      ouvir :  irreg                                         
-      pres     oi\co   ouves    ouve    ouvimos     ouvem    
-      cpres    oi\ca   oi\cas   oi\ca   oi\camos    oi\cam   
-      ivo              ouve     oi\ca   oi\camos    oi\cam   
-      pp       ouvido                                        
-      grd      ouvindo                                  
+      > conjug i ouvir ivo partic\'ipio passado grd presente
+      ouvir :  irreg                               
+      ivo              ouve  oi\ca oi\camos oi\cam 
+      pp       ouvido                              
+      grd      ouvindo                             
+      pres     oi\co   ouves ouve  ouvimos  ouvem  
 
   Options
 

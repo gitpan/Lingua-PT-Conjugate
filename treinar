@@ -15,8 +15,8 @@ use Term::ReadLine;
 $term = new Term::ReadLine 'Treinar', \*STDIN, \*STDOUT ;
 
 use Lingua::PT::Conjugate qw(list_verbs conjug @regverb $vlist
-																	 %verb @tense %tense );
-use Lingua::PT::Accent_iso_8859_1 qw(iso2asc asc2iso);
+														 %verb @tense %tense %alt_tense $letter );
+use Lingua::PT::Accent_iso_8859_1 qw(iso2asc asc2iso un_accent);
 
 BEGIN{
     $help_string= q{
@@ -45,7 +45,7 @@ BEGIN{
 # &Portuguese::Conjugate::codify($Portuguese::Conjugate::vl);
 # @all_verbs = (keys(Portuguese::Conjugate::verb), @Portuguese::Conjugate::regverbs );
 @all_verbs = grep(!/defectivos[123]?/ && /\S/,
-                  &Lingua::PT::Conjugate::list_verbs(), @Lingua::PT::Conjugate::regverb ); 
+                  &list_verbs(), @regverb ); 
 # print "ARGH!\n" if( grep(/defectivos/ , @all_verbs ));
 # print "ARGH2\n" if( grep(/^\s*$/ , @all_verbs ));
 
@@ -105,13 +105,13 @@ if(($#ARGV >=0) && $ARGV[0]=~/^\-?i$/){
 while(1) {
     print "ARGH3\n" if( grep(/^\s*$/ , @all_verbs ));
     if( ($v= shift @ARGV) && $v =~ /[oaei]r$/ ){
-#        print "V=$v, @ARGV[0], $Lingua::PT::Conjugate::tense{$ARGV[0]}\n";
-        if( ($#ARGV>=0) && defined($Lingua::PT::Conjugate::tense{"$ARGV[0]"}) ){
+#        print "V=$v, @ARGV[0], $tense{$ARGV[0]}\n";
+        if( ($#ARGV>=0) && defined($tense{"$ARGV[0]"}) ){
             $t  = shift @ARGV;
-            $tc = $Lingua::PT::Conjugate::tense{$t}-1;
+            $tc = $tense{$t}-1;
             #  print " Tense $t, $c \n";
         } else {
-            $tc = int  rand($#Lingua::PT::Conjugate::tense+1) ;
+            $tc = int  rand($#tense+1) ;
         }
     } elsif(  @fv && rand()<0.5 ){
 
@@ -133,7 +133,7 @@ while(1) {
             print "BUG 2 : $v, $#all_verbs, $n\n";
         }
         
-        $tc = int  rand($#Lingua::PT::Conjugate::tense+1) ;
+        $tc = int  rand($#tense+1) ;
     }
     if( $fixed_tense &&  ($tc != $fixed_tense) ){
             $from_flunk = 0 ; 
@@ -144,7 +144,7 @@ while(1) {
         print "BUG 3 : $v, $#fv, $#all_verbs, $n, $from_flunk \n";
     }
 
-    $t = $Lingua::PT::Conjugate::tense[ $tc ]; 
+    $t = $tense[ $tc ]; 
     # exit;
     
     $|=1;
@@ -175,11 +175,13 @@ while(1) {
             $w =~ s/\s+$//; 
             $w =~ s/\\([\'\"\^])/$1/; #'"
             $w = lc $w ;
+						$w = asc2iso($w);
         }
+																################## Quit
+        if( $w =~ /^ q $/x ){    print "\n"," "x11,"Adeusinho \n\n"; exit 0 }
 
-        if( $w =~ /^q$/ ){    print "\n"," "x11,"Adeusinho \n\n"; exit 0 }
-
-        elsif( $w =~ /^c \s* (\S+) \s+ (\S+) /x ) {
+																################## Do a correction
+        elsif( $w =~ /^ c \s* ([$letter]+) \s+ ([$letter]+) /ox ) {
             
             my $q = exists($subs{$1}) ? $subs{$1} : $1 ;
             my $x = $2 ;
@@ -201,7 +203,7 @@ while(1) {
                 elsif(defined &iso2asc){ $ref[$q] = iso2asc($ref[$q]) }
             }
             redo ;
-            
+            																################## Help
         } elsif( $w =~ /^ h $/x ) {
 
             print "\33\133A", "\33\133C"x length($a),
@@ -213,7 +215,8 @@ while(1) {
             "\33\133B"x(@pers+2),"\33\133C"x length($a);
             redo; 
 
-        } elsif( $w =~ /^ t (?: \s+ (\S+))? (?: \s+ (\S+))? $/x ) {
+																################## Try verb,tense
+        } elsif( $w =~ /^ t (?: \s+ (\S+))? (?: \s+ (\S.+))? $/x ) {
 
             # Erase last entry
             print "\33\133A", "\33\133C"x length($a),
@@ -221,9 +224,19 @@ while(1) {
             
             
             push @ARGV, $1 if $1;
-            push @ARGV, $2 if $2;
-
+						if($2){
+								my $tmp = $2 ;
+								$tmp =~ s/  / /g;
+								$tmp = lc(un_accent($tmp));
+								$tmp = $alt_tense{$tmp} if 
+										defined($alt_tense{$tmp}) && !ref($alt_tense{$tmp});
+								push @ARGV, $tmp;
+#								print "pushed >$tmp< >$alt_tense{$tmp}<\n";
+#								push @ARGV, $2 if $2;
+						}
             redo;
+
+																################## Toggle ISO-8859-1
         } elsif( $w =~ /^ i $/x) {
 
             # Erase last entry
@@ -238,7 +251,7 @@ while(1) {
                 @ltense{keys(%subs)} = iso2asc(values(%subs));  
 
             } else {
-                do 'Accent_iso_8859_1.pm' unless $isoacc; 
+#                do 'Accent_iso_8859_1.pm' unless $isoacc; 
                 $isoacc="i";
   
                 @ltense{keys(%ltense)} = asc2iso(values(%ltense));
@@ -247,8 +260,8 @@ while(1) {
             }
             redo;
             
-                                # Fix tense
-        } elsif( $w =~ /^ f (?: \s+ (\S+))? $/x){
+                                ################## Fix tense
+        } elsif( $w =~ /^ f (?: \s+ (\S.+))? $/x){
             
             # Erase last entry
             print "\33\133A", "\33\133C"x length($a),
@@ -256,14 +269,23 @@ while(1) {
 
             if( $1 ){
                 # Sorry no check; plain behaviour is fine.
-                # if( defined($Lingua::PT::Conjugate::tense{$1})){
-                    $fixed_tense =  $Lingua::PT::Conjugate::tense{$1}-1 ;                 
+                # if( defined($tense{$1})){
+								my ($tmp,$tmp2) = ($1,$1) ;
+								$tmp =~ s/  / /g;
+								$tmp = lc(un_accent($tmp));
+								unless($alt_tense{$tmp}){
+										warn "Sorry, I know no tense called >$tmp2< " ;
+										redo ;
+								}
+								$fixed_tense =  $tense{$alt_tense{$tmp}}-1 ;
+						                 
             } else {
                 $fixed_tense = $fixed_tense ? "" : $tc ;
             }
             redo;
         }
 
+																########## Else, it's an entry
         $w =~ s/^\s*(\S.+)\s*$/$1/;
         if($isoacc){ 
             $w = asc2iso($w);

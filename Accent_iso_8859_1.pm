@@ -22,7 +22,7 @@ package Lingua::PT::Accent_iso_8859_1;
 use Exporter ;
 @ISA = qw(Exporter);
 # Yes, this package is a namespace polluter. 
-@EXPORT = qw(iso2asc asc2iso);
+@EXPORT = qw(iso2asc asc2iso un_accent);
 @EXPORT_OK = qw( iso2ascii ascii2iso );
 %iso2ascii = (
            "\'"     =>"' ",
@@ -85,6 +85,14 @@ $find_iso_accent = "[".join("",keys(%iso2ascii))."]";
 
 # Accent-matching regexp
 $find_ascii_accent = join("|",keys(%ascii2iso_keys));
+
+
+# Crude code
+sub un_accent { 
+		return unless(defined @_);
+		my @a=@_;
+		iso2asc(map {s/[\'\`\^\~]([aAeEiIoOuU])/$1/g; $_} @a) 
+}
 
 sub iso2asc {
     my ($x,@res);

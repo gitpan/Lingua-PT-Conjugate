@@ -3,7 +3,7 @@
 BEGIN {print "1..1\n";}
 
 
-@a = `ckconj all`;
+@a = `perl ckconj all`;
 
 $ok=1;
 foreach (@a){

@@ -57,7 +57,7 @@
 # 12  2000 - Incorporate Unconjugate-related stuff
 # 10  2002 - A few fixes in verbs
 
-$VERSION = '1.08' ;
+$VERSION = '1.09' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -453,16 +453,6 @@ $letter = "ç$vocs$cons";
 			   habituar garantir iludir imitir infundir inquirir
 			   insistir infringir infligir impingir insurgir
 			   intermitir irromper };
-
-# ############### INITIALIZE THE DATABASE STRING OF VERBS ##############
-
-# Why use DATA filehandles that are 'closed' when one needs them?
-goto ALL_THE_WAY;		# This goto initialises $Lingua::PT::vlist  
-				# and jumps back here.
-I_M_BACK:  
-
-$vlist =~ s/\#.*\n+/\n/mg;	# No comments or newlines
-$vlist =~ s/\n/ /mg;
 
 ########################## SOME CODE, at last ########################
 
@@ -1471,16 +1461,11 @@ sub tabrow {
 }
 ######################################################################
 
-# I just hope this way of exiting does not break in the future.
 
-# return 1 if defined($allready_passed_here);
-goto THE_END ;
+BEGIN {
 
-ALL_THE_WAY:
-$allready_passed_here=1;
-
-# ## Database for Portuguese verbs. The non-commented text below has the
-# ## format : 
+# ## Define a string variable $vlist that holds a database for Portuguese
+# ## verbs. The non-commented text below has the format : 
 # 
 # model_verb =  verb1  verb2 ... 
 #
@@ -1498,7 +1483,7 @@ $allready_passed_here=1;
 # 
 # Cool : Emacs perl-mode highlights the infinitives (as labels?). 
 
-$vlist = <<EOD ; 
+    $vlist = <<EOD ; 
 
 obter: obtenho obténs obtém ivo obtém model ter 
 abster: abstenho absténs abstém ivo abstém model ter 
@@ -1820,7 +1805,11 @@ defectivos3=    precaver adequar
 
 
 EOD
-goto I_M_BACK;
-#}
-THE_END:
+;
+ # ############### INITIALIZE THE DATABASE STRING OF VERBS ##############
+
+    $vlist =~ s/\#.*\n+/\n/mg;	# Remove comment and newlines
+    $vlist =~ s/\n/ /mg;
+
+}				# EOF BEGIN
 1 ;

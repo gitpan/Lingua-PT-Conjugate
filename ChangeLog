@@ -1,3 +1,7 @@
+2003-01-19  Etienne Grossmann  <etienne@anonimo.isr.ist.utl.pt>
+
+	* Remove goto from Conjugate.pm (perl 5.8.0 seems to dislike it)
+
 2002        Etienne Grossmann  <etienne@isr.ist.utl.pt>
 
 	* Miscellaneous fixes.

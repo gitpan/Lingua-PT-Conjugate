@@ -1,956 +1,953 @@
-transferir :  model        ferir                                                     
-pres          transfiro    transferes    transfere    transferimos     transferem    
-perf          transferi    transferiste  transferiu   transferimos     transferiram  
-imp           transferia   transferias   transferia   transferíamos    transferiam   
-fut           transferirei transferirás  transferirá  transferiremos   transferirão  
-mdp           transferira  transferiras  transferira  transferíramos   transferiram  
-cpres         transfira    transfiras    transfira    transfiramos     transfiram    
-cimp          transferisse transferisses transferisse transferíssemos  transferissem 
-cfut          transferir   transferires  transferir   transferirmos    transferirem  
-cond          transferiria transferirias transferiria transferiríamos  transfeririam 
-ivo                        transfere     transfira    transfiramos     transfiram    
-pp            transferido                                                            
-grd           transferindo                                                           
-cobrir :  irreg                                              
-pres      cubro    cobres    cobre    cobrimos     cobrem    
-perf      cobri    cobriste  cobriu   cobrimos     cobriram  
-imp       cobria   cobrias   cobria   cobríamos    cobriam   
-fut       cobrirei cobrirás  cobrirá  cobriremos   cobrirão  
-mdp       cobrira  cobriras  cobrira  cobríramos   cobriram  
-cpres     cubra    cubras    cubra    cubramos     cubram    
-cimp      cobrisse cobrisses cobrisse cobríssemos  cobrissem 
-cfut      cobrir   cobrires  cobrir   cobrirmos    cobrirem  
-cond      cobriria cobririas cobriria cobriríamos  cobririam 
-ivo                cobre     cobra    cobramos     cobram    
-pp        coberto                                            
-grd       cobrindo                                           
-transgredir :  model         agredir                                                       
-pres           transgrido    transgrides    transgride    transgredimos     transgridem    
-perf           transgredi    transgrediste  transgrediu   transgredimos     transgrediram  
-imp            transgredia   transgredias   transgredia   transgredíamos    transgrediam   
-fut            transgredirei transgredirás  transgredirá  transgrediremos   transgredirão  
-mdp            transgredira  transgrediras  transgredira  transgredíramos   transgrediram  
-cpres          transgrida    transgridas    transgrida    transgridamos     transgridam    
-cimp           transgredisse transgredisses transgredisse transgredíssemos  transgredissem 
-cfut           transgredir   transgredires  transgredir   transgredirmos    transgredirem  
-cond           transgrediria transgredirias transgrediria transgrediríamos  transgrediriam 
-ivo                          transgride     transgrida    transgridamos     transgridam    
-pp             transgredido                                                                
-grd            transgredindo                                                               
-digerir :  model     ferir                                         
-pres       digiro    digeres    digere    digerimos     digerem    
-perf       digeri    digeriste  digeriu   digerimos     digeriram  
-imp        digeria   digerias   digeria   digeríamos    digeriam   
-fut        digerirei digerirás  digerirá  digeriremos   digerirão  
-mdp        digerira  digeriras  digerira  digeríramos   digeriram  
-cpres      digira    digiras    digira    digiramos     digiram    
-cimp       digerisse digerisses digerisse digeríssemos  digerissem 
-cfut       digerir   digerires  digerir   digerirmos    digerirem  
-cond       digeriria digeririas digeriria digeriríamos  digeririam 
-ivo                  digere     digira    digiramos     digiram    
-pp         digerido                                                
-grd        digerindo                                               
-antrever :  model      ver                                               
-pres        antrevejo  antrevês    antrevê    antrevemos     antrevêem   
-perf        antrevi    antreviste  antreviu   antrevimos     antreviram  
-imp         antrevia   antrevias   antrevia   antrevíamos    antreviam   
-fut         antreverei antreverás  antreverá  antreveremos   antreverão  
-mdp         antrevira  antreviras  antrevira  antrevíramos   antreviram  
-cpres       antreveja  antrevejas  antreveja  antrevejamos   antrevejam  
-cimp        antrevisse antrevisses antrevisse antrevîssemos  antrevissem 
-cfut        antrevir   antrevires  antrevir   antrevirmos    antrevirem  
-cond        antreveria antreverias antreveria antreveríamos  antreveriam 
-ivo                    antrevê     antreveja  antrevejamos   antrevejam  
-pp          antrevisto                                                   
-grd         antrevendo                                                   
-divertir :  model      ferir                                             
-pres        divirto    divertes    diverte    divertimos     divertem    
-perf        diverti    divertiste  divertiu   divertimos     divertiram  
-imp         divertia   divertias   divertia   divertíamos    divertiam   
-fut         divertirei divertirás  divertirá  divertiremos   divertirão  
-mdp         divertira  divertiras  divertira  divertíramos   divertiram  
-cpres       divirta    divirtas    divirta    divirtamos     divirtam    
-cimp        divertisse divertisses divertisse divertíssemos  divertissem 
-cfut        divertir   divertires  divertir   divertirmos    divertirem  
-cond        divertiria divertirias divertiria divertiríamos  divertiriam 
-ivo                    diverte     divirta    divirtamos     divirtam    
-pp          divertido                                                    
-grd         divertindo                                                   
-impedir :  model     pedir                                         
-pres       impeço    impedes    impede    impedimos     impedem    
-perf       impedi    impediste  impediu   impedimos     impediram  
-imp        impedia   impedias   impedia   impedíamos    impediam   
-fut        impedirei impedirás  impedirá  impediremos   impedirão  
-mdp        impedira  impediras  impedira  impedíramos   impediram  
-cpres      impeça    impeças    impeça    impeçamos     impeçam    
-cimp       impedisse impedisses impedisse impedíssemos  impedissem 
-cfut       impedir   impedires  impedir   impedirmos    impedirem  
-cond       impediria impedirias impediria impediríamos  impediriam 
-ivo                  impede     impeça    impeçamos     impeçam    
-pp         impedido                                                
-grd        impedindo                                               
-prevenir :  model      agredir                                           
-pres        previno    prevines    previne    prevenimos     previnem    
-perf        preveni    preveniste  preveniu   prevenimos     preveniram  
-imp         prevenia   prevenias   prevenia   preveníamos    preveniam   
-fut         prevenirei prevenirás  prevenirá  preveniremos   prevenirão  
-mdp         prevenira  preveniras  prevenira  preveníramos   preveniram  
-cpres       previna    previnas    previna    previnamos     previnam    
-cimp        prevenisse prevenisses prevenisse preveníssemos  prevenissem 
-cfut        prevenir   prevenires  prevenir   prevenirmos    prevenirem  
-cond        preveniria prevenirias preveniria preveniríamos  preveniriam 
-ivo                    previne     previna    previnamos     previnam    
-pp          prevenido                                                    
-grd         prevenindo                                                   
-requerer :  irreg                                                        
-pres        requeiro   requeres    requer     requeremos     requerem    
-perf        requeri    requereste  requereu   requeremos     requerem    
-imp         requeria   requerias   requeria   requeríamos    requeriam   
-fut         requererei requererás  requererá  requereremos   requererão  
-mdp         requerera  requereras  requerera  requerêramos   requereram  
-cpres       requeira   requeiras   requeira   requeiramos    requeiram   
-cimp        requeresse requeresses requeresse requerêssemos  requeressem 
-cfut        requerer   requereres  requerer   requerermos    requererem  
-cond        requereria requererias requereria requereríamos  requereriam 
-ivo                    requer      requeira   requeiramos    requeiram   
-pp          requerido                                                    
-grd         requerendo                                                   
-demolir :  model     dormir                                        
-pres       demulo    demoles    demole    demolimos     demolem    
-perf       demoli    demoliste  demoliu   demolimos     demoliram  
-imp        demolia   demolias   demolia   demolíamos    demoliam   
-fut        demolirei demolirás  demolirá  demoliremos   demolirão  
-mdp        demolira  demoliras  demolira  demolíramos   demoliram  
-cpres      demula    demulas    demula    demulamos     demulam    
-cimp       demolisse demolisses demolisse demolíssemos  demolissem 
-cfut       demolir   demolires  demolir   demolirmos    demolirem  
-cond       demoliria demolirias demoliria demoliríamos  demoliriam 
-ivo                  demole     demola    demolamos     demolam    
-pp         demolido                                                
-grd        demolindo                                               
-preterir :  model      ferir                                             
-pres        pretiro    preteres    pretere    preterimos     preterem    
-perf        preteri    preteriste  preteriu   preterimos     preteriram  
-imp         preteria   preterias   preteria   preteríamos    preteriam   
-fut         preterirei preterirás  preterirá  preteriremos   preterirão  
-mdp         preterira  preteriras  preterira  preteríramos   preteriram  
-cpres       pretira    pretiras    pretira    pretiramos     pretiram    
-cimp        preterisse preterisses preterisse preteríssemos  preterissem 
-cfut        preterir   preterires  preterir   preterirmos    preterirem  
-cond        preteriria preteririas preteriria preteriríamos  preteririam 
-ivo                    pretere     pretira    pretiramos     pretiram    
-pp          preterido                                                    
-grd         preterindo                                                   
-saber :  irreg                                              
-pres     sei      sabes     sabe     sabemos      sabem     
-perf     soube    soubeste  soube    soubemos     souberam  
-imp      sabia    sabias    sabia    sabíamos     sabiam    
-fut      saberei  saberás   saberá   saberemos    saberão   
-mdp      soubera  souberas  soubera  soubéramos   souberam  
-cpres    saiba    saibas    saiba    saibamos     saibam    
-cimp     soubesse soubesses soubesse soubéssemos  soubessem 
-cfut     souber   souberes  souber   soubermos    souberem  
-cond     saberia  saberias  saberia  saberíamos   saberiam  
-ivo               sabe      saiba    saibamos     saibam    
-pp       sabido                                             
-grd      sabendo                                            
-medir :  model   pedir                                 
-pres     meço    medes    mede    medimos     medem    
-perf     medi    mediste  mediu   medimos     mediram  
-imp      media   medias   media   medíamos    mediam   
-fut      medirei medirás  medirá  mediremos   medirão  
-mdp      medira  mediras  medira  medíramos   mediram  
-cpres    meça    meças    meça    meçamos     meçam    
-cimp     medisse medisses medisse medíssemos  medissem 
-cfut     medir   medires  medir   medirmos    medirem  
-cond     mediria medirias mediria mediríamos  mediriam 
-ivo              mede     meça    meçamos     meçam    
-pp       medido                                        
-grd      medindo                                       
-prosseguir :  model        seguir                                                    
-pres          prossigo     prossegues    prossegue    prosseguimos     prosseguem    
-perf          prossegui    prosseguiste  prosseguiu   prosseguimos     prosseguiram  
-imp           prosseguia   prosseguias   prosseguia   prosseguíamos    prosseguiam   
-fut           prosseguirei prosseguirás  prosseguirá  prosseguiremos   prosseguirão  
-mdp           prosseguira  prosseguiras  prosseguira  prosseguíramos   prosseguiram  
-cpres         prossiga     prossigas     prossiga     prossigamos      prossigam     
-cimp          prosseguisse prosseguisses prosseguisse prosseguíssemos  prosseguissem 
-cfut          prosseguir   prosseguires  prosseguir   prosseguirmos    prosseguirem  
-cond          prosseguiria prosseguirias prosseguiria prosseguiríamos  prosseguiriam 
-ivo                        prossegue     prossiga     prossigamos      prossigam     
-pp            prosseguido                                                            
-grd           prosseguindo                                                           
-prever :  model    ver                                       
-pres      prevejo  prevês    prevê    prevemos     prevêem   
-perf      previ    previste  previu   previmos     previram  
-imp       previa   previas   previa   prevíamos    previam   
-fut       preverei preverás  preverá  preveremos   preverão  
-mdp       previra  previras  previra  prevíramos   previram  
-cpres     preveja  prevejas  preveja  prevejamos   prevejam  
-cimp      previsse previsses previsse prevîssemos  previssem 
-cfut      previr   previres  previr   previrmos    previrem  
-cond      preveria preverias preveria preveríamos  preveriam 
-ivo                prevê     preveja  prevejamos   prevejam  
-pp        previsto                                           
-grd       prevendo                                           
-pedir :  irreg                                         
-pres     peço    pedes    pede    pedimos     pedem    
-perf     pedi    pediste  pediu   pedimos     pediram  
-imp      pedia   pedias   pedia   pedíamos    pediam   
-fut      pedirei pedirás  pedirá  pediremos   pedirão  
-mdp      pedira  pediras  pedira  pedíramos   pediram  
-cpres    peça    peças    peça    peçamos     peçam    
-cimp     pedisse pedisses pedisse pedíssemos  pedissem 
-cfut     pedir   pedires  pedir   pedirmos    pedirem  
-cond     pediria pedirias pediria pediríamos  pediriam 
-ivo              pede     peça    peçamos     peçam    
-pp       pedido                                        
-grd      pedindo                                       
-sentir :  irreg                                              
-pres      sinto    sentes    sente    sentimos     sentem    
-perf      senti    sentiste  sentiu   sentimos     sentiram  
-imp       sentia   sentias   sentia   sentíamos    sentiam   
-fut       sentirei sentirás  sentirá  sentiremos   sentirão  
-mdp       sentira  sentiras  sentira  sentíramos   sentiram  
-cpres     sinta    sintas    sinta    sintamos     sintam    
-cimp      sentisse sentisses sentisse sentíssemos  sentissem 
-cfut      sentir   sentires  sentir   sentirmos    sentirem  
-cond      sentiria sentirias sentiria sentiríamos  sentiriam 
-ivo                sente     sinta    sintamos     sintam    
-pp        sentido                                            
-grd       sentindo                                           
-perseguir :  model       seguir                                                
-pres         persigo     persegues    persegue    perseguimos     perseguem    
-perf         persegui    perseguiste  perseguiu   perseguimos     perseguiram  
-imp          perseguia   perseguias   perseguia   perseguíamos    perseguiam   
-fut          perseguirei perseguirás  perseguirá  perseguiremos   perseguirão  
-mdp          perseguira  perseguiras  perseguira  perseguíramos   perseguiram  
-cpres        persiga     persigas     persiga     persigamos      persigam     
-cimp         perseguisse perseguisses perseguisse perseguíssemos  perseguissem 
-cfut         perseguir   perseguires  perseguir   perseguirmos    perseguirem  
-cond         perseguiria perseguirias perseguiria perseguiríamos  perseguiriam 
-ivo                      persegue     persiga     persigamos      persigam     
-pp           perseguido                                                        
-grd          perseguindo                                                       
-haver :  irreg                                              
-pres     hei      hás       há       havemos      hão       
-perf     houve    houveste  houve    houvemos     houveram  
-imp      havia    havias    havia    havíamos     haviam    
-fut      haverei  haverás   haverá   haveremos    haverão   
-mdp      houvera  houveras  houvera  houveramos   houveram  
-cpres    haja     hajas     haja     hajamos      hajam     
-cimp     houvesse houvesses houvesse houvéssemos  houvessem 
-cfut     houver   houveres  houver   houvermos    houverem  
-cond     haveria  haverias  haveria  haveríamos   haveriam  
-ivo               hajas     haja     hajamos      hajam     
-pp       havido                                             
-grd      havendo                                            
-dar :  irreg                               
-pres   dou   dás    dá    damos     dão    
-perf   dei   deste  deu   demos     deram  
-imp    dava  davas  dava  dávamos   davam  
-fut    darei darás  dará  daremos   darão  
-mdp    dera  deras  dera  déramos   deram  
-cpres  dê    dês    dê    dêmos     dêem   
-cimp   desse desses desse dêssemos  dessem 
-cfut   der   deres  der   dermos    derem  
-cond   daria darias daria daríamos  dariam 
-ivo          dês    dê    dêmos     dêem   
-pp     dado                                
-grd    dando                               
-fazer :  irreg                                         
-pres     faço    fazes    faz     fazemos     fazem    
-perf     fiz     fizeste  fez     fizemos     fizeram  
-imp      fazia   fazias   fazia   fazíamos    faziam   
-fut      farei   farás    fará    faremos     farão    
-mdp      fizera  fizeras  fizera  fizêramos   fizeram  
-cpres    faça    faças    faça    façamos     façam    
-cimp     fizesse fizesses fizesse fizêssemos  fizessem 
-cfut     fizer   fizeres  fizer   fizermos    fizerem  
-cond     faria   farias   faria   faríamos    fariam   
-ivo              faz      faça    façamos     façam    
-pp       feito                                         
-grd      fazendo                                       
-ferir :  irreg                                         
-pres     firo    feres    fere    ferimos     ferem    
-perf     feri    feriste  feriu   ferimos     feriram  
-imp      feria   ferias   feria   feríamos    feriam   
-fut      ferirei ferirás  ferirá  feriremos   ferirão  
-mdp      ferira  feriras  ferira  feríramos   feriram  
-cpres    fira    firas    fira    firamos     firam    
-cimp     ferisse ferisses ferisse feríssemos  ferissem 
-cfut     ferir   ferires  ferir   ferirmos    ferirem  
-cond     feriria feririas feriria feriríamos  feririam 
-ivo              fere     fira    firamos     firam    
-pp       ferido                                        
-grd      ferindo                                       
-gerir :  model   ferir                                 
-pres     giro    geres    gere    gerimos     gerem    
-perf     geri    geriste  geriu   gerimos     geriram  
-imp      geria   gerias   geria   geríamos    geriam   
-fut      gerirei gerirás  gerirá  geriremos   gerirão  
-mdp      gerira  geriras  gerira  geríramos   geriram  
-cpres    gira    giras    gira    giramos     giram    
-cimp     gerisse gerisses gerisse geríssemos  gerissem 
-cfut     gerir   gerires  gerir   gerirmos    gerirem  
-cond     geriria geririas geriria geriríamos  geririam 
-ivo              gere     gira    giramos     giram    
-pp       gerido                                        
-grd      gerindo                                       
-abolir :  model    dormir                                    
-pres      abulo    aboles    abole    abolimos     abolem    
-perf      aboli    aboliste  aboliu   abolimos     aboliram  
-imp       abolia   abolias   abolia   abolíamos    aboliam   
-fut       abolirei abolirás  abolirá  aboliremos   abolirão  
-mdp       abolira  aboliras  abolira  abolíramos   aboliram  
-cpres     abula    abulas    abula    abulamos     abulam    
-cimp      abolisse abolisses abolisse abolíssemos  abolissem 
-cfut      abolir   abolires  abolir   abolirmos    abolirem  
-cond      aboliria abolirias aboliria aboliríamos  aboliriam 
-ivo                abole     abola    abolamos     abolam    
-pp        abolido                                            
-grd       abolindo                                           
-compelir :  model      ferir                                             
-pres        compilo    compeles    compele    compelimos     compelem    
-perf        compeli    compeliste  compeliu   compelimos     compeliram  
-imp         compelia   compelias   compelia   compelíamos    compeliam   
-fut         compelirei compelirás  compelirá  compeliremos   compelirão  
-mdp         compelira  compeliras  compelira  compelíramos   compeliram  
-cpres       compila    compilas    compila    compilamos     compilam    
-cimp        compelisse compelisses compelisse compelíssemos  compelissem 
-cfut        compelir   compelires  compelir   compelirmos    compelirem  
-cond        compeliria compelirias compeliria compeliríamos  compeliriam 
-ivo                    compele     compila    compilamos     compilam    
-pp          compelido                                                    
-grd         compelindo                                                   
-repetir :  model     ferir                                         
-pres       repito    repetes    repete    repetimos     repetem    
-perf       repeti    repetiste  repetiu   repetimos     repetiram  
-imp        repetia   repetias   repetia   repetíamos    repetiam   
-fut        repetirei repetirás  repetirá  repetiremos   repetirão  
-mdp        repetira  repetiras  repetira  repetíramos   repetiram  
-cpres      repita    repitas    repita    repitamos     repitam    
-cimp       repetisse repetisses repetisse repetíssemos  repetissem 
-cfut       repetir   repetires  repetir   repetirmos    repetirem  
-cond       repetiria repetirias repetiria repetiríamos  repetiriam 
-ivo                  repete     repita    repitamos     repitam    
-pp         repetido                                                
-grd        repetindo                                               
-servir :  model    ferir                                     
-pres      sirvo    serves    serve    servimos     servem    
-perf      servi    serviste  serviu   servimos     serviram  
-imp       servia   servias   servia   servíamos    serviam   
-fut       servirei servirás  servirá  serviremos   servirão  
-mdp       servira  serviras  servira  servíramos   serviram  
-cpres     sirva    sirvas    sirva    sirvamos     sirvam    
-cimp      servisse servisses servisse servíssemos  servissem 
-cfut      servir   servires  servir   servirmos    servirem  
-cond      serviria servirias serviria serviríamos  serviriam 
-ivo                serve     sirva    sirvamos     sirvam    
-pp        servido                                            
-grd       servindo                                           
-vestir :  model    ferir                                     
-pres      visto    vestes    veste    vestimos     vestem    
-perf      vesti    vestiste  vestiu   vestimos     vestiram  
-imp       vestia   vestias   vestia   vestíamos    vestiam   
-fut       vestirei vestirás  vestirá  vestiremos   vestirão  
-mdp       vestira  vestiras  vestira  vestíramos   vestiram  
-cpres     vista    vistas    vista    vistamos     vistam    
-cimp      vestisse vestisses vestisse vestíssemos  vestissem 
-cfut      vestir   vestires  vestir   vestirmos    vestirem  
-cond      vestiria vestirias vestiria vestiríamos  vestiriam 
-ivo                veste     vista    vistamos     vistam    
-pp        vestido                                            
-grd       vestindo                                           
-descobrir :  model       cobrir                                                
-pres         descubro    descobres    descobre    descobrimos     descobrem    
-perf         descobri    descobriste  descobriu   descobrimos     descobriram  
-imp          descobria   descobrias   descobria   descobríamos    descobriam   
-fut          descobrirei descobrirás  descobrirá  descobriremos   descobrirão  
-mdp          descobrira  descobriras  descobrira  descobríramos   descobriram  
-cpres        descubra    descubras    descubra    descubramos     descubram    
-cimp         descobrisse descobrisses descobrisse descobríssemos  descobrissem 
-cfut         descobrir   descobrires  descobrir   descobrirmos    descobrirem  
-cond         descobriria descobririas descobriria descobriríamos  descobririam 
-ivo                      descobre     descobra    descobramos     descobram    
-pp           descoberto                                                        
-grd          descobrindo                                                       
-fugir :  irreg                                         
-pres     fujo    foges    foge    fugimos     fogem    
-perf     fugi    fugiste  fugiu   fugimos     fugiram  
-imp      fugia   fugias   fugia   fugíamos    fugiam   
-fut      fugirei fugirás  fugirá  fugiremos   fugirão  
-mdp      fugira  fugiras  fugira  fugíramos   fugiram  
-cpres    fuja    fujas    fuja    fujamos     fujam    
-cimp     fugisse fugisses fugisse fugíssemos  fugissem 
-cfut     fugir   fugires  fugir   fugirmos    fugirem  
-cond     fugiria fugirias fugiria fugiríamos  fugiriam 
-ivo              foge     fuja    fujamos     fujam    
-pp       fugido                                        
-grd      fugindo                                       
-contrafazer :  model         fazer                                                         
-pres           contrafaço    contrafazes    contrafaz     contrafazemos     contrafazem    
-perf           contrafiz     contrafizeste  contrafez     contrafizemos     contrafizeram  
-imp            contrafazia   contrafazias   contrafazia   contrafazíamos    contrafaziam   
-fut            contrafarei   contrafarás    contrafará    contrafaremos     contrafarão    
-mdp            contrafizera  contrafizeras  contrafizera  contrafizêramos   contrafizeram  
-cpres          contrafaça    contrafaças    contrafaça    contrafaçamos     contrafaçam    
-cimp           contrafizesse contrafizesses contrafizesse contrafizêssemos  contrafizessem 
-cfut           contrafizer   contrafizeres  contrafizer   contrafizermos    contrafizerem  
-cond           contrafaria   contrafarias   contrafaria   contrafaríamos    contrafariam   
-ivo                          contrafaz      contrafaça    contrafaçamos     contrafaçam    
-pp             contrafeito                                                                 
-grd            contrafazendo                                                               
-estar :  irreg                                                     
-pres     estou     estás      está        estamos       estão      
-perf     estive    estiveste  esteve      estivemos     estiveram  
-imp      estava    estavas    estava      estávamos     estavam    
-fut      estarei   estarás    estará      estaremos     estarão    
-mdp      estivera  estiveras  estivera    estivéramos   estiverãm  
-cpres    esteja    estejas    esteja      estejamos     estejam    
-cimp     estivesse estivesses estivesse   estivéssemos  estivessem 
-cfut     estiver   estiveres  estiver     estivermos    estiverem  
-cond     estaria   estarias   estaríamos  estariam      estariam   
-ivo                está       estéja      estejamos     estejam    
-pp       estado                                                    
-grd      estando                                                   
-reflectir :  model       ferir                                                 
-pres         reflicto    reflectes    reflecte    reflectimos     reflectem    
-perf         reflecti    reflectiste  reflectiu   reflectimos     reflectiram  
-imp          reflectia   reflectias   reflectia   reflectíamos    reflectiam   
-fut          reflectirei reflectirás  reflectirá  reflectiremos   reflectirão  
-mdp          reflectira  reflectiras  reflectira  reflectíramos   reflectiram  
-cpres        reflicta    reflictas    reflicta    reflictamos     reflictam    
-cimp         reflectisse reflectisses reflectisse reflectíssemos  reflectissem 
-cfut         reflectir   reflectires  reflectir   reflectirmos    reflectirem  
-cond         reflectiria reflectirias reflectiria reflectiríamos  reflectiriam 
-ivo                      reflecte     reflicta    reflictamos     reflictam    
-pp           reflectido                                                        
-grd          reflectindo                                                       
-advertir :  model      ferir                                             
-pres        advirto    advertes    adverte    advertimos     advertem    
-perf        adverti    advertiste  advertiu   advertimos     advertiram  
-imp         advertia   advertias   advertia   advertíamos    advertiam   
-fut         advertirei advertirás  advertirá  advertiremos   advertirão  
-mdp         advertira  advertiras  advertira  advertíramos   advertiram  
-cpres       advirta    advirtas    advirta    advirtamos     advirtam    
-cimp        advertisse advertisses advertisse advertíssemos  advertissem 
-cfut        advertir   advertires  advertir   advertirmos    advertirem  
-cond        advertiria advertirias advertiria advertiríamos  advertiriam 
-ivo                    adverte     advirta    advirtamos     advirtam    
-pp          advertido                                                    
-grd         advertindo                                                   
-rever :  model   ver                                   
-pres     revejo  revês    revê    revemos     revêem   
-perf     revi    reviste  reviu   revimos     reviram  
-imp      revia   revias   revia   revíamos    reviam   
-fut      reverei reverás  reverá  reveremos   reverão  
-mdp      revira  reviras  revira  revíramos   reviram  
-cpres    reveja  revejas  reveja  revejamos   revejam  
-cimp     revisse revisses revisse revîssemos  revissem 
-cfut     revir   revires  revir   revirmos    revirem  
-cond     reveria reverias reveria reveríamos  reveriam 
-ivo              revê     reveja  revejamos   revejam  
-pp       revisto                                       
-grd      revendo                                       
-ser :                                                                                      
-pres           sou           és             é             somos             são            
-perf           fui           foste          foi           fomos             foram          
-imp            era           eras           era           éramos            eram           
-fut            serei         serás          será          seremos           serão          
-mdp            fora          foras          fora          fôramos           foram          
-cpres          seja          sejas          seja          sejamos           sejam          
-cimp           fosse         fosses         fosse         fôssemos          fossem         
-cfut           for           fores          for           formos            forem          
-cond           seria         serias         seria         seríamos          seriam         
-ivo                          sê             seja          sejamos           sejam          
-pp             sido                                                                        
-grd            sendo                                                                       
-ter :  irreg                                          
-pres   tenho   tens     tem        temos     têm      
-perf   tive    tiveste  teve       tivemos   tiveram  
-imp    tinha   tinhas   tinha      tínhamos  tinham   
-fut    terei   terás    terá       teremos   terão    
-mdp    tivera  tiveras  tivera     tivéramos tiveram  
-cpres  tenha   tenhas   tenha      tenhamos  tenham   
-cimp   tivesse tivesses tivéssemos tivessem  tivessem 
-cfut   tiver   tiveres  tiver      tivermos  tiverem  
-cond   teria   terias   teria      teríamos  teriam   
-ivo            tem      tenha      tenhamos  tenham   
-pp     tido                                           
-grd    tendo                                          
-ver :  irreg                               
-pres   vejo  vês    vê    vemos     vêem   
-perf   vi    viste  viu   vimos     viram  
-imp    via   vias   via   víamos    viam   
-fut    verei verás  verá  veremos   verão  
-mdp    vira  viras  vira  víramos   viram  
-cpres  veja  vejas  veja  vejamos   vejam  
-cimp   visse visses visse vîssemos  vissem 
-cfut   vir   vires  vir   virmos    virem  
-cond   veria verias veria veríamos  veriam 
-ivo          vê     veja  vejamos   vejam  
-pp     visto                               
-grd    vendo                               
-dormir :  irreg                                              
-pres      durmo    dormes    dorme    dormimos     dormem    
-perf      dormi    dormiste  dormiu   dormimos     dormiram  
-imp       dormia   dormias   dormia   dormíamos    dormiam   
-fut       dormirei dormirás  dormirá  dormiremos   dormirão  
-mdp       dormira  dormiras  dormira  dormíramos   dormiram  
-cpres     durma    durmas    durma    durmamos     durmam    
-cimp      dormisse dormisses dormisse dormíssemos  dormissem 
-cfut      dormir   dormires  dormir   dormirmos    dormirem  
-cond      dormiria dormirias dormiria dormiríamos  dormiriam 
-ivo                dorme     dorma    dormamos     dormam    
-pp        dormido                                            
-grd       dormindo                                           
-progredir :  model       agredir                                               
-pres         progrido    progrides    progride    progredimos     progridem    
-perf         progredi    progrediste  progrediu   progredimos     progrediram  
-imp          progredia   progredias   progredia   progredíamos    progrediam   
-fut          progredirei progredirás  progredirá  progrediremos   progredirão  
-mdp          progredira  progrediras  progredira  progredíramos   progrediram  
-cpres        progrida    progridas    progrida    progridamos     progridam    
-cimp         progredisse progredisses progredisse progredíssemos  progredissem 
-cfut         progredir   progredires  progredir   progredirmos    progredirem  
-cond         progrediria progredirias progrediria progrediríamos  progrediriam 
-ivo                      progride     progrida    progridamos     progridam    
-pp           progredido                                                        
-grd          progredindo                                                       
-seguir :  model    ferir                                     
-pres      sigo     segues    segue    seguimos     seguem    
-perf      segui    seguiste  seguiu   seguimos     seguiram  
-imp       seguia   seguias   seguia   seguíamos    seguiam   
-fut       seguirei seguirás  seguirá  seguiremos   seguirão  
-mdp       seguira  seguiras  seguira  seguíramos   seguiram  
-cpres     siga     sigas     siga     sigamos      sigam     
-cimp      seguisse seguisses seguisse seguíssemos  seguissem 
-cfut      seguir   seguires  seguir   seguirmos    seguirem  
-cond      seguiria seguirias seguiria seguiríamos  seguiriam 
-ivo                segue     siga     sigamos      sigam     
-pp        seguido                                            
-grd       seguindo                                           
-despedir :  model      pedir                                             
-pres        despeço    despedes    despede    despedimos     despedem    
-perf        despedi    despediste  despediu   despedimos     despediram  
-imp         despedia   despedias   despedia   despedíamos    despediam   
-fut         despedirei despedirás  despedirá  despediremos   despedirão  
-mdp         despedira  despediras  despedira  despedíramos   despediram  
-cpres       despeça    despeças    despeça    despeçamos     despeçam    
-cimp        despedisse despedisses despedisse despedíssemos  despedissem 
-cfut        despedir   despedires  despedir   despedirmos    despedirem  
-cond        despediria despedirias despediria despediríamos  despediriam 
-ivo                    despede     despeça    despeçamos     despeçam    
-pp          despedido                                                    
-grd         despedindo                                                   
-expedir :  model     pedir                                         
-pres       expeço    expedes    expede    expedimos     expedem    
-perf       expedi    expediste  expediu   expedimos     expediram  
-imp        expedia   expedias   expedia   expedíamos    expediam   
-fut        expedirei expedirás  expedirá  expediremos   expedirão  
-mdp        expedira  expediras  expedira  expedíramos   expediram  
-cpres      expeça    expeças    expeça    expeçamos     expeçam    
-cimp       expedisse expedisses expedisse expedíssemos  expedissem 
-cfut       expedir   expedires  expedir   expedirmos    expedirem  
-cond       expediria expedirias expediria expediríamos  expediriam 
-ivo                  expede     expeça    expeçamos     expeçam    
-pp         expedido                                                
-grd        expedindo                                               
-desfazer :  model      fazer                                             
-pres        desfaço    desfazes    desfaz     desfazemos     desfazem    
-perf        desfiz     desfizeste  desfez     desfizemos     desfizeram  
-imp         desfazia   desfazias   desfazia   desfazíamos    desfaziam   
-fut         desfarei   desfarás    desfará    desfaremos     desfarão    
-mdp         desfizera  desfizeras  desfizera  desfizêramos   desfizeram  
-cpres       desfaça    desfaças    desfaça    desfaçamos     desfaçam    
-cimp        desfizesse desfizesses desfizesse desfizêssemos  desfizessem 
-cfut        desfizer   desfizeres  desfizer   desfizermos    desfizerem  
-cond        desfaria   desfarias   desfaria   desfaríamos    desfariam   
-ivo                    desfaz      desfaça    desfaçamos     desfaçam    
-pp          desfeito                                                     
-grd         desfazendo                                                   
-querer :  irreg                                              
-pres      quero    queres    quer     queremos     querem    
-perf      quis     quiseste  quis     quisemos     quiseram  
-imp       queria   querias   queria   queríamos    queriam   
-fut       quererei quererás  quererá  quereremos   quererão  
-mdp       quisera  quiseras  quisera  quiséramos   quiseram  
-cpres     queira   queiras   queira   queiramos    queiram   
-cimp      quisesse quisesses quisesse quiséssemos  quisessem 
-cfut      quiser   quiseres  quiser   quisermos    quiserem  
-cond      quereria quererias quereria quereríamos  quereriam 
-ivo                queiras   queira   queiramos    queiram   
-pp        querido                                            
-grd       querendo                                           
-encobrir :  model      cobrir                                            
-pres        encubro    encobres    encobre    encobrimos     encobrem    
-perf        encobri    encobriste  encobriu   encobrimos     encobriram  
-imp         encobria   encobrias   encobria   encobríamos    encobriam   
-fut         encobrirei encobrirás  encobrirá  encobriremos   encobrirão  
-mdp         encobrira  encobriras  encobrira  encobríramos   encobriram  
-cpres       encubra    encubras    encubra    encubramos     encubram    
-cimp        encobrisse encobrisses encobrisse encobríssemos  encobrissem 
-cfut        encobrir   encobrires  encobrir   encobrirmos    encobrirem  
-cond        encobriria encobririas encobriria encobriríamos  encobririam 
-ivo                    encobre     encobra    encobramos     encobram    
-pp          encoberto                                                    
-grd         encobrindo                                                   
-ouvir :  irreg                                         
-pres     ouço    ouves    ouve    ouvimos     ouvem    
-perf     ouvi    ouviste  ouviu   ouvimos     ouviram  
-imp      ouvia   ouvias   ouvia   ouvíamos    ouviam   
-fut      ouvirei ouvirás  ouvirá  ouviremos   ouvirão  
-mdp      ouvira  ouviras  ouvira  ouvíramos   ouviram  
-cpres    ouça    ouças    ouça    ouçamos     ouçam    
-cimp     ouvisse ouvisses ouvisse ouvíssemos  ouvissem 
-cfut     ouvir   ouvires  ouvir   ouvirmos    ouvirem  
-cond     ouviria ouvirias ouviria ouviríamos  ouviriam 
-ivo              ouve     oiça    ouçamos     ouçam    
-pp       ouvido                                        
-grd      ouvindo                                       
-antever :  model     ver                                           
-pres       antevejo  antevês    antevê    antevemos     antevêem   
-perf       antevi    anteviste  anteviu   antevimos     anteviram  
-imp        antevia   antevias   antevia   antevíamos    anteviam   
-fut        anteverei anteverás  anteverá  anteveremos   anteverão  
-mdp        antevira  anteviras  antevira  antevíramos   anteviram  
-cpres      anteveja  antevejas  anteveja  antevejamos   antevejam  
-cimp       antevisse antevisses antevisse antevîssemos  antevissem 
-cfut       antevir   antevires  antevir   antevirmos    antevirem  
-cond       anteveria anteverias anteveria anteveríamos  anteveriam 
-ivo                  antevê     anteveja  antevejamos   antevejam  
-pp         antevisto                                               
-grd        antevendo                                               
-precaver :  irreg                                                        
-pres        precavejo  precavês    precavê    precavemos     precavem    
-perf        precavi    precaveste  precaveu   precavemos     precaveram  
-imp         precavia   precavias   precavia   precavíamos    precaviam   
-fut         precaverei precaverás  precaverá  precaveremos   precaverão  
-mdp         precavera  precaveras  precavera  precavêramos   precaveram  
-cpres       precava    precavas    precava    precavamos     precavam    
-cimp        precavesse precavesses precavesse precavêssemos  precavessem 
-cfut        precaver   precaveres  precaver   precavermos    precaverem  
-cond        precaveria precaverias precaveria precaveríamos  precaveriam 
-ivo                    precave     precavei   precavamos     precavam    
-pp          precavido                                                    
-grd         precavendo                                                   
-conferir :  model      ferir                                             
-pres        confiro    conferes    confere    conferimos     conferem    
-perf        conferi    conferiste  conferiu   conferimos     conferiram  
-imp         conferia   conferias   conferia   conferíamos    conferiam   
-fut         conferirei conferirás  conferirá  conferiremos   conferirão  
-mdp         conferira  conferiras  conferira  conferíramos   conferiram  
-cpres       confira    confiras    confira    confiramos     confiram    
-cimp        conferisse conferisses conferisse conferíssemos  conferissem 
-cfut        conferir   conferires  conferir   conferirmos    conferirem  
-cond        conferiria conferirias conferiria conferiríamos  confeririam 
-ivo                    confere     confira    confiramos     confiram    
-pp          conferido                                                    
-grd         conferindo                                                   
-ir :                                                                                       
-pres           vou           vais           vai           vamos             vão            
-perf           fui           foste          foi           fomos             foram          
-imp            ia            ias            ia            íamos             iam            
-fut            irei          irás           irá           iremos            irão           
-mdp            ira           iras           ira           íramos            iram           
-cpres          vá            vás            vá            vamos             vão            
-cimp           fosse         fosses         fosse         fôssemos          fossem         
-cfut           for           fores          for           formos            foram          
-cond           iria          irias          iria          iríamos           iriam          
-ivo                          vai            ide           vamos             vão            
-pp             ido                                                                         
-grd            indo                                                                        
-satisfazer :  model        fazer                                                     
-pres          satisfaço    satisfazes    satisfaz     satisfazemos     satisfazem    
-perf          satisfiz     satisfizeste  satisfez     satisfizemos     satisfizeram  
-imp           satisfazia   satisfazias   satisfazia   satisfazíamos    satisfaziam   
-fut           satisfarei   satisfarás    satisfará    satisfaremos     satisfarão    
-mdp           satisfizera  satisfizeras  satisfizera  satisfizêramos   satisfizeram  
-cpres         satisfaça    satisfaças    satisfaça    satisfaçamos     satisfaçam    
-cimp          satisfizesse satisfizesses satisfizesse satisfizêssemos  satisfizessem 
-cfut          satisfizer   satisfizeres  satisfizer   satisfizermos    satisfizerem  
-cond          satisfaria   satisfarias   satisfaria   satisfaríamos    satisfariam   
-ivo                        satisfaz      satisfaça    satisfaçamos     satisfaçam    
-pp            satisfeito                                                             
-grd           satisfazendo                                                           
-caber :  irreg                                              
-pres     caibo    cabes     cabe     cabemos      cabem     
-perf     coube    coubeste  coubeu   coubemos     couberam  
-imp      cabia    cabias    cabia    cabíamos     cabiam    
-fut      caberei  caberás   caberá   caberemos    caberão   
-mdp      coubera  couberas  coubera  coubéramos   couberam  
-cpres    caiba    caibas    caiba    caibamos     caibam    
-cimp     coubesse coubesses coubesse coubéssemos  coubessem 
-cfut     couber   couberes  couber   coubermos    couberem  
-cond     caberia  caberias  caberia  caberíamos   caberiam  
-ivo               caibas    caiba    caibamos     caibam    
-pp       cabido                                             
-grd      cabendo                                            
-agredir :  irreg                                                   
-pres       agrido    agrides    agride    agredimos     agridem    
-perf       agredi    agrediste  agrediu   agredimos     agrediram  
-imp        agredia   agredias   agredia   agredíamos    agrediam   
-fut        agredirei agredirás  agredirá  agrediremos   agredirão  
-mdp        agredira  agrediras  agredira  agredíramos   agrediram  
-cpres      agrida    agridas    agrida    agridamos     agridam    
-cimp       agredisse agredisses agredisse agredíssemos  agredissem 
-cfut       agredir   agredires  agredir   agredirmos    agredirem  
-cond       agrediria agredirias agrediria agrediríamos  agrediriam 
-ivo                  agride     agrida    agridamos     agridam    
-pp         agredido                                                
-grd        agredindo                                               
-preferir :  model      ferir                                             
-pres        prefiro    preferes    prefere    preferimos     preferem    
-perf        preferi    preferiste  preferiu   preferimos     preferiram  
-imp         preferia   preferias   preferia   preferíamos    preferiam   
-fut         preferirei preferirás  preferirá  preferiremos   preferirão  
-mdp         preferira  preferiras  preferira  preferíramos   preferiram  
-cpres       prefira    prefiras    prefira    prefiramos     prefiram    
-cimp        preferisse preferisses preferisse preferíssemos  preferissem 
-cfut        preferir   preferires  preferir   preferirmos    preferirem  
-cond        preferiria preferirias preferiria preferiríamos  prefeririam 
-ivo                    prefere     prefira    prefiramos     prefiram    
-pp          preferido                                                    
-grd         preferindo                                                   
-desmentir :  model       sentir                                                
-pres         desminto    desmentes    desmente    desmentimos     desmentem    
-perf         desmenti    desmentiste  desmentiu   desmentimos     desmentiram  
-imp          desmentia   desmentias   desmentia   desmentíamos    desmentiam   
-fut          desmentirei desmentirás  desmentirá  desmentiremos   desmentirão  
-mdp          desmentira  desmentiras  desmentira  desmentíramos   desmentiram  
-cpres        desminta    desmintas    desminta    desmintamos     desmintam    
-cimp         desmentisse desmentisses desmentisse desmentíssemos  desmentissem 
-cfut         desmentir   desmentires  desmentir   desmentirmos    desmentirem  
-cond         desmentiria desmentirias desmentiria desmentiríamos  desmentiriam 
-ivo                      desmente     desminta    desmintamos     desmintam    
-pp           desmentido                                                        
-grd          desmentindo                                                       
-vir :  irreg                                    
-pres   venho  vens    vem    vimos      vêm     
-perf   vim    vieste  veio   viemos     vieram  
-imp    vinha  vinhas  vinha  vínhamos   vinham  
-fut    virei  virás   virá   viremos    virão   
-mdp    viera  vieras  viera  viéramos   vieram  
-cpres  venha  venhas  venha  venhamos   venham  
-cimp   viesse viesses viesse viéssemos  viessem 
-cfut   vier   vieres  vier   viermos    vierem  
-cond   viria  virias  viria  viríamos   viriam  
-ivo           venhas  venha  venhamos   venham  
-pp     vindo                                    
-grd    vindo                                    
-
-trazer :  irreg                                                   
-pres      trago     trazes     traz      trazemos      trazem     
-perf      trouxe    trouxeste  trouxeu   trouxemos     trouxeram  
-imp       trazia    trazias    trazia    trazíamos     traziam    
-fut       tarei     trarás     trará     traremos      trarão     
-mdp       trouxera  trouxeras  trouxera  trouxéramos   trouxeram  
-cpres     traga     tragas     traga     tragamos      tragam     
-cimp      trouxesse trouxesses trouxesse trouxêssemos  trouxessem 
-cfut      trouxer   trouxeres  trouxer   trouxermos    trouxerem  
-cond      traria    trarias    traria    traríamos     trariam    
-ivo                 traz       traga     tragamos      tragam     
-pp        trazido                                                 
-grd       trazendo                                                
-valer :  irreg                                         
-pres     valho   vales    vale    valemos     valem    
-perf     vali    valeste  valeu   valemos     valeram  
-imp      valia   valias   valia   valíamos    valiam   
-fut      valerei valerás  valerá  valeremos   valerão  
-mdp      valera  valeras  valera  valêramos   valeram  
-cpres    valha   valhas   valha   valhamos    valham   
-cimp     valesse valesses valesse valêssemos  valessem 
-cfut     valer   valeres  valer   valermos    valerem  
-cond     valeria valerias valeria valeríamos  valeriam 
-ivo              vale     valha   valhamos    valham   
-pp       valido                                        
-grd      valendo                                       
-
-poder :  irreg                                         
-pres     posso   podes    pode    podemos     podem    
-perf     pude    pudeste  pôde    pudemos     puderam  
-imp      podia   podias   podia   podíamos    podiam   
-fut      poderei poderás  poderá  poderemos   poderão  
-mdp      pudera  puderas  pudera  pudêramos   puderam  
-cpres    possa   possas   possa   possamos    possam   
-cimp     pudesse pudesses pudesse pudéssemos  pudessem 
-cfut     puder   puderes  puder   pudermos    puderem  
-cond     poderia poderias poderia poderíamos  poderiam 
-ivo              possas   possa   possamos    possam   
-pp       podido                                        
-grd      podendo                                       
-
-rir :  irreg                               
-pres   rio   ris    ri    rimos     riem   
-perf   ri    riste  riu   rimos     riram  
-imp    ria   rias   ria   ríamos    riam   
-fut    rirei rirás  rirá  riremos   rirão  
-mdp    rira  riras  rira  ríramos   riram  
-cpres  ria   rias   ria   ríamos    riam   
-cimp   risse risses risse ríssemos  rissem 
-cfut   rir   rires  rir   rirmos    rirem  
-cond   riria ririas riria riríamos  ririam 
-ivo          ri     ria   riamos    riam   
-pp     rido                                
-grd    rindo                               
-ler :  irreg                               
-pres   leio  lês    lê    lemos     lêem   
-perf   li    leste  leu   lemos     leram  
-imp    lia   lias   lia   líamos    liam   
-fut    lerei lerás  lerá  leremos   lerão  
-mdp    lera  leras  lera  lêramos   leram  
-cpres  leia  leias  leia  leiamos   leiam  
-cimp   lesse lesses lesse lêssemos  lessem 
-cfut   ler   leres  ler   lermos    lerem  
-cond   leria lerias leria leríamos  leriam 
-ivo          lê     lêia  leiamos   leiam  
-pp     lido                                
-grd    lendo                               
-incendiar :  irreg                                                             
-pres         incendeio   incendeias   incendeia   incendiamos     incendeiam   
-perf         incendiei   incendiaste  incendiou   incendiamos     incendiaram  
-imp          incendiava  incendiavas  incendiava  incendiávamos   incendiavam  
-fut          incendiarei incendiarás  incendiará  incendiaremos   incendiarão  
-mdp          incendiara  incendiaras  incendiara  incendiáramos   incendiaram  
-cpres        incedeie    incendeies   incendeie   incendiemos     incendeiem   
-cimp         incendiasse incendiasses incendiasse incendiássemos  incendiassem 
-cfut         incendiar   incendiares  incendiar   incendiarmos    incendiarem  
-cond         incendiaria incendiarias incendiaria incendiaríamos  incendiariam 
-ivo                      incendeia    incendeie   incendiemos     incendeiem   
-pp           incendiado                                                        
-grd          incendiando                                                       
-prover :  model    ver                                       
-pres      provejo  provês    provê    provemos     provêem   
-perf      provi    proveste  proveu   provemos     proveram  
-imp       provia   provias   provia   províamos    proviam   
-fut       proverei proverás  proverá  proveremos   proverão  
-mdp       provira  proviras  provira  províramos   proviram  
-cpres     proveja  provejas  proveja  provejamos   provejam  
-cimp      provisse provisses provisse provîssemos  provissem 
-cfut      provir   provires  provir   provirmos    provirem  
-cond      proveria proverias proveria proveríamos  proveriam 
-ivo                provê     proveja  provejamos   provejam  
-pp        provido                                            
-grd       provendo                                           
-sair :  irreg                                        
-pres    saio    sais     sai     saímos     saem     
-perf    saí     saíste   saiu    saímos     saíram   
-imp     saía    saías    saía    saíamos    saíam    
-fut     sairei  sairás   sairá   sairemos   sairão   
-mdp     saíra   saíras   saíra   saíramos   saíram   
-cpres   saia    saias    saia    saiamos    saiam    
-cimp    saísse  saísses  saísse  saíssemos  saíssem  
-cfut    saír    saíres   saír    saírmos    saírem   
-cond    sairia  sairias  sairia  sairíamos  sairiam  
-ivo             sai      saia    saiamos    saiam    
-pp      saido                                        
-grd     saindo                                       
-atrair :  model     sair                                         
-pres      atraio    atrais     atrai     atraímos     atraem     
-perf      atraí     atraíste   atraiu    atraímos     atraíram   
-imp       atraía    atraías    atraía    atraíamos    atraíam    
-fut       atrairei  atrairás   atrairá   atrairemos   atrairão   
-mdp       atraíra   atraíras   atraíra   atraíramos   atraíram   
-cpres     atraia    atraias    atraia    atraiamos    atraiam    
-cimp      atraísse  atraísses  atraísse  atraíssemos  atraíssem  
-cfut      atraír    atraíres   atraír    atraírmos    atraírem   
-cond      atrairia  atrairias  atrairia  atrairíamos  atrairiam  
-ivo                 atrai      atraia    atraiamos    atraiam    
-pp        atraido                                                
-grd       atraindo                                               
-passear :  irreg                                                   
-pres       passeio   passeias   passeia   passeamos     passeiam   
-perf       passeei   passeaste  passeou   passeamos     passearam  
-imp        passeava  passeavas  passeava  passeávamos   passeavam  
-fut        passearei passearás  passeará  passearemos   passearão  
-mdp        passeara  passearas  passeara  passeáramos   passearam  
-cpres      passee    passees    passee    passeemos     passeem    
-cimp       passeasse passeasses passeasse passeássemos  passeassem 
-cfut       passear   passeares  passear   passearmos    passearem  
-cond       passearia passearias passearia passearíamos  passeariam 
-ivo                  passeia    passeie   passeemos     passeiem   
-pp         passeado                                                
-grd        passeando                                               
-ansiar :  model    incendiar                                 
-pres      anseio   anseias   anseia   ansiamos     anseiam   
-perf      ansiei   ansiaste  ansiou   ansiamos     ansiaram  
-imp       ansiava  ansiavas  ansiava  ansiávamos   ansiavam  
-fut       ansiarei ansiarás  ansiará  ansiaremos   ansiarão  
-mdp       ansiara  ansiaras  ansiara  ansiáramos   ansiaram  
-cpres     anseie   anseies   anseie   ansiemos     anseiem   
-cimp      ansiasse ansiasses ansiasse ansiássemos  ansiassem 
-cfut      ansiar   ansiares  ansiar   ansiarmos    ansiarem  
-cond      ansiaria ansiarias ansiaria ansiaríamos  ansiariam 
-ivo                anseia    anseie   ansiemos     anseiem   
-pp        ansiado                                            
-grd       ansiando                                           
-moer :  irreg                                    
-pres    moo    moís    mói    moemos     moem    
-perf    moí    moeste  moeu   moemos     moeram  
-imp     moía   moías   moía   moíamos    moíam   
-fut     moerei moerás  moerá  moeremos   moerão  
-mdp     moera  moeras  moera  moêramos   moeram  
-cpres   moa    moas    moa    moamos     moam    
-cimp    moesse moesses moesse moêssemos  moessem 
-cfut    moer   moeres  moer   moermos    moerem  
-cond    moeria moerias moeria moeríamos  moeriam 
-ivo            mói     moa    moamos     moam    
-pp      moído                                    
-grd     moendo                                   
-perdoar :  irreg                                                   
-pres       perdoo    perdoas    perdoa    perdoamos     perdoam    
-perf       perdoei   perdoaste  perdoou   perdoamos     perdoaram  
-imp        perdoava  perdoavas  perdoava  perdoávamos   perdoavam  
-fut        perdoarei perdoarás  perdoará  perdoaremos   perdoarão  
-mdp        perdoara  perdoaras  perdoara  perdoáramos   perdoaram  
-cpres      perdoe    perdoes    perdoe    perdoemos     perdoem    
-cimp       perdoasse perdoasses perdoasse perdoássemos  perdoassem 
-cfut       perdoar   perdoares  perdoar   perdoarmos    perdoarem  
-cond       perdoaria perdoarias perdoaria perdoaríamos  perdoariam 
-ivo                  perdoa     perdoe    perdoemos     perdoem    
-pp         perdoado                                                
-grd        perdoando                                               
-secar :                                                
-pres     seco    secas    seca    secamos     secam    
-perf     sequei  secaste  secou   secamos     secaram  
-imp      secava  secavas  secava  secávamos   secavam  
-fut      secarei secarás  secará  secaremos   secarão  
-mdp      secara  secaras  secara  secáramos   secaram  
-cpres    seque   seques   seque   sequemos    sequem   
-cimp     secasse secasses secasse secássemos  secassem 
-cfut     secar   secares  secar   secarmos    secarem  
-cond     secaria secarias secaria secaríamos  secariam 
-ivo              seca     seque   sequemos    sequem   
-pp       secado                                        
-grd      secando                                       
-parecer :                                                          
-pres       pareço    pareces    parece    parecemos     parecem    
-perf       pareci    pareceste  pareceu   parecemos     pareceram  
-imp        parecia   parecias   parecia   parecíamos    pareciam   
-fut        parecerei parecerás  parecerá  pareceremos   parecerão  
-mdp        parecera  pareceras  parecera  parecêramos   pareceram  
-cpres      pareça    pareças    pareça    pareçamos     pareçam    
-cimp       parecesse parecesses parecesse parecêssemos  parecessem 
-cfut       parecer   pareceres  parecer   parecermos    parecerem  
-cond       pareceria parecerias pareceria pareceríamos  pareceriam 
-ivo                  parece     pareça    pareçamos     pareçam    
-pp         parecido                                                
-grd        parecendo                                               
-averiguar :  irreg                                                             
-pres         averiguo    averiguas    averigua    averiguamos     averiguam    
-perf         averiguei   averiguaste  averiguou   averiguamos     averiguaram  
-imp          averiguava  averiguavas  averiguava  averiguávamos   averiguavam  
-fut          averiguarei averiguarás  averiguará  averiguaremos   averiguarão  
-mdp          averiguara  averiguaras  averiguara  averiguáramos   averiguaram  
-cpres        averigúe    averigúes    averigúe    averigúemos     averigúem    
-cimp         averiguasse averiguasses averiguasse averiguássemos  averiguassem 
-cfut         averiguar   averiguares  averiguar   averiguarmos    averiguarem  
-cond         averiguaria averiguarias averiguaria averiguaríamos  averiguariam 
-ivo                      averigua     averigúe    averiguemos     averigúem    
-pp           averiguado                                                        
-grd          averiguando
-começar  :
+transferir :  model        ferir                                                                   
+pres          transfiro    transferes    transfere    transferimos    transferis     transferem    
+perf          transferi    transferiste  transferiu   transferimos    transferistes  transferiram  
+imp           transferia   transferias   transferia   transferíamos   transferíeis   transferiam   
+fut           transferirei transferirás  transferirá  transferiremos  transferireis  transferirão  
+mdp           transferira  transferiras  transferira  transferíramos  transferíreis  transferiram  
+cpres         transfira    transfiras    transfira    transfiramos    transfirais    transfiram    
+cimp          transferisse transferisses transferisse transferíssemos transferísseis transferissem 
+cfut          transferir   transferires  transferir   transferirmos   transferirdes  transferirem  
+cond          transferiria transferirias transferiria transferiríamos transferiríeis transfeririam 
+ivo                        transfere     transfira    transfiramos    transferi      transfiram    
+pp            transferido                                                                          
+grd           transferindo                                                                         
+cobrir :  irreg                                                        
+pres      cubro    cobres    cobre    cobrimos    cobris     cobrem    
+perf      cobri    cobriste  cobriu   cobrimos    cobristes  cobriram  
+imp       cobria   cobrias   cobria   cobríamos   cobríeis   cobriam   
+fut       cobrirei cobrirás  cobrirá  cobriremos  cobrireis  cobrirão  
+mdp       cobrira  cobriras  cobrira  cobríramos  cobríreis  cobriram  
+cpres     cubra    cubras    cubra    cubramos    cubrais    cubram    
+cimp      cobrisse cobrisses cobrisse cobríssemos cobrísseis cobrissem 
+cfut      cobrir   cobrires  cobrir   cobrirmos   cobrirdes  cobrirem  
+cond      cobriria cobririas cobriria cobriríamos cobriríeis cobririam 
+ivo                cobre     cobra    cobramos    cobri      cobram    
+pp        coberto                                                      
+grd       cobrindo                                                     
+transgredir :  model         agredir                                                                      
+pres           transgrido    transgrides    transgride    transgredimos    transgridis     transgridem    
+perf           transgredi    transgrediste  transgrediu   transgredimos    transgredistes  transgrediram  
+imp            transgredia   transgredias   transgredia   transgredíamos   transgredíeis   transgrediam   
+fut            transgredirei transgredirás  transgredirá  transgrediremos  transgredireis  transgredirão  
+mdp            transgredira  transgrediras  transgredira  transgredíramos  transgredíreis  transgrediram  
+cpres          transgrida    transgridas    transgrida    transgridamos    transgrais      transgridam    
+cimp           transgredisse transgredisses transgredisse transgredíssemos transgredísseis transgredissem 
+cfut           transgredir   transgredires  transgredir   transgredirmos   transgredirdes  transgredirem  
+cond           transgrediria transgredirias transgrediria transgrediríamos transgrediríeis transgrediriam 
+ivo                          transgride     transgrida    transgridamos    transgradi      transgridam    
+pp             transgredido                                                                               
+grd            transgredindo                                                                              
+digerir :  model     ferir                                                    
+pres       digiro    digeres    digere    digerimos    digeris     digerem    
+perf       digeri    digeriste  digeriu   digerimos    digeristes  digeriram  
+imp        digeria   digerias   digeria   digeríamos   digeríeis   digeriam   
+fut        digerirei digerirás  digerirá  digeriremos  digerireis  digerirão  
+mdp        digerira  digeriras  digerira  digeríramos  digeríreis  digeriram  
+cpres      digira    digiras    digira    digiramos    digirais    digiram    
+cimp       digerisse digerisses digerisse digeríssemos digerísseis digerissem 
+cfut       digerir   digerires  digerir   digerirmos   digerirdes  digerirem  
+cond       digeriria digeririas digeriria digeriríamos digeriríeis digeririam 
+ivo                  digere     digira    digiramos    digeri      digiram    
+pp         digerido                                                           
+grd        digerindo                                                          
+antrever :  model      ver                                                           
+pres        antrevejo  antrevês    antrevê    antrevemos    antreveis    antrevêem   
+perf        antrevi    antreviste  antreviu   antrevimos    antrevestes  antreviram  
+imp         antrevia   antrevias   antrevia   antrevíamos   antrevíeis   antreviam   
+fut         antreverei antreverás  antreverá  antreveremos  antrevereis  antreverão  
+mdp         antrevira  antreviras  antrevira  antrevíramos  antrevíreis  antreviram  
+cpres       antreveja  antrevejas  antreveja  antrevejamos  antrevais    antrevejam  
+cimp        antrevisse antrevisses antrevisse antrevîssemos antrevîsseis antrevissem 
+cfut        antrevir   antrevires  antrevir   antrevirmos   antrevirdes  antrevirem  
+cond        antreveria antreverias antreveria antreveríamos antreveríeis antreveriam 
+ivo                    antrevê     antreveja  antrevejamos  antrevede    antrevejam  
+pp          antrevisto                                                               
+grd         antrevendo                                                               
+divertir :  model      ferir                                                         
+pres        divirto    divertes    diverte    divertimos    divertis     divertem    
+perf        diverti    divertiste  divertiu   divertimos    divertistes  divertiram  
+imp         divertia   divertias   divertia   divertíamos   divertíeis   divertiam   
+fut         divertirei divertirás  divertirá  divertiremos  divertireis  divertirão  
+mdp         divertira  divertiras  divertira  divertíramos  divertíreis  divertiram  
+cpres       divirta    divirtas    divirta    divirtamos    divirtais    divirtam    
+cimp        divertisse divertisses divertisse divertíssemos divertísseis divertissem 
+cfut        divertir   divertires  divertir   divertirmos   divertirdes  divertirem  
+cond        divertiria divertirias divertiria divertiríamos divertiríeis divertiriam 
+ivo                    diverte     divirta    divirtamos    diverti      divirtam    
+pp          divertido                                                                
+grd         divertindo                                                               
+impedir :  model     pedir                                                    
+pres       impeço    impedes    impede    impedimos    impedis     impedem    
+perf       impedi    impediste  impediu   impedimos    impedistes  impediram  
+imp        impedia   impedias   impedia   impedíamos   impedíeis   impediam   
+fut        impedirei impedirás  impedirá  impediremos  impedireis  impedirão  
+mdp        impedira  impediras  impedira  impedíramos  impedíreis  impediram  
+cpres      impeça    impeças    impeça    impeçamos    impeçais    impeçam    
+cimp       impedisse impedisses impedisse impedíssemos impedísseis impedissem 
+cfut       impedir   impedires  impedir   impedirmos   impedirdes  impedirem  
+cond       impediria impedirias impediria impediríamos impediríeis impediriam 
+ivo                  impede     impeça    immeçamos    immedi      immeçam    
+pp         impedido                                                           
+grd        impedindo                                                          
+prevenir :  model      agredir                                                       
+pres        previno    prevines    previne    prevenimos    previnis     previnem    
+perf        preveni    preveniste  preveniu   prevenimos    prevenistes  preveniram  
+imp         prevenia   prevenias   prevenia   preveníamos   preveníeis   preveniam   
+fut         prevenirei prevenirás  prevenirá  preveniremos  prevenireis  prevenirão  
+mdp         prevenira  preveniras  prevenira  preveníramos  preveníreis  preveniram  
+cpres       previna    previnas    previna    previnamos    prevais      previnam    
+cimp        prevenisse prevenisses prevenisse preveníssemos prevenísseis prevenissem 
+cfut        prevenir   prevenires  prevenir   prevenirmos   prevenirdes  prevenirem  
+cond        preveniria prevenirias preveniria preveniríamos preveniríeis preveniriam 
+ivo                    previne     previna    previnamos    prevani      previnam    
+pp          prevenido                                                                
+grd         prevenindo                                                               
+requerer :  irreg                                                                    
+pres        requeiro   requeres    requer     requeremos    requereis    requerem    
+perf        requeri    requereste  requereu   requeremos    requerestes  requerem    
+imp         requeria   requerias   requeria   requeríamos   requeríeis   requeriam   
+fut         requererei requererás  requererá  requereremos  requerereis  requererão  
+mdp         requerera  requereras  requerera  requerêramos  requerêreis  requereram  
+cpres       requeira   requeiras   requeira   requeiramos   requeirais   requeiram   
+cimp        requeresse requeresses requeresse requerêssemos requerêsseis requeressem 
+cfut        requerer   requereres  requerer   requerermos   requererdes  requererem  
+cond        requereria requererias requereria requereríamos requereríeis requereriam 
+ivo                    requer      requeira   requeiramos   requeirais   requeiram   
+pp          requerido                                                                
+grd         requerendo                                                               
+demolir :  defectivo                                                          
+pres                                      demolimos    demolis                
+perf       demoli    demoliste  demoliu   demolimos    demolistes  demoliram  
+imp        demolia   demolias   demolia   demolíamos   demolíeis   demoliam   
+fut        demolirei demolirás  demolirá  demoliremos  demolireis  demolirão  
+mdp        demolira  demoliras  demolira  demolíramos  demolíreis  demoliram  
+cpres                                                  demulais               
+cimp       demolisse demolisses demolisse demolíssemos demolísseis demolissem 
+cfut       demolir   demolires  demolir   demolirmos   demolirdes  demolirem  
+cond       demoliria demolirias demoliria demoliríamos demoliríeis demoliriam 
+ivo                                                    demoli                 
+pp         demolido                                                           
+grd        demolindo                                                          
+preterir :  model      ferir                                                         
+pres        pretiro    preteres    pretere    preterimos    preteris     preterem    
+perf        preteri    preteriste  preteriu   preterimos    preteristes  preteriram  
+imp         preteria   preterias   preteria   preteríamos   preteríeis   preteriam   
+fut         preterirei preterirás  preterirá  preteriremos  preterireis  preterirão  
+mdp         preterira  preteriras  preterira  preteríramos  preteríreis  preteriram  
+cpres       pretira    pretiras    pretira    pretiramos    pretirais    pretiram    
+cimp        preterisse preterisses preterisse preteríssemos preterísseis preterissem 
+cfut        preterir   preterires  preterir   preterirmos   preterirdes  preterirem  
+cond        preteriria preteririas preteriria preteriríamos preteriríeis preteririam 
+ivo                    pretere     pretira    pretiramos    preteri      pretiram    
+pp          preterido                                                                
+grd         preterindo                                                               
+saber :  irreg                                                        
+pres     sei      sabes     sabe     sabemos     sabeis     sabem     
+perf     soube    soubeste  soube    soubemos    sabestes   souberam  
+imp      sabia    sabias    sabia    sabíamos    sabíeis    sabiam    
+fut      saberei  saberás   saberá   saberemos   sabereis   saberão   
+mdp      soubera  souberas  soubera  soubéramos  soubêreis  souberam  
+cpres    saiba    saibas    saiba    saibamos    saibais    saibam    
+cimp     soubesse soubesses soubesse soubéssemos soubêsseis soubessem 
+cfut     souber   souberes  souber   soubermos   souberdes  souberem  
+cond     saberia  saberias  saberia  saberíamos  saberíeis  saberiam  
+ivo               sabe      saiba    saibamos    saibais    saibam    
+pp       sabido                                                       
+grd      sabendo                                                      
+medir :  model   pedir                                          
+pres     meço    medes    mede    medimos    medis     medem    
+perf     medi    mediste  mediu   medimos    medistes  mediram  
+imp      media   medias   media   medíamos   medíeis   mediam   
+fut      medirei medirás  medirá  mediremos  medireis  medirão  
+mdp      medira  mediras  medira  medíramos  medíreis  mediram  
+cpres    meça    meças    meça    meçamos    mais      meçam    
+cimp     medisse medisses medisse medíssemos medísseis medissem 
+cfut     medir   medires  medir   medirmos   medirdes  medirem  
+cond     mediria medirias mediria mediríamos mediríeis mediriam 
+ivo              mede     meça    meçamos    medi      meçam    
+pp       medido                                                 
+grd      medindo                                                
+prosseguir :  model        seguir                                                                  
+pres          prossigo     prossegues    prossegue    prosseguimos    prosseguis     prosseguem    
+perf          prossegui    prosseguiste  prosseguiu   prosseguimos    prosseguistes  prosseguiram  
+imp           prosseguia   prosseguias   prosseguia   prosseguíamos   prosseguíeis   prosseguiam   
+fut           prosseguirei prosseguirás  prosseguirá  prosseguiremos  prosseguireis  prosseguirão  
+mdp           prosseguira  prosseguiras  prosseguira  prosseguíramos  prosseguíreis  prosseguiram  
+cpres         prossiga     prossigas     prossiga     prossigamos     prossigais     prossigam     
+cimp          prosseguisse prosseguisses prosseguisse prosseguíssemos prosseguísseis prosseguissem 
+cfut          prosseguir   prosseguires  prosseguir   prosseguirmos   prosseguirdes  prosseguirem  
+cond          prosseguiria prosseguirias prosseguiria prosseguiríamos prosseguiríeis prosseguiriam 
+ivo                        prossegue     prossiga     prossigamos     prossigais     prossigam     
+pp            prosseguido                                                                          
+grd           prosseguindo                                                                         
+prever :  model    ver                                                 
+pres      prevejo  prevês    prevê    prevemos    preveis    prevêem   
+perf      previ    previste  previu   previmos    prevestes  previram  
+imp       previa   previas   previa   prevíamos   prevíeis   previam   
+fut       preverei preverás  preverá  preveremos  prevereis  preverão  
+mdp       previra  previras  previra  prevíramos  prevíreis  previram  
+cpres     preveja  prevejas  preveja  prevejamos  prevais    prevejam  
+cimp      previsse previsses previsse prevîssemos prevîsseis previssem 
+cfut      previr   previres  previr   previrmos   previrdes  previrem  
+cond      preveria preverias preveria preveríamos preveríeis preveriam 
+ivo                prevê     preveja  prevejamos  prevede    prevejam  
+pp        previsto                                                     
+grd       prevendo                                                     
+pedir :  irreg                                                  
+pres     peço    pedes    pede    pedimos    pedis     pedem    
+perf     pedi    pediste  pediu   pedimos    pedistes  pediram  
+imp      pedia   pedias   pedia   pedíamos   pedíeis   pediam   
+fut      pedirei pedirás  pedirá  pediremos  pedireis  pedirão  
+mdp      pedira  pediras  pedira  pedíramos  pedíreis  pediram  
+cpres    peça    peças    peça    peçamos    peçais    peçam    
+cimp     pedisse pedisses pedisse pedíssemos pedísseis pedissem 
+cfut     pedir   pedires  pedir   pedirmos   pedirdes  pedirem  
+cond     pediria pedirias pediria pediríamos pediríeis pediriam 
+ivo              pede     peça    meçamos    medi      meçam    
+pp       pedido                                                 
+grd      pedindo                                                
+sentir :  irreg                                                        
+pres      sinto    sentes    sente    sentimos    sentis     sentem    
+perf      senti    sentiste  sentiu   sentimos    sentistes  sentiram  
+imp       sentia   sentias   sentia   sentíamos   sentíeis   sentiam   
+fut       sentirei sentirás  sentirá  sentiremos  sentireis  sentirão  
+mdp       sentira  sentiras  sentira  sentíramos  sentíreis  sentiram  
+cpres     sinta    sintas    sinta    sintamos    sintais    sintam    
+cimp      sentisse sentisses sentisse sentíssemos sentísseis sentissem 
+cfut      sentir   sentires  sentir   sentirmos   sentirdes  sentirem  
+cond      sentiria sentirias sentiria sentiríamos sentiríeis sentiriam 
+ivo                sente     sinta    sintamos    sinti      sintam    
+pp        sentido                                                      
+grd       sentindo                                                     
+perseguir :  model       seguir                                                             
+pres         persigo     persegues    persegue    perseguimos    perseguis     perseguem    
+perf         persegui    perseguiste  perseguiu   perseguimos    perseguistes  perseguiram  
+imp          perseguia   perseguias   perseguia   perseguíamos   perseguíeis   perseguiam   
+fut          perseguirei perseguirás  perseguirá  perseguiremos  perseguireis  perseguirão  
+mdp          perseguira  perseguiras  perseguira  perseguíramos  perseguíreis  perseguiram  
+cpres        persiga     persigas     persiga     persigamos     persigais     persigam     
+cimp         perseguisse perseguisses perseguisse perseguíssemos perseguísseis perseguissem 
+cfut         perseguir   perseguires  perseguir   perseguirmos   perseguirdes  perseguirem  
+cond         perseguiria perseguirias perseguiria perseguiríamos perseguiríeis perseguiriam 
+ivo                      persegue     persiga     persigamos     persigais     persigam     
+pp           perseguido                                                                     
+grd          perseguindo                                                                    
+haver :  irreg                                                        
+pres     hei      hás       há       havemos     haveis     hão       
+perf     houve    houveste  houve    houvemos    houvestes  houveram  
+imp      havia    havias    havia    havíamos    havíeis    haviam    
+fut      haverei  haverás   haverá   haveremos   havereis   haverão   
+mdp      houvera  houveras  houvera  houvéramos  houvéreis  houveram  
+cpres    haja     hajas     haja     hajamos     hajais     hajam     
+cimp     houvesse houvesses houvesse houvéssemos houvésseis houvessem 
+cfut     houver   houveres  houver   houvermos   houverdes  houverem  
+cond     haveria  haverias  haveria  haveríamos  haveríeis  haveriam  
+ivo               hajas     haja     hajamos     havei      hajam     
+pp       havido                                                       
+grd      havendo                                                      
+dar :  irreg                                      
+pres   dou   dás    dá    damos    dais    dão    
+perf   dei   deste  deu   demos    destes  deram  
+imp    dava  davas  dava  dávamos  dáveis  davam  
+fut    darei darás  dará  daremos  dareis  darão  
+mdp    dera  deras  dera  déramos  dáreis  deram  
+cpres  dê    dês    dê    dêmos    deis    dêem   
+cimp   desse desses desse dêssemos dêsseis dessem 
+cfut   der   deres  der   dermos   deirdes derem  
+cond   daria darias daria daríamos daríeis dariam 
+ivo          dês    dê    dêmos    deis    dêem   
+pp     dado                                       
+grd    dando                                      
+fazer :  irreg                                                  
+pres     faço    fazes    faz     fazemos    fazeis    fazem    
+perf     fiz     fizeste  fez     fizemos    fazestes  fizeram  
+imp      fazia   fazias   fazia   fazíamos   fazíeis   faziam   
+fut      farei   farás    fará    faremos    fazereis  farão    
+mdp      fizera  fizeras  fizera  fizêramos  fizêreis  fizeram  
+cpres    faça    faças    faça    façamos    façais    façam    
+cimp     fizesse fizesses fizesse fizêssemos fizêsseis fizessem 
+cfut     fizer   fizeres  fizer   fizermos   fizerdes  fizerem  
+cond     faria   farias   faria   faríamos   faríeis   fariam   
+ivo              faz      faça    façamos    façais    façam    
+pp       feito                                                  
+grd      fazendo                                                
+ferir :  irreg                                                  
+pres     firo    feres    fere    ferimos    feris     ferem    
+perf     feri    feriste  feriu   ferimos    feristes  feriram  
+imp      feria   ferias   feria   feríamos   feríeis   feriam   
+fut      ferirei ferirás  ferirá  feriremos  ferireis  ferirão  
+mdp      ferira  feriras  ferira  feríramos  feríreis  feriram  
+cpres    fira    firas    fira    firamos    firais    firam    
+cimp     ferisse ferisses ferisse feríssemos ferísseis ferissem 
+cfut     ferir   ferires  ferir   ferirmos   ferirdes  ferirem  
+cond     feriria feririas feriria feriríamos feriríeis feririam 
+ivo              fere     fira    firamos    feri      firam    
+pp       ferido                                                 
+grd      ferindo                                                
+gerir :  model   ferir                                          
+pres     giro    geres    gere    gerimos    geris     gerem    
+perf     geri    geriste  geriu   gerimos    geristes  geriram  
+imp      geria   gerias   geria   geríamos   geríeis   geriam   
+fut      gerirei gerirás  gerirá  geriremos  gerireis  gerirão  
+mdp      gerira  geriras  gerira  geríramos  geríreis  geriram  
+cpres    gira    giras    gira    giramos    girais    giram    
+cimp     gerisse gerisses gerisse geríssemos gerísseis gerissem 
+cfut     gerir   gerires  gerir   gerirmos   gerirdes  gerirem  
+cond     geriria geririas geriria geriríamos geriríeis geririam 
+ivo              gere     gira    giramos    geri      giram    
+pp       gerido                                                 
+grd      gerindo                                                
+abolir :  defectivo                                                     
+pres                                   abolimos    abolis               
+perf      aboli     aboliste  aboliu   abolimos    abolistes  aboliram  
+imp       abolia    abolias   abolia   abolíamos   abolíeis   aboliam   
+fut       abolirei  abolirás  abolirá  aboliremos  abolireis  abolirão  
+mdp       abolira   aboliras  abolira  abolíramos  abolíreis  aboliram  
+cpres                                              abulais              
+cimp      abolisse  abolisses abolisse abolíssemos abolísseis abolissem 
+cfut      abolir    abolires  abolir   abolirmos   abolirdes  abolirem  
+cond      aboliria  abolirias aboliria aboliríamos aboliríeis aboliriam 
+ivo                                                aboli                
+pp        abolido                                                       
+grd       abolindo                                                      
+compelir :  model      ferir                                                         
+pres        compilo    compeles    compele    compelimos    compelis     compelem    
+perf        compeli    compeliste  compeliu   compelimos    compelistes  compeliram  
+imp         compelia   compelias   compelia   compelíamos   compelíeis   compeliam   
+fut         compelirei compelirás  compelirá  compeliremos  compelireis  compelirão  
+mdp         compelira  compeliras  compelira  compelíramos  compelíreis  compeliram  
+cpres       compila    compilas    compila    compilamos    compilais    compilam    
+cimp        compelisse compelisses compelisse compelíssemos compelísseis compelissem 
+cfut        compelir   compelires  compelir   compelirmos   compelirdes  compelirem  
+cond        compeliria compelirias compeliria compeliríamos compeliríeis compeliriam 
+ivo                    compele     compila    compilamos    compeli      compilam    
+pp          compelido                                                                
+grd         compelindo                                                               
+repetir :  model     ferir                                                    
+pres       repito    repetes    repete    repetimos    repetis     repetem    
+perf       repeti    repetiste  repetiu   repetimos    repetistes  repetiram  
+imp        repetia   repetias   repetia   repetíamos   repetíeis   repetiam   
+fut        repetirei repetirás  repetirá  repetiremos  repetireis  repetirão  
+mdp        repetira  repetiras  repetira  repetíramos  repetíreis  repetiram  
+cpres      repita    repitas    repita    repitamos    repitais    repitam    
+cimp       repetisse repetisses repetisse repetíssemos repetísseis repetissem 
+cfut       repetir   repetires  repetir   repetirmos   repetirdes  repetirem  
+cond       repetiria repetirias repetiria repetiríamos repetiríeis repetiriam 
+ivo                  repete     repita    repitamos    repeti      repitam    
+pp         repetido                                                           
+grd        repetindo                                                          
+servir :  model    ferir                                               
+pres      sirvo    serves    serve    servimos    servis     servem    
+perf      servi    serviste  serviu   servimos    servistes  serviram  
+imp       servia   servias   servia   servíamos   servíeis   serviam   
+fut       servirei servirás  servirá  serviremos  servireis  servirão  
+mdp       servira  serviras  servira  servíramos  servíreis  serviram  
+cpres     sirva    sirvas    sirva    sirvamos    sirvais    sirvam    
+cimp      servisse servisses servisse servíssemos servísseis servissem 
+cfut      servir   servires  servir   servirmos   servirdes  servirem  
+cond      serviria servirias serviria serviríamos serviríeis serviriam 
+ivo                serve     sirva    sirvamos    servi      sirvam    
+pp        servido                                                      
+grd       servindo                                                     
+vestir :  model    ferir                                               
+pres      visto    vestes    veste    vestimos    vestis     vestem    
+perf      vesti    vestiste  vestiu   vestimos    vestistes  vestiram  
+imp       vestia   vestias   vestia   vestíamos   vestíeis   vestiam   
+fut       vestirei vestirás  vestirá  vestiremos  vestireis  vestirão  
+mdp       vestira  vestiras  vestira  vestíramos  vestíreis  vestiram  
+cpres     vista    vistas    vista    vistamos    vistais    vistam    
+cimp      vestisse vestisses vestisse vestíssemos vestísseis vestissem 
+cfut      vestir   vestires  vestir   vestirmos   vestirdes  vestirem  
+cond      vestiria vestirias vestiria vestiríamos vestiríeis vestiriam 
+ivo                veste     vista    vistamos    vesti      vistam    
+pp        vestido                                                      
+grd       vestindo                                                     
+descobrir :  model       cobrir                                                             
+pres         descubro    descobres    descobre    descobrimos    descobris     descobrem    
+perf         descobri    descobriste  descobriu   descobrimos    descobristes  descobriram  
+imp          descobria   descobrias   descobria   descobríamos   descobríeis   descobriam   
+fut          descobrirei descobrirás  descobrirá  descobriremos  descobrireis  descobrirão  
+mdp          descobrira  descobriras  descobrira  descobríramos  descobríreis  descobriram  
+cpres        descubra    descubras    descubra    descubramos    descubrais    descubram    
+cimp         descobrisse descobrisses descobrisse descobríssemos descobrísseis descobrissem 
+cfut         descobrir   descobrires  descobrir   descobrirmos   descobrirdes  descobrirem  
+cond         descobriria descobririas descobriria descobriríamos descobriríeis descobririam 
+ivo                      descobre     descobra    descobramos    descobri      descobram    
+pp           descoberto                                                                     
+grd          descobrindo                                                                    
+fugir :  irreg                                                  
+pres     fujo    foges    foge    fugimos    fugis     fogem    
+perf     fugi    fugiste  fugiu   fugimos    fugistes  fugiram  
+imp      fugia   fugias   fugia   fugíamos   fugíeis   fugiam   
+fut      fugirei fugirás  fugirá  fugiremos  fugireis  fugirão  
+mdp      fugira  fugiras  fugira  fugíramos  fugíreis  fugiram  
+cpres    fuja    fujas    fuja    fujamos    fujais    fujam    
+cimp     fugisse fugisses fugisse fugíssemos fugísseis fugissem 
+cfut     fugir   fugires  fugir   fugirmos   fugirdes  fugirem  
+cond     fugiria fugirias fugiria fugiríamos fugiríeis fugiriam 
+ivo              foge     fuja    fujamos    fugi      fujam    
+pp       fugido                                                 
+grd      fugindo                                                
+contrafazer :  model         fazer                                                                        
+pres           contrafaço    contrafazes    contrafaz     contrafazemos    contrafazeis    contrafazem    
+perf           contrafiz     contrafizeste  contrafez     contrafizemos    contrafazestes  contrafizeram  
+imp            contrafazia   contrafazias   contrafazia   contrafazíamos   contrafazíeis   contrafaziam   
+fut            contrafarei   contrafarás    contrafará    contrafaremos    contrafazereis  contrafarão    
+mdp            contrafizera  contrafizeras  contrafizera  contrafizêramos  contrafizêreis  contrafizeram  
+cpres          contrafaça    contrafaças    contrafaça    contrafaçamos    contrafaçais    contrafaçam    
+cimp           contrafizesse contrafizesses contrafizesse contrafizêssemos contrafizêsseis contrafizessem 
+cfut           contrafizer   contrafizeres  contrafizer   contrafizermos   contrafizerdes  contrafizerem  
+cond           contrafaria   contrafarias   contrafaria   contrafaríamos   contrafaríeis   contrafariam   
+ivo                          contrafaz      contrafaça    contrafaçamos    contrafaçais    contrafaçam    
+pp             contrafeito                                                                                
+grd            contrafazendo                                                                              
+estar :  irreg                                                               
+pres     estou     estás      está       estamos      estais      estão      
+perf     estive    estiveste  esteve     estivemos    estivestes  estiveram  
+imp      estava    estavas    estava     estávamos    estáveis    estavam    
+fut      estarei   estarás    estará     estaremos    estareis    estarão    
+mdp      estivera  estiveras  estivera   estivéramos  estivéreis  estiverãm  
+cpres    esteja    estejas    esteja     estejamos    estejais    estejam    
+cimp     estivesse estivesses estivesse  estivéssemos estivésseis estivessem 
+cfut     estiver   estiveres  estiver    estivermos   estiverdes  estiverem  
+cond     estaria   estarias   estaríamos estaríeis    estaríeis   estariam   
+ivo                está       estéja     estejamos    estai       estejam    
+pp       estado                                                              
+grd      estando                                                             
+reflectir :  model       ferir                                                              
+pres         reflicto    reflectes    reflecte    reflectimos    reflectis     reflectem    
+perf         reflecti    reflectiste  reflectiu   reflectimos    reflectistes  reflectiram  
+imp          reflectia   reflectias   reflectia   reflectíamos   reflectíeis   reflectiam   
+fut          reflectirei reflectirás  reflectirá  reflectiremos  reflectireis  reflectirão  
+mdp          reflectira  reflectiras  reflectira  reflectíramos  reflectíreis  reflectiram  
+cpres        reflicta    reflictas    reflicta    reflictamos    reflictais    reflictam    
+cimp         reflectisse reflectisses reflectisse reflectíssemos reflectísseis reflectissem 
+cfut         reflectir   reflectires  reflectir   reflectirmos   reflectirdes  reflectirem  
+cond         reflectiria reflectirias reflectiria reflectiríamos reflectiríeis reflectiriam 
+ivo                      reflecte     reflicta    reflictamos    reflecti      reflictam    
+pp           reflectido                                                                     
+grd          reflectindo                                                                    
+advertir :  model      ferir                                                         
+pres        advirto    advertes    adverte    advertimos    advertis     advertem    
+perf        adverti    advertiste  advertiu   advertimos    advertistes  advertiram  
+imp         advertia   advertias   advertia   advertíamos   advertíeis   advertiam   
+fut         advertirei advertirás  advertirá  advertiremos  advertireis  advertirão  
+mdp         advertira  advertiras  advertira  advertíramos  advertíreis  advertiram  
+cpres       advirta    advirtas    advirta    advirtamos    advirtais    advirtam    
+cimp        advertisse advertisses advertisse advertíssemos advertísseis advertissem 
+cfut        advertir   advertires  advertir   advertirmos   advertirdes  advertirem  
+cond        advertiria advertirias advertiria advertiríamos advertiríeis advertiriam 
+ivo                    adverte     advirta    advirtamos    adverti      advirtam    
+pp          advertido                                                                
+grd         advertindo                                                               
+rever :  model   ver                                            
+pres     revejo  revês    revê    revemos    reveis    revêem   
+perf     revi    reviste  reviu   revimos    revestes  reviram  
+imp      revia   revias   revia   revíamos   revíeis   reviam   
+fut      reverei reverás  reverá  reveremos  revereis  reverão  
+mdp      revira  reviras  revira  revíramos  revíreis  reviram  
+cpres    reveja  revejas  reveja  revejamos  revais    revejam  
+cimp     revisse revisses revisse revîssemos revîsseis revissem 
+cfut     revir   revires  revir   revirmos   revirdes  revirem  
+cond     reveria reverias reveria reveríamos reveríeis reveriam 
+ivo              revê     reveja  revejamos  revede    revejam  
+pp       revisto                                                
+grd      revendo                                                
+ser :  irreg                                      
+pres   sou   és     é     somos    sois    são    
+perf   fui   foste  foi   fomos    fostes  foram  
+imp    era   eras   era   éramos   éreis   eram   
+fut    serei serás  será  seremos  sereis  serão  
+mdp    fora  foras  fora  fôramos  fôreis  foram  
+cpres  seja  sejas  seja  sejamos  sejais  sejam  
+cimp   fosse fosses fosse fôssemos fôsseis fossem 
+cfut   for   fores  for   formos   fordes  forem  
+cond   seria serias seria seríamos seríeis seriam 
+ivo          sê     seja  sejamos  sede    sejam  
+pp     sido                                       
+grd    sendo                                      
+ter :  irreg                                                    
+pres   tenho   tens     tem        temos     tendes    têm      
+perf   tive    tiveste  teve       tivemos   tivestes  tiveram  
+imp    tinha   tinhas   tinha      tínhamos  tínheis   tinham   
+fut    terei   terás    terá       teremos   tereis    terão    
+mdp    tivera  tiveras  tivera     tivéramos tivéreis  tiveram  
+cpres  tenha   tenhas   tenha      tenhamos  tenhais   tenham   
+cimp   tivesse tivesses tivéssemos tivésseis tivêsseis tivessem 
+cfut   tiver   tiveres  tiver      tivermos  tiverdes  tiverem  
+cond   teria   terias   teria      teríamos  teríeis   teriam   
+ivo            tem      tenha      tenhamos  tende     tenham   
+pp     tido                                                     
+grd    tendo                                                    
+ver :  irreg                                      
+pres   vejo  vês    vê    vemos    veis    vêem   
+perf   vi    viste  viu   vimos    vestes  viram  
+imp    via   vias   via   víamos   víeis   viam   
+fut    verei verás  verá  veremos  vereis  verão  
+mdp    vira  viras  vira  víramos  víreis  viram  
+cpres  veja  vejas  veja  vejamos  vejais  vejam  
+cimp   visse visses visse vîssemos vîsseis vissem 
+cfut   vir   vires  vir   virmos   virdes  virem  
+cond   veria verias veria veríamos veríeis veriam 
+ivo          vê     veja  vejamos  vede    vejam  
+pp     visto                                      
+grd    vendo                                      
+dormir :  irreg                                                        
+pres      durmo    dormes    dorme    dormimos    dormis     dormem    
+perf      dormi    dormiste  dormiu   dormimos    dormistes  dormiram  
+imp       dormia   dormias   dormia   dormíamos   dormíeis   dormiam   
+fut       dormirei dormirás  dormirá  dormiremos  dormireis  dormirão  
+mdp       dormira  dormiras  dormira  dormíramos  dormíreis  dormiram  
+cpres     durma    durmas    durma    durmamos    durmais    durmam    
+cimp      dormisse dormisses dormisse dormíssemos dormísseis dormissem 
+cfut      dormir   dormires  dormir   dormirmos   dormirdes  dormirem  
+cond      dormiria dormirias dormiria dormiríamos dormiríeis dormiriam 
+ivo                dorme     dorma    dormamos    dormi      dormam    
+pp        dormido                                                      
+grd       dormindo                                                     
+progredir :  model       agredir                                                            
+pres         progrido    progrides    progride    progredimos    progridis     progridem    
+perf         progredi    progrediste  progrediu   progredimos    progredistes  progrediram  
+imp          progredia   progredias   progredia   progredíamos   progredíeis   progrediam   
+fut          progredirei progredirás  progredirá  progrediremos  progredireis  progredirão  
+mdp          progredira  progrediras  progredira  progredíramos  progredíreis  progrediram  
+cpres        progrida    progridas    progrida    progridamos    prograis      progridam    
+cimp         progredisse progredisses progredisse progredíssemos progredísseis progredissem 
+cfut         progredir   progredires  progredir   progredirmos   progredirdes  progredirem  
+cond         progrediria progredirias progrediria progrediríamos progrediríeis progrediriam 
+ivo                      progride     progrida    progridamos    progradi      progridam    
+pp           progredido                                                                     
+grd          progredindo                                                                    
+seguir :  irreg                                                        
+pres      sigo     segues    segue    seguimos    seguis     seguem    
+perf      segui    seguiste  seguiu   seguimos    seguistes  seguiram  
+imp       seguia   seguias   seguia   seguíamos   seguíeis   seguiam   
+fut       seguirei seguirás  seguirá  seguiremos  seguireis  seguirão  
+mdp       seguira  seguiras  seguira  seguíramos  seguíreis  seguiram  
+cpres     siga     sigas     siga     sigamos     sigais     sigam     
+cimp      seguisse seguisses seguisse seguíssemos seguísseis seguissem 
+cfut      seguir   seguires  seguir   seguirmos   seguirdes  seguirem  
+cond      seguiria seguirias seguiria seguiríamos seguiríeis seguiriam 
+ivo                segue     siga     sigamos     sigais     sigam     
+pp        seguido                                                      
+grd       seguindo                                                     
+despedir :  model      pedir                                                         
+pres        despeço    despedes    despede    despedimos    despedis     despedem    
+perf        despedi    despediste  despediu   despedimos    despedistes  despediram  
+imp         despedia   despedias   despedia   despedíamos   despedíeis   despediam   
+fut         despedirei despedirás  despedirá  despediremos  despedireis  despedirão  
+mdp         despedira  despediras  despedira  despedíramos  despedíreis  despediram  
+cpres       despeça    despeças    despeça    despeçamos    despeçais    despeçam    
+cimp        despedisse despedisses despedisse despedíssemos despedísseis despedissem 
+cfut        despedir   despedires  despedir   despedirmos   despedirdes  despedirem  
+cond        despediria despedirias despediria despediríamos despediríeis despediriam 
+ivo                    despede     despeça    desmeçamos    desmedi      desmeçam    
+pp          despedido                                                                
+grd         despedindo                                                               
+expedir :  model     pedir                                                    
+pres       expeço    expedes    expede    expedimos    expedis     expedem    
+perf       expedi    expediste  expediu   expedimos    expedistes  expediram  
+imp        expedia   expedias   expedia   expedíamos   expedíeis   expediam   
+fut        expedirei expedirás  expedirá  expediremos  expedireis  expedirão  
+mdp        expedira  expediras  expedira  expedíramos  expedíreis  expediram  
+cpres      expeça    expeças    expeça    expeçamos    expeçais    expeçam    
+cimp       expedisse expedisses expedisse expedíssemos expedísseis expedissem 
+cfut       expedir   expedires  expedir   expedirmos   expedirdes  expedirem  
+cond       expediria expedirias expediria expediríamos expediríeis expediriam 
+ivo                  expede     expeça    exmeçamos    exmedi      exmeçam    
+pp         expedido                                                           
+grd        expedindo                                                          
+desfazer :  model      fazer                                                         
+pres        desfaço    desfazes    desfaz     desfazemos    desfazeis    desfazem    
+perf        desfiz     desfizeste  desfez     desfizemos    desfazestes  desfizeram  
+imp         desfazia   desfazias   desfazia   desfazíamos   desfazíeis   desfaziam   
+fut         desfarei   desfarás    desfará    desfaremos    desfazereis  desfarão    
+mdp         desfizera  desfizeras  desfizera  desfizêramos  desfizêreis  desfizeram  
+cpres       desfaça    desfaças    desfaça    desfaçamos    desfaçais    desfaçam    
+cimp        desfizesse desfizesses desfizesse desfizêssemos desfizêsseis desfizessem 
+cfut        desfizer   desfizeres  desfizer   desfizermos   desfizerdes  desfizerem  
+cond        desfaria   desfarias   desfaria   desfaríamos   desfaríeis   desfariam   
+ivo                    desfaz      desfaça    desfaçamos    desfaçais    desfaçam    
+pp          desfeito                                                                 
+grd         desfazendo                                                               
+querer :  irreg                                                        
+pres      quero    queres    quer     queremos    quereis    querem    
+perf      quis     quiseste  quis     quisemos    querestes  quiseram  
+imp       queria   querias   queria   queríamos   queríeis   queriam   
+fut       quererei quererás  quererá  quereremos  querereis  quererão  
+mdp       quisera  quiseras  quisera  quiséramos  quisêreis  quiseram  
+cpres     queira   queiras   queira   queiramos   queirais   queiram   
+cimp      quisesse quisesses quisesse quiséssemos quisêsseis quisessem 
+cfut      quiser   quiseres  quiser   quisermos   quiserdes  quiserem  
+cond      quereria quererias quereria quereríamos quereríeis quereriam 
+ivo                queiras   queira   queiramos   queirais   queiram   
+pp        querido                                                      
+grd       querendo                                                     
+encobrir :  model      cobrir                                                        
+pres        encubro    encobres    encobre    encobrimos    encobris     encobrem    
+perf        encobri    encobriste  encobriu   encobrimos    encobristes  encobriram  
+imp         encobria   encobrias   encobria   encobríamos   encobríeis   encobriam   
+fut         encobrirei encobrirás  encobrirá  encobriremos  encobrireis  encobrirão  
+mdp         encobrira  encobriras  encobrira  encobríramos  encobríreis  encobriram  
+cpres       encubra    encubras    encubra    encubramos    encubrais    encubram    
+cimp        encobrisse encobrisses encobrisse encobríssemos encobrísseis encobrissem 
+cfut        encobrir   encobrires  encobrir   encobrirmos   encobrirdes  encobrirem  
+cond        encobriria encobririas encobriria encobriríamos encobriríeis encobririam 
+ivo                    encobre     encobra    encobramos    encobri      encobram    
+pp          encoberto                                                                
+grd         encobrindo                                                               
+ouvir :  irreg                                                  
+pres     oiço    ouves    ouve    ouvimos    ouvis     ouvem    
+perf     ouvi    ouviste  ouviu   ouvimos    ouvistes  ouviram  
+imp      ouvia   ouvias   ouvia   ouvíamos   ouvíeis   ouviam   
+fut      ouvirei ouvirás  ouvirá  ouviremos  ouvireis  ouvirão  
+mdp      ouvira  ouviras  ouvira  ouvíramos  ouvíreis  ouviram  
+cpres    oiça    oiças    oiça    oiçamos    oiçais    oiçam    
+cimp     ouvisse ouvisses ouvisse ouvíssemos ouvísseis ouvissem 
+cfut     ouvir   ouvires  ouvir   ouvirmos   ouvirdes  ouvirem  
+cond     ouviria ouvirias ouviria ouviríamos ouviríeis ouviriam 
+ivo              ouve     oiça    oiçamos    oiçais    oiçam    
+pp       ouvido                                                 
+grd      ouvindo                                                
+antever :  model     ver                                                      
+pres       antevejo  antevês    antevê    antevemos    anteveis    antevêem   
+perf       antevi    anteviste  anteviu   antevimos    antevestes  anteviram  
+imp        antevia   antevias   antevia   antevíamos   antevíeis   anteviam   
+fut        anteverei anteverás  anteverá  anteveremos  antevereis  anteverão  
+mdp        antevira  anteviras  antevira  antevíramos  antevíreis  anteviram  
+cpres      anteveja  antevejas  anteveja  antevejamos  antevais    antevejam  
+cimp       antevisse antevisses antevisse antevîssemos antevîsseis antevissem 
+cfut       antevir   antevires  antevir   antevirmos   antevirdes  antevirem  
+cond       anteveria anteverias anteveria anteveríamos anteveríeis anteveriam 
+ivo                  antevê     anteveja  antevejamos  antevede    antevejam  
+pp         antevisto                                                          
+grd        antevendo                                                          
+precaver :  defectivo                                                                
+pres                                          precavemos                             
+perf        precavi    precaveste  precaveu   precavemos    precavestes  precaveram  
+imp         precavia   precavias   precavia   precavíamos   precavíeis   precaviam   
+fut         precaverei precaverás  precaverá  precaveremos  precavereis  precaverão  
+mdp         precavera  precaveras  precavera  precavêramos  precavêreis  precaveram  
+cpres                                                                                
+cimp        precavesse precavesses precavesse precavêssemos precavêsseis precavessem 
+cfut        precaver   precaveres  precaver   precavermos   precaverdes  precaverem  
+cond        precaveria precaverias precaveria precaveríamos precaveríeis precaveriam 
+ivo                                                                                  
+pp          precavido                                                                
+grd         precavendo                                                               
+conferir :  model      ferir                                                         
+pres        confiro    conferes    confere    conferimos    conferis     conferem    
+perf        conferi    conferiste  conferiu   conferimos    conferistes  conferiram  
+imp         conferia   conferias   conferia   conferíamos   conferíeis   conferiam   
+fut         conferirei conferirás  conferirá  conferiremos  conferireis  conferirão  
+mdp         conferira  conferiras  conferira  conferíramos  conferíreis  conferiram  
+cpres       confira    confiras    confira    confiramos    confirais    confiram    
+cimp        conferisse conferisses conferisse conferíssemos conferísseis conferissem 
+cfut        conferir   conferires  conferir   conferirmos   conferirdes  conferirem  
+cond        conferiria conferirias conferiria conferiríamos conferiríeis confeririam 
+ivo                    confere     confira    confiramos    conferi      confiram    
+pp          conferido                                                                
+grd         conferindo                                                               
+ir :  irreg                                      
+pres  vou   vais   vai   vamos    ides    vão    
+perf  fui   foste  foi   fomos    fostes  foram  
+imp   ia    ias    ia    íamos    íeis    iam    
+fut   irei  irás   irá   iremos   ireis   irão   
+mdp   ira   iras   ira   íramos   íreis   iram   
+cpres vá    vás    vá    vamos    vades   vão    
+cimp  fosse fosses fosse fôssemos fôsseis fossem 
+cfut  for   fores  for   formos   fordes  foram  
+cond  iria  irias  iria  iríamos  iríeis  iriam  
+ivo         vai    ide   vamos    ide     vão    
+pp    ido                                        
+grd   indo                                       
+satisfazer :  model        fazer                                                                   
+pres          satisfaço    satisfazes    satisfaz     satisfazemos    satisfazeis    satisfazem    
+perf          satisfiz     satisfizeste  satisfez     satisfizemos    satisfazestes  satisfizeram  
+imp           satisfazia   satisfazias   satisfazia   satisfazíamos   satisfazíeis   satisfaziam   
+fut           satisfarei   satisfarás    satisfará    satisfaremos    satisfazereis  satisfarão    
+mdp           satisfizera  satisfizeras  satisfizera  satisfizêramos  satisfizêreis  satisfizeram  
+cpres         satisfaça    satisfaças    satisfaça    satisfaçamos    satisfaçais    satisfaçam    
+cimp          satisfizesse satisfizesses satisfizesse satisfizêssemos satisfizêsseis satisfizessem 
+cfut          satisfizer   satisfizeres  satisfizer   satisfizermos   satisfizerdes  satisfizerem  
+cond          satisfaria   satisfarias   satisfaria   satisfaríamos   satisfaríeis   satisfariam   
+ivo                        satisfaz      satisfaça    satisfaçamos    satisfaçais    satisfaçam    
+pp            satisfeito                                                                           
+grd           satisfazendo                                                                         
+caber :  irreg                                                        
+pres     caibo    cabes     cabe     cabemos     cabeis     cabem     
+perf     coube    coubeste  coubeu   coubemos    coubestes  couberam  
+imp      cabia    cabias    cabia    cabíamos    cabíeis    cabiam    
+fut      caberei  caberás   caberá   caberemos   cabereis   caberão   
+mdp      coubera  couberas  coubera  coubéramos  coubêreis  couberam  
+cpres    caiba    caibas    caiba    caibamos    caibais    caibam    
+cimp     coubesse coubesses coubesse coubéssemos coubêsseis coubessem 
+cfut     couber   couberes  couber   coubermos   couberdes  couberem  
+cond     caberia  caberias  caberia  caberíamos  caberíeis  caberiam  
+ivo               caibas    caiba    caibamos    caibais    caibam    
+pp       cabido                                                       
+grd      cabendo                                                      
+agredir :  irreg                                                              
+pres       agrido    agrides    agride    agredimos    agridis     agridem    
+perf       agredi    agrediste  agrediu   agredimos    agredistes  agrediram  
+imp        agredia   agredias   agredia   agredíamos   agredíeis   agrediam   
+fut        agredirei agredirás  agredirá  agrediremos  agredireis  agredirão  
+mdp        agredira  agrediras  agredira  agredíramos  agredíreis  agrediram  
+cpres      agrida    agridas    agrida    agridamos    agridais    agridam    
+cimp       agredisse agredisses agredisse agredíssemos agredísseis agredissem 
+cfut       agredir   agredires  agredir   agredirmos   agredirdes  agredirem  
+cond       agrediria agredirias agrediria agrediríamos agrediríeis agrediriam 
+ivo                  agride     agrida    agridamos    agridais    agridam    
+pp         agredido                                                           
+grd        agredindo                                                          
+preferir :  model      ferir                                                         
+pres        prefiro    preferes    prefere    preferimos    preferis     preferem    
+perf        preferi    preferiste  preferiu   preferimos    preferistes  preferiram  
+imp         preferia   preferias   preferia   preferíamos   preferíeis   preferiam   
+fut         preferirei preferirás  preferirá  preferiremos  preferireis  preferirão  
+mdp         preferira  preferiras  preferira  preferíramos  preferíreis  preferiram  
+cpres       prefira    prefiras    prefira    prefiramos    prefirais    prefiram    
+cimp        preferisse preferisses preferisse preferíssemos preferísseis preferissem 
+cfut        preferir   preferires  preferir   preferirmos   preferirdes  preferirem  
+cond        preferiria preferirias preferiria preferiríamos preferiríeis prefeririam 
+ivo                    prefere     prefira    prefiramos    preferi      prefiram    
+pp          preferido                                                                
+grd         preferindo                                                               
+desmentir :  model       sentir                                                             
+pres         desminto    desmentes    desmente    desmentimos    desmentis     desmentem    
+perf         desmenti    desmentiste  desmentiu   desmentimos    desmentistes  desmentiram  
+imp          desmentia   desmentias   desmentia   desmentíamos   desmentíeis   desmentiam   
+fut          desmentirei desmentirás  desmentirá  desmentiremos  desmentireis  desmentirão  
+mdp          desmentira  desmentiras  desmentira  desmentíramos  desmentíreis  desmentiram  
+cpres        desminta    desmintas    desminta    desmintamos    desmais       desmintam    
+cimp         desmentisse desmentisses desmentisse desmentíssemos desmentísseis desmentissem 
+cfut         desmentir   desmentires  desmentir   desmentirmos   desmentirdes  desmentirem  
+cond         desmentiria desmentirias desmentiria desmentiríamos desmentiríeis desmentiriam 
+ivo                      desmente     desminta    desmintamos    desminti      desmintam    
+pp           desmentido                                                                     
+grd          desmentindo                                                                    
+vir :  irreg                                             
+pres   venho  vens    vem    vimos     vis       vêm     
+perf   vim    vieste  veio   viemos    vistes    vieram  
+imp    vinha  vinhas  vinha  vínhamos  víeis     vinham  
+fut    virei  virás   virá   viremos   vireis    virão   
+mdp    viera  vieras  viera  viéramos  víreis    vieram  
+cpres  venha  venhas  venha  venhamos  venhais   venham  
+cimp   viesse viesses viesse viéssemos vimísseis viessem 
+cfut   vier   vieres  vier   viermos   vimirdes  vierem  
+cond   viria  virias  viria  viríamos  viríeis   viriam  
+ivo           venhas  venha  venhamos  vi        venham  
+pp     vindo                                             
+grd    vindo                                             
+trazer :  irreg                                                              
+pres      trago     trazes     traz      trazemos     trazeis     trazem     
+perf      trouxe    trouxeste  trouxeu   trouxemos    trouxestes  trouxeram  
+imp       trazia    trazias    trazia    trazíamos    trazíeis    traziam    
+fut       tarei     trarás     trará     traremos     trazereis   trarão     
+mdp       trouxera  trouxeras  trouxera  trouxéramos  trouxêreis  trouxeram  
+cpres     traga     tragas     traga     tragamos     tragais     tragam     
+cimp      trouxesse trouxesses trouxesse trouxêssemos trouxêsseis trouxessem 
+cfut      trouxer   trouxeres  trouxer   trouxermos   trouxerdes  trouxerem  
+cond      traria    trarias    traria    traríamos    traríeis    trariam    
+ivo                 traz       traga     tragamos     tragei      tragam     
+pp        trazido                                                            
+grd       trazendo                                                           
+valer :  irreg                                                  
+pres     valho   vales    vale    valemos    valeis    valem    
+perf     vali    valeste  valeu   valemos    valestes  valeram  
+imp      valia   valias   valia   valíamos   valíeis   valiam   
+fut      valerei valerás  valerá  valeremos  valereis  valerão  
+mdp      valera  valeras  valera  valêramos  valêreis  valeram  
+cpres    valha   valhas   valha   valhamos   valhais   valham   
+cimp     valesse valesses valesse valêssemos valêsseis valessem 
+cfut     valer   valeres  valer   valermos   valerdes  valerem  
+cond     valeria valerias valeria valeríamos valeríeis valeriam 
+ivo              vale     valha   valhamos   valhais   valham   
+pp       valido                                                 
+grd      valendo                                                
+poder :  irreg                                                  
+pres     posso   podes    pode    podemos    podeis    podem    
+perf     pude    pudeste  pôde    pudemos    podestes  puderam  
+imp      podia   podias   podia   podíamos   podíeis   podiam   
+fut      poderei poderás  poderá  poderemos  podereis  poderão  
+mdp      pudera  puderas  pudera  pudêramos  pudêreis  puderam  
+cpres    possa   possas   possa   possamos   possais   possam   
+cimp     pudesse pudesses pudesse pudéssemos pudêsseis pudessem 
+cfut     puder   puderes  puder   pudermos   puderdes  puderem  
+cond     poderia poderias poderia poderíamos poderíeis poderiam 
+ivo              possas   possa   possamos   possais   possam   
+pp       podido                                                 
+grd      podendo                                                
+rir :  irreg                                      
+pres   rio   ris    ri    rimos    rides   riem   
+perf   ri    riste  riu   rimos    ristes  riram  
+imp    ria   rias   ria   ríamos   ríeis   riam   
+fut    rirei rirás  rirá  riremos  rireis  rirão  
+mdp    rira  riras  rira  ríramos  ríreis  riram  
+cpres  ria   rias   ria   ríamos   ríeis   riam   
+cimp   risse risses risse ríssemos rísseis rissem 
+cfut   rir   rires  rir   rirmos   rirdes  rirem  
+cond   riria ririas riria riríamos riríeis ririam 
+ivo          ri     ria   riamos   ride    riam   
+pp     rido                                       
+grd    rindo                                      
+ler :  irreg                                      
+pres   leio  lês    lê    lemos    leis    lêem   
+perf   li    leste  leu   lemos    lestes  leram  
+imp    lia   lias   lia   líamos   líeis   liam   
+fut    lerei lerás  lerá  leremos  lereis  lerão  
+mdp    lera  leras  lera  lêramos  lêreis  leram  
+cpres  leia  leias  leia  leiamos  leiais  leiam  
+cimp   lesse lesses lesse lêssemos lêsseis lessem 
+cfut   ler   leres  ler   lermos   lerdes  lerem  
+cond   leria lerias leria leríamos leríeis leriam 
+ivo          lê     lêia  leiamos  lei     leiam  
+pp     lido                                       
+grd    lendo                                      
+incendiar :  irreg                                                                          
+pres         incendeio   incendeias   incendeia   incendiamos    incendiais    incendeiam   
+perf         incendiei   incendiaste  incendiou   incendiamos    incendiastes  incendiaram  
+imp          incendiava  incendiavas  incendiava  incendiávamos  incendiáveis  incendiavam  
+fut          incendiarei incendiarás  incendiará  incendiaremos  incendiareis  incendiarão  
+mdp          incendiara  incendiaras  incendiara  incendiáramos  incendiáreis  incendiaram  
+cpres        incedeie    incendeies   incendeie   incendiemos    incendeieis   incendeiem   
+cimp         incendiasse incendiasses incendiasse incendiássemos incendiásseis incendiassem 
+cfut         incendiar   incendiares  incendiar   incendiarmos   incendiardes  incendiarem  
+cond         incendiaria incendiarias incendiaria incendiaríamos incendiaríeis incendiariam 
+ivo                      incendeia    incendeie   incendiemos    incendiai     incendeiem   
+pp           incendiado                                                                     
+grd          incendiando                                                                    
+prover :  model    ver                                                 
+pres      provejo  provês    provê    provemos    proveis    provêem   
+perf      provi    proveste  proveu   provemos    provestes  proveram  
+imp       provia   provias   provia   províamos   províeis   proviam   
+fut       proverei proverás  proverá  proveremos  provereis  proverão  
+mdp       provira  proviras  provira  províramos  províreis  proviram  
+cpres     proveja  provejas  proveja  provejamos  prevais    provejam  
+cimp      provisse provisses provisse provîssemos provîsseis provissem 
+cfut      provir   provires  provir   provirmos   provirdes  provirem  
+cond      proveria proverias proveria proveríamos proveríeis proveriam 
+ivo                provê     proveja  provejamos  provede    provejam  
+pp        provido                                                      
+grd       provendo                                                     
+sair :  irreg                                            
+pres    saio   sais    sai    saímos    saís     saem    
+perf    saí    saíste  saiu   saímos    saístes  saíram  
+imp     saía   saías   saía   saíamos   saíeis   saíam   
+fut     sairei sairás  sairá  sairemos  saireis  sairão  
+mdp     saíra  saíras  saíra  saíramos  saíreis  saíram  
+cpres   saia   saias   saia   saiamos   saiais   saiam   
+cimp    saísse saísses saísse saíssemos saísseis saíssem 
+cfut    saír   saíres  saír   saírmos   saírdes  saírem  
+cond    sairia sairias sairia sairíamos sairíeis sairiam 
+ivo            sai     saia   saiamos   saí      saiam   
+pp      saido                                            
+grd     saindo                                           
+atrair :  model    sair                                                
+pres      atraio   atrais    atrai    atraímos    atraís     atraem    
+perf      atraí    atraíste  atraiu   atraímos    atraístes  atraíram  
+imp       atraía   atraías   atraía   atraíamos   atraíeis   atraíam   
+fut       atrairei atrairás  atrairá  atrairemos  atraireis  atrairão  
+mdp       atraíra  atraíras  atraíra  atraíramos  atraíreis  atraíram  
+cpres     atraia   atraias   atraia   atraiamos   atraiais   atraiam   
+cimp      atrasse  atrasses  atrasse  atrássemos  atrásseis  atrassem  
+cfut      atrar    atrares   atrar    atrarmos    atrardes   atrarem   
+cond      atrairia atrairias atrairia atrairíamos atrairíeis atrairiam 
+ivo                atrai     atraia   atraiamos   atraí      atraiam   
+pp        atraido                                                      
+grd       atraindo                                                     
+passear :  irreg                                                              
+pres       passeio   passeias   passeia   passeamos    passeais    passeiam   
+perf       passeei   passeaste  passeou   passeamos    passeastes  passearam  
+imp        passeava  passeavas  passeava  passeávamos  passeáveis  passeavam  
+fut        passearei passearás  passeará  passearemos  passeareis  passearão  
+mdp        passeara  passearas  passeara  passeáramos  passeáreis  passearam  
+cpres      passee    passees    passee    passeemos    passeeis    passeem    
+cimp       passeasse passeasses passeasse passeássemos passeásseis passeassem 
+cfut       passear   passeares  passear   passearmos   passeardes  passearem  
+cond       passearia passearias passearia passearíamos passearíeis passeariam 
+ivo                  passeia    passeie   passeemos    passeai     passeiem   
+pp         passeado                                                           
+grd        passeando                                                          
+ansiar :  model    incendiar                                           
+pres      anseio   anseias   anseia   ansiamos    ansiais    anseiam   
+perf      ansiei   ansiaste  ansiou   ansiamos    ansiastes  ansiaram  
+imp       ansiava  ansiavas  ansiava  ansiávamos  ansiáveis  ansiavam  
+fut       ansiarei ansiarás  ansiará  ansiaremos  ansiareis  ansiarão  
+mdp       ansiara  ansiaras  ansiara  ansiáramos  ansiáreis  ansiaram  
+cpres     anseie   anseies   anseie   ansiemos    anseieis   anseiem   
+cimp      ansiasse ansiasses ansiasse ansiássemos ansiásseis ansiassem 
+cfut      ansiar   ansiares  ansiar   ansiarmos   ansiardes  ansiarem  
+cond      ansiaria ansiarias ansiaria ansiaríamos ansiaríeis ansiariam 
+ivo                anseia    anseie   ansiemos    ansiai     anseiem   
+pp        ansiado                                                      
+grd       ansiando                                                     
+moer :  irreg                                            
+pres    moo    moís    mói    moemos    moeis    moem    
+perf    moí    moeste  moeu   moemos    moestes  moeram  
+imp     moía   moías   moía   moíamos   moíeis   moíam   
+fut     moerei moerás  moerá  moeremos  moereis  moerão  
+mdp     moera  moeras  moera  moêramos  moêreis  moeram  
+cpres   moa    moas    moa    moamos    moais    moam    
+cimp    moesse moesses moesse moêssemos moêsseis moessem 
+cfut    moer   moeres  moer   moermos   moerdes  moerem  
+cond    moeria moerias moeria moeríamos moeríeis moeriam 
+ivo            mói     moa    moamos    moei     moam    
+pp      moído                                            
+grd     moendo                                           
+perdoar :  irreg                                                              
+pres       perdoo    perdoas    perdoa    perdoamos    perdoais    perdoam    
+perf       perdoei   perdoaste  perdoou   perdoamos    perdoastes  perdoaram  
+imp        perdoava  perdoavas  perdoava  perdoávamos  perdoáveis  perdoavam  
+fut        perdoarei perdoarás  perdoará  perdoaremos  perdoareis  perdoarão  
+mdp        perdoara  perdoaras  perdoara  perdoáramos  perdoáreis  perdoaram  
+cpres      perdoe    perdoes    perdoe    perdoemos    perdoeis    perdoem    
+cimp       perdoasse perdoasses perdoasse perdoássemos perdoásseis perdoassem 
+cfut       perdoar   perdoares  perdoar   perdoarmos   perdoardes  perdoarem  
+cond       perdoaria perdoarias perdoaria perdoaríamos perdoaríeis perdoariam 
+ivo                  perdoa     perdoe    perdoemos    perdoai     perdoem    
+pp         perdoado                                                           
+grd        perdoando                                                          
+secar :  irreg                                                  
+pres     seco    secas    seca    secamos    secais    secam    
+perf     sequei  secaste  secou   secamos    secastes  secaram  
+imp      secava  secavas  secava  secávamos  secáveis  secavam  
+fut      secarei secarás  secará  secaremos  secareis  secarão  
+mdp      secara  secaras  secara  secáramos  secáreis  secaram  
+cpres    seque   seques   seque   sequemos   sequeis   sequem   
+cimp     secasse secasses secasse secássemos secásseis secassem 
+cfut     secar   secares  secar   secarmos   secardes  secarem  
+cond     secaria secarias secaria secaríamos secaríeis secariam 
+ivo              seca     seque   sequemos   secai     sequem   
+pp       seco                                                   
+grd      secando                                                
+parecer :                                                                     
+pres       pareço    pareces    parece    parecemos    pareceis    parecem    
+perf       pareci    pareceste  pareceu   parecemos    parecestes  pareceram  
+imp        parecia   parecias   parecia   parecíamos   parecíeis   pareciam   
+fut        parecerei parecerás  parecerá  pareceremos  parecereis  parecerão  
+mdp        parecera  pareceras  parecera  parecêramos  parecêreis  pareceram  
+cpres      pareça    pareças    pareça    pareçamos    pareçais    pareçam    
+cimp       parecesse parecesses parecesse parecêssemos parecêsseis parecessem 
+cfut       parecer   pareceres  parecer   parecermos   parecerdes  parecerem  
+cond       pareceria parecerias pareceria pareceríamos pareceríeis pareceriam 
+ivo                  parece     pareça    pareçamos    parecei     pareçam    
+pp         parecido                                                           
+grd        parecendo                                                          
+averiguar :  irreg                                                                          
+pres         averiguo    averiguas    averigua    averiguamos    averiguais    averiguam    
+perf         averiguei   averiguaste  averiguou   averiguamos    averiguastes  averiguaram  
+imp          averiguava  averiguavas  averiguava  averiguávamos  averiguáveis  averiguavam  
+fut          averiguarei averiguarás  averiguará  averiguaremos  averiguareis  averiguarão  
+mdp          averiguara  averiguaras  averiguara  averiguáramos  averiguáreis  averiguaram  
+cpres        averigúe    averigúes    averigúe    averigúemos    averigúeis    averigúem    
+cimp         averiguasse averiguasses averiguasse averiguássemos averiguásseis averiguassem 
+cfut         averiguar   averiguares  averiguar   averiguarmos   averiguardes  averiguarem  
+cond         averiguaria averiguarias averiguaria averiguaríamos averiguaríeis averiguariam 
+ivo                      averigua     averigúe    averiguemos    averiguai     averigúem    
+pp           averiguado                                                                     
+grd          averiguando                                                                    
+ar  :
 pres        começo     começas     começa     começamos      começam     
 perf        comecei    começaste   começou    começamos      começaram   
 imp         começava   começavas   começava   começ ávamos   começavam   
@@ -963,7 +960,33 @@ cond        começaria  começarias  começaria  começ aríamos  começariam
 ivo                    começa      comece     comecemos      comecem     
 pp          começado                                                     
 grd         começando                                                    
-pôr  :  irreg                                         
+pôr :  irreg                                                  
+pres   ponho   pões     põe     pomos      pondes    põem     
+perf   pus     puseste  pôs     pusemos    pusestes  puseram  
+imp    punha   punhas   punha   púnhamos   púnheis   punham   
+fut    porei   porás    porá    poremos    poreis    porão    
+mdp    pusera  puseras  pusera  puséramos  puséreis  puseram  
+cpres  ponha   ponhas   ponha   ponhamos   ponhais   ponham   
+cimp   pusesse pusesses pusesse puséssemos pusésseis pusessem 
+cfut   puser   puseres  puser   pusermos   puserdes  puserem  
+cond   poria   porias   poria   poríamos   poríeis   poriam   
+ivo            ponhas   ponha   ponhamos   ponhais   ponham   
+pp     posto                                                  
+grd    pondo                                                  
+inscrever :  model       escrever                                                           
+pres         inscrevo    inscreves    inscreve    inscrevemos    inscreveis    inscrevem    
+perf         inscrevi    inscreveste  inscreveu   inscrevemos    inscrevestes  inscreveram  
+imp          inscrevia   inscrevias   inscrevia   inscrevíamos   inscrevíeis   inscreviam   
+fut          inscreverei inscreverás  inscreverá  inscreveremos  inscrevereis  inscreverão  
+mdp          inscrevera  inscreveras  inscrevera  inscrevêramos  inscrevêreis  inscreveram  
+cpres        inscreva    inscrevas    inscreva    inscrevamos    inscrevais    inscrevam    
+cimp         inscrevesse inscrevesses inscrevesse inscrevêssemos inscrevêsseis inscrevessem 
+cfut         inscrever   inscreveres  inscrever   inscrevermos   inscreverdes  inscreverem  
+cond         inscreveria inscreverias inscreveria inscreveríamos inscreveríeis inscreveriam 
+ivo                      inscreve     inscreva    inscrevamos    inscrevei     inscrevam    
+pp           inscrito                                                                       
+grd          inscrevendo                                                                    
+r  :  irreg                                         
 pres    ponho   pões     põe     pomos       põem     
 perf    pus     puseste  pôs     pusemos     puseram  
 imp     punha   punhas   punha   púnhamos    punham   
@@ -976,85 +999,59 @@ cond    poria   porias   poria   poríamos    poriam
 ivo             ponhas   ponha   ponhamos    ponham   
 pp      posto                                         
 grd     pondo                                         
-inscrever :  model       escrever                                              
-pres         inscrevo    inscreves    inscreve    inscrevemos     inscrevem    
-perf         inscrevi    inscreveste  inscreveu   inscrevemos     inscreveram  
-imp          inscrevia   inscrevias   inscrevia   inscrevíamos    inscreviam   
-fut          inscreverei inscreverás  inscreverá  inscreveremos   inscreverão  
-mdp          inscrevera  inscreveras  inscrevera  inscrevêramos   inscreveram  
-cpres        inscreva    inscrevas    inscreva    inscrevamos     inscrevam    
-cimp         inscrevesse inscrevesses inscrevesse inscrevêssemos  inscrevessem 
-cfut         inscrever   inscreveres  inscrever   inscrevermos    inscreverem  
-cond         inscreveria inscreverias inscreveria inscreveríamos  inscreveriam 
-ivo                      inscreve     inscreva    inscrevamos     inscrevam    
-pp           inscrito                                                          
-grd          inscrevendo                                                       
-pôr  :  irreg                                         
-pres    ponho   pões     põe     pomos       põem     
-perf    pus     puseste  pôs     pusemos     puseram  
-imp     punha   punhas   punha   púnhamos    punham   
-fut     porei   porás    porá    poremos     porão    
-mdp     pusera  puseras  pusera  puséramos   puseram  
-cpres   ponha   ponhas   ponha   ponhamos    ponham   
-cimp    pusesse pusesses pusesse puséssemos  pusessem 
-cfut    puser   puseres  puser   pusermos    puserem  
-cond    poria   porias   poria   poríamos    poriam   
-ivo             ponhas   ponha   ponhamos    ponham   
-pp      posto                                         
-grd     pondo                                         
-compor :                                                               
-pres      componho   compões     compõe     compomos       compõem     
-perf      compus     compuseste  compôs     compusemos     compuseram  
-imp       compunha   compunhas   compunha   compúnhamos    compunham   
-fut       comporei   comporás    comporá    comporemos     comporão    
-mdp       compusera  compuseras  compusera  compuséramos   compuseram  
-cpres     componha   componhas   componha   componhamos    componham   
-cimp      compusesse compusesses compusesse compuséssemos  compusessem 
-cfut      compuser   compuseres  compuser   compusermos    compuserem  
-cond      comporia   comporias   comporia   comporíamos    comporiam   
-ivo                                                                    
-pp        composto                                                     
-grd       compondo                                                     
-aturdir :                                                          
-pres                 aturdes    aturde    aturdimos     aturdem    
-perf       aturdi    aturdiste  aturdiu   aturdimos     aturdiram  
-imp        aturdia   aturdias   aturdia   aturdíamos    aturdiam   
-fut        aturdirei aturdirás  aturdirá  aturdiremos   aturdirão  
-mdp        aturdira  aturdiras  aturdira  aturdíramos   aturdiram  
-cpres                                                              
-cimp       aturdisse aturdisses aturdisse aturdíssemos  aturdissem 
-cfut       aturdir   aturdires  aturdir   aturdirmos    aturdirem  
-cond       aturdiria aturdirias aturdiria aturdiríamos  aturdiriam 
-ivo                  aturde                                        
-pp         aturdido                                                
-grd        aturdindo                                               
-colorir :                                                          
-pres       coloro    colores    colore    colorimos     colorem    
-perf       colori    coloriste  coloriu   colorimos     coloriram  
-imp        coloria   colorias   coloria   coloríamos    coloriam   
-fut        colorirei colorirás  colorirá  coloriremos   colorirão  
-mdp        colorira  coloriras  colorira  coloríramos   coloriram  
-cpres      colora    coloras    colora    coloramos     coloram    
-cimp       colorisse colorisses colorisse coloríssemos  colorissem 
-cfut       colorir   colorires  colorir   colorirmos    colorirem  
-cond       coloriria coloririas coloriria coloriríamos  coloririam 
-ivo                  colore     colora    coloramos     coloram    
-pp         colorido                                                
-grd        colorindo                                               
-reaver :  irreg                                                   
-pres                                     reavemos                 
-perf      reouve    reouveste  reouve    reouvemos     reouveram  
-imp       reavia    reavias    reavia    reavíamos     reaviam    
-fut       reaverei  reaverás   reaverá   reaveremos    reaverão   
-mdp       reouvera  reouveras  reouvera  reouveramos   reouveram  
-cpres                                                             
-cimp      reouvesse reouvesses reouvesse reouvéssemos  reouvessem 
-cfut      reouver   reouveres  reouver   reouvermos    reouverem  
-cond      reaveria  reaverias  reaveria  reaveríamos   reaveriam  
-ivo                                                               
-pp        reavido                                                 
-grd       reavendo                                                
-afeiçoar :  model      perdoar                                          
+compor :                                                                          
+pres      componho   compões     compõe     compomos      compondes   compõem     
+perf      compus     compuseste  compôs     compusemos    compusestes compuseram  
+imp       compunha   compunhas   compunha   compúnhamos   compúnheis  compunham   
+fut       comporei   comporás    comporá    comporemos    comporeis   comporão    
+mdp       compusera  compuseras  compusera  compuséramos  compuséreis compuseram  
+cpres     componha   componhas   componha   componhamos   componhais  componham   
+cimp      compusesse compusesses compusesse compuséssemos compuésseis compusessem 
+cfut      compuser   compuseres  compuser   compusermos   compuserdes compuserem  
+cond      comporia   comporias   comporia   comporíamos   comporíeis  comporiam   
+ivo                                                                               
+pp        composto                                                                
+grd       compondo                                                                
+aturdir :  defectivo                                                          
+pres                                      aturdimos    aturdis                
+perf       aturdi    aturdiste  aturdiu   aturdimos    aturdistes  aturdiram  
+imp        aturdia   aturdias   aturdia   aturdíamos   aturdíeis   aturdiam   
+fut        aturdirei aturdirás  aturdirá  aturdiremos  aturdireis  aturdirão  
+mdp        aturdira  aturdiras  aturdira  aturdíramos  aturdíreis  aturdiram  
+cpres                                                  aturdais               
+cimp       aturdisse aturdisses aturdisse aturdíssemos aturdísseis aturdissem 
+cfut       aturdir   aturdires  aturdir   aturdirmos   aturdirdes  aturdirem  
+cond       aturdiria aturdirias aturdiria aturdiríamos aturdiríeis aturdiriam 
+ivo                                                    aturdi                 
+pp         aturdido                                                           
+grd        aturdindo                                                          
+colorir :  defectivo                                                          
+pres                                      colorimos    coloris                
+perf       colori    coloriste  coloriu   colorimos    coloristes  coloriram  
+imp        coloria   colorias   coloria   coloríamos   coloríeis   coloriam   
+fut        colorirei colorirás  colorirá  coloriremos  colorireis  colorirão  
+mdp        colorira  coloriras  colorira  coloríramos  coloríreis  coloriram  
+cpres                                                  colorais               
+cimp       colorisse colorisses colorisse coloríssemos colorísseis colorissem 
+cfut       colorir   colorires  colorir   colorirmos   colorirdes  colorirem  
+cond       coloriria coloririas coloriria coloriríamos coloriríeis coloririam 
+ivo                                                    colori                 
+pp         colorido                                                           
+grd        colorindo                                                          
+reaver :  irreg                                                              
+pres                                     reavemos     reaveis                
+perf      reouve    reouveste  reouve    reouvemos    reouvestes  reouveram  
+imp       reavia    reavias    reavia    reavíamos    reavíeis    reaviam    
+fut       reaverei  reaverás   reaverá   reaveremos   reavereis   reaverão   
+mdp       reouvera  reouveras  reouvera  reouvéramos  reouvéreis  reouveram  
+cpres                                                                        
+cimp      reouvesse reouvesses reouvesse reouvéssemos reouvésseis reouvessem 
+cfut      reouver   reouveres  reouver   reouvermos   reouverdes  reouverem  
+cond      reaveria  reaverias  reaveria  reaveríamos  reaveríeis  reaveriam  
+ivo                                                                          
+pp        reavido                                                            
+grd       reavendo                                                           
+oar :  model      perdoar                                          
 pres        afeiçoo    afeiçoas    afeiçoa    afeiçoamos    afeiçoam    
 perf        afeiçoei   afeiçoaste  afeiçoou   afeiçoamos    afeiçoaram  
 imp         afeiçoava  afeiçoavas  afeiçoava  afeiçoávamos  afeiçoavam  
@@ -1067,78 +1064,107 @@ cond        afeiçoaria afeiçoarias afeiçoaria afeiçoaríamos afeiçoariam
 ivo                    afeiçoa     afeiçoe    afeiçoemos    afeiçoem    
 pp          afeiçoado                                                   
 grd         afeiçoando                                                  
-obter :  model     ter                                            
-pres     obtenho   obténs     obtém        obtemos     obtêm      
-perf     obtive    obtiveste  obteve       obtivemos   obtiveram  
-imp      obtinha   obtinhas   obtinha      obtínhamos  obtinham   
-fut      obterei   obterás    obterá       obteremos   obterão    
-mdp      obtivera  obtiveras  obtivera     obtivéramos obtiveram  
-cpres    obtenha   obtenhas   obtenha      obtenhamos  obtenham   
-cimp     obtivesse obtivesses obtivéssemos obtivessem  obtivessem 
-cfut     obtiver   obtiveres  obtiver      obtivermos  obtiverem  
-cond     obteria   obterias   obteria      obteríamos  obteriam   
-ivo                obtém      obtenha      obtenhamos  obtenham   
-pp       obtido                                                   
-grd      obtendo                                                  
-abster :  model      ter                                                
-pres      abstenho   absténs     abstém        abstemos     abstêm      
-perf      abstive    abstiveste  absteve       abstivemos   abstiveram  
-imp       abstinha   abstinhas   abstinha      abstínhamos  abstinham   
-fut       absterei   absterás    absterá       absteremos   absterão    
-mdp       abstivera  abstiveras  abstivera     abstivéramos abstiveram  
-cpres     abstenha   abstenhas   abstenha      abstenhamos  abstenham   
-cimp      abstivesse abstivesses abstivéssemos abstivessem  abstivessem 
-cfut      abstiver   abstiveres  abstiver      abstivermos  abstiverem  
-cond      absteria   absterias   absteria      absteríamos  absteriam   
-ivo                  abstém      abstenha      abstenhamos  abstenham   
-pp        abstido                                                       
-grd       abstendo                                                      roer :  model  moer                             
-pres    roo    roís    rói    roemos    roem    
-perf    roí    roeste  roeu   roemos    roeram  
-imp     roía   roías   roía   roíamos   roíam   
-fut     roerei roerás  roerá  roeremos  roerão  
-mdp     roera  roeras  roera  roêramos  roeram  
-cpres   roa    roas    roa    roamos    roam    
-cimp    roesse roesses roesse roêssemos roessem 
-cfut    roer   roeres  roer   roermos   roerem  
-cond    roeria roerias roeria roeríamos roeriam 
-ivo            rói     roa    roamos    roam    
-pp      roído                                   
-grd     roendo                                  engolir :  model     dormir                                       
-pres       engulo    engoles    engole    engolimos    engolem    
-perf       engoli    engoliste  engoliu   engolimos    engoliram  
-imp        engolia   engolias   engolia   engolíamos   engoliam   
-fut        engolirei engolirás  engolirá  engoliremos  engolirão  
-mdp        engolira  engoliras  engolira  engolíramos  engoliram  
-cpres      engula    engulas    engula    engulamos    engulam    
-cimp       engolisse engolisses engolisse engolíssemos engolissem 
-cfut       engolir   engolires  engolir   engolirmos   engolirem  
-cond       engoliria engolirias engoliria engoliríamos engoliriam 
-ivo                  engole     engola    engolamos    engolam    
-pp         engolido                                               
-grd        engolindo                                              subir :  irreg                                        
-pres     subo    sobes    sobe    subimos    sobem    
-perf     subi    subiste  subiu   subimos    subiram  
-imp      subia   subias   subia   subíamos   subiam   
-fut      subirei subirás  subirá  subiremos  subirão  
-mdp      subira  subiras  subira  subíramos  subiram  
-cpres    suba    subas    suba    subamos    subam    
-cimp     subisse subisses subisse subíssemos subissem 
-cfut     subir   subires  subir   subirmos   subirem  
-cond     subiria subirias subiria subiríamos subiriam 
-ivo              sobe     suba    subamos    subam    
-pp       subido                                       
-grd      subindo                                      
-conseguir :  model       seguir                                               
-pres         consigo     consegues    consegue    conseguimos    conseguem    
-perf         consegui    conseguiste  conseguiu   conseguimos    conseguiram  
-imp          conseguia   conseguias   conseguia   conseguíamos   conseguiam   
-fut          conseguirei conseguirás  conseguirá  conseguiremos  conseguirão  
-mdp          conseguira  conseguiras  conseguira  conseguíramos  conseguiram  
-cpres        consiga     consigas     consiga     consigamos     consigam     
-cimp         conseguisse conseguisses conseguisse conseguíssemos conseguissem 
-cfut         conseguir   conseguires  conseguir   conseguirmos   conseguirem  
-cond         conseguiria conseguirias conseguiria conseguiríamos conseguiriam 
-ivo                      consegue     consiga     consigamos     consigam     
-pp           conseguido                                                       
-grd          conseguindo                                                      
+obter :  model     ter                                                        
+pres     obtenho   obténs     obtém        obtemos     obtendes    obtêm      
+perf     obtive    obtiveste  obteve       obtivemos   obtivestes  obtiveram  
+imp      obtinha   obtinhas   obtinha      obtínhamos  obtínheis   obtinham   
+fut      obterei   obterás    obterá       obteremos   obtereis    obterão    
+mdp      obtivera  obtiveras  obtivera     obtivéramos obtivéreis  obtiveram  
+cpres    obtenha   obtenhas   obtenha      obtenhamos  obtenhais   obtenham   
+cimp     obtivesse obtivesses obtivéssemos obtivésseis obtivêsseis obtivessem 
+cfut     obtiver   obtiveres  obtiver      obtivermos  obtiverdes  obtiverem  
+cond     obteria   obterias   obteria      obteríamos  obteríeis   obteriam   
+ivo                obtém      obtenha      obtenhamos  obtende     obtenham   
+pp       obtido                                                               
+grd      obtendo                                                              
+abster :  model      ter                                                             
+pres      abstenho   absténs     abstém        abstemos     abstendes    abstêm      
+perf      abstive    abstiveste  absteve       abstivemos   abstivestes  abstiveram  
+imp       abstinha   abstinhas   abstinha      abstínhamos  abstínheis   abstinham   
+fut       absterei   absterás    absterá       absteremos   abstereis    absterão    
+mdp       abstivera  abstiveras  abstivera     abstivéramos abstivéreis  abstiveram  
+cpres     abstenha   abstenhas   abstenha      abstenhamos  abstenhais   abstenham   
+cimp      abstivesse abstivesses abstivéssemos abstivésseis abstivêsseis abstivessem 
+cfut      abstiver   abstiveres  abstiver      abstivermos  abstiverdes  abstiverem  
+cond      absteria   absterias   absteria      absteríamos  absteríeis   absteriam   
+ivo                  abstém      abstenha      abstenhamos  abstende     abstenham   
+pp        abstido                                                                    
+grd       abstendo                                                                   
+roer :  model  moer                                      
+pres    roo    roís    rói    roemos    roeis    roem    
+perf    roí    roeste  roeu   roemos    roestes  roeram  
+imp     roía   roías   roía   roíamos   roíeis   roíam   
+fut     roerei roerás  roerá  roeremos  roereis  roerão  
+mdp     roera  roeras  roera  roêramos  roêreis  roeram  
+cpres   roa    roas    roa    roamos    roais    roam    
+cimp    roesse roesses roesse roêssemos roêsseis roessem 
+cfut    roer   roeres  roer   roermos   roerdes  roerem  
+cond    roeria roerias roeria roeríamos roeríeis roeriam 
+ivo            rói     roa    roamos    roei     roam    
+pp      roído                                            
+grd     roendo                                           
+engolir :  model     dormir                                                   
+pres       engulo    engoles    engole    engolimos    engolis     engolem    
+perf       engoli    engoliste  engoliu   engolimos    engolistes  engoliram  
+imp        engolia   engolias   engolia   engolíamos   engolíeis   engoliam   
+fut        engolirei engolirás  engolirá  engoliremos  engolireis  engolirão  
+mdp        engolira  engoliras  engolira  engolíramos  engolíreis  engoliram  
+cpres      engula    engulas    engula    engulamos    engulais    engulam    
+cimp       engolisse engolisses engolisse engolíssemos engolísseis engolissem 
+cfut       engolir   engolires  engolir   engolirmos   engolirdes  engolirem  
+cond       engoliria engolirias engoliria engoliríamos engoliríeis engoliriam 
+ivo                  engole     engola    engolamos    engoli      engolam    
+pp         engolido                                                           
+grd        engolindo                                                          
+subir :  irreg                                                  
+pres     subo    sobes    sobe    subimos    subis     sobem    
+perf     subi    subiste  subiu   subimos    subistes  subiram  
+imp      subia   subias   subia   subíamos   subíeis   subiam   
+fut      subirei subirás  subirá  subiremos  subireis  subirão  
+mdp      subira  subiras  subira  subíramos  subíreis  subiram  
+cpres    suba    subas    suba    subamos    subais    subam    
+cimp     subisse subisses subisse subíssemos subísseis subissem 
+cfut     subir   subires  subir   subirmos   subirdes  subirem  
+cond     subiria subirias subiria subiríamos subiríeis subiriam 
+ivo              sobe     suba    subamos    subi      subam    
+pp       subido                                                 
+grd      subindo                                                
+conseguir :  model       seguir                                                             
+pres         consigo     consegues    consegue    conseguimos    conseguis     conseguem    
+perf         consegui    conseguiste  conseguiu   conseguimos    conseguistes  conseguiram  
+imp          conseguia   conseguias   conseguia   conseguíamos   conseguíeis   conseguiam   
+fut          conseguirei conseguirás  conseguirá  conseguiremos  conseguireis  conseguirão  
+mdp          conseguira  conseguiras  conseguira  conseguíramos  conseguíreis  conseguiram  
+cpres        consiga     consigas     consiga     consigamos     consigais     consigam     
+cimp         conseguisse conseguisses conseguisse conseguíssemos conseguísseis conseguissem 
+cfut         conseguir   conseguires  conseguir   conseguirmos   conseguirdes  conseguirem  
+cond         conseguiria conseguirias conseguiria conseguiríamos conseguiríeis conseguiriam 
+ivo                      consegue     consiga     consigamos     consigais     consigam     
+pp           conseguido                                                                     
+grd          conseguindo                                                                    
+ar :                                                                     
+pres       começo    começas    começa    começamos    começais    começam    
+perf       comecei   começaste  começou   começamos    começastes  começaram  
+imp        começava  começavas  começava  começávamos  começáveis  começavam  
+fut        começarei começarás  começará  começaremos  começareis  começarão  
+mdp        começara  começaras  começara  começáramos  começáreis  começaram  
+cpres      comece    comeces    comece    comecemos    comeceis    comecem    
+cimp       começasse começasses começasse começássemos começásseis começassem 
+cfut       começar   começares  começar   começarmos   começardes  começarem  
+cond       começaria começarias começaria começaríamos começaríeis começariam 
+ivo                  começa     comece    comecemos    começai     comecem    
+pp         começado                                                           
+grd        começando                                                          
+afeiçoar :  model      perdoar                                                       
+pres        afeiçoo    afeiçoas    afeiçoa    afeiçoamos    afeiçoais    afeiçoam    
+perf        afeiçoei   afeiçoaste  afeiçoou   afeiçoamos    afeiçoastes  afeiçoaram  
+imp         afeiçoava  afeiçoavas  afeiçoava  afeiçoávamos  afeiçoáveis  afeiçoavam  
+fut         afeiçoarei afeiçoarás  afeiçoará  afeiçoaremos  afeiçoareis  afeiçoarão  
+mdp         afeiçoara  afeiçoaras  afeiçoara  afeiçoáramos  afeiçoáreis  afeiçoaram  
+cpres       afeiçoe    afeiçoes    afeiçoe    afeiçoemos    afeiçoeis    afeiçoem    
+cimp        afeiçoasse afeiçoasses afeiçoasse afeiçoássemos afeiçoásseis afeiçoassem 
+cfut        afeiçoar   afeiçoares  afeiçoar   afeiçoarmos   afeiçoardes  afeiçoarem  
+cond        afeiçoaria afeiçoarias afeiçoaria afeiçoaríamos afeiçoaríeis afeiçoariam 
+ivo                    afeiçoa     afeiçoe    afeiçoemos    afeiçoai     afeiçoem    
+pp          afecto                                                                   
+grd         afeiçoando                                                               

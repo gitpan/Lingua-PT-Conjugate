@@ -44,9 +44,11 @@
 #            be able to return a hash. This is already possible, but I
 #            hadn't documented it. All this is fixed in Version
 #            1.01. Also, some tests have been added.
-#          
+#          - Put second person plural in 1.02, as suggested by
+#            Miguel, and fixed all bugs I found. I doubt 2nd plural is
+#            always correct. 
 # 
-$VERSION = '1.01' ;
+$VERSION = '1.02' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -266,11 +268,12 @@ use Exporter ;
 $vocs = "aeiouáàäâãéèëêíìïîóòöôõúùüû";
 $plainvoc = "aeiou";
 $accvoc = "áàäâãéèëêíìïîóòöôõúùüû";
+# Char => accent
 $only_acc = 
   {split("","á\'à\`ä\"â^ã~é\'è\`ë\"ê^í\'ì\`ï\"î^ó\'ò\`ö\"ô^õ~ú\'ù\`ü\"û^")};
+# Char => unaccentuated
 $no_acc = 
   {split("","áaàaäaâaãaéeèeëeêeíiìiïiîióoòoöoôoõoúuùuüuûu")};
-
 $vpat = "[$vocs]";
 $cons = 'qwrtypsdfghjklzxcvbnm';
 $cpat = "(?:[$cons]+|ç|gu)";
@@ -278,23 +281,21 @@ $wpat = "[ç$vocs$cons]";
 $letter = "ç$vocs$cons";
 
 # pres perf imp fut mdp  cpres cimp cfut cond ivo pp grd 
-
-
 # ##############  REGULAR EXPRESSIONS THAT MATCH VERB ENDINGS ############
 %endg = %{verbify( q"
-      o   [aeiín]s  [aeim] [eaio]mos [ae]?is [ae]m,
-      e?[íis]   [aei]ste  [eio][us] [aei]mos [aei]stes [aei]ram,
+      o   [aeiín]s  [aeim] [eaioí]mos [ae]?[ií]s [ae]m,
+      e?[íis]   [aeií]ste  [eio][us] [aeií]mos [aeií]stes [aeií]ram,
       (?:av|i)?a   (?:av|i)?as   (?:av|i)?a (?:av|áv|í|i)?[aá]mos
-      (?:av|áv|í|i)?[aá]eis (?:av|i)?am, 
+      (?:av|áv|í|i)?[aá]?eis (?:av|i)?am, 
       [aeio]rei [aeio]r[aá]s [aeio]r[aáâ] [aeio]r[ae]mos [aeio]reis
       [aeio]rão,
-      [aei]ra [aei]ras [aei]ra [aeiâáêéîí]ramos [aeiaeiâáêéîí]reis [aei]ram,
+      [aeií]ra [aeií]ras [aeií]ra [aeiâáêéîí]ramos [aeiaeiâáêéîí]reis [aeií]ram,
       [aeo] [ae]s [ae] [ae]mos [aei]s [ae]m,
       [ae]sse [ae]sses [ae]sse [aeâáêé]ssemos [aeiâáêéîí]sseis [ae]ssem,
       [aei]r [aei]res [aei]r [aei]rmos [aei]rdes [aei]rem, 
       [aeio]ria [aeio]rias [aeio]ria [aeio]r[iíî]amos
       [aeio]r[aeioâáêéîíóòô]eis [aeio]riam, 
-      [aeim] [ae] [ae]mos [ae]m ,
+      [aeim] [ae] [ae]mos (?:i|de|í) [ae]m ,
       (?:[aií]do|to) , [aeio]ndo " 
 				 )};
 
@@ -302,131 +303,135 @@ $letter = "ç$vocs$cons";
 # exit;
 
 # #################### REGULAR VERBS ENDINGS ####################
+# pres perf imp fut mdp  cpres cimp cfut cond ivo pp grd 
 %reg = ( 
 		"er" => verbify( q{
 		  o   es     e emos eis em,
 		  i   este  eu emos estes eram,
 		  ia   ias   ia íamos íeis iam,
 		  erei erás erá eremos ereis erão,
-		  era eras era êramos eram,
-		  a as a amos am,
-		  esse esses esse êssemos essem,
-		  er eres er ermos erem, 
-		  eria erias eria eríamos eriam,
-		  e a amos am ,
+		  era eras era êramos êreis eram,
+		  a as a amos ais am,
+		  esse esses esse êssemos êsseis essem,
+		  er eres er ermos erdes erem, 
+		  eria erias eria eríamos eríeis eriam,
+		  e a amos ei am ,
 		  ido , endo ,
 		}) ,
 		
+# pres perf imp fut mdp  cpres cimp cfut cond ivo pp grd 
 		"ar" => verbify( q{
 		  o   as     a  amos  ais     am , 
 		  ei   aste  ou  amos  astes  aram ,
 		  ava   avas  ava  ávamos áveis avam ,
 		  arei arás ará aremos  areis  arão,
-		  ara aras ara áramos aram ,
-		  e es e emos em ,
-		  asse  asses asse ássemos assem,
-		  ar ares ar armos arem,
-		  aria arias aria aríamos ariam,
-		  a e emos em ,
+		  ara aras ara áramos áreis aram ,
+		  e es e emos eis em ,
+		  asse  asses asse ássemos ásseis assem,
+		  ar ares ar armos ardes arem,
+		  aria arias aria aríamos aríeis ariam,
+		  a e emos ai em ,
 		  ado , ando ,
 		} ),
 		
+# pres perf imp fut mdp  cpres cimp cfut cond ivo pp grd 
 		"ir" => verbify( q{
 		  o   es     e  imos   is    em , 
 		  i   iste  iu  imos   istes  iram ,
-		  ia   ias   ia  íamos íieis iam ,
+		  ia   ias   ia  íamos íeis iam ,
 		  irei irás irá iremos ireis  irão,
-		  ira iras ira íramos iram,
-		  a as a amos am,
-		  isse isses isse íssemos issem,
-		  ir ires ir irmos irem,
-		  iria irias iria iríamos iriam,
-		  e a amos am ,
+		  ira iras ira íramos íreis iram,
+		  a as a amos ais am,
+		  isse isses isse íssemos ísseis issem,
+		  ir ires ir irmos irdes irem,
+		  iria irias iria iríamos iríeis iriam,
+		  e a amos i am ,
 		  ido , indo ,
 		} ),
 		
 		"or" => verbify(q{ 
-		  onho ões õe omos õem ,
-		  us useste ôs usemos useram , 
-		  unha unhas unha únhamos unham,
-		  orei orás orá oremos orão,
-		  usera useras usera uséramos useram,
-		  onha onhas onha onhamos onham,
-		  usesse usesses usesse uséssemos usessem,
-		  user useres user usermos userem,
-		  oria orias oria oríamos oriam,
+		  onho ões õe omos ondes õem ,
+		  us useste ôs usemos usestes useram , 
+		  unha unhas unha únhamos únheis unham,
+		  orei orás orá oremos oreis orão,
+		  usera useras usera uséramos uséreis useram,
+		  onha onhas onha onhamos onhais onham,
+		  usesse usesses usesse uséssemos uésseis usessem,
+		  user useres user usermos userdes userem,
+		  oria orias oria oríamos oríeis oriam,
 		  pp osto grd ondo
 		}),
 	   );
 
 # ################# AUXILIARY OR COMMON VERBS ################## 
+# pres perf imp fut mdp  cpres cimp cfut cond ivo pp grd 
 %verb = (
 		 "ter"=>verbify( q{ 
 		   tenho tens tem temos tendes têm ,
 		   tive tiveste teve tivemos tivestes tiveram,
 		   tinha tinhas tinha tínhamos tínheis tinham,
 		   terei terás terá teremos tereis terão,
-		   tivera tiveras tivera tivéramos tiveram,
-		   tenha tenhas tenha tenhamos tenham,
-		   tivesse tivesses tivéssemos tivessem,
-		   tiver tiveres tiver tivermos tiverem,
-		   cond teria terias teria teríamos teriam,
-		   ivo tem tenha tenhamos tenham ,
+		   tivera tiveras tivera tivéramos tivéreis tiveram,
+		   tenha tenhas tenha tenhamos tenhais tenham,
+		   tivesse tivesses tivéssemos tivésseis tivessem,
+		   tiver tiveres tiver tivermos tiverdes tiverem,
+		   cond teria terias teria teríamos teríeis teriam,
+		   ivo tem tenha tenhamos tende tenham ,
 		   tido tendo 
 		 } ),
 		 
 		 "ser"=>verbify( q{
-		   sou és é somos são, 
+		   sou és é somos sois são, 
 		   fui foste foi fomos fostes foram,
 		   era eras era éramos éreis eram,
-		   serei serás será seremos serão ,
-		   fora foras fora fôramos foram ,
-		   seja sejas seja sejamos sejam,
-		   fosse fosses fosse fôssemos fossem,
-		   for fores for formos forem,
-		   seria serias seria seríamos seriam,
-		   sê seja sejamos sejam,
+		   serei serás será seremos sereis serão ,
+		   fora foras fora fôramos fôreis foram ,
+		   seja sejas seja sejamos sejais sejam,
+		   fosse fosses fosse fôssemos fôsseis fossem,
+		   for fores for formos fordes forem,
+		   seria serias seria seríamos seríeis seriam,
+		   sê seja sejamos sede sejam,
 		   sido sendo
 		 } ),
 		 
 		 "estar"=>verbify( q{
-		   estou estás está estamos estão,
-		   estive estiveste esteve estivemos estiveram,
-		   estava estavas estava estávamos estavam,
-		   estarei estarás estará estaremos estarão,
-		   estivera estiveras estivera estivéramos estiverãm,
-		   esteja estejas esteja estejamos estejam,
-		   estivesse estivesses estivesse estivéssemos estivessem,
-		   estiver estiveres estiver estivermos estiverem,
-		   estaria estarias estaríamos estariam,
-		   está estéja estejamos estejam,
+		   estou estás está estamos estais estão,
+		   estive estiveste esteve estivemos estivestes estiveram,
+		   estava estavas estava estávamos estáveis estavam,
+		   estarei estarás estará estaremos estareis estarão,
+		   estivera estiveras estivera estivéramos estivéreis estiverãm,
+		   esteja estejas esteja estejamos estejais estejam,
+		   estivesse estivesses estivesse estivéssemos estivésseis estivessem,
+		   estiver estiveres estiver estivermos estiverdes estiverem,
+		   estaria estarias estaríamos estaríeis estariam,
+		   está estéja estejamos estai estejam,
 		   estado estando
 		 } ),
 		 
 		 "haver"=>verbify( q{
 		   hei hás há havemos haveis hão,
-		   houve houveste houve houvemos houveram,
-		   havia havias havia havíamos haviam,
-		   haverei haverás haverá haveremos haverão,
-		   houvera houveras houvera houveramos houveram,
-		   haja hajas haja hajamos hajam,
-		   houvesse houvesses houvesse houvéssemos houvessem,
-		   houver houveres houver houvermos houverem,
-		   haveria haverias haveria haveríamos haveriam,
-		   hajas haja hajamos hajam, havido  havendo
+		   houve houveste houve houvemos houvestes houveram,
+		   havia havias havia havíamos havíeis haviam,
+		   haverei haverás haverá haveremos havereis haverão,
+		   houvera houveras houvera houvéramos houvéreis houveram,
+		   haja hajas haja hajamos hajais hajam,
+		   houvesse houvesses houvesse houvéssemos houvésseis houvessem,
+		   houver houveres houver houvermos houverdes houverem,
+		   haveria haverias haveria haveríamos haveríeis haveriam,
+		   hajas haja hajamos havei hajam, havido  havendo
 		 } ),
 		 
-		 
+		 # pres perf imp fut mdp  cpres cimp cfut cond ivo pp grd 
 		 "pôr"=>verbify( q{  pôr
-		     ponho pões põe pomos põem ,
-  		     pus puseste pôs pusemos puseram , 
- 		     punha punhas punha púnhamos punham,
-		     porei porás porá poremos porão,
-			 pusera puseras pusera puséramos puseram,
-			 ponha ponhas ponha ponhamos ponham,
-			 cimp pusesse pusesses pusesse puséssemos pusessem,
-			 puser puseres puser pusermos puserem,
-			 poria porias poria poríamos poriam,
+		     ponho pões põe pomos pondes põem ,
+  		     pus puseste pôs pusemos pusestes puseram , 
+ 		     punha punhas punha púnhamos púnheis punham,
+		     porei porás porá poremos poreis porão,
+			 pusera puseras pusera puséramos puséreis puseram,
+			 ponha ponhas ponha ponhamos ponhais ponham,
+			 cimp pusesse pusesses pusesse puséssemos pusésseis pusessem,
+			 puser puseres puser pusermos puserdes puserem,
+			 poria porias poria poríamos poríeis poriam,
 			 pp posto grd pondo
 			 }),
 		 
@@ -516,6 +521,7 @@ sub verbify {
 	  
       if($p==5){				# If no 2nd person plural was found
         $res{$t}->[5] = $res{$t}->[4] ;
+		$res{$t}->[4] = undef ;		# MODIF 082899
       }
 	  # Ready for next tense
       $p = 0;
@@ -591,6 +597,7 @@ sub verbify {
   } 
   if($p==5){
     $res{$t}->[5] = $res{$t}->[4] ;
+	$res{$t}->[4] = undef ;		# MODIF 082899
   }
   
   foreach $t (@accent){
@@ -649,20 +656,28 @@ sub codify {
 	  @{$verb->{$v}}{keys(%$tmp)} =  values(%$tmp);
 	  
     } elsif( $v =~ /defectivos([1234])?/){ 
-	  # print "found defective -- $v,$1,$r --\n";
+		my $dnum = $1 ;
+	  # print "found defective -- $v,$dnum,$r --\n";
 	  foreach (split(/\s+/,$r)){
 		s/[\n\s]+//g;
 		next unless $_;
-		# print "found defective >>$v,$1,$_<<\n";
-		# $verb->{"defectivos". ($1 eq "3" ? "": "$1")}->{"$v"}= $1 ; 
-		# print " Def $v,$1,defectivos",($1 eq "3") ? "": "$1","\n";
-		# $verb->{defectivos}->{"$v"} = ($1 eq "3") ? "$v" : $1;
-		$verb->{"defectivos". ($1 eq "3" ? "": "$1")}->{"$_"}= $1 ; 
-		# print " Def $v,$1,defectivos",($1 eq "3") ? "": "$1","\n";
-		$verb->{defectivos}->{"$v"} = ($1 eq "3") ? "$_" : $1;
+		# print "found defective >>$v,$dnum,$_<<\n" if /abolir/ || /demolir/ ;
+		# $verb->{"defectivos". ($dnum eq "3" ? "": "$dnum")}->{"$v"}= $dnum ; 
+		# print " Def $v,$dnum,defectivos",($dnum eq "3") ? "": "$dnum","\n";
+		# $verb->{defectivos}->{"$v"} = ($dnum eq "3") ? "$v" : $dnum;
+		$verb->{"defectivos". ($dnum eq "3" ? "": "$dnum")}->{"$_"}= $dnum ; 
+		# print " Def $v,$dnum,defectivos",($dnum eq "3") ? "": "$dnum","\n";
+		$verb->{defectivos}->{"$v"} = ($dnum eq "3") ? "$_" : $dnum;
+		$verb->{defectivos}->{"$_"} = ($dnum eq "3") ? "$_" : $dnum;
+		my $tmpmodel = $verb->{$v}->{model} ;
+		delete($verb->{$v}) ; 
+		$verb->{$v} = conjug($v) ;
+		$verb->{$v}->{model} = $tmpmodel if defined($tmpmodel) ;
+		# print "defective :: ",join(",",keys(%{$verb->{defectivos}})),"\n" if /abolir/ || /demolir/ ;
 	  }
 	  
     } else {
+		# print "same_model : $v, $r\n" if $v =~ /abolir/ || $r =~ /demolir/ ;
       same_model($verb, "$v $r " ) ;
     }
     $v=shift @s; $c=shift @s; 
@@ -671,7 +686,7 @@ sub codify {
   if(@s){
 	warn "codify leaves out $#s elements, of which >$v< >$c< >$r< \n";
   }
-  
+
 }								# End codify
 
 # ### Make a list of knows verb names in the global variable \%verb.
@@ -728,10 +743,12 @@ sub verify {
 	(0,     "","","","","","","")  ;
   @s=@t=@u=();
   
+  # $w will contain the complaints
   my ($res,$w,@ckd) = ("","");
   
   # print "Verify $#_ , \n", join(", ", @_ ),"\n";
   $_ = shift ;
+  # Verb hash
   my $verb = ( ref($_[0]) eq "HASH") ? shift  : \%verb ;
   
   s/\#.*$//m;
@@ -742,6 +759,7 @@ sub verify {
   # @s = split(/(\w+)[\s\n]*([:=])/,$_ );
   # @s = split(/([\w\\]+)[\s\n]*([:=])/,$_ );
   
+  # Split into verb, separator, definition
   @s = split(/($wpat+)[\s\n]*([:=])/o,$_ );
   
   # print "Ver2 ",join(", ",@s);
@@ -750,9 +768,10 @@ sub verify {
   $v=shift @s;
   while( @s && ($c=shift @s) && ($c!~/[:=]/) ){$v=$c}
   
-                                # @u = reference of conjugation
+  # @u = reference of conjugation : One element = one tense
   @u= split("\n",shift @s);
-  shift(@u) ;
+  shift(@u) ;					# First elt is empty
+  
   
   while ( $c && $c=~/[:=]/ && $v && @u ){
 	
@@ -763,18 +782,19 @@ sub verify {
 	  shift @t;
       
 	  while ( defined($e=shift @u) && defined($d=shift @t) ){
-		
+
+		  # Remove extra spaces
 	      $e =~ s/\s+/ /g; $e =~ s/^\s+//; $e =~ s/\s+$//;
 	      $d =~ s/\s+/ /g; $d =~ s/^\s+//; $d =~ s/\s+$//;
-	      
+	      chomp $e; chomp $d ;
 	      $d2 = $d;
 	      $d2 =~ s/\\/\\\\/g;
 	      $d2 =~ s/([^\\])([\'\"\^\~])/$1\\$2/g; #'" 
 	      # $d2 =~ s/([^\\])([\'\"\^\~])/$1\\$2/g;#'" 
 	      $w .= join("", tabcol(-2,[
 					sprintf("  %3d ",++$errcnt),
-					split(/\s/,$d),
-					"\n  REF ", split(/\s/,$e)] ) )
+					split(/\s+/,$d),
+					"  REF ", split(/\s+/,$e)] ) )
 		  if ($e !~ /$d2/);
 	      # print ">$e<\n>$d2<\n" if ($e !~ /$d2/);a
 	  }
@@ -974,13 +994,13 @@ sub conjug {
   # @t = @tense;
   # }
   
-  if( defined($v) && $v=~/^ [1-4,6] $/x ){
+  if( defined($v) && $v=~/^ [1-6] $/x ){
     @p = ($v);
-    while(($v=shift) && $v=~ /^[1-4,6] $/x){ push @p,$v};
+    while(($v=shift) && $v=~ /^[1-6] $/x){ push @p,$v};
   } else {
       # @p = (1..4,6) unless @p ;
   }
-  @p = (1..4,6) unless @p ;
+  @p = (1..6) unless @p ;
   # print "VERB  ",join(",",@v);
   # print "\nTENSE ",join(",",@t);
   # print "\nPERS  ",join(",",@p),"\n";
@@ -1019,16 +1039,16 @@ sub conjug {
     if   ( $v =~ /g[ei]r$/ )    {  $modif = \&soft_g }
     elsif( $v =~ /c[ei]r$/ )    {  $modif = \&soft_c }
     elsif( $v =~ /g[ao]r$/ )    {  $modif = \&hard_g }
-    elsif( $v =~ /çar$/ )    {  $modif = \&cedilla }
+    elsif( $v =~ /çar$/ )       {  $modif = \&cedilla }
     elsif( $v =~ /c[ao]r$/ )    {  $modif = \&hard_c }
     elsif( $v =~/gu[ei]r$/ )    {  $modif = \&end_gu }
     elsif( $v =~ /[^g]uir$/)    {  $modif = \&end_uir }
     elsif( $v =~ /air$/)        {  $verb->{$v}->{model} = "sair" 
-									 unless $v eq "sair" }
+									   unless $v eq "sair" }
     elsif( $v =~ /oer$/)        {  $verb->{$v}->{model} = "moer" 
-									 unless $v eq "moer" }
+									   unless $v eq "moer" }
     elsif( $v =~ /oar$/)        {  $verb->{$v}->{model} = "perdoar" 
-									 unless $v eq "perdoar" }
+									   unless $v eq "perdoar" }
     elsif( $v =~ /oiar$/ && $v ne "boiar" )        {  
 	  $verb->{$v}->{model} = "boiar" ; 
 	  # $modif = \&end_oiar ;
@@ -1051,7 +1071,7 @@ sub conjug {
 					defined($verb->{$v}->{model}) ?
 						("model",$verb->{$v}->{model}) :
 							("irreg","") : ("",""), 
-							("","","") ; # Assume @p == 5 !!!
+							("","","","") ; # Assume @p == 5 !!!
 		# Avoid putting too many columns/rows
 		if( @p != @res )
 		{
@@ -1066,7 +1086,8 @@ sub conjug {
       warn " Root $v -> $root ,$cpat,of unexpected kind" unless
         (($rr,$vr,$cr) = 
          ($root  =~  /^ (.*) ([$vocs]+) ($cpat* \^?) $/ox ))
-		  || $root=~/^ $cpat* \^? $/ox ;  
+		  || $root=~/^ $cpat* \^? $/ox && ($rr = $root || 1) ;  
+
 	  # The \^? serves only for p^or
 	  # print "Root $root yields ($rr,$vr,$cr,$edg)\n";
 	  
@@ -1095,20 +1116,19 @@ sub conjug {
       }
 	  
 	  
-      foreach $t (@t){ 
-		
+      foreach $t (@t)			# Loop over tenses
+	  {
         next unless defined($reg{er}->{$t});
 		
         push @res, $long ? $long_tense{$t} : $t  if $verbose ;
         
-        foreach $p (@p){
-          
+        foreach $p (@p)			# Loop over persons
+		{
 		  # Is it explicitly defined ?
 		  $ex = ($w = $verb->{$v}->{$t}->[$p-1])?1:0 ;
 		  
-		  if(!$w && $m &&
-			 ($y = $verb->{$m}->{$t}->[$p-1]) ){ 
-			
+		  if(!$w && $m && ($y = $verb->{$m}->{$t}->[$p-1]) )
+		  { 
 			# pass from explicit model to conjd. form.
 			if($prefix){                    
 			  $y = substr($y,$missing); # SUSPICIOUS
@@ -1136,7 +1156,13 @@ sub conjug {
 			  ($vy,$cy,$ey) = $y  =~ 
 				/ ($vpat+) ($cpat?) ($endg{cpres}->[0]) $/x;
 			# print "Cpres rule $y ($vy,$cy,$ey) <$endg{cpres}->[0]> \n";
-			$y=  ($cr eq $cy) ? "$rr$vy$cy" : "$rr$vy$cr" ;
+			$y = (!defined($cr) || defined($cy) && ($cr eq $cy)) ? "$rr$vy$cy" : "$rr$vy$cr" ;
+			# $|=1;
+			# print "cr=$cr, " ;
+			# print "cy=$cy, " ;
+			# print "rr=$rr, " ;
+			# print "vy=$vy\n" ;
+
 			$w = "$y$reg{$edg}->{cpres}->[$p-1]";
 		  }                
 		  
@@ -1155,7 +1181,7 @@ sub conjug {
 				$vy=$cy=$ey="";
 				warn "Cpassad bug $y ($vy,$cy,$ey)" unless 
 				  ($vy,$cy,$ey) = $y  =~ 
-					/ ($vpat+) ($cpat?)($endg{$perf}->[0]) $/x;
+					/ ($vpat+) ($cpat?)($endg{perf}->[0]) $/x;
 				
 				$y=  ($cr eq $cy) ? "$rr$vy$cr" : "$rr$vy$cy" ;
 			  }
@@ -1189,10 +1215,18 @@ sub conjug {
 			  } else {
 				$y = $verb->{$m}->{cpres}->[$p-1];
 				$vy=$cy=$ey="";
-				warn "Ivo bug $y , $p,  ($vy,$cy,$ey) " unless 
-				  ($vy,$cy,$ey) = $y  =~ 
-					/ ([$vocs]) ($cpat) ($endg{cpres}->[$p-1]) $/x;
-				# print "-$endg{cpres}->[$p-1]-$y-$1-$2-$3\n";
+				if( $p != 5 )
+				{
+					warn "Ivo bug $y , $p,  ($vy,$cy,$ey) " unless 
+						($vy,$cy,$ey) = $y  =~ 
+							/ ([$vocs]) ($cpat) ($endg{cpres}->[$p-1]) $/x;
+					# print "-$endg{cpres}->[$p-1]-$y-$1-$2-$3\n";
+				} else {
+					$ey = "i";
+					warn "Ivo bug $y , $p,  ($vy,$cy,$ey) (BIS)" unless 
+						($vy,$cy) = $y  =~ 
+							/ ([$vocs]) ($cpat)  /x;
+				}
 				$y= "$rr$vy$cr$ey";
 			  }
 			}
@@ -1211,16 +1245,23 @@ sub conjug {
 			$w =~ s/ \( ([^\|\)]*) \|? .* \) /$1/gx; 
 		  }
 		  
-		  if($verb->{defectivos}->{$v}){
-# Is this code ever used ?
-			# print "Defectivo\n";
-			if( $verb->{defectivos}->{$v}=~ /[12]/ &&
-				
-				!( $reg{$edg}->{$t}->[$p-1] =~
+		  if( $verb->{defectivos}->{$v} ){
+# Is this code ever used ? 
+# Answer : YES (082899)
+			  # print "Defectivo\n";
+			  # my $tmp = $reg{$edg}->{$t}->[$p-1] ;
+			  # $|=1;print STDERR ">> $edg, $t, $p, $tmp <<\n" ;
+			  # $tmp = $t ;
+			  # $tmp = $v ;
+			  # $tmp = $p ;
+
+			if(  $verb->{defectivos}->{$v} =~ /[12]/ && 
+				 defined( $reg{$edg}->{$t}->[$p-1] ) &&
+				 !( $reg{$edg}->{$t}->[$p-1] =~
 				   /["^$vocs"]*["$vocs"]["^$vocs"]*["$vocs"]/o ||
 				   $reg{$edg}->{$t}->[$p-1] =~
 				   /["^$vocs"]*(["$vocs"])/o && 
-				   ($1 eq "i" ||  $1 eq "í" ||(print("AAA\n") && 0)||
+				   ($1 eq "i" ||  $1 eq "í" || # (print("AAA\n") && 0)||
 					$verb->{defectivos}->{$v}==2 && $1 eq "e") 
 				 )
 				|| $verb->{defectivos}->{$v} == 4 && $p!=3 && $p!=6
@@ -1241,9 +1282,10 @@ sub conjug {
 		  
 		  push @res, $w ;
 		  $res{$t}->[$p] = $w;
-        }
-	  }
-	} else {					# Regular Verb
+	  }							# End loop over persons
+	}							# End loop over tenses
+								# ####################################
+  } else {						# Regular Verb
 	  
       foreach $t (@t){  
 		
@@ -1261,16 +1303,16 @@ sub conjug {
 			
 			if($verb->{defectivos}->{$v}){
 #			  print "Def\n";
+				# print "-- $verb->{defectivos}->{$v} --\n";
 			  if( $verb->{defectivos}->{$v}=~ /[12]/ &&
-				  
 				  !( $reg{$edg}->{$t}->[$p-1] =~
 					 /["^$vocs"]*["$vocs"]["^$vocs"]*["$vocs"]/o ||
 					 $reg{$edg}->{$t}->[$p-1] =~
 					 /["^$vocs"]*(["$vocs"])/o && 
 					 ($1 eq "i" || $1 eq "í" || 
-					  $verb->{defectivos}->{$v}==2 && $1 eq "e") 
+					  "verb->{defectivos}->{$v}" eq "2" && $1 eq "e") 
 				   )
-				  || $verb->{defectivos}->{$v} == 4 && $p!=3 && $p!=6
+				  || "$verb->{defectivos}->{$v}" eq "4" && $p!=3 && $p!=6
 				  || $verb->{defectivos}->{$v} eq "precaver" && 
 				  ( $t eq "pres" && $p!=4 || $t =~ /(cpres|ivo)/
 				  )
@@ -1374,7 +1416,7 @@ sub tabcol {
   # print "tabcol received $ncols, $#$l ,sep=$sep, \@\$l=",join(" ,",@$l),"\n";
   
   $ncols = 1 unless $ncols;
-  $ncols = ($#{$l} + 1)/(-$ncols) if($ncols<0);
+  $ncols = int(($#{$l} + 1)/(-$ncols)+0.9999) if($ncols<0);
 
   # Maximum widtdth of each column
   my @mx = (0) x $ncols ;		# not 0 x $ncols or whatever 
@@ -1535,11 +1577,11 @@ sentir:
 sentir = ressentir assentir consentir mentir desmentir
 ir:
   vou  vais  vai vamos ides vão ,
-  fui  foste foi fomos foram , 
-  cpres vá vás vá vamos vão, 
-  fosse fosses fosse fôssemos fossem,
-  for fores for formos foram
-  ivo vai ide vamos vão
+  fui  foste foi fomos fostes foram , 
+  cpres vá vás vá vamos vades vão, 
+  fosse fosses fosse fôssemos fôsseis fossem,
+  for fores for formos fordes foram
+  ivo vai ide vamos ide vão
 valer:
   valho vales vale valemos valem,
   cpres valha etc
@@ -1547,12 +1589,12 @@ valer:
 prover: perf provi etc pp provido model ver 
 rever:  model ver 
 sair:
-  saio sais sai saímos saem,
-  saí saíste saiu saímos saíram,
-  saía saías saía saíamos saíam
-  mdp saíra saíras saíra saíramos saíram
-  cpres saia saias saia saiamos saiam
-  ivo   sai saia saiamos saiam
+  saio sais sai saímos saís saem,
+  saí saíste saiu saímos saístes saíram,
+  saía saías saía saíamos saíeis saíam
+  mdp saíra saíras saíra saíramos saíreis saíram
+  cpres saia saias saia saiamos saiais saiam
+  ivo   sai saia saiamos saí saiam
 abrir: pp aberto
 abrir = entreabrir
 saber:  
@@ -1584,7 +1626,7 @@ trazer:
   cpres traga etc
   cond traria etc
   ivo traz traga etc
-ferir:  firo cpres fira ivo fere fira etc
+ferir:  firo cpres fira ivo fere fira firamos feri firam 
 ferir = conferir preferir transferir gerir digerir preterir
     servir divertir advertir reflectir repetir compelir vestir sugerir
 seguir:
@@ -1607,13 +1649,13 @@ averiguar:
   cpres averigúe averigúes  averigúe .  averigúem 
   ivo averigua
 pedir: 
-  peço cpres peça etc ivo pede peça etc
+  peço cpres peça etc ivo pede peça meçamos    medi meçam
 ver:  
   vejo vês  vê vemos vêem,
   vi    viste viu vimos viram,
   mdp vira etc
   cpres veja vejas veja vejamos vejam
-  ivo vê
+  ivo vê veja  vejamos vede vejam
   pp visto
 ver = antever antrever prever rever 
 vir:  
@@ -1634,15 +1676,15 @@ ouvir:
   ivo ouve oiça 
   # alternative : ivo . oiça 
 rir:
-  rio ris ri rimos riem
-  cpres ria rias ria ríamos riam
-  ivo ri ria riamos riam 
+  rio ris ri rimos rides riem
+  cpres ria rias ria ríamos ríeis riam
+  ivo ri ria riamos ride riam 
 fugir: 
   fujo foges foge fugimos fogem ivo foge
 dormir:   durmo , cpres durma 
 cobrir:   cubro cpres cubra pp coberto 
 cobrir = encobrir descobrir
-agredir:  agrido agrides etc , cpres agrida etc ivo agride
+agredir:  agrido agrides etc , cpres agrida etc ivo agride 
 agredir = prevenir progredir transgredir
 
                                 # More irregular verbs
@@ -1656,15 +1698,15 @@ subir :
 
 reaver:
        x x x  reavemos reaveis x ,
-       reouve reouveste reouve reouvemos reouveram,
-       reavia reavias reavia reavíamos reaviam,
-       reaverei reaverás reaverá reaveremos reaverão,
-       reouvera reouveras reouvera reouveramos reouveram,
-       x x x x x,
-       reouvesse reouvesses reouvesse reouvéssemos reouvessem,
-       reouver reouveres reouver reouvermos reouverem,
-       reaveria reaverias reaveria reaveríamos reaveriam,
-       x x x x, reavido  reavendo
+       reouve reouveste reouve reouvemos reouvestes reouveram,
+       reavia reavias reavia reavíamos reavíeis reaviam,
+       reaverei reaverás reaverá reaveremos reavereis reaverão,
+       reouvera reouveras reouvera reouvéramos reouvéreis reouveram,
+       x x x x x x,
+       reouvesse reouvesses reouvesse reouvéssemos reouvésseis reouvessem,
+       reouver reouveres reouver reouvermos reouverdes reouverem,
+       reaveria reaverias reaveria reaveríamos reaveríeis reaveriam,
+       x x x x x, reavido  reavendo
 
 pedir = despedir medir impedir expedir
 # Double Particípio Passado

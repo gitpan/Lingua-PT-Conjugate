@@ -12,8 +12,8 @@
 # 
 
 use Lingua::PT::Conjugate ;
-use Lingua::PT::Accent_iso_8859_1;
-
+# use Lingua::PT::Accent_iso_8859_1;
+import Lingua::PT::Accent_iso_8859_1 qw(iso2asc asc2iso);
 exit 0 unless @ARGV;
 
 $rfile = "reference";

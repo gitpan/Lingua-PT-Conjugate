@@ -66,9 +66,9 @@ srand(time());
           "pp"   =>"Particípio Passado", #'
           "grd"  =>"Gerundivo" );
 
-@subs = qw{ eu tu ele/ela nós você eles/elas }; #'
+@subs = qw{ eu tu ele/ela nós vós eles/elas }; #'
 %subs = ('eu', 1, 'tu', 2, 'ele', 3, 'ela', 3, 'nos', 4, "n'os", 4 ,
-         'nós', 4, 'você', 5, 'elas', 6, 'eles', 6 ); #'
+         'nós', 4, 'vós', 5, 'elas', 6, 'eles', 6 ); #'
 
 
 $flunked_name = '.flunked_verbs' ;
@@ -158,8 +158,8 @@ while(1) {
     $errors = 0;
     foreach $p (0..$#subs){
 
-        next if( $p == 4 || $t eq "ivo" && $p==0);
-
+        # next if( $p == 4 || $t eq "ivo" && $p==0);
+	next if( $t eq "ivo" && $p==0);
         # $a is the prompt string
         if ($t ne "pp" && $t ne "grd" ){
             

@@ -89,9 +89,8 @@ The optional 'tense' arguments consist in a list of
 
 The optional 'person' arguments consist in a list of numbers
 representing the person at which the verb is conjugated : 'I'=1,
-'you'=2, 'she/he'=3, 'we'=4, 'they'=6. Second person plural, which
-would be '5' is not implemented. All numbers other that 1-4,6 are
-ignored. Default is 1-4,6.
+'you'=2, 'she/he'=3, 'we'=4, 'you(plural)'=5 'they'=6. All numbers
+other that 1-6 are ignored. Default is 1-6.
 
   Now, for the inner details :
 
@@ -119,13 +118,15 @@ presente), cimp (conjuntivo imperfeito), cfut (conjuntivo futuro), cond
 (gerundivo).
 
 The conjugated forms must correspond to 1st person, second, third,
-first plural, (optionally, second plural) and third plural; except for
+first plural, second plural and third plural; except for
 the imperative tense (shortname : "ivo") which starts at 2nd; and past
 participle ("pp") and gerundivo ("grd") that have a single form
 only. The conjugated forms may be regexes that match a correct form
 (and only a correct form), when more than one form is ok (this is the
-case of the "verbos abundivos"). The second person plural is omitted,
-because it is little used. It should be added, eventually.
+case of the "verbos abundivos"). 
+
+The second person plural has been added in version 1.02, and is
+probably buggy.
 
 Shorthand notation may be used :
 

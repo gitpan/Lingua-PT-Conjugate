@@ -11,10 +11,22 @@
 # (C) Copyright 1998 Etienne Grossmann
 # 
 
+=head1 NAME - assert
+
+=head1 SYNOPSIS
+
+   assert verbname(s)
+
+Replace in the file 'reference' the present entry for verbname w/ the
+output of 'conjug'.
+
+=cut
+
 use Lingua::PT::Conjugate ;
 # use Lingua::PT::Accent_iso_8859_1;
 import Lingua::PT::Accent_iso_8859_1 qw(iso2asc asc2iso);
-exit 0 unless @ARGV;
+
+exec system qq(perldoc $0) unless @ARGV;
 
 $rfile = "reference";
 die  "file >$rfile< not found" unless -f $rfile;

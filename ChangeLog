@@ -1,0 +1,22 @@
+2001-08-06  Etienne Grossmann  <etienne@isr.ist.utl.pt>
+
+	* Applied patch to fix "pedir", sent by Itai Nahshon
+	  <itai@siftology.com> 
+
+2001-08-01
+
+	* Changed name of this file to ChangeLog
+
+	* Fixed influir, added construir in Conjugate.pm
+
+	* Uh oh, building process for unconj is broken
+
+2000 / 12 / 16
+- Slight change to credits in README, unconj and UnConjugate.pmfiles
+
+2000 / 12 / 08 
+- Added this file
+- Added unconjugation stuff
+
+2000 / [0-12]
+ Added some irregular verb patterns in past months

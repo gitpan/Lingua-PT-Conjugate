@@ -86,7 +86,7 @@ cpres      impeça    impeças    impeça    impeçamos    impeçais    impeçam
 cimp       impedisse impedisses impedisse impedíssemos impedísseis impedissem 
 cfut       impedir   impedires  impedir   impedirmos   impedirdes  impedirem  
 cond       impediria impedirias impediria impediríamos impediríeis impediriam 
-ivo                  impede     impeça    immeçamos    immedi      immeçam    
+ivo                  impede     impeça    impeçamos    impedi      impeçam    
 pp         impedido                                                           
 grd        impedindo                                                          
 prevenir :  model      agredir                                                       
@@ -203,7 +203,7 @@ cpres    peça    peças    peça    peçamos    peçais    peçam
 cimp     pedisse pedisses pedisse pedíssemos pedísseis pedissem 
 cfut     pedir   pedires  pedir   pedirmos   pedirdes  pedirem  
 cond     pediria pedirias pediria pediríamos pediríeis pediriam 
-ivo              pede     peça    meçamos    medi      meçam    
+ivo              pede     peça    peçamos    pedi      peçam    
 pp       pedido                                                 
 grd      pedindo                                                
 sentir :  irreg                                                        
@@ -541,7 +541,7 @@ cpres       despeça    despeças    despeça    despeçamos    despeçais    despeça
 cimp        despedisse despedisses despedisse despedíssemos despedísseis despedissem 
 cfut        despedir   despedires  despedir   despedirmos   despedirdes  despedirem  
 cond        despediria despedirias despediria despediríamos despediríeis despediriam 
-ivo                    despede     despeça    desmeçamos    desmedi      desmeçam    
+ivo                    despede     despeça    despeçamos    despedi      despeçam    
 pp          despedido                                                                
 grd         despedindo                                                               
 expedir :  model     pedir                                                    
@@ -554,7 +554,7 @@ cpres      expeça    expeças    expeça    expeçamos    expeçais    expeçam
 cimp       expedisse expedisses expedisse expedíssemos expedísseis expedissem 
 cfut       expedir   expedires  expedir   expedirmos   expedirdes  expedirem  
 cond       expediria expedirias expediria expediríamos expediríeis expediriam 
-ivo                  expede     expeça    exmeçamos    exmedi      exmeçam    
+ivo                  expede     expeça    expeçamos    expedi      expeçam    
 pp         expedido                                                           
 grd        expedindo                                                          
 desfazer :  model      fazer                                                         
@@ -1169,13 +1169,13 @@ ivo                    afeiçoa     afeiçoe    afeiçoemos    afeiçoai     afeiçoe
 pp          afecto                                                                   
 grd         afeiçoando                                                               
 influir :  irreg                                                              
-pres       influo    influis    influi    influímos    influis     influem    
+pres       influo    influis    influi    influímos    influís     influem    
 perf       influí    influíste  influiu   influímos    influístes  influíram  
 imp        influía   influías   influía   influíamos   influíeis   influíam   
 fut        influirei influirás  influirá  influiremos  influireis  influirão  
 mdp        influíra  influíras  influíra  influíramos  influíreis  influíram  
 cpres      influa    influas    influa    influamos    influais    influam    
-cimp       influisse influisses influisse influíssemos influísseis influissem 
+cimp       influísse influísses influísse influíssemos influísseis influíssem 
 cfut       influir   influires  influir   influirmos   influirdes  influirem  
 cond       influiria influirias influiria influiríamos influiríeis influiriam 
 ivo                  influi     influa    influamos    influí      influam    

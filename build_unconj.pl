@@ -54,7 +54,8 @@ sub build_entries
     my @res ;
     my $vdb = shift ;
     my $vcnt = 0 ;
-    print "build_entries\n     0 ";
+    print "build_entries\n";
+    printf ("%-6d ",0);
     while( @_ )
     {
 	print "." if ($vcnt % 20) == 19 ;
@@ -74,8 +75,8 @@ sub build_entries
 	    $w = substr($w,$i) ;
 	    if( $w )
 	    {			# Add the ending
-#		$vdb->{$w}->{$t}->[$p]->{substr($v,$i)} = 1 ; 
-		$vdb->{$w}->{$t}->[$p]->{$v} = 1 ; 
+		$vdb->{$w}->{$t}->[$p]->{substr($v,$i)} = 1 ; 
+##              $vdb->{$w}->{$t}->[$p]->{$v} = 1 ; 
 	    }
 	}
     }
@@ -114,13 +115,40 @@ $| = 1 ;
 
 $vf = "all_infinitives" ;	# Verb file containing infinitives
 # $vf = "limited_list" ;
+$outfile = "all_output" ;	# Output file
+
+
+while (@ARGV) {
+  $opt = shift ;
+  if      ($opt eq "-i") {
+
+    $vf = shift;
+    print "Will use list '$vf'\n";
+
+  } elsif ($opt eq "-o") {
+
+    $outfile = shift;
+    print "Will output to '$outfile'\n";
+
+  } else {
+    print <<EOF ;
+Usage : 
+
+    $0 [-i infinitive_file] [-o output_file]
+
+EOF
+  }
+}
+
+
+
 open AA,"<$vf" or die "Can't open list of infinitives >$vf<\n" ;
 @allv = <AA> ;
 close AA ;
 # @allv = ("submeter");
 $vdb = {};
+print "There are ",0+@allv," verbs\n";
 
-$outfile = "all_output" ;	# Output file
 build_entries $vdb,@allv ;
 @r = dump_entries($vdb) ;
 open AA,">$outfile" or
@@ -128,6 +156,6 @@ open AA,">$outfile" or
 print AA join "\n", @r,"\n" ;
 close AA;
 
-print "Done";
+print "\nDone\n";
 
 

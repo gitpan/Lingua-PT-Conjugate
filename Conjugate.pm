@@ -56,7 +56,7 @@
 ##
 # 12  2000 - Incorporate Unconjugate-related stuff
 
-$VERSION = '1.06' ;
+$VERSION = '1.07' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -299,7 +299,7 @@ $letter = "ç$vocs$cons";
       [aeio]rão,
       [aeií]ra [aeií]ras [aeií]ra [aeiâáêéîí]ramos [aeiaeiâáêéîí]reis [aeií]ram,
       [aeo] [ae]s [ae] [ae]mos [aei]s [ae]m,
-      [ae]sse [ae]sses [ae]sse [aeâáêé]ssemos [aeiâáêéîí]sseis [ae]ssem,
+      [aeí]sse [aeí]sses [aeí]sse [aeâáêéí]ssemos [aeiâáêéîí]sseis [aeí]ssem,
       [aei]r [aei]res [aei]r [aei]rmos [aei]rdes [aei]rem, 
       [aeio]ria [aeio]rias [aeio]ria [aeio]r[iíî]amos
       [aeio]r[aeioâáêéîíóòô]eis [aeio]riam, 
@@ -791,7 +791,7 @@ sub verify {
 	
 	
 	if($c eq ":"){ 
-	  # !!! HERE : Would be great no to do call conjug 
+	  # !!! HERE : Would be great not to do call conjug 
 	  @t = split("\n",conjug(  $verb,"x" , $v ));
 	  shift @t;
       
@@ -923,32 +923,33 @@ sub end_uir {
 # Test for defectiveness
 sub is_defectivo 
 {
-	my ( $verb, $v, $t, $p ) = @_ ;
-	return 0 unless exists( $verb->{defectivos}->{$v} ) ;
-	# Check that verb looks like a verb 
-	unless( $v =~ /^(.*)([aeioô]r)$/ ){ 
-	  warn "$v does not look like a verb." ;
-	  next;
-	}
-	# Extract Root and Ending
-	$edg = $2;
-	$root = $1; 
-	return 1 if ( $verb->{defectivos}->{$v} =~ /[12]/ && 
-				  defined( $reg{$edg}->{$t}->[$p-1] ) &&
-				  !( $reg{$edg}->{$t}->[$p-1] =~
-					 /["^$vocs"]*["$vocs"]["^$vocs"]*["$vocs"]/o ||
-					 $reg{$edg}->{$t}->[$p-1] =~
-					 /["^$vocs"]*(["$vocs"])/o && 
-					 ($1 eq "i" ||  $1 eq "í" || 
-					  $verb->{defectivos}->{$v}==2 && $1 eq "e") 
-					 )
-				  || $verb->{defectivos}->{$v} == 4 && $p!=3 && $p!=6
-				  || $verb->{defectivos}->{$v} eq "precaver" && 
-				  ( $t eq "pres" && $p!=4 || $t =~ /(cpres|ivo)/ )
-				  || $verb->{defectivos}->{$v} eq "adequar" && 
-				  ( $t =~ /c?pres/ && $p!=4 || $t eq "ivo" )
-				  ) ;
-	return 0 ;
+  my ( $verb, $v, $t, $p ) = @_ ;
+  return 0 unless exists( $verb->{defectivos}->{$v} ) ;
+  # Check that verb looks like a verb 
+  unless( $v =~ /^(.*)([aeioô]r)$/ ){ 
+    warn "$v does not look like a verb." ;
+    next;
+  }
+  # Extract Root and Ending
+  $edg = $2;
+  $root = $1; 
+
+  return 1 if ( $verb->{defectivos}->{$v} =~ /[12]/ && 
+		defined( $reg{$edg}->{$t}->[$p-1] ) &&
+		!( $reg{$edg}->{$t}->[$p-1] =~ 
+		   /["^$vocs"]*["$vocs"]["^$vocs"]*["$vocs"]/o ||
+		   $reg{$edg}->{$t}->[$p-1] =~
+		   /["^$vocs"]*(["$vocs"])/o && 
+		   ($1 eq "i" ||  $1 eq "í" || 
+		    "$verb->{defectivos}->{$v}" eq "2" && $1 eq "e") 
+		 )
+		|| "$verb->{defectivos}->{$v}" eq "4" && $p!=3 && $p!=6
+		|| ("precaver" eq $verb->{defectivos}->{$v}) && 
+		( $t eq "pres" && $p!=4 || $t =~ /(cpres|ivo)/ )
+		|| ("adequar" eq $verb->{defectivos}->{$v}) && 
+		( $t =~ /c?pres/ && $p!=4 || $t eq "ivo" )
+	      ) ;
+  return 0 ;
 }
 
 # #################### THE MAIN FUNCTION IN THIS FILE ####################
@@ -1656,7 +1657,7 @@ averiguar:
   cpres averigúe averigúes  averigúe .  averigúem 
   ivo averigua
 pedir: 
-  peço cpres peça etc ivo pede peça meçamos    medi meçam
+  peço cpres peça etc ivo pede peça peçamos    pedi peçam
 ver:  
   vejo vês  vê vemos vêem,
   vi    viste viu vimos viram,
@@ -1699,9 +1700,18 @@ escrever: pp escrito
 escrever = descrever inscrever reescrever prescrever
 dormir =  abolir demolir engolir
 
-influir : ivo . . . influí .
+influir: . . . . influís .
+          ivo . . . influí .
+          cimp influísse influísses influísse . . influíssem
 
-subir : 
+construir: . constr(ó|u)is constr(ó|u)i . . constr(o|u)em
+         model influir
+destruir: . destr(ó|u)is destr(ó|u)i . . destr(o|u)em
+         model influir
+
+# Won't do construir = destruir
+
+subir: 
   subo sobes sobe subimos sobem ivo sobe
 
 
@@ -1717,6 +1727,7 @@ reaver:
        reaveria reaverias reaveria reaveríamos reaveríeis reaveriam,
        x x x x x, reavido  reavendo
 pedir = despedir medir impedir expedir
+       
 # Double Particípio Passado
 aceitar: pp aceit(o|e|ado)
 afeiçoar: pp afe(ct|içoad)o

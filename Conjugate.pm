@@ -47,8 +47,9 @@
 #          - Put second person plural in 1.02, as suggested by
 #            Miguel, and fixed all bugs I found. I doubt 2nd plural is
 #            always correct. 
-# 
-$VERSION = '1.02' ;
+#          - Code cleaning and commenting, fixed doc in 1.03.
+#         
+$VERSION = '1.03' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -186,7 +187,7 @@ use Exporter ;
 # Yes, this package is a namespace polluter. 
 @EXPORT = qw(conjug); 
 
-@EXPORT_OK = qw( cedilla codify diffstr end_gu end_oiar end_uir
+@EXPORT_OK = qw( cedilla codify end_gu end_oiar end_uir
 				 end_zer hard_c hard_g list_verbs locate same_model
 				 soft_c soft_g tabcol tabrow verbify verify @tense
 				 %tense %alt_tense %long_tense %endg %reg %verb
@@ -474,127 +475,124 @@ sub same_model {
 sub verbify {
   
   my ($a,$t,$tc,$p,%res,$x,$y,$root,$edg,@accent);
-  $tc = 0;
+  $t = $tense[$tc=0];			# $tc = current tense, $t = it's name
+  $p = 0;						# $p = current person.
+
   %res = ();					# %empty;
   
-  $a = $_[0];
+  $a = $_[0];					# Take in the arg
   
-  $a =~ s/,/ , /g; 
+  $a =~ s/,/ , /g;				# prepare for split
   $a =~ s/^\s+//;
   $a =~ s/\s+$//;
-  @_ = split(/\s+/,$a);
+  @_ = split(/\s+/,$a);			# Replace @_
   
   # print "verbify >$a<\n";
   
-  $t = $tense[$tc=0];
-  $p = 0;
-  
+  # There may not be a root, see e.g. initial calls to verbify.
   if( $_[0] =~ /([aeioô]r)$/ ){ 
+	  
 	
-    # Extract Root and Ending
-    $edg  = $1;
-    $root = shift; 
-    $root =~ s/..$//;
-	# print "verbifying >> $root , $edg <<\n";
+	  # Extract Root and Ending
+	  $edg  = $1;
+	  $root = shift; 
+	  $root =~ s/..$//;
+	  # print "verbifying >> $root , $edg <<\n";
   } 
+
   # print "Verbifying $_[0]\n";
   while($_ = shift) {
-	
-    s/^\s*//;
-    chomp($_);
-	
-	# print "???? $_ \n" if $root eq "faz" && $t eq "";
-    if($_ eq "model"){
-      warn "Model not found in verbify" unless $_ = shift ;
-      s/^\s*//;
-      chomp($_);
+
+	  warn "Verbify : problem with tc : $tc" if $tc>$#tense ;
+	  warn "Verbify : no tense defined  "    unless defined $t ;
 	  
-      $res{model} = $_ ;
-      next;
-    }
-	
-	
-    if(defined($tense{$_}) || ("$_" eq ",") || $p==6 ){ 
+	  s/^\s*//;
+	  warn "Chomp1" if chomp($_); # This code should be removed
 	  
-	  # All persons passed
-      $p6 = (! defined($tense{$_}) && ("$_" ne ","))? 1 : 0;
+	  # The current verb follows a model
+	  if($_ eq "model"){
+		  warn "Model not found in verbify" unless $_ = shift ;
+		  s/^\s*//;
+		  warn "Chomp2" if chomp($_); # This code should be removed
+		  
+		  $res{model} = $_ ;
+		  next;
+	  }
 	  
-      if($p==5){				# If no 2nd person plural was found
-        $res{$t}->[5] = $res{$t}->[4] ;
-		$res{$t}->[4] = undef ;		# MODIF 082899
-      }
-	  # Ready for next tense
-      $p = 0;
-      if(defined($tense{$t=$_})){
-        for( $tc=0 ; "$tense[$tc]" ne "$t" ; $tc++ ){};
-		# print "Tense $t\n";
-        
-      } else {
-        $tc++;
-        $t = $tense[$tc];
-      }
-      
-	  # if($_ eq "cimp"){
-	  # print "Starting cimp for $root,$edg\n";
-	  # }
-      next unless $p6;
+	  # Start a new tense
+	  if(defined($tense{$_}) || ("$_" eq ",") || $p==6 ){ 
+		  
+		  # All persons passed
+		  $p6 = (! defined($tense{$_}) && ("$_" ne ","))? 1 : 0;
+		  
+		  if($p==5){				# If no 2nd person plural was found
+			  $res{$t}->[5] = $res{$t}->[4] ;
+			  $res{$t}->[4] = undef ;		# MODIF 082899
+		  }
+		  # Ready for next tense
+		  $p = 0;
+		  if(defined($tense{$t=$_})){ # Advance $tc to the specified tense
+			  for( $tc=0 ; "$tense[$tc]" ne "$t" ; $tc++ ){};
+			  # print "Tense $t\n";
+			  
+		  } else {					# .. or just increment $tc
+			  $tc++;
+			  $t = $tense[$tc] ;
+		  } 
+		  next unless $p6;
+		  
+		  # HERE CAREFUL if @tense changes
+	  }  elsif( ($tc==10) && ($p==1)  ){
+		  
+		  $p = 0;
+		  $tc++ ;
+		  $t = $tense[$tc];
+		  
+	  } elsif( ($tc==9) && ($p==0) ){
+		  
+		  # Safer, but slower  
+		  # if( ($tense{$tc} eq "ivo" ) && ($p==0) );
+		  
+		  $p++ ;
+		  
+		  # Build default, if possible
+	  } elsif( $_ eq "etc" && $edg && $p && ($x=$res{$t}->[$p-1])   ){
+		  
+		  # If last input matches a regular model, adopt that model
+		  $edg2 = $edg;
+		  my $e;
+		  if( $x !~ / $reg{$edg}->{$t}->[$p-1] $/x ) {
+			  foreach $e ("ir","ar","er") {
+				  if( $x =~ / $reg{$e}->{$t}->[$p-1] $/x ){
+					  $edg2=$e; last;
+				  } 
+			  }
+		  }
+		  $x =~ s/ $reg{$edg2}->{$t}->[$p-1] $//x;
+		  $x =~ s/ [e]+ $//x;
+		  
+		  while( $p < 6 ){
+			  $res{$t}->[$p] = $x . $reg{$edg2}->{$t}->[$p] unless 
+				  $p==3 && $reg{$edg2}->{$t}->[$p] =~ /^i/ && 
+					  $x =~ /i([$cons]{1,2}|ç|gu)$/o   ;
+			  # print "$t , $p , $res{$t}->[$p] <<\n";
+			  $p++;
+		  }
+		  
+		  $p = 5  ;
+		  $_ = ".";
+	  }   elsif( $_ eq "acc" && $root && $edg ){
+		  push @accent, $t;
+		  next;
+	  }
 	  
-	  # HERE CAREFUL if @tense changes
-    }  elsif( ($tc==10) && ($p==1)  ){
+	  warn "Verbify problem root=$root, $_, $t, $tc " 
+		  unless defined($tense{$t}) ;
 	  
-      $p = 0;
-      $tc++ ;
-      $t = $tense[$tc];
-	  
-    } elsif( ($tc==9) && ($p==0) ){
-	  
-      # Safer, but slower  
-      # if( ($tense{$tc} eq "ivo" ) && ($p==0) );
-	  
-      $p++ ;
-	  
-	  # Build default, if possible
-    } elsif( $_ eq "etc" && $edg && $p && ($x=$res{$t}->[$p-1])   ){
-	  
-      # If last input matches a regular model, adopt that model
-      $edg2 = $edg;
-      my $e;
-      if( $x !~ / $reg{$edg}->{$t}->[$p-1] $/x ) {
-        foreach $e ("ir","ar","er") {
-          if( $x =~ / $reg{$e}->{$t}->[$p-1] $/x ){
-            $edg2=$e; last;
-          } 
-        }
-      }
-      $x =~ s/ $reg{$edg2}->{$t}->[$p-1] $//x;
-      $x =~ s/ [e]+ $//x;
-	  
-      while( $p < 6 ){
-        $res{$t}->[$p] = $x . $reg{$edg2}->{$t}->[$p] unless 
-          $p==3 && $reg{$edg2}->{$t}->[$p] =~ /^i/ && 
-            $x =~ /i([$cons]{1,2}|ç|gu)$/o   ;
-		# print "$t , $p , $res{$t}->[$p] <<\n";
-        $p++;
-      }
-	  
-      $p = 5  ;
-      $_ = ".";
-    }   elsif( $_ eq "acc" && $root && $edg ){
-	  push @accent, $t;
-	  next;
-	}
-	
-    warn "Verbify problem root=$root, $_, $t, $tc " 
-	  unless defined($tense{$t}) ;
-	
-	# if($root && $t eq "cimp"){
-	# print "Defining  cimp for $root,$edg,$p : $_ \n";
-	# }
-	
-	# $res{$t}->[$p] = $_  if defined($_) and "$_" ne ".";
-    $res{$t}->[$p] = $_   if "$_" ne ".";
-    $p++;
-  } 
+	  # $res{$t}->[$p] = $_  if defined($_) and "$_" ne ".";
+	  $res{$t}->[$p] = $_   if "$_" ne ".";
+	  $p++;
+  }
   if($p==5){
     $res{$t}->[5] = $res{$t}->[4] ;
 	$res{$t}->[4] = undef ;		# MODIF 082899
@@ -830,19 +828,6 @@ sub verify {
 }								# End verify
 
 
-sub diffstr {
-  
-  my ($a,$b) = (@_);
-  
-  # while($a && substr($a,0,1) eq substr($a,0,1)){
-  # substr($a,0,1)="";       substr($b,0,1)="";
-  # }
-  # while($a && substr($a,-1,1) eq substr($a,-1,1)){
-  # chop $a;           chop $b;
-  # }
-  
-}
-
 ############## SUBS FOR MODIFYINGS THE TERMINATIONS  ###########
 # Each sub applies a simple spelling rule.
 
@@ -913,11 +898,41 @@ sub end_uir {
 	$t eq "pres" && ($p==2||$p==3) ||$t eq "ivo" && $p == 2 ;
   
   # Here ??Needed??
-  $w =~ s/$root i/$rootí/x if
+  $w =~ s/$root i/ $root. "í"/ex if
 	$t eq "imp" || $t eq "mdp" || $t eq "perf" && $p!=3 || 
 	  $t eq "pres" && $p==4 ;
   
   $w;
+}
+# Test for defectiveness
+sub is_defectivo 
+{
+	my ( $verb, $v, $t, $p ) = @_ ;
+	return 0 unless exists( $verb->{defectivos}->{$v} ) ;
+	# Check that verb looks like a verb 
+	unless( $v =~ /^(.*)([aeioô]r)$/ ){ 
+	  warn "$v does not look like a verb." ;
+	  next;
+	}
+	# Extract Root and Ending
+	$edg = $2;
+	$root = $1; 
+	return 1 if ( $verb->{defectivos}->{$v} =~ /[12]/ && 
+				  defined( $reg{$edg}->{$t}->[$p-1] ) &&
+				  !( $reg{$edg}->{$t}->[$p-1] =~
+					 /["^$vocs"]*["$vocs"]["^$vocs"]*["$vocs"]/o ||
+					 $reg{$edg}->{$t}->[$p-1] =~
+					 /["^$vocs"]*(["$vocs"])/o && 
+					 ($1 eq "i" ||  $1 eq "í" || 
+					  $verb->{defectivos}->{$v}==2 && $1 eq "e") 
+					 )
+				  || $verb->{defectivos}->{$v} == 4 && $p!=3 && $p!=6
+				  || $verb->{defectivos}->{$v} eq "precaver" && 
+				  ( $t eq "pres" && $p!=4 || $t =~ /(cpres|ivo)/ )
+				  || $verb->{defectivos}->{$v} eq "adequar" && 
+				  ( $t =~ /c?pres/ && $p!=4 || $t eq "ivo" )
+				  ) ;
+	return 0 ;
 }
 
 # #################### THE MAIN FUNCTION IN THIS FILE ####################
@@ -1032,7 +1047,7 @@ sub conjug {
 	  next;
 	}
 	# Extract Root and Ending
-	$edg  = $2;
+	$edg = $2;
 	$root = $1; 
 	
                                 # Is there a recognizable model ?
@@ -1255,27 +1270,9 @@ sub conjug {
 			  # $tmp = $v ;
 			  # $tmp = $p ;
 
-			if(  $verb->{defectivos}->{$v} =~ /[12]/ && 
-				 defined( $reg{$edg}->{$t}->[$p-1] ) &&
-				 !( $reg{$edg}->{$t}->[$p-1] =~
-				   /["^$vocs"]*["$vocs"]["^$vocs"]*["$vocs"]/o ||
-				   $reg{$edg}->{$t}->[$p-1] =~
-				   /["^$vocs"]*(["$vocs"])/o && 
-				   ($1 eq "i" ||  $1 eq "í" || # (print("AAA\n") && 0)||
-					$verb->{defectivos}->{$v}==2 && $1 eq "e") 
-				 )
-				|| $verb->{defectivos}->{$v} == 4 && $p!=3 && $p!=6
-				|| $verb->{defectivos}->{$v} eq "precaver" && 
-				( $t eq "pres" && $p!=4 || $t =~ /(cpres|ivo)/
-				)
-				|| $verb->{defectivos}->{$v} eq "adequar" && 
-				( $t =~ /c?pres/ && $p!=4 || $t eq "ivo" )
-				
-			  ){
-			  # unless($v eq "recear" && $t !~ /(c?pres|ivo)/  ||
-			  
-			  $w = " ";
-			}
+			  $w = " " if is_defectivo($verb, $v, $t, $p ) ;
+
+
 		  }
 		  
 		  $w=~s/^x$/ / if $w ;
@@ -1296,39 +1293,16 @@ sub conjug {
         foreach $p (@p){
           $w = "";
           
-          # Duplicate code
+
           if(defined($s = $reg{$edg}->{$t}->[$p-1])) {
 			$w="$root$s";
 			$w = &$modif( $w ,$root, $edg ,$p ,$t ) if( $modif );
 			
-			if($verb->{defectivos}->{$v}){
-#			  print "Def\n";
-				# print "-- $verb->{defectivos}->{$v} --\n";
-			  if( $verb->{defectivos}->{$v}=~ /[12]/ &&
-				  !( $reg{$edg}->{$t}->[$p-1] =~
-					 /["^$vocs"]*["$vocs"]["^$vocs"]*["$vocs"]/o ||
-					 $reg{$edg}->{$t}->[$p-1] =~
-					 /["^$vocs"]*(["$vocs"])/o && 
-					 ($1 eq "i" || $1 eq "í" || 
-					  "verb->{defectivos}->{$v}" eq "2" && $1 eq "e") 
-				   )
-				  || "$verb->{defectivos}->{$v}" eq "4" && $p!=3 && $p!=6
-				  || $verb->{defectivos}->{$v} eq "precaver" && 
-				  ( $t eq "pres" && $p!=4 || $t =~ /(cpres|ivo)/
-				  )
-				  || $verb->{defectivos}->{$v} eq "adequar" && 
-				  ( $t =~ /c?pres/ && $p!=4 || $t eq "ivo" )
-				  
-				){
-				# unless($v eq "recear" && $t !~ /(c?pres|ivo)/  ||
-				
-				$w = " ";
-			  }
-			  
-			}
-          } 
-          $w=~s/^x$/ /;
-          push @res, $w ;
+			$w = " " if is_defectivo( $verb, $v, $t, $p ) ;
+
+	  } 
+		$w=~s/^x$/ /;
+		push @res, $w ;
           $res{$t}->[$p] = $w;
         } } }
   }

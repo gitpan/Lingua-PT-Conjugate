@@ -55,8 +55,11 @@ useful for past participle of abundant verbs.
 
 =item 'h' : 'Hash', return a hash rather than a string. The keys are
 the tense names (both long and short). The values are refs to arrays
-whose i'th element is the i'th person, for i in 1-4,6. This options
-renders ineffective all other options except 'i' and 'x'.
+whose i'th element is the i'th person, for i in 1-6. For example,
+C<$h->{pres}->[1]> is the first person singular. C<$h->{pres}->[0]> is
+not defined. For the particípio passado, only $h->{pp}->[1] is
+defined, and likewise for gerundivo.  This options renders ineffective
+all other options except 'i' and 'x'.
 
 =back
 

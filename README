@@ -2,9 +2,9 @@
 The files in this directory provide tools for conjugating Portuguese
 verbs and recognizing conjugated forms of these verbs.
 
-- Conjugate.pm is a perl module with low-level tools (see manpage)
-- conjug       is a perl program that conjugates verbs (see manpage) 
-- treinar      is a perl program that drills the user on conjugation. 
+- Conjugate.pm   is a perl module with low-level tools (see manpage)
+- conjug         is a perl program that conjugates verbs (see manpage) 
+- treinar        is a perl program that drills the user on conjugation. 
 - UnConjugate.pm is a perl module with low-level tools.
 - unconj         is a perl program that regcognizes conjugated verbs.
 
@@ -63,17 +63,24 @@ under the same terms as Perl itself.
 
 CREDITS:
 
-Thanks to all people on usenet and here at ISR with whom I have
+  Thanks to all people on usenet and here at ISR with whom I have
 discussed about this module, who have provided advice on conjugation,
 programming, on naming and on all relevant points.
 
-Thanks to Lupe Christoph <lupe@lupe-christoph.de> from
+  Thanks to Lupe Christoph <lupe@lupe-christoph.de> from
 cpan-testers@perl.org and to Miguel Marques
 <marques@physik.uni-wuerzburg.de> for finding and fixing some bugs.
 
-Thanks to Soraia Almeida (salmeida@logos.it) from the Logos project
-(http://www.logos.it) and Ulisses Pinto and José João Almeida
-(jj@di.uminho.pt) who made Ispell available. A big part of the list of
-verb infinitives comes from files used in these projects. Some verbs
-were removed and others added by hand.
+=head1 CREDITS
+
+  Thanks to Soraia Almeida (salmeida@logos.it) from the Logos project
+(http://www.logos.it) and Ulisses Pinto and José João Almeida from
+Projecto Natura (shiva.di.uminho.pt/~jj/pln) who made Ispell
+available.
+
+  A big part of the list of verb infinitives comes from files used in
+Ispell (shiva.di.uminho.pt/~jj/pln) and in Logos (www.verba.org,
+www.logos.it).  these projects. Some verbs were removed and others
+added by hand.
+
 

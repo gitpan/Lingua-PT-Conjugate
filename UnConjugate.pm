@@ -289,10 +289,14 @@ sub list_entries
 =head1 CREDITS
 
 Thanks to Soraia Almeida (salmeida@logos.it) from the Logos project
-(http://www.logos.it) and Ulisses Pinto and José João Almeida who made
-Ispell available. A big part of the list of verb infinitives comes
-from files used in these projects. Some verbs were removed and others
-added by hand.
+(http://www.logos.it) and Ulisses Pinto and José João Almeida from
+Projecto Natura (http://shiva.di.uminho.pt/~jj/pln) who made Ispell
+available.
+
+A big part of the list of verb infinitives comes from files used in
+Ispell (http://shiva.di.uminho.pt/~jj/pln) and in Logos
+(http://www.verba.org, http://www.logos.it).  these projects. Some
+verbs were removed and others added by hand.
 
 =cut
 

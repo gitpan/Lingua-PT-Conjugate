@@ -95,11 +95,3 @@ use Lingua::PT::Conjugate ;
 print conjug( @ARGV );
 
 print "";
-
-
-
-
-
-
-
-

@@ -56,7 +56,7 @@
 ##
 # 12  2000 - Incorporate Unconjugate-related stuff
 
-$VERSION = '1.05' ;
+$VERSION = '1.06' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }

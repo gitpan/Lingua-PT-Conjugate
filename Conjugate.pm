@@ -56,8 +56,10 @@
 ##
 # 12  2000 - Incorporate Unconjugate-related stuff
 # 10  2002 - A few fixes in verbs
+#
+# See recent changes in file ChangeLog
 
-$VERSION = '1.09' ;
+$VERSION = '1.11' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -301,7 +303,7 @@ $letter = "ç$vocs$cons";
       [aeií]ra [aeií]ras [aeií]ra [aeiâáêéîí]ramos [aeiaeiâáêéîí]reis [aeií]ram,
       [aeo] [ae]s [ae] [ae]mos [aei]s [ae]m,
       [aeí]sse [aeí]sses [aeí]sse [aeâáêéí]ssemos [aeiâáêéîí]sseis [aeí]ssem,
-      [aei]r [aei]res [aei]r [aei]rmos [aei]rdes [aei]rem, 
+      [aei]r [aeií]res [aei]r [aei]rmos [aei]rdes [aeií]rem, 
       [aeio]ria [aeio]rias [aeio]ria [aeio]r[iíî]amos
       [aeio]r[aeioâáêéîíóòô]eis [aeio]riam, 
       [aeim] [ae] [ae]mos (?:i|de|í) [ae]m ,
@@ -1509,7 +1511,8 @@ moer:
   ivo mói pp moído
 passear:
   passeio passeias passeia passeamos passeiam,
-  ivo passeia  passeie  . . passeiem
+  cpres passeie passeies passeie passeemos passeeis  passeiem
+  ivo passeia  
 incendiar:
   incendeio incendeias incendeia incendiamos incendeiam 
   cpres incedeie incendeies incendeie incendiemos incendeiem 
@@ -1584,6 +1587,8 @@ sair:
   saía saías saía saíamos saíeis saíam
   mdp saíra saíras saíra saíramos saíreis saíram
   cpres saia saias saia saiamos saiais saiam
+  cimp saísse saísses saísse saíssemos saísseis saíssem
+  cfut sair saíres sair sairmos sairdes saírem
   ivo   sai saia saiamos saí saiam
 abrir: pp aberto
 abrir = entreabrir
@@ -1717,7 +1722,14 @@ reaver:
        reaveria reaverias reaveria reaveríamos reaveríeis reaveriam,
        x x x x x, reavido  reavendo
 pedir = despedir medir impedir expedir
-       
+perder:
+  perco ,
+  cpres perca percas perca percais percam
+  ivo perde perca percamos
+crer:
+  creio crês crê . credes crêem,
+  cpres creia creias creia creiamos creiais creiam
+  ivo  crê . . crede
 # Double Particípio Passado
 aceitar: pp aceit(o|e|ado)
 afeiçoar: pp afe(ct|içoad)o

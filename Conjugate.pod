@@ -1,7 +1,7 @@
 
 =head1 NAME 
 
-  Lingua::PT::Conjugate.pm - Module for Conjugating Portuguese verbs
+Lingua::PT::Conjugate.pm - Module for Conjugating Portuguese verbs
 
 =head1 DESCRIPTION 
 

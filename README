@@ -26,7 +26,7 @@ Requisites :
                    Term::ReadKey modules. Term::ReadLine::Perl or
                    Term::ReadLine::Gnu are more friendly.
 
-Installation : 
+INSTALLATION : 
 
 gunzip  Lingua-PT-Conjugate-V.MM.tar.gz
 tar xvf Lingua-PT-Conjugate-V.MM.tar

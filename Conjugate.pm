@@ -34,7 +34,8 @@
 #  3    99 - Options 'o' (comma-separated result) and 'l' (long format
 #            for verb names)
 #          - Fix installation of Lingua::PT::Conjugate.
-$VERSION=0.93;
+#  5    99 - Minor doc fixes
+$VERSION=0.95;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -189,11 +190,11 @@ use Exporter ;
 			 "mais que perfeito"=>"mdp",
 			 "mais"  =>{"que"=>{"perfeito"=>"mdp"}},  
 			 "conjuntivo"=>{"presente"=>"cpres",
-							"imperfeito"=>"cimp",
-							"futuro"=>"cfut",
-							"pres"=>"cpres",
-							"imp"=>"cimp",
-							"fut"=>"cfut"},
+					"imperfeito"=>"cimp",
+					"futuro"=>"cfut",
+					"pres"=>"cpres",
+					"imp"=>"cimp",
+					"fut"=>"cfut"},
 			 "conjuntivo presente"=>"cpres",
 			 "conjuntivo imperfeito"=>"cimp",
 			 "conjuntivo futuro"=>"cfut",
@@ -452,7 +453,7 @@ sub same_model {
   foreach (@_) { $verb->{$_}->{model} = $m   }
 }
 
-# Convert a single verb entry in verb.pt into a %verb hash.
+# Convert a single verb entry in "$vlist" format into a %verb hash.
 sub verbify {
   
   my ($a,$t,$tc,$p,%res,$x,$y,$root,$edg,@accent);

@@ -120,7 +120,7 @@ o[iu]\co ouves ouve ouvimos ouvem
 
 =head1 SEE ALSO 
 
-treinar, Lingua::PT::Conjugate.pm.
+treinar, Lingua::PT::Conjugate.
 
 =head1 VERSION 0.90
 

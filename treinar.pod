@@ -105,7 +105,7 @@ by  priting the strings "\33\133A", "\33\133B", "\33\133C" and
 
 =head1 SEE ALSO 
 
-conj, conjug.
+Lingua::PT::Conjugate, conjug.
 
 =head1 VERSION 0.90
 

@@ -13,44 +13,57 @@ This module contains various routines for  conjugating Portuguese verbs.
 
   use Lingua::PT::Conjugate;
 
-  This module pollutes your namespace with the function C<conjug>,
+This module pollutes your namespace with the function C<conjug>,
 that takes just the same arguments as the program C<conjug> (which is
-just a wrapper). For examples, see the C<conjug> manpage.
+just a wrapper). 
+
+ perl -e 'use Lingua::PT::Conjugate; print conjug("programar","perfeito")'
+ programar :                                                          
+ perf         programei programaste programou programamos programaram
+
+
+See the C<conjug> manpage for more examples.
 
 =head1 DATA STRUCTURES :
 
-=head2 Variable C<$Portuguese::Conjugate::vl>
+=head2 Variable C<$Portuguese::Conjugate::vlist>
 
-The database in F<verb.pt> is loaded as a single big string,
-C<$Portuguese::Conjugate::vl>, uncommented and made into a single line.
+The database is a single big string, defined at the end of
+Conjugate.pm (the comments and end-of-line's are taken out).
 
-Informally its syntax is :
+It is in the variable C<$Portuguese::Conjugate::vlist>.
+
+To understand the format, have a look at the code, and read this
+informal description :
 
 I<Definition of the conjugation of a verb>
 
 <verb_name> ":" <tense>? <conjugated_form> <conjugated_form>...
 
 The <tense> is optional : By default, the "parser" expects to find
-them in the order pres,perf,imp,fut,mdp,cpres,cimp,cfut,cond,ivo,pp, 
-grd. 
+them in the order pres (i.e. present), perf (perfeito), imp
+(imperfeito), fut (futuro), mdp (mais-que-perfeito), cpres (conjuntivo
+presente), cimp (conjuntivo imperfeito), cfut (conjuntivo futuro), cond
+(condicional), ivo (imperativo), pp (particípio passado) and grd
+(gerundivo).  
 
 The conjugated forms must correspond to 1st person, second, third,
 first plural, (optionally, second plural) and third plural; except for
 the imperative tense (shortname : "ivo") which starts at 2nd; and past
 participle ("pp") and gerundivo ("grd") that have a single form
 only. The conjugated forms may be regexes that match a correct form
-(and only a correct form) when more than one form is ok (this is the
+(and only a correct form), when more than one form is ok (this is the
 case of the "verbos abundivos"). The second person plural is omitted,
 because it is little used. It should be added, eventually.
 
-Shorthand notation may be use :
+Shorthand notation may be used :
 
-An "etc"  means that the rest of that tense is regular.
-A   "."   means that the current person is regular.
-A   "x"   means that this verb is defective, and that the current
-          person is missing.
-A   "acc" means that circumflex and acute accents are toggled for the
-          current tense.
+ An "etc"  means that the rest of that tense is regular.
+ A   "."   means that the current person is regular.
+ A   "x"   means that this verb is defective, and that the current
+           person is missing.
+ A   "acc" means that circumflex and acute accents are toggled for the
+           current tense.
 
 I<Saying what verbs follows the model of a given verb>
 
@@ -101,11 +114,12 @@ The verb ending may be [aeio]r.
 verb endings, and is, right now, a little obsolete in the code.
 
 =head2 C<codify($string)> reads a string in the
-L<verb.pt> format, and modifies the internal L<%verb> variable.
+L<$vlist> format, and modifies the internal L<%verb> variable so that
+it reflect the information if C<$string>.
 
 =head2 C<&locate($verbname)> If $verbname is not a key of "%verb",
-finds the data relevant to that verb in the string L<$vlist> , and codes
-so that L<%verb> reflects that data.
+finds the data relevant to that verb in the string L<$vlist> , and
+codes it so that L<%verb> reflects that data. 
 
 =head1 ALGORITHM of the C<conjug> sub :
 
@@ -168,21 +182,21 @@ so that L<%verb> reflects that data.
 
 =head2 WHAT MAKES ME BELIEVE IT WORKS?
 
-  The file C<reference> reference contains conjugation tables for
-plenty of verbs. Each time I modify C<Verb.pm>, I run the program
-C<ckconj> ("ckconj all") that checks that the output is still
-correct for all these verbs. 
+The file C<reference> reference contains conjugation tables for
+plenty of verbs. Each time I modify C<Conjugate.pm>, I run the program
+C<ckconj> ("ckconj all") that checks that the output is still correct
+for all these verbs.
 
-  This program outputs two lines, one starting with "OK", containing
+This program outputs two lines, one starting with "OK", containing
 the verbs that checked ok, and a line "NOT IN REFERENCE FILE"
-containing the verbs that "Verb.pm" knows about, but that are not in
-the "reference" file.
+containing the verbs that "Conjugate.pm" knows about, but that are not
+in the "reference" file.
 
   Any other output reports found errors.
 
 
-  Since F<reference> is produced by L<conjug>, it may be inadvertely
-contaminated. When I discover that, I hack F<Verb.pm> until it
+Since C<reference> is produced by C<conjug>, it may be inadvertely
+contaminated. When I discover that, I hack C<Conjugate.pm> until it
 conjugates correctly the faulty verb (by checking myself), *and all
 the other ones too* (with "ckconj all")(like that, I check that my fix
 has not broken anything). And then I run the program F<assert> (syntax
@@ -193,13 +207,12 @@ is "assert faulty_verb"), which modifies the reference table.
 =head1 VERSION 0.01
 
 =head1 AUTHOR Etienne Grossmann, Jan 27th 1998 [etienne@isr.ist.utl.pt] 
- 
+
 =head1 CREDITS
-  
-  Thanks to all people on usenet and here at ISR with whom I have
+
+Thanks to all people on usenet and here at ISR with whom I have
 discussed about this module, who have provided advice on conjugation,
 programming, on naming and on all relevant points.
-
 
 =cut
 

@@ -1,0 +1,50 @@
+
+The files in this directory provide tools for conjugating the
+Portuguese verbs.
+
+- Conjugate.pm is a perl module with low-level tools (see manpage)
+- conjug       is a perl program that conjugates verbs (see manpage) 
+- treinar      is a perl program that drills the user on conjugation. 
+
+Requisites : 
+    
+    Perl 5.004 or greater. Maybe less will do.
+
+    Perl Module : Term::Readlines and Term::ReadKey are needed for the
+									program "treinar".
+
+Installation : 
+
+gunzip Text-Portuguese-Conjugate-0.01.tar.gz
+tar -xvf Text-Portuguese-Conjugate-0.01.tar
+cd  Text-Portuguese-Conjugate-0.01
+perl Makefile.pl
+make
+make test 
+make install
+
+
+MAN PAGES :
+
+  conjug    : Progam conjugating Portuguese verbs.
+ 
+  treinar   : Training at conjugation.
+
+  Conjugate : Description of the algorithm.
+
+
+BUG REPORTS:
+
+
+  Please send me (etienne@isr.ist.utl.pt) all and any encountered bug,
+patches, suggestions, etc... don't mail with names that my spam
+filters detects.
+
+
+Copyright (c) 1997 Etienne Grossmann All rights reserved. This program
+is free software; you can redistribute it and/or modify it under the
+same terms as Perl itself.  
+
+
+
+

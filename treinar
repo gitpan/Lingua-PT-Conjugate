@@ -15,20 +15,22 @@ use Term::ReadLine;
 $term = new Term::ReadLine 'Treinar', \*STDIN, \*STDOUT ;
 
 use Lingua::PT::Conjugate qw(list_verbs conjug @regverb $vlist
-														 %verb @tense %tense %alt_tense $letter );
+                             %verb @tense %tense %long_tense 
+                             %alt_tense $letter );   
 use Lingua::PT::Accent_iso_8859_1 qw(iso2asc asc2iso un_accent);
 
 BEGIN{
     $help_string= q{
+---------------------------------------------------------------------
            A DRILLING PROGRAM FOR PORTUGUESE VERBS                   
 ---------------------------------------------------------------------
  INPUT:                       COMMANDS:                              
  q                            Quit                                   
  h                            Print help                             
  <verb>                       Enter the requested verb               
- c [eu|tu...|1..6] <verb>     Correct a previous entry 
- f [tense]                    Fix drilled tense (default : current)
- i                            Toggle iso 8859-1 accentuation
+ c [eu|tu...|1..6] <verb>     Correct a previous entry               
+ f [tense]                    Fix drilled tense (default : current)  
+ i                            Toggle iso 8859-1 accentuation         
  t [verb] [tense]             Will drill next  on "verb" at "tense"  
                               (default : same)                       
                                                                      
@@ -65,8 +67,8 @@ srand(time());
           "grd"  =>"Gerundivo" );
 
 @subs = qw{ eu tu ele/ela nós você eles/elas }; #'
-%subs = ('eu', 1, 'tu', 2, 'ele', 3, 'ela', 3, 'nós', 4, 'você', 5,
-				 'elas', 6, 'eles', 6 ); #' 
+%subs = ('eu', 1, 'tu', 2, 'ele', 3, 'ela', 3, 'nos', 4, "n'os", 4 ,
+         'nós', 4, 'você', 5, 'elas', 6, 'eles', 6 ); #'
 
 
 
@@ -150,14 +152,15 @@ while(1) {
     $|=1;
 #    print "\nVerbo --- $v -----    ,  Tempo --- $ltense{$t} ----- \n";
     $v1 =  $isoacc ? asc2iso($v) : $v;
-    printf("\n           %-17s   %-30s \n\n",$v1,$ltense{$t}) ;
+    printf("\n   VERBO : %-17s   TEMPO : %-22s \n\n",$v1,$ltense{$t}) ;
 
     @pers = @ans = @ref = ();
     $errors = 0;
     foreach $p (0..$#subs){
 
         next if( $p == 4 || $t eq "ivo" && $p==0);
-        
+
+        # $a is the prompt string
         if ($t ne "pp" && $t ne "grd" ){
             
             $a = sprintf("%+10s ",$subs[$p]) ;
@@ -167,21 +170,23 @@ while(1) {
             $a = " " x 11 ;
         }
         
+        # $w0 is the input;
+        # $w  is the input, a little cleaner.
         $w = $term->readline($a)  ;
-				unless(defined($w)){$w="";print"\n";}
+        unless(defined($w)){$w="";print"\n";}
         chomp( $w0  = $w );
         if($w){
             $w =~ s/^\s+//; 
             $w =~ s/\s+$//; 
             $w =~ s/\\([\'\"\^])/$1/; #'"
             $w = lc $w ;
-						$w = asc2iso($w);
+            $w = asc2iso($w);
         }
-																################## Quit
+                                ################## Quit
         if( $w =~ /^ q $/x ){    print "\n"," "x11,"Adeusinho \n\n"; exit 0 }
 
-																################## Do a correction
-        elsif( $w =~ /^ c \s* ([$letter]+) \s+ ([$letter]+) /ox ) {
+                                ################## Do a correction
+        elsif( $w =~ /^ c \s* ([$letter\d]+) \s+ ([$letter]+) /ox ) {
             
             my $q = exists($subs{$1}) ? $subs{$1} : $1 ;
             my $x = $2 ;
@@ -203,7 +208,7 @@ while(1) {
                 elsif(defined &iso2asc){ $ref[$q] = iso2asc($ref[$q]) }
             }
             redo ;
-            																################## Help
+                                            ################## Help
         } elsif( $w =~ /^ h $/x ) {
 
             print "\33\133A", "\33\133C"x length($a),
@@ -215,7 +220,7 @@ while(1) {
             "\33\133B"x(@pers+2),"\33\133C"x length($a);
             redo; 
 
-																################## Try verb,tense
+                                ################## Try verb,tense
         } elsif( $w =~ /^ t (?: \s+ (\S+))? (?: \s+ (\S.+))? $/x ) {
 
             # Erase last entry
@@ -224,19 +229,19 @@ while(1) {
             
             
             push @ARGV, $1 if $1;
-						if($2){
-								my $tmp = $2 ;
-								$tmp =~ s/  / /g;
-								$tmp = lc(un_accent($tmp));
-								$tmp = $alt_tense{$tmp} if 
-										defined($alt_tense{$tmp}) && !ref($alt_tense{$tmp});
-								push @ARGV, $tmp;
-#								print "pushed >$tmp< >$alt_tense{$tmp}<\n";
-#								push @ARGV, $2 if $2;
-						}
+            if($2){
+                my $tmp = $2 ;
+                $tmp =~ s/  / /g;
+                $tmp = lc(un_accent($tmp));
+                $tmp = $alt_tense{$tmp} if 
+                    defined($alt_tense{$tmp}) && !ref($alt_tense{$tmp});
+                push @ARGV, $tmp;
+#               print "pushed >$tmp< >$alt_tense{$tmp}<\n";
+#               push @ARGV, $2 if $2;
+            }
             redo;
 
-																################## Toggle ISO-8859-1
+                                ################## Toggle ISO-8859-1
         } elsif( $w =~ /^ i $/x) {
 
             # Erase last entry
@@ -270,22 +275,49 @@ while(1) {
             if( $1 ){
                 # Sorry no check; plain behaviour is fine.
                 # if( defined($tense{$1})){
-								my ($tmp,$tmp2) = ($1,$1) ;
-								$tmp =~ s/  / /g;
-								$tmp = lc(un_accent($tmp));
-								unless($alt_tense{$tmp}){
-										warn "Sorry, I know no tense called >$tmp2< " ;
-										redo ;
-								}
-								$fixed_tense =  $tense{$alt_tense{$tmp}}-1 ;
-						                 
+                my ($tmp,$tmp2) = ($1,$1) ;
+                $tmp =~ s/  / /g;
+                $tmp = lc(un_accent($tmp));
+
+                unless($alt_tense{$tmp}){
+                  # Print out known verbs
+                  my $message = 
+           "                                                            \n".
+"-----------------------------------------------------------------------\n".
+"                  Sorry, I know no tense called >$tmp2<                \n".
+"                  Try one of :                                         \n".
+"-----------------------------------------------------------------------\n".
+"                  ".
+                    join(",".(" "x45). "\n".(" "x18),
+                         values(%long_tense)) 
+                      . (" "x45)."\n" .
+"-----------------------------------------------------------------------\n".
+   sprintf("   VERBO : %-17s   TEMPO : %-22s \n",$v1,$ltense{$t}) .
+"                                                                       \n";
+
+                  my $mlines =  ($message =~ tr [\n] [\n])-4;
+
+                  print "\33\133A", "\33\133C"x length($a),
+                  " " x length($w0) , "\33\133D" x length($w0),
+                  "\33\133B", "\33\133D"x length($a) ;
+                  # "\33\133D"x length($a) ;
+                  
+                  print "\33\133A"x($mlines-1+@pers+4), $message,
+                  "\33\133B"x(@pers+2),"\33\133C"x length($a);
+
+                  redo ;
+                }
+
+                $fixed_tense =  $tense{$alt_tense{$tmp}}-1 
+				  unless( ref($alt_tense{$tmp}) );
+                             
             } else {
                 $fixed_tense = $fixed_tense ? "" : $tc ;
             }
             redo;
         }
 
-																########## Else, it's an entry
+                                ########## Else, it's an entry
         $w =~ s/^\s*(\S.+)\s*$/$1/;
         if($isoacc){ 
             $w = asc2iso($w);

@@ -466,19 +466,19 @@ cond           seria         serias         seria         seríamos          seri
 ivo                          sê             seja          sejamos           sejam          
 pp             sido                                                                        
 grd            sendo                                                                       
-ter :                                                                                      
-pres           tenho         tens           tem           temos             têm            
-perf           tive          tiveste        teve          tivemos           tiveram        
-imp            tinha         tinhas         tinha         tínhamos          tinham         
-fut            terei         terás          terá          teremos           terão          
-mdp            tivera        tiveras        tivera        tivéramos         tiveram        
-cpres          tenha         tenhas         tenha         tenhamos          tenham         
-cimp           tivesse       tivesses       tivessemos    tivessem          tivessem       
-cfut           tiver         tiveres        tiver         tivermos          tiverem        
-cond           teria         terias         teria         teríamos          teriam         
-ivo                          tem            tenha         tenhamos          tenham         
-pp             tido                                                                        
-grd            tendo                                                                       
+ter :  irreg                                          
+pres   tenho   tens     tem        temos     têm      
+perf   tive    tiveste  teve       tivemos   tiveram  
+imp    tinha   tinhas   tinha      tínhamos  tinham   
+fut    terei   terás    terá       teremos   terão    
+mdp    tivera  tiveras  tivera     tivéramos tiveram  
+cpres  tenha   tenhas   tenha      tenhamos  tenham   
+cimp   tivesse tivesses tivéssemos tivessem  tivessem 
+cfut   tiver   tiveres  tiver      tivermos  tiverem  
+cond   teria   terias   teria      teríamos  teriam   
+ivo            tem      tenha      tenhamos  tenham   
+pp     tido                                           
+grd    tendo                                          
 ver :  irreg                               
 pres   vejo  vês    vê    vemos     vêem   
 perf   vi    viste  viu   vimos     viram  
@@ -1067,3 +1067,41 @@ cond        afeiçoaria afeiçoarias afeiçoaria afeiçoaríamos afeiçoariam
 ivo                    afeiçoa     afeiçoe    afeiçoemos    afeiçoem    
 pp          afeiçoado                                                   
 grd         afeiçoando                                                  
+obter :  model     ter                                            
+pres     obtenho   obténs     obtém        obtemos     obtêm      
+perf     obtive    obtiveste  obteve       obtivemos   obtiveram  
+imp      obtinha   obtinhas   obtinha      obtínhamos  obtinham   
+fut      obterei   obterás    obterá       obteremos   obterão    
+mdp      obtivera  obtiveras  obtivera     obtivéramos obtiveram  
+cpres    obtenha   obtenhas   obtenha      obtenhamos  obtenham   
+cimp     obtivesse obtivesses obtivéssemos obtivessem  obtivessem 
+cfut     obtiver   obtiveres  obtiver      obtivermos  obtiverem  
+cond     obteria   obterias   obteria      obteríamos  obteriam   
+ivo                obtém      obtenha      obtenhamos  obtenham   
+pp       obtido                                                   
+grd      obtendo                                                  
+abster :  model      ter                                                
+pres      abstenho   absténs     abstém        abstemos     abstêm      
+perf      abstive    abstiveste  absteve       abstivemos   abstiveram  
+imp       abstinha   abstinhas   abstinha      abstínhamos  abstinham   
+fut       absterei   absterás    absterá       absteremos   absterão    
+mdp       abstivera  abstiveras  abstivera     abstivéramos abstiveram  
+cpres     abstenha   abstenhas   abstenha      abstenhamos  abstenham   
+cimp      abstivesse abstivesses abstivéssemos abstivessem  abstivessem 
+cfut      abstiver   abstiveres  abstiver      abstivermos  abstiverem  
+cond      absteria   absterias   absteria      absteríamos  absteriam   
+ivo                  abstém      abstenha      abstenhamos  abstenham   
+pp        abstido                                                       
+grd       abstendo                                                      roer :  model  moer                             
+pres    roo    roís    rói    roemos    roem    
+perf    roí    roeste  roeu   roemos    roeram  
+imp     roía   roías   roía   roíamos   roíam   
+fut     roerei roerás  roerá  roeremos  roerão  
+mdp     roera  roeras  roera  roêramos  roeram  
+cpres   roa    roas    roa    roamos    roam    
+cimp    roesse roesses roesse roêssemos roessem 
+cfut    roer   roeres  roer   roermos   roerem  
+cond    roeria roerias roeria roeríamos roeriam 
+ivo            rói     roa    roamos    roam    
+pp      roído                                   
+grd     roendo                                  

@@ -11,11 +11,15 @@
 # (C) Copyright 1998 Etienne Grossmann
 # 
 
-use Portuguese::Conjugate ;
-use Accent_iso_8859_1;
+use Lingua::PT::Conjugate ;
+use Lingua::PT::Accent_iso_8859_1;
+
+exit 0 unless @ARGV;
 
 $rfile = "reference";
-die  "file $rfile not found" unless open(VF,"<$rfile");
+die  "file >$rfile< not found" unless -f $rfile;
+die  "file >$rfile< not writable" unless -w $rfile;
+die  "file >$rfile< not readable" unless open(VF,"<$rfile");
 { my @vf = <VF>;
   close VF;
   $rs =  join("",@vf); 

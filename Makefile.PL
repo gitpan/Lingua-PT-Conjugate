@@ -35,7 +35,5 @@ treinar.pl: treinar treinar.pod Conjugate.pm
 	perl -pe 's/use/import/ if /PT/' < treinar >> treinar.pl
 	chmod +x treinar.pl
 
-
-
 )
 }

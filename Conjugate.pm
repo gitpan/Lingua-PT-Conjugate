@@ -29,8 +29,10 @@
 #          - Add targets 'treinar.pl', 'conjug.pl'  in Makefile that
 #            are truly standalone, in the sense that they don't
 #            require the Lingua::PT::Conjugate to be installed.
-#
-$VERSION=0.91;
+# 12    98 - A few past participles in 'uido' didn't have the required
+#            accent. Fixed.
+# 
+$VERSION=0.92;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -1560,6 +1562,7 @@ atribuir:
   atribuía atribuías  atribuía  atribuíamos  atribuíam, 
   cfut   atribuir . atribuir atribuirmos .
   ivo atribui
+	pp atribuído
 averiguar: 
   cpres averigúe averigúes  averigúe .  averigúem 
   ivo averigua
@@ -1652,7 +1655,7 @@ secar: pp sec(|ad)o
 segurar: pp segur(|ad)o
 fechar: pp fech(|ad)o
 afligir: pp afli(t|gid)o 
-concluir:pp conclu(s|id)o
+concluir:pp conclu(s|íd)o
 corrigir:pp corr(ect|igid)o
 dirigir:pp dir(ect|igid)o
 distingir:pp distin(t|guid)o
@@ -1663,7 +1666,7 @@ extinguir:pp ext(int|inguid)o
 frigir:pp fri(t|gid)o
 imergir:pp imer(s|gid)o
 imprimir:pp impr(ess|imid)o
-incluir:pp inclu(s|id)o
+incluir:pp inclu(s|íd)o
 inserir:pp ins(ert|erid)o
 omitir:pp om(ess|itid)o
 oprimir:pp opr(ess|imid)o

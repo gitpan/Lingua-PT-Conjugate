@@ -20,8 +20,9 @@ Requisites :
     
     Perl 5.004 or greater. Maybe less will do.
 
-    Perl Module : Term::Readlines and Term::ReadKey are needed for the
-"treinar" program.
+    Perl Module : "treinar" require the Term::ReadLine and
+                   Term::ReadKey modules. Term::ReadLine::Perl or
+                   Term::ReadLine::Gnu are more friendly.
 
 Installation : 
 
@@ -36,19 +37,17 @@ make install
 
 MAN PAGES :
 
-  conjug    : Progam conjugating Portuguese verbs.
+  conjug                : Progam conjugating Portuguese verbs.
  
-  treinar   : Training at conjugation.
+  treinar               : Training at conjugation.
 
-  Conjugate : Description of the algorithm.
+  Lingua::PT::Conjugate : Description of the algorithm.
 
 
 BUG REPORTS:
 
 
-  Please send me (etienne@isr.ist.utl.pt) all and any encountered bug,
-patches, suggestions, etc... don't mail with names that my spam
-filters detects.
+Mail me at etienne@isr.ist.utl.pt about bug, patches and suggestions. 
 
 
 Copyright (c) 1997,1999 Etienne Grossmann All rights reserved. This
@@ -56,5 +55,13 @@ program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
 
+CREDITS:
+
+Thanks to all people on usenet and here at ISR with whom I have
+discussed about this module, who have provided advice on conjugation,
+programming, on naming and on all relevant points.
+
+Thanks to Lupe Christoph <lupe@lupe-christoph.de> from
+cpan-testers@perl.org for finding and fixing some bugs. 
 
 

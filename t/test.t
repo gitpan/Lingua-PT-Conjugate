@@ -2,8 +2,8 @@
 
 BEGIN {print "1..1\n";}
 
-
-@a = `perl ckconj all`;
+$incstr = join(" ", map("-I$_", @INC));
+@a = `$^X $incstr ckconj all`;
 
 $ok=1;
 foreach (@a){

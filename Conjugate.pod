@@ -204,15 +204,18 @@ is "assert faulty_verb"), which modifies the reference table.
 
 =head1 SEE ALSO : treinar, conjug.
 
-=head1 VERSION 0.01
+=head1 VERSION 1.0
 
-=head1 AUTHOR Etienne Grossmann, Jan 27th 1998 [etienne@isr.ist.utl.pt] 
+=head1 AUTHOR Etienne Grossmann, 1998-1999 [etienne@isr.ist.utl.pt] 
 
 =head1 CREDITS
 
 Thanks to all people on usenet and here at ISR with whom I have
 discussed about this module, who have provided advice on conjugation,
 programming, on naming and on all relevant points.
+
+Thanks to Lupe Christoph <lupe@lupe-christoph.de> from
+cpan-testers@perl.org for finding and fixing some bugs. 
 
 =cut
 

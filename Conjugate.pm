@@ -35,7 +35,9 @@
 #            for verb names)
 #          - Fix installation of Lingua::PT::Conjugate.
 #  5    99 - Minor doc fixes
-$VERSION=0.95;
+#  6    99 - Portability of t/test.t fixed by cpan-tester Lupe.
+# 
+$VERSION = '1.00' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -430,20 +432,21 @@ $letter = "ç$vocs$cons";
 # ############### INITIALIZE THE DATABASE STRING OF VERBS ##############
 
 # Why use DATA filehandles that are 'closed' when one needs them?
-goto ALL_THE_WAY;
-# $Lingua::PT::vlist is  initialised 
+goto ALL_THE_WAY;		# This goto initialises $Lingua::PT::vlist  
+				# and jumps back here.
 I_M_BACK:  
 
-
-$vlist =~ s/\#.*\n+/\n/mg;
+$vlist =~ s/\#.*\n+/\n/mg;	# No comments or newlines
 $vlist =~ s/\n/ /mg;
 
-########################## CODE, at last ############################
+########################## SOME CODE, at last ########################
 
 # Specify that $_[0] is the model of conjugation for @_[1,$#_].
 # Usage : 
 # same_model('model verb1 verb2 ...') 
-# same_model('model','verb1','verb2') 
+# same_model('model','verb1','verb2'...) 
+# same_model( \%verb_hash, 'model verb1 verb2 ...')
+# same_model( \%verb_hash, 'model','verb1','verb2',...)
 sub same_model {
   
   my $verb = ( ref($_[0]) eq "HASH") ? shift  : \%verb ;
@@ -996,7 +999,7 @@ sub conjug {
 	$edg  = $2;
 	$root = $1; 
 	
-                                # Is there a recognizable model 
+                                # Is there a recognizable model ?
     if   ( $v =~ /g[ei]r$/ )    {  $modif = \&soft_g }
     elsif( $v =~ /c[ei]r$/ )    {  $modif = \&soft_c }
     elsif( $v =~ /g[ao]r$/ )    {  $modif = \&hard_g }
@@ -1400,7 +1403,7 @@ sub tabrow {
 }
 ######################################################################
 
-# I just hope this way of exiting does not break down in the future.
+# I just hope this way of exiting does not break in the future.
 
 # return 1 if defined($allready_passed_here);
 goto THE_END ;
@@ -1555,7 +1558,7 @@ trazer:
   ivo traz traga etc
 ferir:  firo cpres fira ivo fere fira etc
 ferir = conferir preferir transferir gerir digerir preterir
-    servir divertir advertir reflectir repetir compelir vestir 
+    servir divertir advertir reflectir repetir compelir vestir sugerir
 seguir:
   sigo cpres siga etc ivo segue 
 seguir = perseguir prosseguir conseguir

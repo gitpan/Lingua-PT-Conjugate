@@ -30,7 +30,7 @@
 #            are truly standalone, in the sense that they don't
 #            require the Lingua::PT::Conjugate to be installed.
 #
-$VERSION=0.90;
+$VERSION=0.91;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }

@@ -53,8 +53,10 @@
 #            "Diciónario Online da Lingua Portuguesa" (DLPO) and "Guia
 #            Prática dos Verbos Portugueses" (GPVP) differ have been
 #            docummented in the verb database at end of this file.
-#         
-$VERSION = '1.04' ;
+##
+# 12  2000 - Incorporate Unconjugate-related stuff
+
+$VERSION = '1.05' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -1284,26 +1286,24 @@ sub conjug {
 		  if( $verb->{defectivos}->{$v} ){
 # Is this code ever used ? 
 # Answer : YES (082899)
-			  # print "Defectivo\n";
-			  # my $tmp = $reg{$edg}->{$t}->[$p-1] ;
-			  # $|=1;print STDERR ">> $edg, $t, $p, $tmp <<\n" ;
-			  # $tmp = $t ;
-			  # $tmp = $v ;
-			  # $tmp = $p ;
-
-			  $w = " " if is_defectivo($verb, $v, $t, $p ) ;
-
-
+		      # print "Defectivo\n";
+		      # my $tmp = $reg{$edg}->{$t}->[$p-1] ;
+		      # $|=1;print STDERR ">> $edg, $t, $p, $tmp <<\n" ;
+		      # $tmp = $t ;
+		      # $tmp = $v ;
+		      # $tmp = $p ;
+		      
+		      $w = " " if is_defectivo($verb, $v, $t, $p ) ;
 		  }
 		  
 		  $w=~s/^x$/ / if $w ;
 		  
 		  push @res, $w ;
 		  $res{$t}->[$p] = $w;
-	  }							# End loop over persons
-	}							# End loop over tenses
-								# ####################################
-  } else {						# Regular Verb
+	      }			# End loop over persons
+    }				# End loop over tenses
+      # ####################################
+  } else {			# Regular Verb
 	  
       foreach $t (@t){  
 		
@@ -1326,8 +1326,9 @@ sub conjug {
 		push @res, $w ;
           $res{$t}->[$p] = $w;
         } } }
-  }
-  
+  }				# End regular verbs ##################
+				# ####################################  
+				# Format output : accents, columns ...
   unless($isoacc){
 	# print "Iso un-accentuating \n";  
 	if($rc ne "h"){
@@ -1536,7 +1537,8 @@ dizer:
   cond diria etc,
   ivo diz,
   pp dito
-dizer = desdizer
+dizer = antedizer bendizer condizer contradizer desdizer
+        interdizer maldizer predizer
 fazer = contrafazer desfazer satisfazer refazer
 fazer:
   faço . faz ,
@@ -1675,8 +1677,8 @@ vir:
 vir = advir convir intervir   
 
 ouvir: 
-  o[iu]ço ouves ouve ouvimos ouvem, 
-  cpres o[iu]ça etc # ouças ouça ouçamos ouçam,
+  o(i|u)ço ouves ouve ouvimos ouvem, 
+  cpres o(i|u)ça etc # ouças ouça ouçamos ouçam,
   # alternative : cpres oiça  oiças  oiça  oiçamos  oiçam 
   ivo ouve oiça 
   # alternative : ivo . oiça 

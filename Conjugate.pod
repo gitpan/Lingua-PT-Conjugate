@@ -257,6 +257,9 @@ codes it so that L<%verb> reflects that data.
 
 =head2 WHAT MAKES ME BELIEVE IT WORKS?
 
+I checked in the book "Guia Prático dos Verbos Portugueses", by Deolinda
+Monteiro e Beatriz Pessoa. Well, to some extent ...
+
 The file C<reference> reference contains conjugation tables for
 plenty of verbs. Each time I modify C<Conjugate.pm>, I run the program
 C<ckconj> ("ckconj all") that checks that the output is still correct

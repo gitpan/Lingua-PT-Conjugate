@@ -24,11 +24,10 @@
 
       default is all.  
  
- - the numbers 1-4,6 correspond to
-    "eu","tu","ele"/"ela","nós","vós", "eles"/"elas". 
-    Second person plural may be buggy, as it is a recent addition to
-    the progam.
-    Default is all persons that apply to the tense.
+ - The numbers 1-6 correspond to "eu", "tu", "ele"/"ela", "nós",
+   "vós", "eles"/"elas".  Second person plural may be buggy, as it is
+   a recent addition to the progam.  Default is all persons that
+   apply to the tense.
 
   Returns the verb congugated at the requested tenses and persons as
   list of strings (one combination of tense, person each), one tense

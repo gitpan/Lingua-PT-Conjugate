@@ -1,10 +1,12 @@
 
-The files in this directory provide tools for conjugating the
-Portuguese verbs.
+The files in this directory provide tools for conjugating Portuguese
+verbs and recognizing conjugated forms of these verbs.
 
 - Conjugate.pm is a perl module with low-level tools (see manpage)
 - conjug       is a perl program that conjugates verbs (see manpage) 
 - treinar      is a perl program that drills the user on conjugation. 
+- UnConjugate.pm is a perl module with low-level tools.
+- unconj         is a perl program that regcognizes conjugated verbs.
 
 
 Quick demo :
@@ -37,11 +39,15 @@ make install
 
 MAN PAGES :
 
-  conjug                : Progam conjugating Portuguese verbs.
- 
-  treinar               : Training at conjugation.
+  conjug                  : Progam conjugating Portuguese verbs.
 
-  Lingua::PT::Conjugate : Description of the algorithm.
+  treinar                 : Training at conjugation.
+
+  unconj                  : Recognizes conjugated portuguese verbs.
+
+  Lingua::PT::UnConjugate : Description of module functions.
+
+  Lingua::PT::Conjugate   : Description of the conjugation algorithm.
 
 
 BUG REPORTS:
@@ -65,4 +71,9 @@ Thanks to Lupe Christoph <lupe@lupe-christoph.de> from
 cpan-testers@perl.org and to Miguel Marques
 <marques@physik.uni-wuerzburg.de> for finding and fixing some bugs.
 
+Thanks to Soraia Almeida (salmeida@logos.it) from the Logos project
+(http://www.logos.it) and Ulisses Pinto and José João Almeida
+(jj@di.uminho.pt) who made Ispell available. A big part of the list of
+verb infinitives comes from files used in these projects. Some verbs
+were removed and others added by hand.
 

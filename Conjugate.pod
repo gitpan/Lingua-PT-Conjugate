@@ -1,7 +1,9 @@
 
 =head1 NAME 
 
-=head2 Lingua::PT::Conjugate.pm - Module for Conjugating Portuguese verbs
+=head2 
+
+  Lingua::PT::Conjugate.pm - Module for Conjugating Portuguese verbs
 
 =head1 DESCRIPTION 
 
@@ -17,7 +19,7 @@ just a wrapper). For examples, see the C<conjug> manpage.
 
 =head1 DATA STRUCTURES :
 
-=head2 Filehandle F<__END__>, and variable C<$Portuguese::Conjugate::vl>
+=head2 Variable C<$Portuguese::Conjugate::vl>
 
 The database in F<verb.pt> is loaded as a single big string,
 C<$Portuguese::Conjugate::vl>, uncommented and made into a single line.

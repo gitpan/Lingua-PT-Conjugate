@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# die "AAAAAA";
+# die "AAAAAA";   
 #
 # Perl package exporting a function "conjug" that conjugates
 # Portuguese verbs. 
@@ -12,7 +12,7 @@
 #  6/30/97 - Verbos Abundantes.
 #  7/01/97 - Verbos Defectivos.
 # 12/27/97 - Iso 8859 Accents.
-#    01 98 - Renaming of conj.pm as Lingua/PT/Conjugate.pm and
+# 01    98 - Renaming of conj.pm as Lingua/PT/Conjugate.pm and
 #            likewise for other files.
 #          - Make iso-accents the default, use them in verb database
 #            and source files.
@@ -20,18 +20,149 @@
 #          - Verb database as a string, is at the end of this file. 
 #          - put use //o  whenever possible, as suggested by Eryq
 #            <eryq@zeegee.com> 
-#    02 98 - Recognize long forms of verbs
+# 02    98 - Recognize long forms of verbs
 #          - Derivatives of "ter" (ugly fix)
-#    03 98 - A few fixes, cleaned up code.
-#    05 98 - A few more "defective" verbs.
-# 
-$VERSION=0.04;
+# 03    98 - A few fixes, cleaned up code.
+# 05    98 - A few more "defective" verbs.
+# 11    98 - Include Accent_iso_8859_1.pm within Conjugate.pm
+#          - Call it version 0.90.
+#          - Add targets 'treinar.pl', 'conjug.pl'  in Makefile that
+#            are truly standalone, in the sense that they don't
+#            require the Lingua::PT::Conjugate to be installed.
+#
+$VERSION=0.90;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
 
 package Lingua::PT::Conjugate;
-use Lingua::PT::Accent_iso_8859_1 qw(iso2asc asc2iso un_accent);
+
+# 
+# Accent_iso_8859_1.pm
+# Author          : Etienne Grossmann
+# Created On      : December 1997
+# Last Modified On: January  1998
+# Language        : Perl
+# Status          : Use with caution!
+# 
+# (C) Copyright 1998 Etienne Grossmann
+# 
+# 
+#              Convert to-from iso accent
+# 01/10/97 
+# Bug : 'e   -(iso2asc)->  'e   -(asc2iso)->  chr(233)!="'e" 
+# Fix : iso2asc("'")  == "' "
+#       asc2iso("' ") == "'"
+# 
+
+package Lingua::PT::Accent_iso_8859_1;
+use Exporter ;
+@ISA = qw(Exporter);
+# Yes, this package is a namespace polluter. 
+@EXPORT = qw(iso2asc asc2iso un_accent);
+@EXPORT_OK = qw( iso2ascii ascii2iso );
+%iso2ascii = (
+           "\'"     =>"' ",
+           chr(0347)=>'\c',
+           
+           chr( 224)=>'`a',
+           chr( 225)=>'\'a',
+           chr( 226)=>'^a',
+           chr( 227)=>'~a',
+
+           chr( 232)=>'`e',
+           chr( 233)=>'\'e',
+           chr( 234)=>'^e',
+
+           chr( 236)=>'`i',
+           chr( 237)=>'\'i',
+           chr( 238)=>'^i',
+
+           chr( 211)=>'\'O',
+           chr( 242)=>'`o',
+           chr( 243)=>'\'o',
+           chr( 244)=>'^o',
+           chr( 245)=>'~o',
+
+           chr( 249)=>'`u',
+           chr( 250)=>'\'u',
+           chr( 251)=>'^u',
+           );
+%ascii2iso = reverse %iso2ascii;
+%ascii2iso_keys = (
+            "\' "     =>"'", 
+           '\\\\c'=>chr(0347),
+           
+           '\`a'=>chr( 224),
+           '\'a'=>chr( 225),
+           '\^a'=>chr( 226),
+           '\~a'=>chr( 227),
+
+           '\`e'=>chr( 232),
+           '\'e'=>chr( 233),
+           '\^e'=>chr( 234),
+
+           '\`i'=>chr( 236),
+           '\'i'=>chr( 237),
+           '\^i'=>chr( 238),
+
+           '\'O'=>chr( 211),
+           '\`o'=>chr( 242),
+           '\'o'=>chr( 243),
+           '\^o'=>chr( 244),
+           '\~o'=>chr( 245),
+
+           '\`u'=>chr( 249),
+           '\'u'=>chr( 250),
+           '\^u'=>chr( 251),
+
+              );
+# Accent-matching regexp
+$find_iso_accent = "[".join("",keys(%iso2ascii))."]";
+
+# Accent-matching regexp
+$find_ascii_accent = join("|",keys(%ascii2iso_keys));
+
+
+# Crude code
+sub un_accent { 
+		return unless(defined @_);
+		my @a=@_;
+		iso2asc(map {s/[\'\`\^\~]([aAeEiIoOuU])/$1/g; $_} @a) 
+}
+
+sub iso2asc {
+    my ($x,@res);
+
+#    print "iso2asc : ";
+    while( $#_ >=0 ){
+        $x = shift @_ ;
+#        print "$x, ";
+        $x=~s/($find_iso_accent)/$iso2ascii{$1}/g if defined($x);
+        push @res,$x;
+    }
+#    print "\n";
+    $#res || wantarray ? @res : $res[0] ;
+}
+
+sub asc2iso {
+    my ($x,@res);
+
+#    print " N args $#_ \n";
+#    print "\nrrr",join("RRR\nRRR",@_),"rrr\n";
+    while( $#_>=0 ){
+        $x = shift @_;
+        $x=~s/($find_ascii_accent)/$ascii2iso{$1}/g if $x; 
+        push @res,$x;
+    }
+#    print "\n SSS ",join("sss \n sss ",@res)," SSS \n";
+    $#res ? @res : $res[0] ;
+}
+
+1;
+package Lingua::PT::Conjugate ;
+
+import Lingua::PT::Accent_iso_8859_1 qw(iso2asc asc2iso un_accent);
 use Exporter ;
 @ISA = qw(Exporter);
 # Yes, this package is a namespace polluter. 
@@ -745,7 +876,7 @@ sub end_uir {
 	$t eq "pres" && ($p==2||$p==3) ||$t eq "ivo" && $p == 2 ;
   
   # Here ??Needed??
-  $w =~ s/$root i/$root\'i/x if
+  $w =~ s/$root i/$rootí/x if
 	$t eq "imp" || $t eq "mdp" || $t eq "perf" && $p!=3 || 
 	  $t eq "pres" && $p==4 ;
   
@@ -770,7 +901,7 @@ sub conjug {
   # Extract options verb, tense and person.
   while( ($v=shift) && ($v=~ /^\-? [hvqrcsxi]+ $/x ) ){
 	# print "option $v\n";
-	if( $v=~/[iaeoô]r$/ ){ 
+	if( $v=~/[iaeoô]r$/ ){ # 
 	  # unshift @_,$v;
 	  # print "NOT OPT\n";
 	  last ;
@@ -1260,7 +1391,8 @@ sub tabrow {
 
 # I just hope this way of exiting does not break down in the future.
 
-return 1 if defined($allready_passed_here);
+# return 1 if defined($allready_passed_here);
+goto THE_END ;
 
 ALL_THE_WAY:
 $allready_passed_here=1;
@@ -1415,7 +1547,7 @@ ferir = conferir preferir transferir gerir digerir preterir
     servir divertir advertir reflectir repetir compelir vestir 
 seguir:
   sigo cpres siga etc ivo segue 
-seguir = perseguir prosseguir
+seguir = perseguir prosseguir conseguir
 #  pres perf imp fut mdp  cpres cimp cfut cond ivo pp grd 
 ler:
   leio lês lê lemos lêem
@@ -1473,7 +1605,11 @@ agredir = prevenir progredir transgredir
                                 # More irregular verbs
 escrever: pp escrito
 escrever = descrever inscrever reescrever prescrever
-dormir =  abolir demolir
+dormir =  abolir demolir engolir
+
+subir : 
+  subo sobes sobe subimos sobem ivo sobe
+
 
 reaver:
        x x x  reavemos reaveis x ,
@@ -1573,3 +1709,5 @@ defectivos3=    precaver adequar
 EOD
 goto I_M_BACK;
 #}
+THE_END:
+1 ;

@@ -1,4 +1,6 @@
 
+=pod 
+
 =head1 NAME 
 
 =head2 conjug - Conjugation of Portuguese verbs
@@ -80,14 +82,14 @@
 
 =head2 EXAMPLES :
 
-etienne@anonimo: conjug i ouvir pres
+ etienne@anonimo: conjug i ouvir pres
 ouvir :  irreg                          
 pres     oi\co ouves ouve ouvimos ouvem 
 
-etienne@anonimo: conjug i q ouvir pres
+ etienne@anonimo: conjug i q ouvir pres
 oi\co ouves ouve ouvimos ouvem 
 
-etienne@anonimo: conjug i qx ouvir pres
+ etienne@anonimo: conjug i qx ouvir pres
 o[iu]\co ouves ouve ouvimos ouvem 
 
 
@@ -96,26 +98,26 @@ o[iu]\co ouves ouve ouvimos ouvem
 =over 4
 
 =item Cedillas must be protected from shell escape : you must write 
-  "conjug cal\\car"  or "conjug 'cal\car' if don't want your verb to
-  become 'calcar'.
+   ``conjug cal\\car''  or  ``conjug 'cal\car' '' if don't want
+  your verb to become 'calcar'.
 
-=item Options "ir" are interpreted as the verb "ir".
+=item Options ``ir'' are interpreted as the verb ``ir''.
 
 =item Second person plural is not defined (little used).
 
 =back
 
-=head1 FILES :
 
-  I<verb.pt> contains an ascii "database" of irregular verbs, and is
-  indispensable to the correct functioning of "conjug".  
+=head1 SEE ALSO 
 
-=head1 SEE ALSO : treinar, Lingua::PT::Conjugate.pm.
+treinar, Lingua::PT::Conjugate.pm.
 
-=head1 VERSION 0.01
+=head1 VERSION 0.90
 
-=head1 AUTHOR Etienne Grossmann, January 1998 [etienne@isr.ist.utl.pt] 
- 
+=head1 AUTHOR 
+
+Etienne Grossmann, January 1998 [etienne@isr.ist.utl.pt] 
+
 =cut
 
 

@@ -58,13 +58,17 @@ like :
 check my skills at conjugating "ir" at tense "imperfecto". "treinar"
 will clear that line, and prompt me to continue the verb I had
 started.
- 
-=head2 ACCENTUATION uses iso 8859-1 characters when the -i option is
-passed. Entering a single "i" on a line will toggle iso-accentuation.
 
-=head2 FIXING THE TENSE is done by entering line with a "f" followed
-by a tense, in abbreviated form. A single "f" on a line will either
-fix the tense to the current tense, or toggle off fixed-tense-mode.
+=head2 ACCENTUATION
+
+uses iso 8859-1 characters when the C<-i> option is passed. Entering a
+single "i" on a line will toggle iso-accentuation.
+
+=head2 FIXING THE TENSE
+
+is done by entering line with a "f" followed by a tense, in
+abbreviated form. A single "f" on a line will either fix the tense to
+the current tense, or toggle off fixed-tense-mode.
 
 =head2 QUITTING 
 
@@ -85,6 +89,11 @@ to say that I want the first person plural to be corrected to
 
 will also do.
 
+=head2 PRERIQUISITES
+
+	   Term::ReadLine
+
+
 =head2 BUGS 
 
   treinar may be fragile, especially since it moves the cursor around
@@ -94,9 +103,13 @@ by  priting the strings "\33\133A", "\33\133B", "\33\133C" and
   It is not very pedagogic. 
 
 
-=head1 SEE ALSO : conj, conjug.
+=head1 SEE ALSO 
 
-=head1 VERSION 0.01
+conj, conjug.
 
-=head1 AUTHOR Etienne Grossmann, January 1998 [etienne@isr.ist.utl.pt] 
+=head1 VERSION 0.90
+
+=head1 AUTHOR 
+
+Etienne Grossmann, January 1998 [etienne@isr.ist.utl.pt] 
  

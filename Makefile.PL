@@ -13,13 +13,29 @@ WriteMakefile(
    'MAN1PODS'=>{'conjug.pod'=>'$(INST_MAN1DIR)/conjug.1',
                 'treinar.pod'=>'$(INST_MAN1DIR)/treinar.1',},
 #   'MAN3PODS'=>{'Conjugate.pod'=>'$(INST_MAN3DIR)/Conjugate.3',},
-    'PM'        => {'Accent_iso_8859_1.pm' => 
-                        '$(INST_LIBDIR)/Accent_iso_8859_1.pm',
+    'PM'        => {
                     'Conjugate.pm'=>'$(INST_LIBDIR)/Conjugate.pm',
-#                   'verb.pt'=>'$(INST_LIBDIR)/verb.pt'
                     },
     'dist'         => { COMPRESS => "gzip -9f",
                         SUFFIX => 'gz',
                       }
 );
 
+sub MY::postamble { q(
+
+conjug.pl: conjug conjug.pod Conjugate.pm
+	perl -pe 's/perl\s+\-w/perl /' < Conjugate.pm > conjug.pl
+	cat conjug.pod >> conjug.pl
+	perl -pe 's/use/import/' < conjug >> conjug.pl
+	chmod +x conjug.pl
+
+treinar.pl: treinar treinar.pod Conjugate.pm
+	perl -pe 's/perl\s+\-w/perl /' < Conjugate.pm > treinar.pl
+	cat treinar.pod >> treinar.pl
+	perl -pe 's/use/import/ if /PT/' < treinar >> treinar.pl
+	chmod +x treinar.pl
+
+
+
+)
+}

@@ -1,15 +1,17 @@
-#!/usr/bin/perl -w 
+#!/usr/bin/perl 
 
 # 
 # conjug
 # Author          : Etienne Grossmann
 # Created On      : May     1997
-# Last Modified On: January 1998
+# Last Modified On: November 1998
 # Language        : Perl
-# Status          : Use with caution!
+# Status          : More or less stable
 # 
 # (C) Copyright 1998 Etienne Grossmann
 # 
+
+$VERSION = 0.90 ;
 
 $help_string= q{
  conjug  :  CONJUGATION OF PORTUGUESE VERBS

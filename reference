@@ -1104,4 +1104,41 @@ cfut    roer   roeres  roer   roermos   roerem
 cond    roeria roerias roeria roeríamos roeriam 
 ivo            rói     roa    roamos    roam    
 pp      roído                                   
-grd     roendo                                  
+grd     roendo                                  engolir :  model     dormir                                       
+pres       engulo    engoles    engole    engolimos    engolem    
+perf       engoli    engoliste  engoliu   engolimos    engoliram  
+imp        engolia   engolias   engolia   engolíamos   engoliam   
+fut        engolirei engolirás  engolirá  engoliremos  engolirão  
+mdp        engolira  engoliras  engolira  engolíramos  engoliram  
+cpres      engula    engulas    engula    engulamos    engulam    
+cimp       engolisse engolisses engolisse engolíssemos engolissem 
+cfut       engolir   engolires  engolir   engolirmos   engolirem  
+cond       engoliria engolirias engoliria engoliríamos engoliriam 
+ivo                  engole     engola    engolamos    engolam    
+pp         engolido                                               
+grd        engolindo                                              subir :  irreg                                        
+pres     subo    sobes    sobe    subimos    sobem    
+perf     subi    subiste  subiu   subimos    subiram  
+imp      subia   subias   subia   subíamos   subiam   
+fut      subirei subirás  subirá  subiremos  subirão  
+mdp      subira  subiras  subira  subíramos  subiram  
+cpres    suba    subas    suba    subamos    subam    
+cimp     subisse subisses subisse subíssemos subissem 
+cfut     subir   subires  subir   subirmos   subirem  
+cond     subiria subirias subiria subiríamos subiriam 
+ivo              sobe     suba    subamos    subam    
+pp       subido                                       
+grd      subindo                                      
+conseguir :  model       seguir                                               
+pres         consigo     consegues    consegue    conseguimos    conseguem    
+perf         consegui    conseguiste  conseguiu   conseguimos    conseguiram  
+imp          conseguia   conseguias   conseguia   conseguíamos   conseguiam   
+fut          conseguirei conseguirás  conseguirá  conseguiremos  conseguirão  
+mdp          conseguira  conseguiras  conseguira  conseguíramos  conseguiram  
+cpres        consiga     consigas     consiga     consigamos     consigam     
+cimp         conseguisse conseguisses conseguisse conseguíssemos conseguissem 
+cfut         conseguir   conseguires  conseguir   conseguirmos   conseguirem  
+cond         conseguiria conseguirias conseguiria conseguiríamos conseguiriam 
+ivo                      consegue     consiga     consigamos     consigam     
+pp           conseguido                                                       
+grd          conseguindo                                                      

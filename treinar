@@ -1,4 +1,4 @@
-#!/usr/bin/perl  -w
+#!/usr/bin/perl -w
 
 # 
 # treinar
@@ -71,8 +71,8 @@ srand(time());
          'nós', 4, 'você', 5, 'elas', 6, 'eles', 6 ); #'
 
 
-
-$flunked = "$ENV{HOME}/.flunked_verbs";
+$flunked_name = '.flunked_verbs' ;
+$flunked = "$ENV{HOME}/$flunked_name";
 if( -e "$flunked" ){
    open AA,"<$flunked";
    @fv = <AA>;
@@ -362,7 +362,7 @@ while(1) {
     print "\33\133D" x 30;
 
     if($errors && ! $from_flunk && ! defined($fv{$v})){
-        print "\nAppending to .flunked_verbs\n";
+        print "\n :-( Booh! <Appending '$v' to $flunked_name\n";
         if( ! -e $flunked){
             print "Creating file : $flunked \n";
         }
@@ -371,7 +371,7 @@ while(1) {
         close(AA); 
         
     } elsif(!$errors && $from_flunk ){
-        print "\nRemoving from .flunked_verbs\n";
+        print "\n :-) <Congratulations!!!! Removing '$v' from $flunked_name\n";
         open AA,">$flunked";
         print AA join("\n",@fv),"\n";
         close(AA); 

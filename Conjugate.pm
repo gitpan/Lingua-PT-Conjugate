@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# die "AAAAAA";   
+## die "AAAAAA";
 #
 # Perl package exporting a function "conjug" that conjugates
 # Portuguese verbs. 
@@ -55,8 +55,9 @@
 #            docummented in the verb database at end of this file.
 ##
 # 12  2000 - Incorporate Unconjugate-related stuff
+# 10  2002 - A few fixes in verbs
 
-$VERSION = '1.07' ;
+$VERSION = '1.08' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -1708,6 +1709,10 @@ construir: . constr(ó|u)is constr(ó|u)i . . constr(o|u)em
          model influir
 destruir: . destr(ó|u)is destr(ó|u)i . . destr(o|u)em
          model influir
+polir:
+    pulo pules pule polimos polis pulem
+    cpres pula pulas pula pulamos pulais pulam
+    ivo   pule
 
 # Won't do construir = destruir
 

@@ -1,4 +1,14 @@
-2001-08-06  Etienne Grossmann  <etienne@isr.ist.utl.pt>
+2002        Etienne Grossmann  <etienne@isr.ist.utl.pt>
+
+	* Miscellaneous fixes.
+
+2001-08-07  Etienne Grossmann  <etienne@isr.ist.utl.pt>
+
+	* Make build_doc work again, accept args and a little doc.
+
+	* Add minimal doc to 'assert'
+
+2001-08-06 
 
 	* Applied patch to fix "pedir", sent by Itai Nahshon
 	  <itai@siftology.com> 

@@ -34,7 +34,7 @@ cpres          transgrida    transgridas    transgrida    transgridamos    trans
 cimp           transgredisse transgredisses transgredisse transgredíssemos transgredísseis transgredissem 
 cfut           transgredir   transgredires  transgredir   transgredirmos   transgredirdes  transgredirem  
 cond           transgrediria transgredirias transgrediria transgrediríamos transgrediríeis transgrediriam 
-ivo                          transgride     transgrida    transgridamos    transgradi      transgridam    
+ivo                          transgride     transgrida    transgridamos    transgredi      transgridam    
 pp             transgredido                                                                               
 grd            transgredindo                                                                              
 digerir :  model     ferir                                                    
@@ -99,7 +99,7 @@ cpres       previna    previnas    previna    previnamos    prevais      previna
 cimp        prevenisse prevenisses prevenisse preveníssemos prevenísseis prevenissem 
 cfut        prevenir   prevenires  prevenir   prevenirmos   prevenirdes  prevenirem  
 cond        preveniria prevenirias preveniria preveniríamos preveniríeis preveniriam 
-ivo                    previne     previna    previnamos    prevani      previnam    
+ivo                    previne     previna    previnamos    preveni      previnam    
 pp          prevenido                                                                
 grd         prevenindo                                                               
 requerer :  irreg                                                                    
@@ -112,7 +112,7 @@ cpres       requeira   requeiras   requeira   requeiramos   requeirais   requeir
 cimp        requeresse requeresses requeresse requerêssemos requerêsseis requeressem 
 cfut        requerer   requereres  requerer   requerermos   requererdes  requererem  
 cond        requereria requererias requereria requereríamos requereríeis requereriam 
-ivo                    requer      requeira   requeiramos   requeirais   requeiram   
+ivo                    requer      requeira   requeiramos   requerei     requeiram   
 pp          requerido                                                                
 grd         requerendo                                                               
 demolir :  defectivo                                                          
@@ -151,7 +151,7 @@ cpres    saiba    saibas    saiba    saibamos    saibais    saibam
 cimp     soubesse soubesses soubesse soubéssemos soubêsseis soubessem 
 cfut     souber   souberes  souber   soubermos   souberdes  souberem  
 cond     saberia  saberias  saberia  saberíamos  saberíeis  saberiam  
-ivo               sabe      saiba    saibamos    saibais    saibam    
+ivo               sabe      saiba    saibamos    sabei      saibam    
 pp       sabido                                                       
 grd      sabendo                                                      
 medir :  model   pedir                                          
@@ -177,7 +177,7 @@ cpres         prossiga     prossigas     prossiga     prossigamos     prossigais
 cimp          prosseguisse prosseguisses prosseguisse prosseguíssemos prosseguísseis prosseguissem 
 cfut          prosseguir   prosseguires  prosseguir   prosseguirmos   prosseguirdes  prosseguirem  
 cond          prosseguiria prosseguirias prosseguiria prosseguiríamos prosseguiríeis prosseguiriam 
-ivo                        prossegue     prossiga     prossigamos     prossigais     prossigam     
+ivo                        prossegue     prossiga     prossigamos     prossegui      prossigam     
 pp            prosseguido                                                                          
 grd           prosseguindo                                                                         
 prever :  model    ver                                                 
@@ -229,7 +229,7 @@ cpres        persiga     persigas     persiga     persigamos     persigais     p
 cimp         perseguisse perseguisses perseguisse perseguíssemos perseguísseis perseguissem 
 cfut         perseguir   perseguires  perseguir   perseguirmos   perseguirdes  perseguirem  
 cond         perseguiria perseguirias perseguiria perseguiríamos perseguiríeis perseguiriam 
-ivo                      persegue     persiga     persigamos     persigais     persigam     
+ivo                      persegue     persiga     persigamos     persegui      persigam     
 pp           perseguido                                                                     
 grd          perseguindo                                                                    
 haver :  irreg                                                        
@@ -255,7 +255,7 @@ cpres  dê    dês    dê    dêmos    deis    dêem
 cimp   desse desses desse dêssemos dêsseis dessem 
 cfut   der   deres  der   dermos   deirdes derem  
 cond   daria darias daria daríamos daríeis dariam 
-ivo          dês    dê    dêmos    deis    dêem   
+ivo          dá     dê    demos    dai     dêem   
 pp     dado                                       
 grd    dando                                      
 fazer :  irreg                                                  
@@ -268,7 +268,7 @@ cpres    faça    faças    faça    façamos    façais    façam
 cimp     fizesse fizesses fizesse fizêssemos fizêsseis fizessem 
 cfut     fizer   fizeres  fizer   fizermos   fizerdes  fizerem  
 cond     faria   farias   faria   faríamos   faríeis   fariam   
-ivo              faz      faça    façamos    façais    façam    
+ivo              faz      faça    façamos    fazei     façam    
 pp       feito                                                  
 grd      fazendo                                                
 ferir :  irreg                                                  
@@ -398,7 +398,7 @@ cpres          contrafaça    contrafaças    contrafaça    contrafaçamos    contr
 cimp           contrafizesse contrafizesses contrafizesse contrafizêssemos contrafizêsseis contrafizessem 
 cfut           contrafizer   contrafizeres  contrafizer   contrafizermos   contrafizerdes  contrafizerem  
 cond           contrafaria   contrafarias   contrafaria   contrafaríamos   contrafaríeis   contrafariam   
-ivo                          contrafaz      contrafaça    contrafaçamos    contrafaçais    contrafaçam    
+ivo                          contrafaz      contrafaça    contrafaçamos    contrafazei     contrafaçam    
 pp             contrafeito                                                                                
 grd            contrafazendo                                                                              
 estar :  irreg                                                               
@@ -515,7 +515,7 @@ cpres        progrida    progridas    progrida    progridamos    prograis      p
 cimp         progredisse progredisses progredisse progredíssemos progredísseis progredissem 
 cfut         progredir   progredires  progredir   progredirmos   progredirdes  progredirem  
 cond         progrediria progredirias progrediria progrediríamos progrediríeis progrediriam 
-ivo                      progride     progrida    progridamos    progradi      progridam    
+ivo                      progride     progrida    progridamos    progredi      progridam    
 pp           progredido                                                                     
 grd          progredindo                                                                    
 seguir :  irreg                                                        
@@ -528,7 +528,7 @@ cpres     siga     sigas     siga     sigamos     sigais     sigam
 cimp      seguisse seguisses seguisse seguíssemos seguísseis seguissem 
 cfut      seguir   seguires  seguir   seguirmos   seguirdes  seguirem  
 cond      seguiria seguirias seguiria seguiríamos seguiríeis seguiriam 
-ivo                segue     siga     sigamos     sigais     sigam     
+ivo                segue     siga     sigamos     segui      sigam     
 pp        seguido                                                      
 grd       seguindo                                                     
 despedir :  model      pedir                                                         
@@ -567,7 +567,7 @@ cpres       desfaça    desfaças    desfaça    desfaçamos    desfaçais    desfaça
 cimp        desfizesse desfizesses desfizesse desfizêssemos desfizêsseis desfizessem 
 cfut        desfizer   desfizeres  desfizer   desfizermos   desfizerdes  desfizerem  
 cond        desfaria   desfarias   desfaria   desfaríamos   desfaríeis   desfariam   
-ivo                    desfaz      desfaça    desfaçamos    desfaçais    desfaçam    
+ivo                    desfaz      desfaça    desfaçamos    desfazei     desfaçam    
 pp          desfeito                                                                 
 grd         desfazendo                                                               
 querer :  irreg                                                        
@@ -580,7 +580,7 @@ cpres     queira   queiras   queira   queiramos   queirais   queiram
 cimp      quisesse quisesses quisesse quiséssemos quisêsseis quisessem 
 cfut      quiser   quiseres  quiser   quisermos   quiserdes  quiserem  
 cond      quereria quererias quereria quereríamos quereríeis quereriam 
-ivo                queiras   queira   queiramos   queirais   queiram   
+ivo                quer      queira   queiramos   querei     queiram   
 pp        querido                                                      
 grd       querendo                                                     
 encobrir :  model      cobrir                                                        
@@ -606,7 +606,7 @@ cpres    oiça    oiças    oiça    oiçamos    oiçais    oiçam
 cimp     ouvisse ouvisses ouvisse ouvíssemos ouvísseis ouvissem 
 cfut     ouvir   ouvires  ouvir   ouvirmos   ouvirdes  ouvirem  
 cond     ouviria ouvirias ouviria ouviríamos ouviríeis ouviriam 
-ivo              ouve     oiça    oiçamos    oiçais    oiçam    
+ivo              ouve     oiça    oiçamos    ouvi      oiçam    
 pp       ouvido                                                 
 grd      ouvindo                                                
 antever :  model     ver                                                      
@@ -671,7 +671,7 @@ cpres         satisfaça    satisfaças    satisfaça    satisfaçamos    satisfaçai
 cimp          satisfizesse satisfizesses satisfizesse satisfizêssemos satisfizêsseis satisfizessem 
 cfut          satisfizer   satisfizeres  satisfizer   satisfizermos   satisfizerdes  satisfizerem  
 cond          satisfaria   satisfarias   satisfaria   satisfaríamos   satisfaríeis   satisfariam   
-ivo                        satisfaz      satisfaça    satisfaçamos    satisfaçais    satisfaçam    
+ivo                        satisfaz      satisfaça    satisfaçamos    satisfazei     satisfaçam    
 pp            satisfeito                                                                           
 grd           satisfazendo                                                                         
 caber :  irreg                                                        
@@ -684,7 +684,7 @@ cpres    caiba    caibas    caiba    caibamos    caibais    caibam
 cimp     coubesse coubesses coubesse coubéssemos coubêsseis coubessem 
 cfut     couber   couberes  couber   coubermos   couberdes  couberem  
 cond     caberia  caberias  caberia  caberíamos  caberíeis  caberiam  
-ivo               caibas    caiba    caibamos    caibais    caibam    
+ivo               cabe      caiba    caibamos    cabei      caibam    
 pp       cabido                                                       
 grd      cabendo                                                      
 agredir :  irreg                                                              
@@ -697,7 +697,7 @@ cpres      agrida    agridas    agrida    agridamos    agridais    agridam
 cimp       agredisse agredisses agredisse agredíssemos agredísseis agredissem 
 cfut       agredir   agredires  agredir   agredirmos   agredirdes  agredirem  
 cond       agrediria agredirias agrediria agrediríamos agrediríeis agrediriam 
-ivo                  agride     agrida    agridamos    agridais    agridam    
+ivo                  agride     agrida    agridamos    agredi      agridam    
 pp         agredido                                                           
 grd        agredindo                                                          
 preferir :  model      ferir                                                         
@@ -762,7 +762,7 @@ cpres    valha   valhas   valha   valhamos   valhais   valham
 cimp     valesse valesses valesse valêssemos valêsseis valessem 
 cfut     valer   valeres  valer   valermos   valerdes  valerem  
 cond     valeria valerias valeria valeríamos valeríeis valeriam 
-ivo              vale     valha   valhamos   valhais   valham   
+ivo              vale     valha   valhamos   valei     valham   
 pp       valido                                                 
 grd      valendo                                                
 poder :  irreg                                                  
@@ -775,7 +775,7 @@ cpres    possa   possas   possa   possamos   possais   possam
 cimp     pudesse pudesses pudesse pudéssemos pudêsseis pudessem 
 cfut     puder   puderes  puder   pudermos   puderdes  puderem  
 cond     poderia poderias poderia poderíamos poderíeis poderiam 
-ivo              possas   possa   possamos   possais   possam   
+ivo              pode     possa   possamos   podei     possam   
 pp       podido                                                 
 grd      podendo                                                
 rir :  irreg                                      
@@ -970,7 +970,7 @@ cpres  ponha   ponhas   ponha   ponhamos   ponhais   ponham
 cimp   pusesse pusesses pusesse puséssemos pusésseis pusessem 
 cfut   puser   puseres  puser   pusermos   puserdes  puserem  
 cond   poria   porias   poria   poríamos   poríeis   poriam   
-ivo            ponhas   ponha   ponhamos   ponhais   ponham   
+ivo            põe      ponha   ponhamos   ponde     ponham   
 pp     posto                                                  
 grd    pondo                                                  
 inscrever :  model       escrever                                                           
@@ -1139,7 +1139,7 @@ cpres        consiga     consigas     consiga     consigamos     consigais     c
 cimp         conseguisse conseguisses conseguisse conseguíssemos conseguísseis conseguissem 
 cfut         conseguir   conseguires  conseguir   conseguirmos   conseguirdes  conseguirem  
 cond         conseguiria conseguirias conseguiria conseguiríamos conseguiríeis conseguiriam 
-ivo                      consegue     consiga     consigamos     consigais     consigam     
+ivo                      consegue     consiga     consigamos     consegui      consigam     
 pp           conseguido                                                                     
 grd          conseguindo                                                                    
 ar :                                                                     
@@ -1168,7 +1168,7 @@ cond        afeiçoaria afeiçoarias afeiçoaria afeiçoaríamos afeiçoaríeis afeiçoa
 ivo                    afeiçoa     afeiçoe    afeiçoemos    afeiçoai     afeiçoem    
 pp          afecto                                                                   
 grd         afeiçoando                                                               
-influir :                                                                     
+influir :  irreg                                                              
 pres       influo    influis    influi    influímos    influis     influem    
 perf       influí    influíste  influiu   influímos    influístes  influíram  
 imp        influía   influías   influía   influíamos   influíeis   influíam   
@@ -1178,6 +1178,6 @@ cpres      influa    influas    influa    influamos    influais    influam
 cimp       influisse influisses influisse influíssemos influísseis influissem 
 cfut       influir   influires  influir   influirmos   influirdes  influirem  
 cond       influiria influirias influiria influiríamos influiríeis influiriam 
-ivo                  influi     influa    influamos    influi      influam    
+ivo                  influi     influa    influamos    influí      influam    
 pp         influido                                                           
 grd        influindo                                                          

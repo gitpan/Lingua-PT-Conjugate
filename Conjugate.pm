@@ -47,9 +47,14 @@
 #          - Put second person plural in 1.02, as suggested by
 #            Miguel, and fixed all bugs I found. I doubt 2nd plural is
 #            always correct. 
-#          - Code cleaning and commenting, fixed doc in 1.03.
+#          - 1.03 : Code cleaning and commenting, fixed doc.
+#  9    99 - 1.04 : Imperativo of second plural follows a simple rule
+#            which I had overlooked. Fixed. Some places where
+#            "Diciónario Online da Lingua Portuguesa" (DLPO) and "Guia
+#            Prática dos Verbos Portugueses" (GPVP) differ have been
+#            docummented in the verb database at end of this file.
 #         
-$VERSION = '1.03' ;
+$VERSION = '1.04' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -360,6 +365,7 @@ $letter = "ç$vocs$cons";
 		  usesse usesses usesse uséssemos uésseis usessem,
 		  user useres user usermos userdes userem,
 		  oria orias oria oríamos oríeis oriam,
+		  õe onha onhamos onde onham
 		  pp osto grd ondo
 		}),
 	   );
@@ -428,15 +434,16 @@ $letter = "ç$vocs$cons";
   		     pus puseste pôs pusemos pusestes puseram , 
  		     punha punhas punha púnhamos púnheis punham,
 		     porei porás porá poremos poreis porão,
-			 pusera puseras pusera puséramos puséreis puseram,
-			 ponha ponhas ponha ponhamos ponhais ponham,
-			 cimp pusesse pusesses pusesse puséssemos pusésseis pusessem,
-			 puser puseres puser pusermos puserdes puserem,
-			 poria porias poria poríamos poríeis poriam,
-			 pp posto grd pondo
-			 }),
+   		     pusera puseras pusera puséramos puséreis puseram,
+		     ponha ponhas ponha ponhamos ponhais ponham,
+		     cimp pusesse pusesses pusesse puséssemos pusésseis pusessem,
+		     puser puseres puser pusermos puserdes puserem,
+          	     poria porias poria poríamos poríeis poriam,
+ 		     põe ponha ponhamos ponde ponham
+        	     pp posto grd pondo
+		     }),
 		 
-		 );
+	 );
 
 #  A few regular verbs
 @regverb = qw{ receitar viver andar partir fintar fracturar guiar
@@ -541,7 +548,7 @@ sub verbify {
 		  } 
 		  next unless $p6;
 		  
-		  # HERE CAREFUL if @tense changes
+		  # HERE CAREFUL if @tense changes . This is "grd"
 	  }  elsif( ($tc==10) && ($p==1)  ){
 		  
 		  $p = 0;
@@ -594,8 +601,15 @@ sub verbify {
 	  $p++;
   }
   if($p==5){
-    $res{$t}->[5] = $res{$t}->[4] ;
-	$res{$t}->[4] = undef ;		# MODIF 082899
+#      if( $t ne "ivo" )
+#      {
+	  $res{$t}->[5] = $res{$t}->[4] ;
+	  $res{$t}->[4] = undef ;		# MODIF 082899
+#      } else 
+#      {
+#	  chop( $res{$t}->[4] = $root  ) ;
+#	  ( $res{$t}->[4] .= "i" ) =~ s/ii$/i/ ;
+#      }
   }
   
   foreach $t (@accent){
@@ -1218,35 +1232,42 @@ sub conjug {
 			$w = $y;
 
 			# Default imperativo is built from conjuntivo
-		  } elsif (!$w  && "$t" eq "ivo" && $p!=1 && 
-				   (($y=$verb->{$v}->{cpres}->[$p-1]) || 
-					($m && $verb->{$m}->{cpres}->[$p-1] ))
-				  ){
-			
-			if(!$y) { 
+		  } elsif (!$w  && "$t" eq "ivo" && $p!=1 && $p != 5 &&
+			   (($y=$verb->{$v}->{cpres}->[$p-1]) || 
+			    ($m && $verb->{$m}->{cpres}->[$p-1] ))
+			   ){
+		      # print "I'm here III $p,$y  \n";
+		      if(!$y) { 
 			  if($prefix){
-				$y="$verb->{$m}->{cpres}->[$p-1]"; 
-				$y = $prefix . substr($y,$missing); # SUSPICIOUS
+#			      print "I'm here II\n";
+			      $y="$verb->{$m}->{cpres}->[$p-1]"; 
+			      $y = $prefix . substr($y,$missing); # SUSPICIOUS
 			  } else {
-				$y = $verb->{$m}->{cpres}->[$p-1];
-				$vy=$cy=$ey="";
-				if( $p != 5 )
-				{
-					warn "Ivo bug $y , $p,  ($vy,$cy,$ey) " unless 
-						($vy,$cy,$ey) = $y  =~ 
-							/ ([$vocs]) ($cpat) ($endg{cpres}->[$p-1]) $/x;
-					# print "-$endg{cpres}->[$p-1]-$y-$1-$2-$3\n";
-				} else {
-					$ey = "i";
-					warn "Ivo bug $y , $p,  ($vy,$cy,$ey) (BIS)" unless 
-						($vy,$cy) = $y  =~ 
-							/ ([$vocs]) ($cpat)  /x;
-				}
-				$y= "$rr$vy$cr$ey";
+			      $y = $verb->{$m}->{cpres}->[$p-1];
+			      $vy=$cy=$ey="";
+			      if( $p != 5 )
+			      {
+				  warn "Ivo bug $y , $p,  ($vy,$cy,$ey) " unless 
+				      ($vy,$cy,$ey) = $y  =~ 
+					  / ([$vocs]) ($cpat) ($endg{cpres}->[$p-1]) $/x;
+				  # print "-$endg{cpres}->[$p-1]-$y-$1-$2-$3\n";
+			      } else {
+#				  print "I'm here\n" ;
+				  $ey = "i";
+				  warn "Ivo bug $y , $p,  ($vy,$cy,$ey) (BIS)" unless 
+				      ($vy,$cy) = $y  =~ 
+					  / ([$vocs]) ($cpat)  /x;
+			      }
+			      $y= "$rr$vy$cr$ey";
 			  }
-			}
-			$w = "$y";
+		      } 
+		      $w = "$y";
 			
+		  } elsif(!$w  && "$t" eq "ivo" && $p!=1 && $p == 5 )
+		  {
+		      chop( $w = $v );
+		      ($w .= "i") =~ s/ii/i/;
+		      
 		  }
 		  
 		  $w = "$root$reg{$edg}->{$t}->[$p-1]"   if 
@@ -1318,7 +1339,7 @@ sub conjug {
   # Format output
   if   ( $rc eq "c" ){ return tabcol($verbose+@p,\@res,$sep); }
   elsif( $rc eq "r" ){ return tabrow($verbose+@p,\@res,$sep); }
-  elsif( $rc eq "s" ){ 
+  elsif( $rc eq "s" ){			# Single line
 	  $_ = join($sep,grep defined, @res); 
 	  s/\s+$//mg; 
 	  return $_ }
@@ -1490,6 +1511,7 @@ boiar:
   bóio etc 
   cpres bóie bóies bóie boiemos bóiem
   ivo bóia bóie boiemos bóiem
+# This one has ivo,p=5 perdoeis in GPVP, perdoai in DLPO
 perdoar:
   perdoo perdoas perdoa perdoamos perdoam 
 moer:
@@ -1533,16 +1555,21 @@ dar:
   dê dês dê dêmos deis dêem,
   desse etc 
   der deres der dermos derem ,
+  ivo dá . demos
 poder:
   posso podes etc
   pude pudeste pôde pudemos puderam, 
   mdp pudera etc
   cpres possa etc
   cimp pudesse pudesses pudesse pudéssemos pudessem 
+# DLPO defines ivo like here, GPVP says it isn't defined
+  ivo pode
 caber:
   caibo perf coube etc cpres caiba etc 
   cimp acc 
   mdp coubera acc etc
+# DLPO defines ivo like here, GPVP says it isn't defined
+  ivo cabe
 sentir:
   sinto sentes etc
   cpres sinta etc
@@ -1578,16 +1605,20 @@ saber:
   cpres saiba etc # saibas saiba saibamos saibam
   cimp acc 
   ivo sabe
+# DLPO defines ivo like here. GPVP says ivo is not defined.
 querer: 
   . . quer . . ,
   quis quiseste quis quisemos quiseram,
   mdp quisera acc etc 
   cpres queira etc
   cimp quisesse acc etc 
+  ivo  quer
+
 requerer: 
   requeiro . requer ,
   requeri requereste requereu requeremos requerem ,
   cpres requeira etc , cimp requeresse etc , cfut requerer etc 
+# DLPO defines ivo "requer requira requiramos requerei requiram"
   ivo requer 
 ganhar: pp (ganho|ganhado)
 gastar: pp gast(|ad)o
@@ -1666,6 +1697,8 @@ escrever: pp escrito
 escrever = descrever inscrever reescrever prescrever
 dormir =  abolir demolir engolir
 
+influir : ivo . . . influí .
+
 subir : 
   subo sobes sobe subimos sobem ivo sobe
 
@@ -1681,7 +1714,6 @@ reaver:
        reouver reouveres reouver reouvermos reouverdes reouverem,
        reaveria reaverias reaveria reaveríamos reaveríeis reaveriam,
        x x x x x, reavido  reavendo
-
 pedir = despedir medir impedir expedir
 # Double Particípio Passado
 aceitar: pp aceit(o|e|ado)

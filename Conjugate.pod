@@ -1,8 +1,6 @@
 
 =head1 NAME 
 
-=head2 
-
   Lingua::PT::Conjugate.pm - Module for Conjugating Portuguese verbs
 
 =head1 DESCRIPTION 
@@ -24,14 +22,87 @@ just a wrapper).
 
 See the C<conjug> manpage for more examples.
 
+=head1 SYNOPSIS 
+
+  $a = conjug( [$options,] $verb [,$tense ... ] [,$person ... ])
+
+=head2 Options define how the output will be formatted.
+
+=over 4
+
+=item 'q' : 'Quiet', only return the conjugated forms.
+
+=item 'v' : 'Verbose', return the infinitive, the tenses, the
+conjugated forms and say if the verb is irregular or follows a model
+(Default). 
+
+=item 's' : 'Single', returned string is a single line. 'quiet' option
+is forced, but can be toggled off by a subsequent 'v'  option.
+
+=item 'r' : 'Row', each row represents a person.
+
+=item 'c' : 'Column', each column represents a person (Default).
+
+=item 'o' : 'cOmma', output is comma-separated. Basically useless.
+
+=item 'l' : Long form of verb name is used.
+
+=item 'x' : 'regeXp', when multiple forms are available, returns a
+regexp that matches all correct form, and only these. This is mostly
+useful for past participle of abundant verbs. 
+
+=item 'i' : 'ascIi', use only ascii characters, no accents.
+
+=item 'h' : 'Hash', return a hash rather than a string. The keys are
+the tense names (both long and short). The values are refs to arrays
+whose i'th element is the i'th person, for i in 1-4,6. This options
+renders ineffective all other options except 'i' and 'x'.
+
+=back
+
+=head2 VERB 
+
+The verb argument must end in 'ar', 'or' '\^or', 'er' or 'ir'
+(otherwise it cannot be a genuine portuguese verb). If a string with a
+valid ending is passed, that is not a true portuguese verb -say,
+'PerlProgrammer' - it will be conjugated as if it were a regular verb.
+
+=head2 TENSE
+
+The optional 'tense' arguments consist in a list of 
+
+   'pres' , 'Presente', 
+   'perf' , 'Perfeito', 
+   'imp'  , 'Imperfeito', 
+   'fut'  , 'Futuro',
+   'mdp'  , 'Mais Que Perfeito' or 'Mais-que-Perfeito', 
+   'cpres', 'Conjuntivo Presente', 
+   'cimp' , 'Conjuntivo Imperfeito', 
+   'cfut' , 'Conjuntivo Futuro', 
+   'ivo'  , 'Imperativo', 
+   'pp'   , 'Particípio Passado',
+   'grd'  , 'Gerundivo'. 
+
+  Caps don't matter. Default is all tenses in the first column.
+
+=head2 PERSON
+
+The optional 'person' arguments consist in a list of numbers
+representing the person at which the verb is conjugated : 'I'=1,
+'you'=2, 'she/he'=3, 'we'=4, 'they'=6. Second person plural, which
+would be '5' is not implemented. All numbers other that 1-4,6 are
+ignored. Default is 1-4,6.
+
+  Now, for the inner details :
+
 =head1 DATA STRUCTURES :
 
-=head2 Variable C<$Portuguese::Conjugate::vlist>
+=head2 Variable C<$Lingua::PT::Conjugate::vlist>
 
 The database is a single big string, defined at the end of
 Conjugate.pm (the comments and end-of-line's are taken out).
 
-It is in the variable C<$Portuguese::Conjugate::vlist>.
+It is in the variable C<$Lingua::PT::Conjugate::vlist>.
 
 To understand the format, have a look at the code, and read this
 informal description :
@@ -45,7 +116,7 @@ them in the order pres (i.e. present), perf (perfeito), imp
 (imperfeito), fut (futuro), mdp (mais-que-perfeito), cpres (conjuntivo
 presente), cimp (conjuntivo imperfeito), cfut (conjuntivo futuro), cond
 (condicional), ivo (imperativo), pp (particípio passado) and grd
-(gerundivo).  
+(gerundivo).
 
 The conjugated forms must correspond to 1st person, second, third,
 first plural, (optionally, second plural) and third plural; except for
@@ -215,7 +286,8 @@ discussed about this module, who have provided advice on conjugation,
 programming, on naming and on all relevant points.
 
 Thanks to Lupe Christoph <lupe@lupe-christoph.de> from
-cpan-testers@perl.org for finding and fixing some bugs. 
+cpan-testers@perl.org and to Miguel Marques
+<marques@physik.uni-wuerzburg.de> for finding and fixing some bugs.
 
 =cut
 

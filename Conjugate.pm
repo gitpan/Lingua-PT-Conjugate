@@ -8,6 +8,8 @@
 # 
 # Date   : May 1997 onwards.
 # 
+# The verb data base is at the end of this file.
+# 
 # Changes : 
 #  6/30/97 - Verbos Abundantes.
 #  7/01/97 - Verbos Defectivos.
@@ -28,7 +30,7 @@
 #          - Call it version 0.90.
 #          - Add targets 'treinar.pl', 'conjug.pl', that
 #            are truly standalone, in the sense that they don't
-#            require the Lingua::PT::Conjugate to be installed.
+#            require Lingua::PT::Conjugate to be installed.
 # 12    98 - A few past participles in 'uido' didn't have the required
 #            accent. Fixed.
 #  3    99 - Options 'o' (comma-separated result) and 'l' (long format
@@ -36,8 +38,15 @@
 #          - Fix installation of Lingua::PT::Conjugate.
 #  5    99 - Minor doc fixes
 #  6    99 - Portability of t/test.t fixed by cpan-tester Lupe.
+#  8    99 - Miguel Marques <marques@physik.uni-wuerzburg.de> noticed
+#            that 'cegar' had a wrong and ugly past participle. And
+#            another bug too. And that 'Lingua::PT::conjug()' should
+#            be able to return a hash. This is already possible, but I
+#            hadn't documented it. All this is fixed in Version
+#            1.01. Also, some tests have been added.
+#          
 # 
-$VERSION = '1.00' ;
+$VERSION = '1.01' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -408,20 +417,20 @@ $letter = "ç$vocs$cons";
 		 } ),
 		 
 		 
-		 "pôr"=>verbify( q{ pôr
-							  ponho pões põe pomos põem ,
-							  pus puseste pôs pusemos puseram , 
-							  punha punhas punha púnhamos punham,
-							  porei porás porá poremos porão,
-							  pusera puseras pusera puséramos puseram,
-							  ponha ponhas ponha ponhamos ponham,
-							  cimp pusesse pusesses pusesse puséssemos pusessem,
-							  puser puseres puser pusermos puserem,
-							  poria porias poria poríamos poriam,
-							  pp posto grd pondo
-							}),
+		 "pôr"=>verbify( q{  pôr
+		     ponho pões põe pomos põem ,
+  		     pus puseste pôs pusemos puseram , 
+ 		     punha punhas punha púnhamos punham,
+		     porei porás porá poremos porão,
+			 pusera puseras pusera puséramos puseram,
+			 ponha ponhas ponha ponhamos ponham,
+			 cimp pusesse pusesses pusesse puséssemos pusessem,
+			 puser puseres puser pusermos puserem,
+			 poria porias poria poríamos poriam,
+			 pp posto grd pondo
+			 }),
 		 
-		);
+		 );
 
 #  A few regular verbs
 @regverb = qw{ receitar viver andar partir fintar fracturar guiar
@@ -755,22 +764,22 @@ sub verify {
       
 	  while ( defined($e=shift @u) && defined($d=shift @t) ){
 		
-		$e =~ s/\s+/ /g; $e =~ s/^\s+//; $e =~ s/\s+$//;
-		$d =~ s/\s+/ /g; $d =~ s/^\s+//; $d =~ s/\s+$//;
-		
-		$d2 = $d;
-		$d2 =~ s/\\/\\\\/g;
-		$d2 =~ s/([^\\])([\'\"\^\~])/$1\\$2/g; #'" 
-		# $d2 =~ s/([^\\])([\'\"\^\~])/$1\\$2/g;#'" 
-		$w .= join("",tabcol(-2,[
-								 sprintf("  %3d ",++$errcnt),
-								 split(/\s/,$d),
-								 "\n  REF ", split(/\s/,$e)] ) )
+	      $e =~ s/\s+/ /g; $e =~ s/^\s+//; $e =~ s/\s+$//;
+	      $d =~ s/\s+/ /g; $d =~ s/^\s+//; $d =~ s/\s+$//;
+	      
+	      $d2 = $d;
+	      $d2 =~ s/\\/\\\\/g;
+	      $d2 =~ s/([^\\])([\'\"\^\~])/$1\\$2/g; #'" 
+	      # $d2 =~ s/([^\\])([\'\"\^\~])/$1\\$2/g;#'" 
+	      $w .= join("", tabcol(-2,[
+					sprintf("  %3d ",++$errcnt),
+					split(/\s/,$d),
+					"\n  REF ", split(/\s/,$e)] ) )
 		  if ($e !~ /$d2/);
-		# print ">$e<\n>$d2<\n" if ($e !~ /$d2/);
+	      # print ">$e<\n>$d2<\n" if ($e !~ /$d2/);a
 	  }
 	  if($#u>=0){
-		$w .= "   ABS ".join("\n   ABS ",@u)."\n"
+	      $w .= "   ABS ".join("\n   ABS ",@u)."\n"
 	  }
 	  if($#t>=0){
 		$w .= "   EXC ".join("\n   EXC ",@t)."\n"
@@ -907,25 +916,30 @@ sub conjug {
   my $verb = ( ref($_[0]) eq "HASH") ? shift  : \%verb ;
   
   # Extract options verb, tense and person.
-  while( ($v=shift) && ($v=~ /^\-? [hvqlrcsxio]+ $/x ) ){
+#  while( ($v=shift) && ($v=~ /^\-? [hvqlrcsxio]+ $/x ) ){
+  while( @_ && (($v = shift) =~ /^\-? [hvqlrcsxio]+ $/x ) ){
 	# print "option $v\n";
-	if( $v=~/[iaeoô]r$/ ){ # 
+	if( $v=~/[iaeoô]r$/ ){	# That looks like a verb
 	  # unshift @_,$v;
 	  # print "NOT OPT\n";
 	  last ;
 	}
-	if   ( $v =~ /q/ ) {$verbose = 0 } # Quiet
-	elsif( $v =~ /v/ ) {$verbose = 1 } # Verbose
-	if   ( $v =~ /r/ ) { $rc = "r" } # Rows	
-	elsif( $v =~ /c/ ) { $rc = "c" } # Columns
-																# return a Single line
-	elsif( $v =~ /s/ ) { $rc = "s"; $verbose = 0; }
- 	elsif( $v =~ /h/ ) { $rc = "h"; }	# return a Hash
-	if   ( $v =~ /l/ ) { $long = 1 } # Long form of verbs
-	if   ( $v =~ /o/ ) { $sep = ", " } # output is comma-separated
-	# Return a regexp that matches a correct verbal form
-	if   ( $v =~ /x/ ) { $regexp = 1 } 
-	if   ( $v =~ /i/ ) { $isoacc = 0; }	# Use only ascii chars
+	foreach ( $v =~ /./g )
+	{
+	    # print "--> $_\n";
+	    if   ( /q/ ) {$verbose = 0 } # Quiet
+	    elsif( /v/ ) {$verbose = 1 } # Verbose
+	    elsif( /r/ ) { $rc = "r" } # Rows	
+	    elsif( /c/ ) { $rc = "c" } # Columns
+	    # return a Single line
+	    elsif( /s/ ) { $rc = "s"; $verbose = 0; }
+	    elsif( /h/ ) { $rc = "h"; } # return a Hash
+	    elsif( /l/ ) { $long = 1 } # Long form of verbs
+	    elsif( /o/ ) { $sep = ", " } # output is comma-separated
+	    # Return a regexp that matches a correct verbal form
+	    elsif( /x/ ) { $regexp = 1 } 
+	    elsif( /i/ ) { $isoacc = 0; }	# Use only ascii chars
+    }
   }
   
   while( $v && !defined($alt_tense{$w = lc(un_accent($v)) }) && ($v!~/[\d]/)){ 
@@ -964,9 +978,9 @@ sub conjug {
     @p = ($v);
     while(($v=shift) && $v=~ /^[1-4,6] $/x){ push @p,$v};
   } else {
-    @p = (1..4,6);
+      # @p = (1..4,6) unless @p ;
   }
-  
+  @p = (1..4,6) unless @p ;
   # print "VERB  ",join(",",@v);
   # print "\nTENSE ",join(",",@t);
   # print "\nPERS  ",join(",",@p),"\n";
@@ -978,6 +992,8 @@ sub conjug {
   my ($prefix, $missing);
   my ($y,$cy,$vy,$ey);          # Found conjugated form, 
   my ($ex,$z,$s);               # EXplicitely defined? temps.
+
+  @res = () ; %res = () ;
   
   map {$_=asc2iso($_) if /[\"\'\^\\\~]/} @v ; #
   # print "CONJUG  \n>",join(",",@v),"<\n>", 
@@ -1019,23 +1035,31 @@ sub conjug {
     }
     elsif( $v =~ /(uzir|zer)$/ ){  $modif = \&end_zer }
     elsif( $v =~/ear$/ )        {  $verb->{$v}->{model} = "passear" 
-									 unless $v eq "passear" }
+									   unless $v eq "passear" }
     else                        { $modif = 0 }
 	
 	# if($v =~/or$/){       # verbs in "or"
 	# $verb->{$v}->{model} = "pôr" unless defined($verb->{$v});
 	# }
 	
-    if($verbose){
-	  
-      push @res, "$v : ", defined($verb->{defectivos}->{$v}) ? 
-		("defectivo","") :
-		  defined($verb->{$v}) ?
-			defined($verb->{$v}->{model}) ?
-			  ("model",$verb->{$v}->{model}) :
-				("irreg","") : ("",""), 
-				("","",""),   
-			}
+    if($verbose)
+    {
+	
+		push @res, "$v : ", defined($verb->{defectivos}->{$v}) ? 
+			("defectivo","") :
+				defined($verb->{$v}) ?
+					defined($verb->{$v}->{model}) ?
+						("model",$verb->{$v}->{model}) :
+							("irreg","") : ("",""), 
+							("","","") ; # Assume @p == 5 !!!
+		# Avoid putting too many columns/rows
+		if( @p != @res )
+		{
+			push @res , join(" ", splice(@res,@p) ) ;
+			$res[$#res] =~ s/\s+$//;
+		}
+		
+    }
 	
     if( defined($verb->{$v}) ) { # Irregular Verb
 	  
@@ -1278,7 +1302,10 @@ sub conjug {
   # Format output
   if   ( $rc eq "c" ){ return tabcol($verbose+@p,\@res,$sep); }
   elsif( $rc eq "r" ){ return tabrow($verbose+@p,\@res,$sep); }
-  elsif( $rc eq "s" ){ $_ = join($sep,@res); s/\s+$//mg; return $_ }
+  elsif( $rc eq "s" ){ 
+	  $_ = join($sep,grep defined, @res); 
+	  s/\s+$//mg; 
+	  return $_ }
   elsif( $rc eq "h" ){ return \%res }
   return \@res ;
   
@@ -1348,7 +1375,8 @@ sub tabcol {
   
   $ncols = 1 unless $ncols;
   $ncols = ($#{$l} + 1)/(-$ncols) if($ncols<0);
-  
+
+  # Maximum widtdth of each column
   my @mx = (0) x $ncols ;		# not 0 x $ncols or whatever 
   
   my ($i,$res,$a)   = (0,"",0) ;
@@ -1362,7 +1390,7 @@ sub tabcol {
   # print "mx ",join(" ,",@mx),"\n";
   $i=0;
   foreach (@$l) { 
-    $res .= sprintf("%-$mx[$i]s$sep",defined($_)?$_:"");
+    $res .= sprintf("%-$mx[$i]s$sep", defined($_) ? $_ : "" );
     $i = ($i+1)%$ncols ;
     $res .= "\n" unless $i ;
   }
@@ -1643,7 +1671,7 @@ pedir = despedir medir impedir expedir
 aceitar: pp aceit(o|e|ado)
 afeiçoar: pp afe(ct|içoad)o
 cativar: pp cativ(|ad)o
-cegar: pp cag(|ad)o
+cegar: pp ceg(|ad)o
 completar: pp complet(|ad)o
 cultivar: pp cult(|ivad)o
 descalçar: pp descalç(|ad)o

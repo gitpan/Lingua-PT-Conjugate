@@ -12,7 +12,7 @@ WriteMakefile(
     'EXE_FILES' => ['conjug','treinar'],
    'MAN1PODS'=>{'conjug.pod'=>'$(INST_MAN1DIR)/conjug.1',
                 'treinar.pod'=>'$(INST_MAN1DIR)/treinar.1',},
-#   'MAN3PODS'=>{'Conjugate.pod'=>'$(INST_MAN3DIR)/Conjugate.3',},
+   'MAN3PODS'=>{'Conjugate.pod'=>'$(INST_MAN3DIR)/Lingua::PT::Conjugate.3',},
     'PM'        => {
                     'Conjugate.pm'=>'$(INST_LIBDIR)/Conjugate.pm',
                     },

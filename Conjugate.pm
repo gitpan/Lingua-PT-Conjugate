@@ -26,13 +26,15 @@
 # 05    98 - A few more "defective" verbs.
 # 11    98 - Include Accent_iso_8859_1.pm within Conjugate.pm
 #          - Call it version 0.90.
-#          - Add targets 'treinar.pl', 'conjug.pl'  in Makefile that
+#          - Add targets 'treinar.pl', 'conjug.pl', that
 #            are truly standalone, in the sense that they don't
 #            require the Lingua::PT::Conjugate to be installed.
 # 12    98 - A few past participles in 'uido' didn't have the required
 #            accent. Fixed.
-# 
-$VERSION=0.92;
+#  3    99 - Options 'o' (comma-separated result) and 'l' (long format
+#            for verb names)
+#          - Fix installation of Lingua::PT::Conjugate.
+$VERSION=0.93;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -894,28 +896,32 @@ sub conjug {
   
   my($v,$w,@v,@t,@p);
   
-  my ($verbose,$rc,$regexp,$isoacc) = (1,"c",0,1);
+  my ($verbose,$rc,$regexp,$isoacc,$sep,$long) = (1,"c",0,1," ",0);
   
   #	print "Received : >",join("<   >",@_),"<\n";
   # print "HASH FOUND \n" if ( ref($_[0]) eq "HASH");
   my $verb = ( ref($_[0]) eq "HASH") ? shift  : \%verb ;
   
   # Extract options verb, tense and person.
-  while( ($v=shift) && ($v=~ /^\-? [hvqrcsxi]+ $/x ) ){
+  while( ($v=shift) && ($v=~ /^\-? [hvqlrcsxio]+ $/x ) ){
 	# print "option $v\n";
 	if( $v=~/[iaeoô]r$/ ){ # 
 	  # unshift @_,$v;
 	  # print "NOT OPT\n";
 	  last ;
 	}
-	if   ( $v =~ /q/ ) {$verbose = 0 }
-	elsif( $v =~ /v/ ) {$verbose = 1 }
-	if   ( $v =~ /r/ ) { $rc = "r" }
-	elsif( $v =~ /c/ ) { $rc = "c" }
+	if   ( $v =~ /q/ ) {$verbose = 0 } # Quiet
+	elsif( $v =~ /v/ ) {$verbose = 1 } # Verbose
+	if   ( $v =~ /r/ ) { $rc = "r" } # Rows	
+	elsif( $v =~ /c/ ) { $rc = "c" } # Columns
+																# return a Single line
 	elsif( $v =~ /s/ ) { $rc = "s"; $verbose = 0; }
-	elsif( $v =~ /h/ ) { $rc = "h"; }
-	if   ( $v =~ /x/ ) { $regexp = 1 }
-	if   ( $v =~ /i/ ) { $isoacc = 0; }
+ 	elsif( $v =~ /h/ ) { $rc = "h"; }	# return a Hash
+	if   ( $v =~ /l/ ) { $long = 1 } # Long form of verbs
+	if   ( $v =~ /o/ ) { $sep = ", " } # output is comma-separated
+	# Return a regexp that matches a correct verbal form
+	if   ( $v =~ /x/ ) { $regexp = 1 } 
+	if   ( $v =~ /i/ ) { $isoacc = 0; }	# Use only ascii chars
   }
   
   while( $v && !defined($alt_tense{$w = lc(un_accent($v)) }) && ($v!~/[\d]/)){ 
@@ -1065,7 +1071,7 @@ sub conjug {
 		
         next unless defined($reg{er}->{$t});
 		
-        push @res, "$t" if $verbose ;
+        push @res, $long ? $long_tense{$t} : $t  if $verbose ;
         
         foreach $p (@p){
           
@@ -1215,7 +1221,7 @@ sub conjug {
 		
         next unless defined($reg{er}->{$t});        
 		
-        push @res, "$t" if $verbose ;
+        push @res, $long ? $long_tense{$t}: $t  if $verbose ;
 		
         foreach $p (@p){
           $w = "";
@@ -1266,9 +1272,9 @@ sub conjug {
 	}
   }
   # Format output
-  if   ( $rc eq "c" ){ return tabcol($verbose+@p,\@res); }
-  elsif( $rc eq "r" ){ return tabrow($verbose+@p,\@res); }
-  elsif( $rc eq "s" ){ $_ = join(" ",@res); s/\s+$//mg; return $_ }
+  if   ( $rc eq "c" ){ return tabcol($verbose+@p,\@res,$sep); }
+  elsif( $rc eq "r" ){ return tabrow($verbose+@p,\@res,$sep); }
+  elsif( $rc eq "s" ){ $_ = join($sep,@res); s/\s+$//mg; return $_ }
   elsif( $rc eq "h" ){ return \%res }
   return \@res ;
   
@@ -1332,9 +1338,9 @@ sub locate {
 
 # Tabify a list into a string
 sub tabcol {
-  my ($ncols,$l) = @_ ;
-  
-  # print "tabcol received $ncols, $#$l ",join(" ,",@$l),"\n";
+  my ($ncols,$l,$sep) = @_ ;
+  $sep = " " unless defined $sep ;
+  # print "tabcol received $ncols, $#$l ,sep=$sep, \@\$l=",join(" ,",@$l),"\n";
   
   $ncols = 1 unless $ncols;
   $ncols = ($#{$l} + 1)/(-$ncols) if($ncols<0);
@@ -1352,7 +1358,7 @@ sub tabcol {
   # print "mx ",join(" ,",@mx),"\n";
   $i=0;
   foreach (@$l) { 
-    $res .= sprintf("%-$mx[$i]s ",defined($_)?$_:"");
+    $res .= sprintf("%-$mx[$i]s$sep",defined($_)?$_:"");
     $i = ($i+1)%$ncols ;
     $res .= "\n" unless $i ;
   }
@@ -1362,7 +1368,9 @@ sub tabcol {
 
 # Tabify a list into a string
 sub tabrow {
-  my ($nrows,$l) = @_ ;
+  my ($nrows,$l,$sep) = @_ ;
+  $sep = " " unless defined $sep ;
+
   my $nn = $#$l+1 > $nrows ? $#$l+1 : $nrows ;
 
   $nrows = 1 unless $nrows;
@@ -1381,7 +1389,7 @@ sub tabrow {
   
   $i=$j=0;
   foreach (@$l) { 
-    $res[$i] .= sprintf("%-$mx[$j]s ",$_);
+    $res[$i] .= sprintf("%-$mx[$j]s$sep",$_);
     $i = ($i+1)%$nrows ;
     $j++ unless $i;
   }
@@ -1696,14 +1704,18 @@ submeter:pp subm(iss|etid)o
 suspender:pp suspen(s|did)o
 tender:pp ten(s|did)o
 
-
+# Some of these verb's forms aren't defined because they would sound
+# bad. 
 defectivos1= abolir adir banir carpir colorir combalir comedir
 delinquir delir demolir descomedir embair empedernir escapulir
 extorquir falir florir munir remir renhir retorquir 
  
+# These are defined only in the forms where the infinitive's 'i' is
+# either present, or replaced by a 'e'.
 defectivos2= aturdir brandir brunir emergir exaurir fremir fulgir
 haurir imergir jungir submergir ungir #
 
+# These verbs have only the third person defined.
 defectivos4= acontecer concernir grassar constar assentar
 
 defectivos3=    precaver adequar

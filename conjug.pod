@@ -7,7 +7,7 @@
 
 =head1 DESCRIPTION
 
-   conjug [qvrcsx] verb+, [tense]*, [1-6]*
+   conjug [qvrcsxol] verb+, [tense]*, [1-6]*
 
  - tense is one of 
       pres    or      Presente, 
@@ -68,6 +68,16 @@
 
    Each verb entry is a regular eXpression that matches a
          correct form.
+
+=item  o
+
+	 Separate results with commas and spaces rather than just spaces.
+
+=item  l
+
+	 Use long format for verbs, e.g. "presente" instead of "pres".
+
+
 
 =back
 

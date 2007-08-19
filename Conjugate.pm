@@ -59,7 +59,7 @@
 #
 # See recent changes in file ChangeLog
 
-$VERSION = '1.11' ;
+$VERSION = '1.12' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -385,7 +385,7 @@ $letter = "ç$vocs$cons";
 		   terei terás terá teremos tereis terão,
 		   tivera tiveras tivera tivéramos tivéreis tiveram,
 		   tenha tenhas tenha tenhamos tenhais tenham,
-		   tivesse tivesses tivéssemos tivésseis tivessem,
+		   tivesse tivesses tivesse tivéssemos tivésseis tivessem,
 		   tiver tiveres tiver tivermos tiverdes tiverem,
 		   cond teria terias teria teríamos teríeis teriam,
 		   ivo tem tenha tenhamos tende tenham ,
@@ -1488,7 +1488,7 @@ BEGIN {
     $vlist = <<EOD ; 
 
 obter: obtenho obténs obtém ivo obtém model ter 
-abster: abstenho absténs abstém ivo abstém model ter 
+bster: abstenho absténs abstém ivo abstém model ter 
 ater: atenho aténs atém ivo atém model ter 
 conter: contenho conténs contém ivo contém model ter 
 deter: detenho deténs detém ivo detém model ter 

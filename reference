@@ -467,16 +467,16 @@ ivo          sê     seja  sejamos  sede    sejam
 pp     sido                                       
 grd    sendo                                      
 ter :  irreg                                                    
-pres   tenho   tens     tem        temos     tendes    têm      
-perf   tive    tiveste  teve       tivemos   tivestes  tiveram  
-imp    tinha   tinhas   tinha      tínhamos  tínheis   tinham   
-fut    terei   terás    terá       teremos   tereis    terão    
-mdp    tivera  tiveras  tivera     tivéramos tivéreis  tiveram  
-cpres  tenha   tenhas   tenha      tenhamos  tenhais   tenham   
-cimp   tivesse tivesses tivéssemos tivésseis tivêsseis tivessem 
-cfut   tiver   tiveres  tiver      tivermos  tiverdes  tiverem  
-cond   teria   terias   teria      teríamos  teríeis   teriam   
-ivo            tem      tenha      tenhamos  tende     tenham   
+pres   tenho   tens     tem        temos      tendes    têm      
+perf   tive    tiveste  teve       tivemos    tivestes  tiveram  
+imp    tinha   tinhas   tinha      tínhamos   tínheis   tinham   
+fut    terei   terás    terá       teremos    tereis    terão    
+mdp    tivera  tiveras  tivera     tivéramos  tivéreis  tiveram  
+cpres  tenha   tenhas   tenha      tenhamos   tenhais   tenham   
+cimp   tivesse tivesses tivesse    tivéssemos tivésseis tivessem 
+cfut   tiver   tiveres  tiver      tivermos   tiverdes  tiverem  
+cond   teria   terias   teria      teríamos   teríeis   teriam   
+ivo            tem      tenha      tenhamos   tende     tenham   
 pp     tido                                                     
 grd    tendo                                                    
 ver :  irreg                                      
@@ -1065,29 +1065,29 @@ ivo                    afeiçoa     afeiçoe    afeiçoemos    afeiçoem
 pp          afeiçoado                                                   
 grd         afeiçoando                                                  
 obter :  model     ter                                                        
-pres     obtenho   obténs     obtém        obtemos     obtendes    obtêm      
-perf     obtive    obtiveste  obteve       obtivemos   obtivestes  obtiveram  
-imp      obtinha   obtinhas   obtinha      obtínhamos  obtínheis   obtinham   
-fut      obterei   obterás    obterá       obteremos   obtereis    obterão    
-mdp      obtivera  obtiveras  obtivera     obtivéramos obtivéreis  obtiveram  
-cpres    obtenha   obtenhas   obtenha      obtenhamos  obtenhais   obtenham   
-cimp     obtivesse obtivesses obtivéssemos obtivésseis obtivêsseis obtivessem 
-cfut     obtiver   obtiveres  obtiver      obtivermos  obtiverdes  obtiverem  
-cond     obteria   obterias   obteria      obteríamos  obteríeis   obteriam   
-ivo                obtém      obtenha      obtenhamos  obtende     obtenham   
+pres     obtenho   obténs     obtém        obtemos      obtendes    obtêm      
+perf     obtive    obtiveste  obteve       obtivemos    obtivestes  obtiveram  
+imp      obtinha   obtinhas   obtinha      obtínhamos   obtínheis   obtinham   
+fut      obterei   obterás    obterá       obteremos    obtereis    obterão    
+mdp      obtivera  obtiveras  obtivera     obtivéramos  obtivéreis  obtiveram  
+cpres    obtenha   obtenhas   obtenha      obtenhamos   obtenhais   obtenham   
+cimp     obtivesse obtivesses obtivesse    obtivéssemos obtivésseis obtivessem 
+cfut     obtiver   obtiveres  obtiver      obtivermos   obtiverdes  obtiverem  
+cond     obteria   obterias   obteria      obteríamos   obteríeis   obteriam   
+ivo                obtém      obtenha      obtenhamos   obtende     obtenham   
 pp       obtido                                                               
 grd      obtendo                                                              
 abster :  model      ter                                                             
-pres      abstenho   absténs     abstém        abstemos     abstendes    abstêm      
-perf      abstive    abstiveste  absteve       abstivemos   abstivestes  abstiveram  
-imp       abstinha   abstinhas   abstinha      abstínhamos  abstínheis   abstinham   
-fut       absterei   absterás    absterá       absteremos   abstereis    absterão    
-mdp       abstivera  abstiveras  abstivera     abstivéramos abstivéreis  abstiveram  
-cpres     abstenha   abstenhas   abstenha      abstenhamos  abstenhais   abstenham   
-cimp      abstivesse abstivesses abstivéssemos abstivésseis abstivêsseis abstivessem 
-cfut      abstiver   abstiveres  abstiver      abstivermos  abstiverdes  abstiverem  
-cond      absteria   absterias   absteria      absteríamos  absteríeis   absteriam   
-ivo                  abstém      abstenha      abstenhamos  abstende     abstenham   
+pres      abstenho   absténs     abstém        abstemos      abstendes    abstêm      
+perf      abstive    abstiveste  absteve       abstivemos    abstivestes  abstiveram  
+imp       abstinha   abstinhas   abstinha      abstínhamos   abstínheis   abstinham   
+fut       absterei   absterás    absterá       absteremos    abstereis    absterão    
+mdp       abstivera  abstiveras  abstivera     abstivéramos  abstivéreis  abstiveram  
+cpres     abstenha   abstenhas   abstenha      abstenhamos   abstenhais   abstenham   
+cimp      abstivesse abstivesses abstivesse    abstivéssemos abstivésseis abstivessem 
+cfut      abstiver   abstiveres  abstiver      abstivermos   abstiverdes  abstiverem  
+cond      absteria   absterias   absteria      absteríamos   absteríeis   absteriam   
+ivo                  abstém      abstenha      abstenhamos   abstende     abstenham   
 pp        abstido                                                                    
 grd       abstendo                                                                   
 roer :  model  moer                                      

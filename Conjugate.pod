@@ -284,7 +284,7 @@ is "assert faulty_verb"), which modifies the reference table.
 
 =head1 VERSION 1.0
 
-=head1 AUTHOR Etienne Grossmann, 1998-1999 [etienne@isr.ist.utl.pt] 
+=head1 AUTHOR Etienne Grossmann, 1998-2006 [etienne@isr.ist.utl.pt] 
 
 =head1 CREDITS
 

@@ -230,7 +230,7 @@ print <<EOFHTML;
             <br>
             <br>
             <input type="checkbox" name="isoacc" unchecked>
-            Don't output accentuated (ISO-8959-1) characters<br>
+            Don't output accentuated (ISO-8859-1) characters<br>
 <br>
 </p>
 </form>

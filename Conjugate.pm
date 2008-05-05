@@ -1,5 +1,4 @@
 #!/usr/bin/perl -w
-## die "AAAAAA";
 #
 # Perl package exporting a function "conjug" that conjugates
 # Portuguese verbs. 
@@ -59,7 +58,7 @@
 #
 # See recent changes in file ChangeLog
 
-$VERSION = '1.12' ;
+$VERSION = '1.14' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -1110,7 +1109,7 @@ sub conjug {
 	  
       warn " Root $v -> $root ,$cpat,of unexpected kind" unless
         (($rr,$vr,$cr) = 
-         ($root  =~  /^ (.*) ([$vocs]+) ($cpat* \^?) $/ox ))
+         ($root  =~  /^ (.*) ($vpat+) ($cpat* \^?) $/ox ))
 		  || $root=~/^ $cpat* \^? $/ox && ($rr = $root || 1) ;  
 
 	  # The \^? serves only for p^or
@@ -1243,9 +1242,9 @@ sub conjug {
 			      $vy=$cy=$ey="";
 			      if( $p != 5 )
 			      {
-				  warn "Ivo bug $y , $p,  ($vy,$cy,$ey) " unless 
+				  warn "Ivo bug $y , $p,  ($vy,$cy,$ey) $vocs / $cpat / $endg{cpres}->[$p-1]" unless 
 				      ($vy,$cy,$ey) = $y  =~ 
-					  / ([$vocs]) ($cpat) ($endg{cpres}->[$p-1]) $/x;
+					  / ([$vocs]) ($cpat?) ($endg{cpres}->[$p-1]) $/x;
 				  # print "-$endg{cpres}->[$p-1]-$y-$1-$2-$3\n";
 			      } else {
 #				  print "I'm here\n" ;
@@ -1574,7 +1573,7 @@ ir:
   cpres vá vás vá vamos vades vão, 
   fosse fosses fosse fôssemos fôsseis fossem,
   for fores for formos fordes foram
-  ivo vai ide vamos ide vão
+  ivo vai vá vamos ide vão
 valer:
   valho vales vale valemos valem,
   cpres valha etc

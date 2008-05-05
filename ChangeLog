@@ -1,3 +1,7 @@
+2008-05-04  Etienne Grossmann  <etienne@anonimo.isr.ist.utl.pt>
+
+	* Fix ir bug spotted by Michael Drayton
+
 2004-04-26  Etienne Grossmann  <etienne@cs.uky.edu>
 
 	* Fix crer (spotted by Brian Oleniacz <bjoleniacz@hotmail.com>)

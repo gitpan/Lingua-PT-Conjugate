@@ -216,7 +216,7 @@ cpres     sinta    sintas    sinta    sintamos    sintais    sintam
 cimp      sentisse sentisses sentisse sentíssemos sentísseis sentissem 
 cfut      sentir   sentires  sentir   sentirmos   sentirdes  sentirem  
 cond      sentiria sentirias sentiria sentiríamos sentiríeis sentiriam 
-ivo                sente     sinta    sintamos    sinti      sintam    
+ivo                sente     sinta    sintamos    senti      sintam    
 pp        sentido                                                      
 grd       sentindo                                                     
 perseguir :  model       seguir                                                             
@@ -658,7 +658,7 @@ cpres vá    vás    vá    vamos    vades   vão
 cimp  fosse fosses fosse fôssemos fôsseis fossem 
 cfut  for   fores  for   formos   fordes  foram  
 cond  iria  irias  iria  iríamos  iríeis  iriam  
-ivo         vai     vá   vamos    ide     vão    
+ivo         vai    vá    vamos    ide     vão    
 pp    ido                                        
 grd   indo                                       
 satisfazer :  model        fazer                                                                   
@@ -723,7 +723,7 @@ cpres        desminta    desmintas    desminta    desmintamos    desmais       d
 cimp         desmentisse desmentisses desmentisse desmentíssemos desmentísseis desmentissem 
 cfut         desmentir   desmentires  desmentir   desmentirmos   desmentirdes  desmentirem  
 cond         desmentiria desmentirias desmentiria desmentiríamos desmentiríeis desmentiriam 
-ivo                      desmente     desminta    desmintamos    desminti      desmintam    
+ivo                      desmente     desminta    desmintamos    desmenti      desmintam    
 pp           desmentido                                                                     
 grd          desmentindo                                                                    
 vir :  irreg                                             
@@ -1181,3 +1181,4 @@ cond       influiria influirias influiria influiríamos influiríeis influiriam
 ivo                  influi     influa    influamos    influí      influam    
 pp         influido                                                           
 grd        influindo                                                          
+HASH(0x81d79a0)

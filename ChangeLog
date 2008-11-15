@@ -1,4 +1,13 @@
-2008-05-04  Etienne Grossmann  <etienne@anonimo.isr.ist.utl.pt>
+
+2008-11-11
+	* Fix bug reported by Eugenio Pojarkov for verbs investir,
+	revestir, desinvestir and vestir.
+	
+2008-09-07 Etienne Grossmann  <etienne@isr.ist.utl.pt>
+
+	* Atribuir bug put in evidence by Eugenio Pojarkov
+
+2008-05-04  Etienne Grossmann  <etienne@isr.ist.utl.pt>
 
 	* Fix ir bug spotted by Michael Drayton
 

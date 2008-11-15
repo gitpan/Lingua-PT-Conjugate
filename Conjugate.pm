@@ -58,7 +58,7 @@
 #
 # See recent changes in file ChangeLog
 
-$VERSION = '1.14' ;
+$VERSION = '1.15' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -1487,7 +1487,7 @@ BEGIN {
     $vlist = <<EOD ; 
 
 obter: obtenho obténs obtém ivo obtém model ter 
-bster: abstenho absténs abstém ivo abstém model ter 
+abster: abstenho absténs abstém ivo abstém model ter 
 ater: atenho aténs atém ivo atém model ter 
 conter: contenho conténs contém ivo contém model ter 
 deter: detenho deténs detém ivo detém model ter 
@@ -1565,8 +1565,8 @@ sentir:
   sinto sentes etc
   cpres sinta etc
   # HERE Must check
-  ivo sente sinta etc
-sentir = ressentir assentir consentir mentir desmentir
+  ivo sente sinta sintamos senti sintam
+sentir = ressentir assentir consentir mentir desmentir investir revestir desinvestir vestir
 ir:
   vou  vais  vai vamos ides vão ,
   fui  foste foi fomos fostes foram , 
@@ -1637,7 +1637,7 @@ ler:
   ivo   lê lêia leiamos leiam
 ler = reler tresler
 atribuir:
-  atribuo atribuis atribui atribuímos atribuem,
+  atribuo atribuis atribui atribuímos atribuís atribuem,
   atribuí atribuíste  atribuiu  atribuímos  atribuíram, 
   atribuía atribuías  atribuía  atribuíamos  atribuíam, 
   cfut   atribuir . atribuir atribuirmos .

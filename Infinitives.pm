@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Created by ./mk_str_mod.pl on Tue Sep 28 08:24:58 WEST 1999
+# Created by ./mk_str_mod.pl on Wed Jan 28 22:21:15 PST 2009
 
 package Lingua::PT::Infinitives ;
 use Exporter ;
@@ -1247,6 +1247,7 @@ açancalar
 açodar
 açoitar
 açorar
+açucar
 açucarar
 açudar
 açular
@@ -1303,6 +1304,7 @@ banquetear
 banzar
 baptizar
 baquear
+bar
 barafustar
 baralhar
 baratear
@@ -1370,14 +1372,17 @@ bigamizar
 biglandular
 biglobular
 bigodear
+bilhar
 bilhardar
 biliar
 bilocular
 bilontrar
+binocular
 binoculizar
 binuclear
 biografar
 bipartir
+bipolar
 birrar
 bisar
 bisbilhotar
@@ -1574,6 +1579,7 @@ captar
 capturar
 capuchar
 caracolar
+caracter
 caracterizar
 carambolar
 caramelizar
@@ -2009,6 +2015,7 @@ constranger
 constringir
 construir
 consubstanciar
+consular
 consultar
 consumar
 consumir
@@ -2295,6 +2302,7 @@ denigrir
 denominar
 denotar
 dentar
+denticular
 denudar
 denunciar
 deparar
@@ -2743,6 +2751,7 @@ detiver
 detonar
 detrair
 deturpar
+devagar
 devanear
 devassar
 devastar
@@ -2982,6 +2991,7 @@ ementar
 emergir
 emigrar
 eminenciar
+emir
 emitir
 emocionar
 emoldurar
@@ -3417,6 +3427,7 @@ epitetar
 equacionar
 equidistar
 equilibrar
+equimolecular
 equipar
 equiparar
 equivaler
@@ -3786,6 +3797,7 @@ excruciar
 excursionar
 execrar
 executar
+exemplar
 exemplificar
 exercer
 exercitar
@@ -3836,6 +3848,7 @@ externar
 extinguir
 extirpar
 extorquir
+extracelular
 extraditar
 extrair
 extraparlamentar
@@ -4177,6 +4190,7 @@ grampear
 granar
 granizar
 granjear
+granular
 grasnar
 grassar
 gratificar
@@ -4222,6 +4236,7 @@ habitar
 habituar
 hachurar
 halogenar
+hangar
 haraganear
 harmonizar
 harpar
@@ -4231,6 +4246,7 @@ hastear
 haver
 hebetar
 hebraizar
+hectar
 hegemonizar
 helenizar
 hepatocelular
@@ -4508,18 +4524,26 @@ intercelular
 interceptar
 interclavicular
 interdepender
+interdisciplinar
 interditar
 interdizer
 interessar
 interestelar
 interferir
+interglaciar
 interiorizar
 interligar
+interlinear
+intermediar
 intermeter
 intermitir
+intermolecular
+intermuscular
 internacionalizar
 internalizar
 internar
+internuclear
+interocular
 interpelar
 interpenetrar
 interpeninsular
@@ -4531,14 +4555,18 @@ interrelacionar
 interrogar
 interromper
 intersectar
+interstelar
 intervalar
+interventricular
 interverter
 intervir
 intimar
 intimidar
 intitular
 intoxicar
+intracelular
 intraselar
+intraventricular
 intrigar
 intrincar
 introduzir
@@ -4654,7 +4682,9 @@ lançar
 lapidar
 lapisar
 laquear
+lar
 largar
+larvar
 lascar
 lassar
 lastimar
@@ -4749,6 +4779,7 @@ lucubrar
 ludibriar
 lufar
 lugar
+lunar
 lustrar
 lutar
 luxar
@@ -4797,10 +4828,12 @@ maltratar
 malucar
 maluquear
 mamar
+mamilar
 manar
 mancar
 manchar
 mandar
+mandibular
 mandriar
 mandrionar
 manducar
@@ -4878,6 +4911,7 @@ matizar
 matracar
 matraquear
 matricular
+matrilinear
 matrimoniar
 maturar
 matutar
@@ -5001,6 +5035,7 @@ mofar
 mofumbar
 moinar
 moitar
+molar
 moldar
 moldurar
 molecular
@@ -5015,6 +5050,7 @@ monarquizar
 mondar
 monetizar
 monocarpelar
+monocelular
 monocular
 monoculizar
 monologar
@@ -5054,6 +5090,7 @@ mugir
 mulher
 multar
 multiangular
+multicelular
 multicolorir
 multiplicar
 multipolar
@@ -5068,6 +5105,7 @@ murchar
 murmurar
 murmurejar
 murmurinhar
+muscular
 musicar
 mutilar
 mutuar
@@ -5117,6 +5155,7 @@ nivelar
 nobilitar
 nobrecer
 nocautear
+nodular
 noivar
 nomadizar
 nomear
@@ -5170,6 +5209,7 @@ ocasionar
 ocidentalizar
 ocorrer
 octangular
+ocular
 ocultar
 ocupar
 odiar
@@ -5317,6 +5357,7 @@ paralisar
 paralizar
 paramentar
 parametrizar
+paramilitar
 paraninfar
 parapeitar
 parar
@@ -5333,6 +5374,7 @@ parlar
 parodiar
 parolar
 paroquiar
+parser
 partafusar
 partejar
 participar
@@ -5353,6 +5395,7 @@ pastejar
 pasteurizar
 pastorar
 pastorear
+patamar
 pataratar
 pataratear
 pategar
@@ -5549,6 +5592,7 @@ poetar
 poetizar
 poisar
 pojar
+polar
 polarizar
 polcar
 polegar
@@ -5801,12 +5845,16 @@ putrefazer
 putrificar
 puxar
 pôr
+quadrangular
 quadrar
 quadricular
+quadrilocular
 quadrinizar
 quadruplar
 quadruplicar
+quaisquer
 qualificar
+qualquer
 quantificar
 quarar
 quarentar
@@ -5833,6 +5881,7 @@ quimificar
 quinar
 quintar
 quintuplicar
+quiser
 quitar
 quotizar
 rabear
@@ -5844,6 +5893,7 @@ rachar
 raciocinar
 racionalizar
 racionar
+radar
 radiar
 radicalizar
 radicar
@@ -5988,6 +6038,7 @@ recriar
 recriminar
 recrudescer
 recrutar
+rectangular
 rectificar
 recuar
 recumbir
@@ -6250,6 +6301,7 @@ retardar
 retemperar
 retesar
 reticenciar
+reticular
 retificar
 retinir
 retirar
@@ -6440,11 +6492,13 @@ saturar
 saudar
 sazonar
 saçaricar
+scanner
 secar
 seccionar
 secionar
 secretar
 secretariar
+secular
 secularizar
 secundar
 sedar
@@ -6463,6 +6517,7 @@ semear
 semelhar
 sementar
 semicerrar
+semicircular
 semiviver
 sengar
 senhorear
@@ -6520,6 +6575,7 @@ sindicalizar
 sindicar
 sinfonizar
 singrar
+singular
 singularizar
 sinistrar
 sinonimar
@@ -6575,6 +6631,7 @@ sofrear
 sofregar
 sofrer
 solapar
+solar
 solavancar
 soldar
 solenizar
@@ -6616,6 +6673,7 @@ sorvar
 sorver
 sossegar
 soterrar
+souber
 sovar
 soverter
 sovietizar
@@ -6649,6 +6707,7 @@ subjugar
 subjulgar
 sublevar
 sublimar
+subliminar
 sublinear
 sublinhar
 sublocar
@@ -6657,6 +6716,7 @@ submeter
 subministrar
 subordinar
 subornar
+subpolar
 subpor
 subscrever
 subsecretariar
@@ -6700,6 +6760,7 @@ superabundar
 superalimentar
 superar
 superativar
+superescalar
 superestimar
 superexcitar
 superintender
@@ -6715,6 +6776,7 @@ supliciar
 supor
 suportar
 supraescapular
+supralunar
 suprimir
 suprir
 supurar
@@ -6755,6 +6817,7 @@ tamborilar
 tampar
 tangar
 tangenciar
+tanger
 tantalizar
 tapar
 tapear
@@ -6806,6 +6869,9 @@ teologizar
 teorizar
 ter
 terminar
+termonuclear
+termopar
+terraplanar
 terrificar
 terçar
 tesar
@@ -6813,6 +6879,7 @@ tesoirar
 tesourar
 testar
 testemunhar
+testicular
 testificar
 testilhar
 tetanizar
@@ -6857,6 +6924,7 @@ tornear
 torpecer
 torpedar
 torpedear
+torpor
 torrar
 torrear
 torrificar
@@ -6995,6 +7063,7 @@ tropeçar
 tropicar
 trotar
 trotear
+trouxer
 trovar
 trovejar
 troviscar
@@ -7005,6 +7074,7 @@ trucidar
 trufar
 truncar
 trunfar
+tubular
 tufar
 tugir
 tumeficar
@@ -7025,6 +7095,7 @@ uivar
 ulcerar
 ultimar
 ultrajar
+ultramar
 ultrapassar
 ulular
 umedecer
@@ -7036,6 +7107,7 @@ unicelular
 unificar
 uniformizar
 unilocular
+unipolar
 unir
 universalizar
 untar
@@ -7115,6 +7187,7 @@ ventanear
 ventanejar
 ventar
 ventilar
+ventricular
 ver
 veranear
 verbalizar
@@ -7139,6 +7212,7 @@ versificar
 verter
 verticalizar
 vesguear
+vesicular
 vestibular
 vestir
 vetar
@@ -7192,7 +7266,9 @@ vivenciar
 viver
 vivificar
 vizinhar
+vizir
 voar
+vocabular
 vocabulizar
 vocalizar
 vociferar
@@ -7210,6 +7286,7 @@ vomitar
 votar
 vozear
 vulcanizar
+vulgar
 vulgarizar
 vulnerar
 vunzar

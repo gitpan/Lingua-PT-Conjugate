@@ -58,7 +58,7 @@
 #
 # See recent changes in file ChangeLog
 
-$VERSION = '1.15' ;
+$VERSION = '1.16' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -978,7 +978,7 @@ sub conjug {
 	    # return a Single line
 	    elsif( /s/ ) { $rc = "s"; $verbose = 0; }
 	    elsif( /h/ ) { $rc = "h"; } # return a Hash
-	    elsif( /l/ ) { $long = 1 } # Long form of verbs
+	    elsif( /l/ ) { $long = 1 } # Long form of verbs names
 	    elsif( /o/ ) { $sep = ", " } # output is comma-separated
 	    # Return a regexp that matches a correct verbal form
 	    elsif( /x/ ) { $regexp = 1 } 
@@ -1620,7 +1620,7 @@ trazer:
   trago trazes traz trazemos trazem,
   trouxe trouxeste etc
   mdp trouxera acc etc 
-  fut tarei trarás trará traremos trarão, 
+  fut trarei trarás trará traremos trarão, 
   cpres traga etc
   cond traria etc
   ivo traz traga etc

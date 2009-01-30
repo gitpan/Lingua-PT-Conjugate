@@ -151,7 +151,7 @@ print "There are ",0+@allv," verbs\n";
 
 build_entries $vdb,@allv ;
 @r = dump_entries($vdb) ;
-open AA,">$outfile" or
+open AA,">", $outfile or
     die "Can't open result file $outfile\n" ;
 print AA join "\n", @r,"\n" ;
 close AA;

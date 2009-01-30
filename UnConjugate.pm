@@ -158,7 +158,7 @@ sub unconj
     {
 	## HERE : assume letters are isolated in $p
 	$p =~ s/\b($equivk)\b/$equiv{$1}/g ;
-	# print "$p\n" ;
+	## print "$p\n" ;
     }
     my $p2 = "($p .*)" ;
     my @matches = $verb_suffixes =~ /^$p2/mg ;
@@ -178,7 +178,7 @@ sub unconj
 	{
 	    my $i = $root . $_ ;
 	    # $i =~ s/r+r$/r/ ;	# Why?
-	    # print "Trying : $i, $t, $p, $root\n" ;
+	    ##print "Trying : $i, $t, $p, $root + $_\n" ;
 	    next unless $infinitives =~ /^$i$/m ;
 	    my $check = conjug("xs",$i,$t,$p) ;
 	    $check =~ s/($equivk)/$equiv{$1}/g if $acc ;

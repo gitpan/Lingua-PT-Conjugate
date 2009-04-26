@@ -1,8 +1,12 @@
+2009-04-26
+	* Fix bug reported by Eliana (perfeito de trazer, 3rd person is
+	trouxe, not trouxeu.
+
 2009-01-28
 	* Fix bugs reported by Wolfram Schäfer for verbs perder (perco not
 	recognized), ter (tivesse not recognized as 3rd person conj. imp.)
 	and in trazer (1st person future is "trarei", not "tarei").
-	
+
 2008-11-11
 	* Fix bug reported by Eugenio Pojarkov for verbs investir,
 	revestir, desinvestir and vestir.

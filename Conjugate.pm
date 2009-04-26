@@ -58,7 +58,7 @@
 #
 # See recent changes in file ChangeLog
 
-$VERSION = '1.16' ;
+$VERSION = '1.17' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -1618,7 +1618,7 @@ gastar: pp gast(|ad)o
 pagar: pp pago
 trazer:
   trago trazes traz trazemos trazem,
-  trouxe trouxeste etc
+  trouxe trouxeste trouxe etc
   mdp trouxera acc etc 
   fut trarei trarás trará traremos trarão, 
   cpres traga etc

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Created by ./mk_str_mod.pl on Wed Jan 28 22:21:15 PST 2009
+# Created by ./mk_str_mod.pl on Sun Apr 26 10:03:52 PDT 2009
 
 package Lingua::PT::Infinitives ;
 use Exporter ;
@@ -7063,7 +7063,6 @@ tropeçar
 tropicar
 trotar
 trotear
-trouxer
 trovar
 trovejar
 troviscar

@@ -1,4 +1,7 @@
-#!/usr/bin/perl 
+#!/usr/bin/perl -w -CLO
+
+eval 'exec /usr/bin/perl -w -CLO -S $0 ${1+"$@"}'
+    if 0; # not running under some shell
 
 # 
 # conjug
@@ -11,7 +14,7 @@
 # (C) Copyright 1998 Etienne Grossmann
 # 
 
-$VERSION = 0.90 ;
+$VERSION = 0.91 ;
 
 $help_string= q{
  conjug  :  CONJUGATION OF PORTUGUESE VERBS

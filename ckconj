@@ -15,8 +15,8 @@ use Lingua::PT::Conjugate qw( conjug codify verify %verb $vlist $cpat $vpat
                              $wpat $letter ); 
 import Lingua::PT::Accent_iso_8859_1 qw(iso2asc asc2iso);
 
-
-if(!defined(%verb)){
+if (! %verb)
+{
     die "No way of continuing without \%verb ! ";
 }
 

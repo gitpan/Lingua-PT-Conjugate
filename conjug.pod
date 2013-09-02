@@ -122,11 +122,11 @@ o[iu]\co ouves ouve ouvimos ouvem
 
 treinar, Lingua::PT::Conjugate.
 
-=head1 VERSION 0.90
+=head1 VERSION 0.91
 
 =head1 AUTHOR 
 
-Etienne Grossmann, January 1998 [etienne@isr.ist.utl.pt] 
+Etienne Grossmann, 1998-2013 [etienne@isr.ist.utl.pt] 
 
 =cut
 

@@ -58,7 +58,7 @@
 #
 # See recent changes in file ChangeLog
 
-$VERSION = '1.17' ;
+$VERSION = '1.18' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -1653,17 +1653,19 @@ ver:
   vi    viste viu vimos viram,
   mdp vira etc
   cpres veja vejas veja vejamos vejam
+  cimp visse visses visse víssemos vísseis vissem
   ivo vê veja  vejamos vede vejam
   pp visto
-ver = antever antrever prever rever 
+ver = antever entrever prever rever 
 vir:  
-  venho vens vem vimos vêm,
-  vim vieste veio viemos vieram,
-  vinha vinhas vinha vínhamos vinham,
+  venho vens vem vimos vindes vêm,
+  vim vieste veio viemos viestes vieram,
+  vinha vinhas vinha vínhamos vínheis vinham,
   mdp   viera vieras viera viéramos vieram,
   cpres venha venhas venha venhamos venham,
-  cimp viesse viesses viesse viéssemos viessem,
-  cfut vier vieres vier viermos vierem,
+  cimp viesse viesses viesse viéssemos viésseis viessem,
+  cfut vier vieres vier viermos vierdes vierem,
+  ivo vem venha vinhamos vinde venham
   pp vindo
 vir = advir convir intervir   
 

@@ -1,6 +1,15 @@
+
+2013-09-01
+	* Remove non-verb antrever, replace with entrever.
+	* Make conjug output Unicode UTF-8.
+
+2009-05-12
+	* Fix bugs reported by Robert L. Davis for the verbs vir (2nd
+	plural was all wrong) and ver.
+
 2009-04-26
 	* Fix bug reported by Eliana (perfeito de trazer, 3rd person is
-	trouxe, not trouxeu.
+	trouxe, not trouxeu).
 
 2009-01-28
 	* Fix bugs reported by Wolfram Schäfer for verbs perder (perco not
@@ -10,7 +19,7 @@
 2008-11-11
 	* Fix bug reported by Eugenio Pojarkov for verbs investir,
 	revestir, desinvestir and vestir.
-	
+
 2008-09-07 Etienne Grossmann  <etienne@isr.ist.utl.pt>
 
 	* Atribuir bug put in evidence by Eugenio Pojarkov

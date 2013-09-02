@@ -50,19 +50,19 @@ cond       digeriria digeririas digeriria digeriríamos digeriríeis digeririam
 ivo                  digere     digira    digiramos    digeri      digiram    
 pp         digerido                                                           
 grd        digerindo                                                          
-antrever :  model      ver                                                           
-pres        antrevejo  antrevês    antrevê    antrevemos    antreveis    antrevêem   
-perf        antrevi    antreviste  antreviu   antrevimos    antrevestes  antreviram  
-imp         antrevia   antrevias   antrevia   antrevíamos   antrevíeis   antreviam   
-fut         antreverei antreverás  antreverá  antreveremos  antrevereis  antreverão  
-mdp         antrevira  antreviras  antrevira  antrevíramos  antrevíreis  antreviram  
-cpres       antreveja  antrevejas  antreveja  antrevejamos  antrevais    antrevejam  
-cimp        antrevisse antrevisses antrevisse antrevîssemos antrevîsseis antrevissem 
-cfut        antrevir   antrevires  antrevir   antrevirmos   antrevirdes  antrevirem  
-cond        antreveria antreverias antreveria antreveríamos antreveríeis antreveriam 
-ivo                    antrevê     antreveja  antrevejamos  antrevede    antrevejam  
-pp          antrevisto                                                               
-grd         antrevendo                                                               
+entrever :  model      ver                                                           
+pres        entrevejo  entrevês    entrevê    entrevemos    entreveis    entrevêem   
+perf        entrevi    entreviste  entreviu   entrevimos    entrevestes  entreviram  
+imp         entrevia   entrevias   entrevia   entrevíamos   entrevíeis   entreviam   
+fut         entreverei entreverás  entreverá  entreveremos  entrevereis  entreverão  
+mdp         entrevira  entreviras  entrevira  entrevíramos  entrevíreis  entreviram  
+cpres       entreveja  entrevejas  entreveja  entrevejamos  entrevais    entrevejam  
+cimp        entrevisse entrevisses entrevisse entrevíssemos entrevísseis entrevissem 
+cfut        entrevir   entrevires  entrevir   entrevirmos   entrevirdes  entrevirem  
+cond        entreveria entreverias entreveria entreveríamos entreveríeis entreveriam 
+ivo                    entrevê     entreveja  entrevejamos  entrevede    entrevejam  
+pp          entrevisto                                                               
+grd         entrevendo                                                               
 divertir :  model      ferir                                                         
 pres        divirto    divertes    diverte    divertimos    divertis     divertem    
 perf        diverti    divertiste  divertiu   divertimos    divertistes  divertiram  
@@ -187,7 +187,7 @@ imp       previa   previas   previa   prevíamos   prevíeis   previam
 fut       preverei preverás  preverá  preveremos  prevereis  preverão  
 mdp       previra  previras  previra  prevíramos  prevíreis  previram  
 cpres     preveja  prevejas  preveja  prevejamos  prevais    prevejam  
-cimp      previsse previsses previsse prevîssemos prevîsseis previssem 
+cimp      previsse previsses previsse prevíssemos prevísseis previssem 
 cfut      previr   previres  previr   previrmos   previrdes  previrem  
 cond      preveria preverias preveria preveríamos preveríeis preveriam 
 ivo                prevê     preveja  prevejamos  prevede    prevejam  
@@ -447,7 +447,7 @@ imp      revia   revias   revia   revíamos   revíeis   reviam
 fut      reverei reverás  reverá  reveremos  revereis  reverão  
 mdp      revira  reviras  revira  revíramos  revíreis  reviram  
 cpres    reveja  revejas  reveja  revejamos  revais    revejam  
-cimp     revisse revisses revisse revîssemos revîsseis revissem 
+cimp     revisse revisses revisse revíssemos revísseis revissem 
 cfut     revir   revires  revir   revirmos   revirdes  revirem  
 cond     reveria reverias reveria reveríamos reveríeis reveriam 
 ivo              revê     reveja  revejamos  revede    revejam  
@@ -486,7 +486,7 @@ imp    via   vias   via   víamos   víeis   viam
 fut    verei verás  verá  veremos  vereis  verão  
 mdp    vira  viras  vira  víramos  víreis  viram  
 cpres  veja  vejas  veja  vejamos  vejais  vejam  
-cimp   visse visses visse vîssemos vîsseis vissem 
+cimp   visse visses visse víssemos vísseis vissem 
 cfut   vir   vires  vir   virmos   virdes  virem  
 cond   veria verias veria veríamos veríeis veriam 
 ivo          vê     veja  vejamos  vede    vejam  
@@ -616,7 +616,7 @@ imp        antevia   antevias   antevia   antevíamos   antevíeis   anteviam
 fut        anteverei anteverás  anteverá  anteveremos  antevereis  anteverão  
 mdp        antevira  anteviras  antevira  antevíramos  antevíreis  anteviram  
 cpres      anteveja  antevejas  anteveja  antevejamos  antevais    antevejam  
-cimp       antevisse antevisses antevisse antevîssemos antevîsseis antevissem 
+cimp       antevisse antevisses antevisse antevíssemos antevísseis antevissem 
 cfut       antevir   antevires  antevir   antevirmos   antevirdes  antevirem  
 cond       anteveria anteverias anteveria anteveríamos anteveríeis anteveriam 
 ivo                  antevê     anteveja  antevejamos  antevede    antevejam  
@@ -726,19 +726,19 @@ cond         desmentiria desmentirias desmentiria desmentiríamos desmentiríeis d
 ivo                      desmente     desminta    desmintamos    desmenti      desmintam    
 pp           desmentido                                                                     
 grd          desmentindo                                                                    
-vir :  irreg                                             
-pres   venho  vens    vem    vimos     vis       vêm     
-perf   vim    vieste  veio   viemos    vistes    vieram  
-imp    vinha  vinhas  vinha  vínhamos  víeis     vinham  
-fut    virei  virás   virá   viremos   vireis    virão   
-mdp    viera  vieras  viera  viéramos  víreis    vieram  
-cpres  venha  venhas  venha  venhamos  venhais   venham  
-cimp   viesse viesses viesse viéssemos vimísseis viessem 
-cfut   vier   vieres  vier   viermos   vimirdes  vierem  
-cond   viria  virias  viria  viríamos  viríeis   viriam  
-ivo           venhas  venha  venhamos  vi        venham  
-pp     vindo                                             
-grd    vindo                                             
+vir :  irreg                                            
+pres   venho  vens    vem    vimos     vindes   vêm     
+perf   vim    vieste  veio   viemos    viestes  vieram  
+imp    vinha  vinhas  vinha  vínhamos  vínheis  vinham  
+fut    virei  virás   virá   viremos   vireis   virão   
+mdp    viera  vieras  viera  viéramos  víreis   vieram  
+cpres  venha  venhas  venha  venhamos  venhais  venham  
+cimp   viesse viesses viesse viéssemos viésseis viessem 
+cfut   vier   vieres  vier   viermos   vierdes  vierem  
+cond   viria  virias  viria  viríamos  viríeis  viriam  
+ivo           vem     venha  vinhamos  vinde    venham  
+pp     vindo                                            
+grd    vindo                                            
 trazer :  irreg                                                              
 pres      trago     trazes     traz      trazemos     trazeis     trazem     
 perf      trouxe    trouxeste  trouxe    trouxemos    trouxestes  trouxeram  
@@ -824,7 +824,7 @@ imp       provia   provias   provia   províamos   províeis   proviam
 fut       proverei proverás  proverá  proveremos  provereis  proverão  
 mdp       provira  proviras  provira  províramos  províreis  proviram  
 cpres     proveja  provejas  proveja  provejamos  prevais    provejam  
-cimp      provisse provisses provisse provîssemos provîsseis provissem 
+cimp      provisse provisses provisse províssemos provísseis provissem 
 cfut      provir   provires  provir   provirmos   provirdes  provirem  
 cond      proveria proverias proveria proveríamos proveríeis proveriam 
 ivo                provê     proveja  provejamos  provede    provejam  
@@ -1181,4 +1181,3 @@ cond       influiria influirias influiria influiríamos influiríeis influiriam
 ivo                  influi     influa    influamos    influí      influam    
 pp         influido                                                           
 grd        influindo                                                          
-HASH(0x81d79a0)

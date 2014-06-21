@@ -1,20 +1,20 @@
-#!/usr/bin/perl -w -CLO
+#!/usr/bin/perl -w 
 
-eval 'exec /usr/bin/perl -w -CLO -S $0 ${1+"$@"}'
+eval 'exec /usr/bin/perl -w -S $0 ${1+"$@"}'
     if 0; # not running under some shell
 
 # 
 # conjug
-# Author          : Etienne  Grossmann
-# Created On      : May      1997
-# Last Modified On: November 1998
+# Author          : Etienne   Grossmann
+# Created On      : May       1997
+# Last Modified On: Fegruary  2014
 # Language        : Perl
 # Status          : More or less stable
 # 
-# (C) Copyright 1998 Etienne Grossmann
+# (C) Copyright 1998- Etienne Grossmann
 # 
 
-$VERSION = 0.91 ;
+# $VERSION = 0.92 ;
 
 $help_string= q{
  conjug  :  CONJUGATION OF PORTUGUESE VERBS
@@ -89,12 +89,19 @@ AUTHOR : Etienne Grossmann etienne@isr.ist.utl.pt, January 1998
 
 
 
-if( !@ARGV || $ARGV[0]!~/[aeio]r$/ &&  $ARGV[0] =~ /\-?h/ ){
+if( !@ARGV || $ARGV[0]!~/[aeio]r$/ &&  $ARGV[0] =~ /\-?h/ )
+{
     print $help_string;
     exit 0;
 }
+
 use Lingua::PT::Conjugate ;
 
-print conjug( @ARGV );
+if (env_is_utf8())
+{
+	binmode (STDOUT, ":utf8");
+}
+
+print conjug (@ARGV);
 
 print "";

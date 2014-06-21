@@ -49,8 +49,8 @@
 #          - 1.03 : Code cleaning and commenting, fixed doc.
 #  9    99 - 1.04 : Imperativo of second plural follows a simple rule
 #            which I had overlooked. Fixed. Some places where
-#            "Diciónario Online da Lingua Portuguesa" (DLPO) and "Guia
-#            Prática dos Verbos Portugueses" (GPVP) differ have been
+#            "DiciÃ³nario Online da Lingua Portuguesa" (DLPO) and "Guia
+#            PrÃ¡tica dos Verbos Portugueses" (GPVP) differ have been
 #            docummented in the verb database at end of this file.
 ##
 # 12  2000 - Incorporate Unconjugate-related stuff
@@ -58,7 +58,7 @@
 #
 # See recent changes in file ChangeLog
 
-$VERSION = '1.18' ;
+$VERSION = '1.19' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -84,6 +84,8 @@ package Lingua::PT::Conjugate;
 # 
 
 package Lingua::PT::Accent_iso_8859_1;
+use feature 'unicode_strings';
+use utf8;
 use Exporter ;
 @ISA = qw(Exporter);
 # Yes, this package is a namespace polluter. 
@@ -153,10 +155,12 @@ $find_ascii_accent = join("|",keys(%ascii2iso_keys));
 
 
 # Crude code
-sub un_accent { 
-		return unless(defined @_);
-		my @a=@_;
-		iso2asc(map {s/[\'\`\^\~]([aAeEiIoOuU])/$1/g; $_} @a) 
+sub un_accent 
+{ 
+    ## return unless(defined @_);
+    return unless @_;
+    my @a=@_;
+    iso2asc(map {s/[\'\`\^\~]([aAeEiIoOuU])/$1/g; $_} @a) 
 }
 
 sub iso2asc {
@@ -194,7 +198,7 @@ import Lingua::PT::Accent_iso_8859_1 qw(iso2asc asc2iso un_accent);
 use Exporter ;
 @ISA = qw(Exporter);
 # Yes, this package is a namespace polluter. 
-@EXPORT = qw(conjug); 
+@EXPORT = qw(conjug env_is_utf8); 
 
 @EXPORT_OK = qw( cedilla codify end_gu end_oiar end_uir
 				 end_zer hard_c hard_g list_verbs locate same_model
@@ -251,7 +255,7 @@ use Exporter ;
 			  "cfut"=>"conjuntivo futuro",
 			  "cond" =>"condicional",
 			  "ivo"  =>"imperativo",
-			  "pp"=>"particípio passado", #'
+			  "pp"=>"particÃ­pio passado", #'
 			  "grd"  =>"gerundivo" ,
 			 );
 
@@ -273,40 +277,50 @@ use Exporter ;
 		  "cpres",[],"cimp",[],"cfut",[],"cond",[],"ivo",[],
 		  "pp",[],"grd",[]);
 
+sub strHash
+{
+    my $a = $_[0];
+    "{ " . join (", ", map {"'".$_."' => '".$a{$_}."'"} sort keys %$a) . " }";
+}
+
 # ####################### VOCALS, CONSONANTS ##################### 
 # Vocals and Consonants   
-$vocs = "aeiouáàäâãéèëêíìïîóòöôõúùüû";
+$vocs = "aeiouÃ¡Ã Ã¤Ã¢Ã£Ã©Ã¨Ã«ÃªÃ­Ã¬Ã¯Ã®Ã³Ã²Ã¶Ã´ÃµÃºÃ¹Ã¼Ã»";
 $plainvoc = "aeiou";
-$accvoc = "áàäâãéèëêíìïîóòöôõúùüû";
+$accvoc = "Ã¡Ã Ã¤Ã¢Ã£Ã©Ã¨Ã«ÃªÃ­Ã¬Ã¯Ã®Ã³Ã²Ã¶Ã´ÃµÃºÃ¹Ã¼Ã»";
 # Char => accent
 $only_acc = 
-  {split("","á\'à\`ä\"â^ã~é\'è\`ë\"ê^í\'ì\`ï\"î^ó\'ò\`ö\"ô^õ~ú\'ù\`ü\"û^")};
+  {split("",$foo="Ã¡\'Ã \`Ã¤\"Ã¢\^Ã£\~Ã©\'Ã¨\`Ã«\"Ãª^Ã­\'Ã¬\`Ã¯\"Ã®\^Ã³\'Ã²\`Ã¶\"Ã´\^Ãµ\~Ãº\'Ã¹\`Ã¼\"Ã»\^")};
+
+#print "only_acc = '", join("', '",%$only_acc), "'\n"; 
+#print "only_acc = ",strHash($only_acc),"\n";
+#print "foo='$foo' = >>",join("<>",split("",$foo)),"<<\n";
 # Char => unaccentuated
 $no_acc = 
-  {split("","áaàaäaâaãaéeèeëeêeíiìiïiîióoòoöoôoõoúuùuüuûu")};
+  {split("","Ã¡aÃ aÃ¤aÃ¢aÃ£aÃ©eÃ¨eÃ«eÃªeÃ­iÃ¬iÃ¯iÃ®iÃ³oÃ²oÃ¶oÃ´oÃµoÃºuÃ¹uÃ¼uÃ»u")};
 $vpat = "[$vocs]";
 $cons = 'qwrtypsdfghjklzxcvbnm';
-$cpat = "(?:[$cons]+|ç|gu)";
-$wpat = "[ç$vocs$cons]";
-$letter = "ç$vocs$cons";
+$cpat = "(?:[$cons]+|Ã§|gu)";
+$wpat = "[Ã§$vocs$cons]";
+$letter = "Ã§$vocs$cons";
 
 # pres perf imp fut mdp  cpres cimp cfut cond ivo pp grd 
 # ##############  REGULAR EXPRESSIONS THAT MATCH VERB ENDINGS ############
 %endg = %{verbify( q"
-      o   [aeiín]s  [aeim] [eaioí]mos [ae]?[ií]s [ae]m,
-      e?[íis]   [aeií]ste  [eio][us] [aeií]mos [aeií]stes [aeií]ram,
-      (?:av|i)?a   (?:av|i)?as   (?:av|i)?a (?:av|áv|í|i)?[aá]mos
-      (?:av|áv|í|i)?[aá]?eis (?:av|i)?am, 
-      [aeio]rei [aeio]r[aá]s [aeio]r[aáâ] [aeio]r[ae]mos [aeio]reis
-      [aeio]rão,
-      [aeií]ra [aeií]ras [aeií]ra [aeiâáêéîí]ramos [aeiaeiâáêéîí]reis [aeií]ram,
+      o   [aeiÃ­n]s  [aeim] [eaioÃ­]mos [ae]?[iÃ­]s [ae]m,
+      e?[Ã­is]   [aeiÃ­]ste  [eio][us] [aeiÃ­]mos [aeiÃ­]stes [aeiÃ­]ram,
+      (?:av|i)?a   (?:av|i)?as   (?:av|i)?a (?:av|Ã¡v|Ã­|i)?[aÃ¡]mos
+      (?:av|Ã¡v|Ã­|i)?[aÃ¡]?eis (?:av|i)?am, 
+      [aeio]rei [aeio]r[aÃ¡]s [aeio]r[aÃ¡Ã¢] [aeio]r[ae]mos [aeio]reis
+      [aeio]rÃ£o,
+      [aeiÃ­]ra [aeiÃ­]ras [aeiÃ­]ra [aeiÃ¢Ã¡ÃªÃ©Ã®Ã­]ramos [aeiaeiÃ¢Ã¡ÃªÃ©Ã®Ã­]reis [aeiÃ­]ram,
       [aeo] [ae]s [ae] [ae]mos [aei]s [ae]m,
-      [aeí]sse [aeí]sses [aeí]sse [aeâáêéí]ssemos [aeiâáêéîí]sseis [aeí]ssem,
-      [aei]r [aeií]res [aei]r [aei]rmos [aei]rdes [aeií]rem, 
-      [aeio]ria [aeio]rias [aeio]ria [aeio]r[iíî]amos
-      [aeio]r[aeioâáêéîíóòô]eis [aeio]riam, 
-      [aeim] [ae] [ae]mos (?:i|de|í) [ae]m ,
-      (?:[aií]do|to) , [aeio]ndo " 
+      [aeÃ­]sse [aeÃ­]sses [aeÃ­]sse [aeÃ¢Ã¡ÃªÃ©Ã­]ssemos [aeiÃ¢Ã¡ÃªÃ©Ã®Ã­]sseis [aeÃ­]ssem,
+      [aei]r [aeiÃ­]res [aei]r [aei]rmos [aei]rdes [aeiÃ­]rem, 
+      [aeio]ria [aeio]rias [aeio]ria [aeio]r[iÃ­Ã®]amos
+      [aeio]r[aeioÃ¢Ã¡ÃªÃ©Ã®Ã­Ã³Ã²Ã´]eis [aeio]riam, 
+      [aeim] [ae] [ae]mos (?:i|de|Ã­) [ae]m ,
+      (?:[aiÃ­]do|to) , [aeio]ndo " 
 				 )};
 
 # print join(",",%endg);
@@ -318,13 +332,13 @@ $letter = "ç$vocs$cons";
 		"er" => verbify( q{
 		  o   es     e emos eis em,
 		  i   este  eu emos estes eram,
-		  ia   ias   ia íamos íeis iam,
-		  erei erás erá eremos ereis erão,
-		  era eras era êramos êreis eram,
+		  ia   ias   ia Ã­amos Ã­eis iam,
+		  erei erÃ¡s erÃ¡ eremos ereis erÃ£o,
+		  era eras era Ãªramos Ãªreis eram,
 		  a as a amos ais am,
-		  esse esses esse êssemos êsseis essem,
+		  esse esses esse Ãªssemos Ãªsseis essem,
 		  er eres er ermos erdes erem, 
-		  eria erias eria eríamos eríeis eriam,
+		  eria erias eria erÃ­amos erÃ­eis eriam,
 		  e a amos ei am ,
 		  ido , endo ,
 		}) ,
@@ -333,13 +347,13 @@ $letter = "ç$vocs$cons";
 		"ar" => verbify( q{
 		  o   as     a  amos  ais     am , 
 		  ei   aste  ou  amos  astes  aram ,
-		  ava   avas  ava  ávamos áveis avam ,
-		  arei arás ará aremos  areis  arão,
-		  ara aras ara áramos áreis aram ,
+		  ava   avas  ava  Ã¡vamos Ã¡veis avam ,
+		  arei arÃ¡s arÃ¡ aremos  areis  arÃ£o,
+		  ara aras ara Ã¡ramos Ã¡reis aram ,
 		  e es e emos eis em ,
-		  asse  asses asse ássemos ásseis assem,
+		  asse  asses asse Ã¡ssemos Ã¡sseis assem,
 		  ar ares ar armos ardes arem,
-		  aria arias aria aríamos aríeis ariam,
+		  aria arias aria arÃ­amos arÃ­eis ariam,
 		  a e emos ai em ,
 		  ado , ando ,
 		} ),
@@ -348,28 +362,28 @@ $letter = "ç$vocs$cons";
 		"ir" => verbify( q{
 		  o   es     e  imos   is    em , 
 		  i   iste  iu  imos   istes  iram ,
-		  ia   ias   ia  íamos íeis iam ,
-		  irei irás irá iremos ireis  irão,
-		  ira iras ira íramos íreis iram,
+		  ia   ias   ia  Ã­amos Ã­eis iam ,
+		  irei irÃ¡s irÃ¡ iremos ireis  irÃ£o,
+		  ira iras ira Ã­ramos Ã­reis iram,
 		  a as a amos ais am,
-		  isse isses isse íssemos ísseis issem,
+		  isse isses isse Ã­ssemos Ã­sseis issem,
 		  ir ires ir irmos irdes irem,
-		  iria irias iria iríamos iríeis iriam,
+		  iria irias iria irÃ­amos irÃ­eis iriam,
 		  e a amos i am ,
 		  ido , indo ,
 		} ),
 		
 		"or" => verbify(q{ 
-		  onho ões õe omos ondes õem ,
-		  us useste ôs usemos usestes useram , 
-		  unha unhas unha únhamos únheis unham,
-		  orei orás orá oremos oreis orão,
-		  usera useras usera uséramos uséreis useram,
+		  onho Ãµes Ãµe omos ondes Ãµem ,
+		  us useste Ã´s usemos usestes useram , 
+		  unha unhas unha Ãºnhamos Ãºnheis unham,
+		  orei orÃ¡s orÃ¡ oremos oreis orÃ£o,
+		  usera useras usera usÃ©ramos usÃ©reis useram,
 		  onha onhas onha onhamos onhais onham,
-		  usesse usesses usesse uséssemos uésseis usessem,
+		  usesse usesses usesse usÃ©ssemos uÃ©sseis usessem,
 		  user useres user usermos userdes userem,
-		  oria orias oria oríamos oríeis oriam,
-		  õe onha onhamos onde onham
+		  oria orias oria orÃ­amos orÃ­eis oriam,
+		  Ãµe onha onhamos onde onham
 		  pp osto grd ondo
 		}),
 	   );
@@ -378,72 +392,72 @@ $letter = "ç$vocs$cons";
 # pres perf imp fut mdp  cpres cimp cfut cond ivo pp grd 
 %verb = (
 		 "ter"=>verbify( q{ 
-		   tenho tens tem temos tendes têm ,
+		   tenho tens tem temos tendes tÃªm ,
 		   tive tiveste teve tivemos tivestes tiveram,
-		   tinha tinhas tinha tínhamos tínheis tinham,
-		   terei terás terá teremos tereis terão,
-		   tivera tiveras tivera tivéramos tivéreis tiveram,
+		   tinha tinhas tinha tÃ­nhamos tÃ­nheis tinham,
+		   terei terÃ¡s terÃ¡ teremos tereis terÃ£o,
+		   tivera tiveras tivera tivÃ©ramos tivÃ©reis tiveram,
 		   tenha tenhas tenha tenhamos tenhais tenham,
-		   tivesse tivesses tivesse tivéssemos tivésseis tivessem,
+		   tivesse tivesses tivesse tivÃ©ssemos tivÃ©sseis tivessem,
 		   tiver tiveres tiver tivermos tiverdes tiverem,
-		   cond teria terias teria teríamos teríeis teriam,
+		   cond teria terias teria terÃ­amos terÃ­eis teriam,
 		   ivo tem tenha tenhamos tende tenham ,
 		   tido tendo 
 		 } ),
 		 
 		 "ser"=>verbify( q{
-		   sou és é somos sois são, 
+		   sou Ã©s Ã© somos sois sÃ£o, 
 		   fui foste foi fomos fostes foram,
-		   era eras era éramos éreis eram,
-		   serei serás será seremos sereis serão ,
-		   fora foras fora fôramos fôreis foram ,
+		   era eras era Ã©ramos Ã©reis eram,
+		   serei serÃ¡s serÃ¡ seremos sereis serÃ£o ,
+		   fora foras fora fÃ´ramos fÃ´reis foram ,
 		   seja sejas seja sejamos sejais sejam,
-		   fosse fosses fosse fôssemos fôsseis fossem,
+		   fosse fosses fosse fÃ´ssemos fÃ´sseis fossem,
 		   for fores for formos fordes forem,
-		   seria serias seria seríamos seríeis seriam,
-		   sê seja sejamos sede sejam,
+		   seria serias seria serÃ­amos serÃ­eis seriam,
+		   sÃª seja sejamos sede sejam,
 		   sido sendo
 		 } ),
 		 
 		 "estar"=>verbify( q{
-		   estou estás está estamos estais estão,
+		   estou estÃ¡s estÃ¡ estamos estais estÃ£o,
 		   estive estiveste esteve estivemos estivestes estiveram,
-		   estava estavas estava estávamos estáveis estavam,
-		   estarei estarás estará estaremos estareis estarão,
-		   estivera estiveras estivera estivéramos estivéreis estiverãm,
+		   estava estavas estava estÃ¡vamos estÃ¡veis estavam,
+		   estarei estarÃ¡s estarÃ¡ estaremos estareis estarÃ£o,
+		   estivera estiveras estivera estivÃ©ramos estivÃ©reis estiverÃ£m,
 		   esteja estejas esteja estejamos estejais estejam,
-		   estivesse estivesses estivesse estivéssemos estivésseis estivessem,
+		   estivesse estivesses estivesse estivÃ©ssemos estivÃ©sseis estivessem,
 		   estiver estiveres estiver estivermos estiverdes estiverem,
-		   estaria estarias estaríamos estaríeis estariam,
-		   está estéja estejamos estai estejam,
+		   estaria estarias estarÃ­amos estarÃ­eis estariam,
+		   estÃ¡ estÃ©ja estejamos estai estejam,
 		   estado estando
 		 } ),
 		 
 		 "haver"=>verbify( q{
-		   hei hás há havemos haveis hão,
+		   hei hÃ¡s hÃ¡ havemos haveis hÃ£o,
 		   houve houveste houve houvemos houvestes houveram,
-		   havia havias havia havíamos havíeis haviam,
-		   haverei haverás haverá haveremos havereis haverão,
-		   houvera houveras houvera houvéramos houvéreis houveram,
+		   havia havias havia havÃ­amos havÃ­eis haviam,
+		   haverei haverÃ¡s haverÃ¡ haveremos havereis haverÃ£o,
+		   houvera houveras houvera houvÃ©ramos houvÃ©reis houveram,
 		   haja hajas haja hajamos hajais hajam,
-		   houvesse houvesses houvesse houvéssemos houvésseis houvessem,
+		   houvesse houvesses houvesse houvÃ©ssemos houvÃ©sseis houvessem,
 		   houver houveres houver houvermos houverdes houverem,
-		   haveria haverias haveria haveríamos haveríeis haveriam,
+		   haveria haverias haveria haverÃ­amos haverÃ­eis haveriam,
 		   hajas haja hajamos havei hajam, havido  havendo
 		 } ),
 		 
 		 # pres perf imp fut mdp  cpres cimp cfut cond ivo pp grd 
-		 "pôr"=>verbify( q{  pôr
-		     ponho pões põe pomos pondes põem ,
-  		     pus puseste pôs pusemos pusestes puseram , 
- 		     punha punhas punha púnhamos púnheis punham,
-		     porei porás porá poremos poreis porão,
-   		     pusera puseras pusera puséramos puséreis puseram,
+		 "pÃ´r"=>verbify( q{  pÃ´r
+		     ponho pÃµes pÃµe pomos pondes pÃµem ,
+  		     pus puseste pÃ´s pusemos pusestes puseram , 
+ 		     punha punhas punha pÃºnhamos pÃºnheis punham,
+		     porei porÃ¡s porÃ¡ poremos poreis porÃ£o,
+   		     pusera puseras pusera pusÃ©ramos pusÃ©reis puseram,
 		     ponha ponhas ponha ponhamos ponhais ponham,
-		     cimp pusesse pusesses pusesse puséssemos pusésseis pusessem,
+		     cimp pusesse pusesses pusesse pusÃ©ssemos pusÃ©sseis pusessem,
 		     puser puseres puser pusermos puserdes puserem,
-          	     poria porias poria poríamos poríeis poriam,
- 		     põe ponha ponhamos ponde ponham
+          	     poria porias poria porÃ­amos porÃ­eis poriam,
+ 		     pÃµe ponha ponhamos ponde ponham
         	     pp posto grd pondo
 		     }),
 		 
@@ -491,7 +505,7 @@ sub verbify {
   # print "verbify >$a<\n";
   
   # There may not be a root, see e.g. initial calls to verbify.
-  if( $_[0] =~ /([aeioô]r)$/ ){ 
+  if( $_[0] =~ /([aeioÃ´]r)$/ ){ 
 	  
 	
 	  # Extract Root and Ending
@@ -575,7 +589,7 @@ sub verbify {
 		  while( $p < 6 ){
 			  $res{$t}->[$p] = $x . $reg{$edg2}->{$t}->[$p] unless 
 				  $p==3 && $reg{$edg2}->{$t}->[$p] =~ /^i/ && 
-					  $x =~ /i([$cons]{1,2}|ç|gu)$/o   ;
+					  $x =~ /i([$cons]{1,2}|Ã§|gu)$/o   ;
 			  # print "$t , $p , $res{$t}->[$p] <<\n";
 			  $p++;
 		  }
@@ -612,7 +626,7 @@ sub verbify {
 	$res{$t}->[3] = conjug({"$root$edg"=>\%res},"s","$root$edg",$t,4);
 	# Before iso-accentuating all 
 	# $res{$t}->[3] =~ tr/\'\^/\^\'/ ;
-	$res{$t}->[3] =~ tr/áéíâêî/âêîáéí/ ;
+	$res{$t}->[3] =~ tr/Ã¡Ã©Ã­Ã¢ÃªÃ®/Ã¢ÃªÃ®Ã¡Ã©Ã­/ ;
   }
   \%res;
   
@@ -851,7 +865,7 @@ sub soft_g {
 sub soft_c {
   my ( $w , $root, $edg , $p , $t ) = @_ ;
   
-  $w=~ s/c([^c]+)$/ç$1/ if( $w =~ /c[aou][^c]*$/);
+  $w=~ s/c([^c]+)$/Ã§$1/ if( $w =~ /c[aou][^c]*$/);
   $w ;
 }
 
@@ -872,7 +886,7 @@ sub hard_c {
 sub cedilla {
   my ( $w , $root, $edg , $p , $t ) = @_ ;
   
-  $w =~ s/ç[e]([^ç]*)$/ce$1/;
+  $w =~ s/Ã§[e]([^Ã§]*)$/ce$1/;
   $w;
 }
 
@@ -886,7 +900,7 @@ sub end_gu {
 #sub end_oiar {
 # my ( $w , $root, $edg , $p , $t ) = @_ ;
 #
-# $w =~ s/oó/ó/ ;
+# $w =~ s/oÃ³/Ã³/ ;
 # $w;
 #}
 
@@ -906,7 +920,7 @@ sub end_uir {
 	$t eq "pres" && ($p==2||$p==3) ||$t eq "ivo" && $p == 2 ;
   
   # Here ??Needed??
-  $w =~ s/$root i/ $root. "í"/ex if
+  $w =~ s/$root i/ $root. "Ã­"/ex if
 	$t eq "imp" || $t eq "mdp" || $t eq "perf" && $p!=3 || 
 	  $t eq "pres" && $p==4 ;
   
@@ -918,7 +932,7 @@ sub is_defectivo
   my ( $verb, $v, $t, $p ) = @_ ;
   return 0 unless exists( $verb->{defectivos}->{$v} ) ;
   # Check that verb looks like a verb 
-  unless( $v =~ /^(.*)([aeioô]r)$/ ){ 
+  unless( $v =~ /^(.*)([aeioÃ´]r)$/ ){ 
     warn "$v does not look like a verb." ;
     next;
   }
@@ -932,7 +946,7 @@ sub is_defectivo
 		   /["^$vocs"]*["$vocs"]["^$vocs"]*["$vocs"]/o ||
 		   $reg{$edg}->{$t}->[$p-1] =~
 		   /["^$vocs"]*(["$vocs"])/o && 
-		   ($1 eq "i" ||  $1 eq "í" || 
+		   ($1 eq "i" ||  $1 eq "Ã­" || 
 		    "$verb->{defectivos}->{$v}" eq "2" && $1 eq "e") 
 		 )
 		|| "$verb->{defectivos}->{$v}" eq "4" && $p!=3 && $p!=6
@@ -963,7 +977,7 @@ sub conjug {
 #  while( ($v=shift) && ($v=~ /^\-? [hvqlrcsxio]+ $/x ) ){
   while( @_ && (($v = shift) =~ /^\-? [hvqlrcsxio]+ $/x ) ){
 	# print "option $v\n";
-	if( $v=~/[iaeoô]r$/ ){	# That looks like a verb
+	if( $v=~/[iaeoÃ´]r$/ ){	# That looks like a verb
 	  # unshift @_,$v;
 	  # print "NOT OPT\n";
 	  last ;
@@ -1051,7 +1065,7 @@ sub conjug {
 	# print " D2 " if $verb->{defectivos}->{$v};
 	
 	# Check that verb looks like a verb 
-	unless( $v =~ /^(.*)([aeioô]r)$/ ){ 
+	unless( $v =~ /^(.*)([aeioÃ´]r)$/ ){ 
 	  warn "$v does not look like a verb." ;
 	  next;
 	}
@@ -1063,7 +1077,7 @@ sub conjug {
     if   ( $v =~ /g[ei]r$/ )    {  $modif = \&soft_g }
     elsif( $v =~ /c[ei]r$/ )    {  $modif = \&soft_c }
     elsif( $v =~ /g[ao]r$/ )    {  $modif = \&hard_g }
-    elsif( $v =~ /çar$/ )       {  $modif = \&cedilla }
+    elsif( $v =~ /Ã§ar$/ )       {  $modif = \&cedilla }
     elsif( $v =~ /c[ao]r$/ )    {  $modif = \&hard_c }
     elsif( $v =~/gu[ei]r$/ )    {  $modif = \&end_gu }
     elsif( $v =~ /[^g]uir$/)    {  $modif = \&end_uir }
@@ -1083,7 +1097,7 @@ sub conjug {
     else                        { $modif = 0 }
 	
 	# if($v =~/or$/){       # verbs in "or"
-	# $verb->{$v}->{model} = "pôr" unless defined($verb->{$v});
+	# $verb->{$v}->{model} = "pÃ´r" unless defined($verb->{$v});
 	# }
 	
     if($verbose)
@@ -1460,6 +1474,19 @@ sub tabrow {
   $res =~ s/\n[\n\s]+/\n/mg;
   $res;
 }
+
+sub env_is_utf8 ()
+{
+	foreach my $v (qw(LC_ALL LC_TYPE LANG))
+	{
+		if (exists ($ENV{$v}) && defined ($ENV{$v}))
+		{
+			return $ENV{$v} =~ /utf-?8/i;
+		}
+	}
+	return undef;
+} 
+
 ######################################################################
 
 
@@ -1486,28 +1513,28 @@ BEGIN {
 
     $vlist = <<EOD ; 
 
-obter: obtenho obténs obtém ivo obtém model ter 
-abster: abstenho absténs abstém ivo abstém model ter 
-ater: atenho aténs atém ivo atém model ter 
-conter: contenho conténs contém ivo contém model ter 
-deter: detenho deténs detém ivo detém model ter 
-entreter: entretenho entreténs entretém ivo entretém model ter 
-reter: retenho reténs retém ivo retém model ter 
-suster: sustenho susténs sustém ivo sustém model ter 
+obter: obtenho obtÃ©ns obtÃ©m ivo obtÃ©m model ter 
+abster: abstenho abstÃ©ns abstÃ©m ivo abstÃ©m model ter 
+ater: atenho atÃ©ns atÃ©m ivo atÃ©m model ter 
+conter: contenho contÃ©ns contÃ©m ivo contÃ©m model ter 
+deter: detenho detÃ©ns detÃ©m ivo detÃ©m model ter 
+entreter: entretenho entretÃ©ns entretÃ©m ivo entretÃ©m model ter 
+reter: retenho retÃ©ns retÃ©m ivo retÃ©m model ter 
+suster: sustenho sustÃ©ns sustÃ©m ivo sustÃ©m model ter 
 
 # obter = abster ater conter deter entreter reter suster # phoey
 boiar:
-  bóio etc 
-  cpres bóie bóies bóie boiemos bóiem
-  ivo bóia bóie boiemos bóiem
+  bÃ³io etc 
+  cpres bÃ³ie bÃ³ies bÃ³ie boiemos bÃ³iem
+  ivo bÃ³ia bÃ³ie boiemos bÃ³iem
 # This one has ivo,p=5 perdoeis in GPVP, perdoai in DLPO
 perdoar:
   perdoo perdoas perdoa perdoamos perdoam 
 moer:
-  moo moís mói moemos moem,
-  moí, 
-  moía moías  moía moíamos moíam, cfut moer etc cimp moesse etc
-  ivo mói pp moído
+  moo moÃ­s mÃ³i moemos moem,
+  moÃ­, 
+  moÃ­a moÃ­as  moÃ­a moÃ­amos moÃ­am, cfut moer etc cimp moesse etc
+  ivo mÃ³i pp moÃ­do
 passear:
   passeio passeias passeia passeamos passeiam,
   cpres passeie passeies passeie passeemos passeeis  passeiem
@@ -1522,7 +1549,7 @@ dizer:
   disse disseste disse dissemos disseram,,
   direi etc
   cpres diga etc,
-  cimp dissesse dissesses dissesse dissêssemos dissessem
+  cimp dissesse dissesses dissesse dissÃªssemos dissessem
   cond diria etc,
   ivo diz,
   pp dito
@@ -1530,29 +1557,29 @@ dizer = antedizer bendizer condizer contradizer desdizer
         interdizer maldizer predizer
 fazer = contrafazer desfazer satisfazer refazer
 fazer:
-  faço . faz ,
+  faÃ§o . faz ,
   fiz fizeste fez fizemos fizeram ,
-  fazia fazias fazia fazíamos faziam,
-  fut farei farás fará faremos farão,
-  fizera etc , # fizeras fizera fizéramos fizeram,
-  faça etc , # faças faça façamos façam,
-  cond faria etc , # farias faria faríamaos faria
+  fazia fazias fazia fazÃ­amos faziam,
+  fut farei farÃ¡s farÃ¡ faremos farÃ£o,
+  fizera etc , # fizeras fizera fizÃ©ramos fizeram,
+  faÃ§a etc , # faÃ§as faÃ§a faÃ§amos faÃ§am,
+  cond faria etc , # farias faria farÃ­amaos faria
   ivo faz 
   pp feito
 dar: 
-  dou dás dá damos dais dão,
+  dou dÃ¡s dÃ¡ damos dais dÃ£o,
   dei deste etc 
-  mdp dera deras dera déramos deram,
-  dê dês dê dêmos deis dêem,
+  mdp dera deras dera dÃ©ramos deram,
+  dÃª dÃªs dÃª dÃªmos deis dÃªem,
   desse etc 
   der deres der dermos derem ,
-  ivo dá . demos
+  ivo dÃ¡ . demos
 poder:
   posso podes etc
-  pude pudeste pôde pudemos puderam, 
+  pude pudeste pÃ´de pudemos puderam, 
   mdp pudera etc
   cpres possa etc
-  cimp pudesse pudesses pudesse pudéssemos pudessem 
+  cimp pudesse pudesses pudesse pudÃ©ssemos pudessem 
 # DLPO defines ivo like here, GPVP says it isn't defined
   ivo pode
 caber:
@@ -1568,12 +1595,12 @@ sentir:
   ivo sente sinta sintamos senti sintam
 sentir = ressentir assentir consentir mentir desmentir investir revestir desinvestir vestir
 ir:
-  vou  vais  vai vamos ides vão ,
+  vou  vais  vai vamos ides vÃ£o ,
   fui  foste foi fomos fostes foram , 
-  cpres vá vás vá vamos vades vão, 
-  fosse fosses fosse fôssemos fôsseis fossem,
+  cpres vÃ¡ vÃ¡s vÃ¡ vamos vades vÃ£o, 
+  fosse fosses fosse fÃ´ssemos fÃ´sseis fossem,
   for fores for formos fordes foram
-  ivo vai vá vamos ide vão
+  ivo vai vÃ¡ vamos ide vÃ£o
 valer:
   valho vales vale valemos valem,
   cpres valha etc
@@ -1581,14 +1608,14 @@ valer:
 prover: perf provi etc pp provido model ver 
 rever:  model ver 
 sair:
-  saio sais sai saímos saís saem,
-  saí saíste saiu saímos saístes saíram,
-  saía saías saía saíamos saíeis saíam
-  mdp saíra saíras saíra saíramos saíreis saíram
+  saio sais sai saÃ­mos saÃ­s saem,
+  saÃ­ saÃ­ste saiu saÃ­mos saÃ­stes saÃ­ram,
+  saÃ­a saÃ­as saÃ­a saÃ­amos saÃ­eis saÃ­am
+  mdp saÃ­ra saÃ­ras saÃ­ra saÃ­ramos saÃ­reis saÃ­ram
   cpres saia saias saia saiamos saiais saiam
-  cimp saísse saísses saísse saíssemos saísseis saíssem
-  cfut sair saíres sair sairmos sairdes saírem
-  ivo   sai saia saiamos saí saiam
+  cimp saÃ­sse saÃ­sses saÃ­sse saÃ­ssemos saÃ­sseis saÃ­ssem
+  cfut sair saÃ­res sair sairmos sairdes saÃ­rem
+  ivo   sai saia saiamos saÃ­ saiam
 abrir: pp aberto
 abrir = entreabrir
 saber:  
@@ -1620,7 +1647,7 @@ trazer:
   trago trazes traz trazemos trazem,
   trouxe trouxeste trouxe etc
   mdp trouxera acc etc 
-  fut trarei trarás trará traremos trarão, 
+  fut trarei trarÃ¡s trarÃ¡ traremos trarÃ£o, 
   cpres traga etc
   cond traria etc
   ivo traz traga etc
@@ -1632,53 +1659,54 @@ seguir:
 seguir = perseguir prosseguir conseguir
 #  pres perf imp fut mdp  cpres cimp cfut cond ivo pp grd 
 ler:
-  leio lês lê lemos lêem
+  leio lÃªs lÃª lemos lÃªem
   cpres  leia leias leia leiamos  leiam
-  ivo   lê lêia leiamos leiam
+  ivo   lÃª lÃªia leiamos leiam
 ler = reler tresler
 atribuir:
-  atribuo atribuis atribui atribuímos atribuís atribuem,
-  atribuí atribuíste  atribuiu  atribuímos  atribuíram, 
-  atribuía atribuías  atribuía  atribuíamos  atribuíam, 
+  atribuo atribuis atribui atribuÃ­mos atribuÃ­s atribuem,
+  atribuÃ­ atribuÃ­ste  atribuiu  atribuÃ­mos  atribuÃ­ram, 
+  atribuÃ­a atribuÃ­as  atribuÃ­a  atribuÃ­amos  atribuÃ­am, 
   cfut   atribuir . atribuir atribuirmos .
   ivo atribui
-	pp atribuído
+	pp atribuÃ­do
 averiguar: 
-  cpres averigúe averigúes  averigúe .  averigúem 
+  cpres averigÃºe averigÃºes  averigÃºe .  averigÃºem 
   ivo averigua
 pedir: 
-  peço cpres peça etc ivo pede peça peçamos    pedi peçam
+  peÃ§o cpres peÃ§a etc ivo pede peÃ§a peÃ§amos    pedi peÃ§am
 ver:  
-  vejo vês  vê vemos vêem,
+  vejo vÃªs  vÃª vemos vÃªem,
   vi    viste viu vimos viram,
   mdp vira etc
   cpres veja vejas veja vejamos vejam
-  cimp visse visses visse víssemos vísseis vissem
-  ivo vê veja  vejamos vede vejam
+  cimp visse visses visse vÃ­ssemos vÃ­sseis vissem
+  ivo vÃª veja  vejamos vede vejam
   pp visto
 ver = antever entrever prever rever 
 vir:  
-  venho vens vem vimos vindes vêm,
+  venho vens vem vimos vindes vÃªm,
   vim vieste veio viemos viestes vieram,
-  vinha vinhas vinha vínhamos vínheis vinham,
-  mdp   viera vieras viera viéramos vieram,
+  vinha vinhas vinha vÃ­nhamos vÃ­nheis vinham,
+  mdp   viera vieras viera viÃ©ramos vieram,
   cpres venha venhas venha venhamos venham,
-  cimp viesse viesses viesse viéssemos viésseis viessem,
+  cimp viesse viesses viesse viÃ©ssemos viÃ©sseis viessem,
   cfut vier vieres vier viermos vierdes vierem,
   ivo vem venha vinhamos vinde venham
   pp vindo
 vir = advir convir intervir   
 
 ouvir: 
-  o(i|u)ço ouves ouve ouvimos ouvem, 
-  cpres o(i|u)ça etc # ouças ouça ouçamos ouçam,
-  # alternative : cpres oiça  oiças  oiça  oiçamos  oiçam 
-  ivo ouve oiça 
-  # alternative : ivo . oiça 
+  o(i|u)Ã§o ouves ouve ouvimos ouvem, 
+  cpres o(i|u)Ã§a etc # ouÃ§as ouÃ§a ouÃ§amos ouÃ§am,
+  # alternative : cpres oiÃ§a  oiÃ§as  oiÃ§a  oiÃ§amos  oiÃ§am 
+  ivo ouve oiÃ§a 
+  # alternative : ivo . oiÃ§a 
 rir:
   rio ris ri rimos rides riem
-  cpres ria rias ria ríamos ríeis riam
+  cpres ria rias ria riamos riais riam
   ivo ri ria riamos ride riam 
+rir = sorrir
 fugir: 
   fujo foges foge fugimos fogem ivo foge
 dormir:   durmo , cpres durma 
@@ -1692,13 +1720,13 @@ escrever: pp escrito
 escrever = descrever inscrever reescrever prescrever
 dormir =  abolir demolir engolir
 
-influir: . . . . influís .
-          ivo . . . influí .
-          cimp influísse influísses influísse . . influíssem
+influir: . . . . influÃ­s .
+          ivo . . . influÃ­ .
+          cimp influÃ­sse influÃ­sses influÃ­sse . . influÃ­ssem
 
-construir: . constr(ó|u)is constr(ó|u)i . . constr(o|u)em
+construir: . constr(Ã³|u)is constr(Ã³|u)i . . constr(o|u)em
          model influir
-destruir: . destr(ó|u)is destr(ó|u)i . . destr(o|u)em
+destruir: . destr(Ã³|u)is destr(Ã³|u)i . . destr(o|u)em
          model influir
 polir:
     pulo pules pule polimos polis pulem
@@ -1714,13 +1742,13 @@ subir:
 reaver:
        x x x  reavemos reaveis x ,
        reouve reouveste reouve reouvemos reouvestes reouveram,
-       reavia reavias reavia reavíamos reavíeis reaviam,
-       reaverei reaverás reaverá reaveremos reavereis reaverão,
-       reouvera reouveras reouvera reouvéramos reouvéreis reouveram,
+       reavia reavias reavia reavÃ­amos reavÃ­eis reaviam,
+       reaverei reaverÃ¡s reaverÃ¡ reaveremos reavereis reaverÃ£o,
+       reouvera reouveras reouvera reouvÃ©ramos reouvÃ©reis reouveram,
        x x x x x x,
-       reouvesse reouvesses reouvesse reouvéssemos reouvésseis reouvessem,
+       reouvesse reouvesses reouvesse reouvÃ©ssemos reouvÃ©sseis reouvessem,
        reouver reouveres reouver reouvermos reouverdes reouverem,
-       reaveria reaverias reaveria reaveríamos reaveríeis reaveriam,
+       reaveria reaverias reaveria reaverÃ­amos reaverÃ­eis reaveriam,
        x x x x x, reavido  reavendo
 pedir = despedir medir impedir expedir
 perder:
@@ -1728,17 +1756,17 @@ perder:
   cpres perca percas perca percais percam
   ivo perde perca percamos
 crer:
-  creio crês crê . credes crêem,
+  creio crÃªs crÃª . credes crÃªem,
   cpres creia creias creia creiamos creiais creiam
-  ivo  crê . . crede
-# Double Particípio Passado
+  ivo  crÃª . . crede
+# Double ParticÃ­pio Passado
 aceitar: pp aceit(o|e|ado)
-afeiçoar: pp afe(ct|içoad)o
+afeiÃ§oar: pp afe(ct|iÃ§oad)o
 cativar: pp cativ(|ad)o
 cegar: pp ceg(|ad)o
 completar: pp complet(|ad)o
 cultivar: pp cult(|ivad)o
-descalçar: pp descalç(|ad)o
+descalÃ§ar: pp descalÃ§(|ad)o
 entregar: pp entreg(ue|ado)
 enxugar: pp enxu(t|gad)o
 expulsar: pp expuls(|ad)o
@@ -1759,7 +1787,7 @@ secar: pp sec(|ad)o
 segurar: pp segur(|ad)o
 fechar: pp fech(|ad)o
 afligir: pp afli(t|gid)o 
-concluir:pp conclu(s|íd)o
+concluir:pp conclu(s|Ã­d)o
 corrigir:pp corr(ect|igid)o
 dirigir:pp dir(ect|igid)o
 distingir:pp distin(t|guid)o
@@ -1770,7 +1798,7 @@ extinguir:pp ext(int|inguid)o
 frigir:pp fri(t|gid)o
 imergir:pp imer(s|gid)o
 imprimir:pp impr(ess|imid)o
-incluir:pp inclu(s|íd)o
+incluir:pp inclu(s|Ã­d)o
 inserir:pp ins(ert|erid)o
 omitir:pp om(ess|itid)o
 oprimir:pp opr(ess|imid)o

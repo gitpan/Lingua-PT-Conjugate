@@ -1,5 +1,7 @@
 #!/usr/bin/perl -w 
 
+use Encode;
+
 # use Ref ; Won't do
 use Data::Dumper;
 $Data::Dumper::Useqq=1;
@@ -82,12 +84,13 @@ sub cmp_str_ans
     chomp($a,$b) ;
     if( $a ne $b )
     {
-	my ($aa,$bb) =  (Dumper($a),Dumper($b)) ;
-	chomp ( $aa, $bb ) ;
-	print "Whoa! :             >>",$aa,"<<\n",
-              "    does not match  >>",$bb,"<<\n"
-		  if $verbose ;
-	return 1 ;
+        my ($aa,$bb) =  (Dumper($a),Dumper($b)) ;
+        chomp ( $aa, $bb ) ;
+        print 
+            "Whoa! :             >>",$aa,"<<\n",
+            "    does not match  >>",$bb,"<<\n"
+            if $verbose ;
+        return 1 ;
     }
     return 0 ;
 }
@@ -149,8 +152,8 @@ $b0 = $b = {
                      "desafiara",
                      undef,
                      undef,
-                     "desafiáramos",
-                     "desafiáreis",
+                     "desafiÃ¡ramos",
+                     "desafiÃ¡reis",
                      "desafiaram"
                    ],
           "pres" => [

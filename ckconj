@@ -11,9 +11,14 @@
 # (C) Copyright 1998 Etienne Grossmann
 # 
 
-use Lingua::PT::Conjugate qw( conjug codify verify %verb $vlist $cpat $vpat
+use Lingua::PT::Conjugate qw( conjug codify env_is_utf8 verify %verb $vlist $cpat $vpat
                              $wpat $letter ); 
 import Lingua::PT::Accent_iso_8859_1 qw(iso2asc asc2iso);
+
+if (env_is_utf8())
+{
+	binmode (STDOUT, ":utf8");
+}
 
 if (! %verb)
 {
@@ -22,8 +27,10 @@ if (! %verb)
 
 $rfile = "reference" unless $rfile;
 
-die  "file $rfile not found" unless open(VF,"<$rfile");
-{    my @vf = <VF>;
+die  "file $rfile not found" unless open (VF,"<$rfile");
+{
+    binmode (VF, ":utf8");
+    my @vf = <VF>;
     close VF;
     $rs =  join("",@vf); 
     $rs =~ s/\#.*\n*//mg;
@@ -41,7 +48,6 @@ if(defined($ARGV[0]) && -e $ARGV[0]){
     $codified = 1;
     shift @ARGV;
 } 
-
 @ARGV= sort @ARGV ;
 $ok_list = "";
 while( $v = shift @ARGV ){

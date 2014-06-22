@@ -52,13 +52,15 @@
 #            "Diciónario Online da Lingua Portuguesa" (DLPO) and "Guia
 #            Prática dos Verbos Portugueses" (GPVP) differ have been
 #            docummented in the verb database at end of this file.
-##
+#
 # 12  2000 - Incorporate Unconjugate-related stuff
 # 10  2002 - A few fixes in verbs
+# 08  2013 - Start printing in utf8
+# 06  2014 - Strings in utf8.
 #
 # See recent changes in file ChangeLog
 
-$VERSION = '1.19' ;
+$VERSION = '1.20' ;
 
 # Just to make sure which file is loaded
 # BEGIN{ print "SEE THIS ???\n",`pwd` }
@@ -84,7 +86,7 @@ package Lingua::PT::Conjugate;
 # 
 
 package Lingua::PT::Accent_iso_8859_1;
-use feature 'unicode_strings';
+# Not needed? use feature 'unicode_strings';
 use utf8;
 use Exporter ;
 @ISA = qw(Exporter);
@@ -152,7 +154,6 @@ $find_iso_accent = "[".join("",keys(%iso2ascii))."]";
 
 # Accent-matching regexp
 $find_ascii_accent = join("|",keys(%ascii2iso_keys));
-
 
 # Crude code
 sub un_accent 
